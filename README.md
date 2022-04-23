@@ -1,5 +1,4 @@
 # TYPO3 Extension Enhanced Backend
 
-![This is an image](EnhancedBackendLogo.png)
-
-Die TYPO3 Enhanced Backend Extension verbessert die User Experience (UX) im TYPO3 Backend, stellt Individualisierungsmöglichkeiten für Kunden, Projekte und Editoren bereit und modernisiert das Look'n'feel von TYPO3, sodass TYPO3 ein modernes und intuitives eCMS visualisiert.
+![This is an image](\Resources\Public\Icons\Extension.png)
+The Enhanced Backend Extension improves the user experience (UX) in the TYPO3 backend, provides customization options for editors and improves the look'n'feel of TYPO3 so that it represents a modern and intuitive eCMS.

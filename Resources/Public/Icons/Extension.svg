@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+        width="150"
+        height="150"
+        viewBox="0 0 39.687499 39.687501"
+        version="1.1"
+        id="svg5"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns="http://www.w3.org/2000/svg">
+    <defs id="defs2">
+        <linearGradient id="linearGradient3361">
+            <stop
+                    style="stop-color:#fbb304;stop-opacity:1"
+                    offset="0"
+                    id="stop3357"/>
+            <stop
+                    style="stop-color:#fb9104;stop-opacity:1"
+                    offset="0.26670131"
+                    id="stop4637"/>
+            <stop
+                    style="stop-color:#fb4804;stop-opacity:1"
+                    offset="1"
+                    id="stop3359"/>
+        </linearGradient>
+        <linearGradient id="linearGradient3331">
+            <stop
+                    style="stop-color:#fb8404;stop-opacity:1;"
+                    offset="0"
+                    id="stop3329"/>
+        </linearGradient>
+        <radialGradient
+                xlink:href="#linearGradient3361"
+                id="stargradient"
+                cx="290.73987"
+                cy="234.11543"
+                fx="290.73987"
+                fy="234.11543"
+                r="177.42954"
+                gradientTransform="matrix(1.9210219,0.00660771,-0.00537949,1.5639484,-266.51834,-134.02315)"
+                gradientUnits="userSpaceOnUse"/>
+    </defs>
+    <g id="layer1" style="display:inline">
+        <g id="svgg" transform="matrix(0.10256014,0,0,0.10256014,-9.3308966,-1.7507755)" style="display:inline;fill:#ffffff;">
+            <path
+                    id="path2"
+                    d="M 91.060076,404.07735 H 192.87086 V 70.126293 H 477.9874 V 16.585692 H 91.060076"
+                    stroke="none"
+                    fill="#181818"
+                    fill-rule="evenodd"
+            />
+            <path
+                    id="path0"
+                    d="m 327.11783,292.83426 143.396,0.0704 V 78.726858 h -145.2 m 1.12,222.109212 0.082,103.2551 H 470.4363 V 300.79509"
+                    stroke="none"
+                    fill-rule="evenodd"
+                    style="display:inline;fill:#e2e2e2"/>
+            <path
+                    id="path1"
+                    d="m 242.7674,70.193123 c 0,0.066 -26.456,78.348997 -26.542,78.489997 -0.087,0.141 -108.631,54.34 -108.72,54.429 -0.09,0.088 97.462,72.85 97.462,73.108 0,0.512 17.806,119.966 17.897,120.066 0.03,0.032 99.47101,-70.354 99.89301,-70.263 1.025,0.221 119.49,20.09 119.53,20.048 0.022,-0.024 -36.117,-115.981 -36.118,-116.149 -0.001,-0.168 56.195,-108.095 56.195,-108.095 l -121.915,-1.539 -49.182,-50.147997 c 0,0 -48.50001,0.017 -48.50001,0.053"
+                    stroke="none"
+                    fill="#fb8404"
+                    fill-rule="evenodd"
+                    style="display:inline;fill:url(#stargradient);fill-opacity:1;fill-rule:evenodd;"/>
+        </g>
+        <g id="layer2" style="display:inline">
+            <path
+                    d="m 4.1657741,1.0240923 c 0.3882588,0.05929 0.5570707,0.172295 0.5570707,0.37284 0,0.52126 -0.3803002,1.345427 -0.6004432,1.301458 -0.4334214,-0.08674 -0.9797489,-1.49325 -0.6507782,-1.675591 0.065158,-0.0361099 0.4537149,-0.0354099 0.6941507,0.0013 m -1.3348826,0.101665 c -0.2319798,0.441181 0.5827363,2.148107 1.0090951,2.114185 0.1119116,-0.009 0.1104194,-3.96e-4 -0.035016,0.202237 -0.4951963,0.689873 -0.8432667,0.913995 -1.1412995,0.734937 -0.5738834,-0.344589 -1.353883,-2.154872 -1.1191167,-2.597147 0.1075343,-0.202635 0.5702026,-0.411636 1.1191167,-0.505542 0.2349643,-0.04029 0.2180532,-0.04546 0.1672204,0.05133"
+                    style="fill:#ff940f;fill-opacity:1;fill-rule:evenodd;stroke:none;"
+                    id="path5885"/>
+            <circle
+                    style="fill:#e2e2e2;fill-opacity:1;fill-rule:evenodd;"
+                    id="path7354"
+                    cx="32.806656"
+                    cy="1.8042158"
+                    r="0.90210789"/>
+            <circle
+                    style="display:inline;fill:#e2e2e2;fill-opacity:1;fill-rule:evenodd;"
+                    id="path7354-0"
+                    cx="37.708111"
+                    cy="-1.8042158"
+                    r="0.90210789"
+                    transform="scale(1,-1)"/>
+            <circle
+                    style="display:inline;fill:#e2e2e2;fill-opacity:1;fill-rule:evenodd3;"
+                    id="path7354-4"
+                    cx="35.30249"
+                    cy="1.7741455"
+                    r="0.90210789"/>
+        </g>
+    </g>
+</svg>
