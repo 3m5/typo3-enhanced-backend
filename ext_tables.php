@@ -11,7 +11,7 @@ defined('TYPO3_MODE') || die();
     // @see
     // TODO add items
     // TODO configure image select
-    $GLOBALS['TYPO3_USER_SETTINGS']['columns']['tx_enhancedbackend_theme'] = [
+    $GLOBALS['TYPO3_USER_SETTINGS']['columns']['tx_enhancedbackend_active'] = [
       'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang.xlf:user_settings.activation',
       'type' => 'select',
       'renderType' => 'selectSingle',
@@ -21,7 +21,7 @@ defined('TYPO3_MODE') || die();
       ],
     ];
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToUserSettings(
-      'tx_enhancedbackend_theme',
+      'tx_enhancedbackend_active',
       'before:edit_RTE'
     );
 })();
