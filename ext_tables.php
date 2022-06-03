@@ -12,7 +12,7 @@ defined('TYPO3_MODE') || die();
     // TODO add items
     // TODO configure image select
     $GLOBALS['TYPO3_USER_SETTINGS']['columns']['tx_enhancedbackend_active'] = [
-      'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang.xlf:user_settings.activation',
+      'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang.xlf:user_settings.active',
       'type' => 'select',
       'renderType' => 'selectSingle',
       'items' => [
