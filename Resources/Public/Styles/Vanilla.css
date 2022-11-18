@@ -1,0 +1,147 @@
+.scaffold-modulemenu .modulemenu-icon svg > path:first-child:not([fill="#fff"]):not([fill="#FFF"]),
+.scaffold-modulemenu .modulemenu-icon svg rect:first-of-type,
+.scaffold-modulemenu .modulemenu-icon svg g:not([fill="#fff"]):not([fill="#FFF"]),
+.scaffold-modulemenu .modulemenu-icon svg g:not([fill="#fff"]):not([fill="#FFF"]) > path:not([fill="#fff"]):not([fill="#FFF"]) {
+  fill: rgba(0, 0, 0, 0.3) !important;
+}
+.scaffold-modulemenu .modulemenu button.modulemenu-action .modulemenu-icon {
+  display: none;
+}
+.scaffold-modulemenu .modulemenu button.modulemenu-action .modulemenu-name {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-left: 0;
+}
+.scaffold-modulemenu .modulemenu-action-active, .scaffold-modulemenu .modulemenu-action :hover {
+  background-color: transparent;
+}
+.scaffold-modulemenu .modulemenu-action-active .modulemenu-name, .scaffold-modulemenu .modulemenu-action :hover .modulemenu-name {
+  color: #ff8700;
+}
+.scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg > path:first-child:not([fill="#fff"]):not([fill="#FFF"]),
+.scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg rect:first-of-type,
+.scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg g:not([fill="#fff"]):not([fill="#FFF"]),
+.scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg g:not([fill="#fff"]):not([fill="#FFF"]) > path:not([fill="#fff"]):not([fill="#FFF"]), .scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg > path:first-child:not([fill="#fff"]):not([fill="#FFF"]),
+.scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg rect:first-of-type,
+.scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg g:not([fill="#fff"]):not([fill="#FFF"]),
+.scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg g:not([fill="#fff"]):not([fill="#FFF"]) > path:not([fill="#fff"]):not([fill="#FFF"]) {
+  fill: #ff8700 !important;
+}
+.scaffold-modulemenu .modulemenu-group {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 0;
+  padding-bottom: 20px;
+}
+
+/*********************** Header ***************************/
+.scaffold-header .toolbar-list {
+  display: flex;
+}
+.scaffold-header .toolbar-list .toolbar-item-search {
+  order: 1;
+}
+.scaffold-header .toolbar-list #typo3-cms-backend-backend-toolbaritems-shortcuttoolbaritem {
+  order: 2;
+}
+.scaffold-header .toolbar-list #typo3-cms-backend-backend-toolbaritems-clearcachetoolbaritem {
+  order: 3;
+}
+.scaffold-header .toolbar-list #typo3-cms-backend-backend-toolbaritems-helptoolbaritem {
+  order: 4;
+}
+.scaffold-header .toolbar-list #typo3-cms-backend-backend-toolbaritems-systeminformationtoolbaritem {
+  order: 5;
+}
+.scaffold-header .toolbar-list .toolbar-item-user {
+  order: 6;
+}
+
+/*********************** Main Content ************************/
+.module-body .t3js-flag {
+  display: none;
+}
+.module-body .t3-page-ce .t3-page-ce-header {
+  background-color: transparent;
+}
+.module-body .t3-page-ce-body-inner .exampleContent > strong:first-child {
+  position: absolute;
+  top: 10px;
+  left: 40px;
+}
+.module-body .t3-page-ce-body-inner .exampleContent > strong:first-child + br {
+  display: none;
+}
+.module-body .t3-page-column-header {
+  display: none;
+}
+.module-body .t3-page-ce * {
+  border: none;
+}
+.module-body .t3-page-ce-dragitem {
+  border: 1px dashed #ff8700;
+}
+.module-body .t3-page-ce-dragitem:hover {
+  border-left: 1px solid #ff8700;
+}
+.module-body .t3-page-ce .t3-page-ce-body {
+  margin-bottom: 0;
+}
+.module-body .t3-page-ce .t3-page-ce-body-inner table {
+  margin: -10px;
+  width: calc(100% + 20px);
+}
+.module-body .t3-page-ce .t3-page-ce-body-inner .exampleContent > br:last-child {
+  display: none;
+}
+.module-body .t3-page-ce-header, .module-body .t3-page-ce-body {
+  border: none;
+}
+.module-body .t3-page-ce-footer {
+  color: #777;
+}
+.module-body .t3-page-ce:hover .t3-page-ce-header, .module-body .t3-page-ce:hover .t3-page-ce-body {
+  box-shadow: none;
+}
+.module-body .t3-page-ce-wrapper-new-ce {
+  text-align: center;
+  margin-top: 10px;
+}
+.module-body .t3-page-ce-wrapper-new-ce .btn {
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+}
+.module-body .t3-page-ce-wrapper-new-ce .btn:hover {
+  background-color: #ff8700;
+}
+
+/**
+Scrollbar Styling
+ */
+body::-webkit-scrollbar {
+  width: 15px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 20px; /* roundness of the scroll thumb */
+  border: 3px solid; /* creates padding around scroll thumb */
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  border: 3px solid;
+}
+
+/*# sourceMappingURL=Vanilla.css.map */

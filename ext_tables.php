@@ -24,4 +24,16 @@ defined('TYPO3_MODE') || die();
       'tx_enhancedbackend_active',
       'before:edit_RTE'
     );
+
+    if (TYPO3_MODE === 'BE') {
+        $renderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
+        //$renderer->addJsFile('enhanced_backend/Resources/Public/JavaScript/Backend.js', 'text/javascript', false, false, '', true, '|', false, '');
+        $renderer->loadRequireJsModule(
+            'Backend',
+            "function() { document.querySelectorAll('[data-identifier=\"actions-add\"]').forEach(button => {
+  button.setAttribute('title', 'Create new content element');
+  button.parentNode.innerHTML = button.outerHTML;
+}); }"
+        );
+    }
 })();
