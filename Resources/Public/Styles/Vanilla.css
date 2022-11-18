@@ -2,7 +2,7 @@
 .scaffold-modulemenu .modulemenu-icon svg rect:first-of-type,
 .scaffold-modulemenu .modulemenu-icon svg g,
 .scaffold-modulemenu .modulemenu-icon svg g > path {
-  fill: rgba(0, 0, 0, 0.3) !important;
+  fill: none !important;
 }
 .scaffold-modulemenu .modulemenu-icon svg > path:first-child[fill="#fff"], .scaffold-modulemenu .modulemenu-icon svg > path:first-child[fill="#FFF"], .scaffold-modulemenu .modulemenu-icon svg > path:first-child[fill="#ffffff"], .scaffold-modulemenu .modulemenu-icon svg > path:first-child[fill="#FFFFFF"], .scaffold-modulemenu .modulemenu-icon svg > path:first-child[fill="#fff"] > *, .scaffold-modulemenu .modulemenu-icon svg > path:first-child[fill="#FFF"] > *, .scaffold-modulemenu .modulemenu-icon svg > path:first-child[fill="#ffffff"] > *, .scaffold-modulemenu .modulemenu-icon svg > path:first-child[fill="#FFFFFF"] > *,
 .scaffold-modulemenu .modulemenu-icon svg rect:first-of-type[fill="#fff"],
@@ -54,31 +54,55 @@
 .scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg g > path {
   fill: #ff8700 !important;
 }
-.scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg > path:first-child[fill="#fff"], .scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg > path:first-child[fill="#FFF"], .scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg > path:first-child[fill="#ffffff"], .scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg > path:first-child[fill="#FFFFFF"],
+.scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg > path:first-child[fill="#fff"], .scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg > path:first-child[fill="#FFF"], .scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg > path:first-child[fill="#ffffff"], .scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg > path:first-child[fill="#FFFFFF"], .scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg > path:first-child[fill="#fff"] > *, .scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg > path:first-child[fill="#FFF"] > *, .scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg > path:first-child[fill="#ffffff"] > *, .scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg > path:first-child[fill="#FFFFFF"] > *,
 .scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg rect:first-of-type[fill="#fff"],
 .scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg rect:first-of-type[fill="#FFF"],
 .scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg rect:first-of-type[fill="#ffffff"],
 .scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg rect:first-of-type[fill="#FFFFFF"],
+.scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg rect:first-of-type[fill="#fff"] > *,
+.scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg rect:first-of-type[fill="#FFF"] > *,
+.scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg rect:first-of-type[fill="#ffffff"] > *,
+.scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg rect:first-of-type[fill="#FFFFFF"] > *,
 .scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg g[fill="#fff"],
 .scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg g[fill="#FFF"],
 .scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg g[fill="#ffffff"],
 .scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg g[fill="#FFFFFF"],
+.scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg g[fill="#fff"] > *,
+.scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg g[fill="#FFF"] > *,
+.scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg g[fill="#ffffff"] > *,
+.scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg g[fill="#FFFFFF"] > *,
 .scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg g > path[fill="#fff"],
 .scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg g > path[fill="#FFF"],
 .scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg g > path[fill="#ffffff"],
-.scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg g > path[fill="#FFFFFF"], .scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg > path:first-child[fill="#fff"], .scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg > path:first-child[fill="#FFF"], .scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg > path:first-child[fill="#ffffff"], .scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg > path:first-child[fill="#FFFFFF"],
+.scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg g > path[fill="#FFFFFF"],
+.scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg g > path[fill="#fff"] > *,
+.scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg g > path[fill="#FFF"] > *,
+.scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg g > path[fill="#ffffff"] > *,
+.scaffold-modulemenu .modulemenu-action-active .modulemenu-icon svg g > path[fill="#FFFFFF"] > *, .scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg > path:first-child[fill="#fff"], .scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg > path:first-child[fill="#FFF"], .scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg > path:first-child[fill="#ffffff"], .scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg > path:first-child[fill="#FFFFFF"], .scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg > path:first-child[fill="#fff"] > *, .scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg > path:first-child[fill="#FFF"] > *, .scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg > path:first-child[fill="#ffffff"] > *, .scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg > path:first-child[fill="#FFFFFF"] > *,
 .scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg rect:first-of-type[fill="#fff"],
 .scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg rect:first-of-type[fill="#FFF"],
 .scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg rect:first-of-type[fill="#ffffff"],
 .scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg rect:first-of-type[fill="#FFFFFF"],
+.scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg rect:first-of-type[fill="#fff"] > *,
+.scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg rect:first-of-type[fill="#FFF"] > *,
+.scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg rect:first-of-type[fill="#ffffff"] > *,
+.scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg rect:first-of-type[fill="#FFFFFF"] > *,
 .scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg g[fill="#fff"],
 .scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg g[fill="#FFF"],
 .scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg g[fill="#ffffff"],
 .scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg g[fill="#FFFFFF"],
+.scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg g[fill="#fff"] > *,
+.scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg g[fill="#FFF"] > *,
+.scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg g[fill="#ffffff"] > *,
+.scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg g[fill="#FFFFFF"] > *,
 .scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg g > path[fill="#fff"],
 .scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg g > path[fill="#FFF"],
 .scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg g > path[fill="#ffffff"],
-.scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg g > path[fill="#FFFFFF"] {
+.scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg g > path[fill="#FFFFFF"],
+.scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg g > path[fill="#fff"] > *,
+.scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg g > path[fill="#FFF"] > *,
+.scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg g > path[fill="#ffffff"] > *,
+.scaffold-modulemenu .modulemenu-action :hover .modulemenu-icon svg g > path[fill="#FFFFFF"] > * {
   fill: #fff !important;
 }
 .scaffold-modulemenu .modulemenu-group {
@@ -125,11 +149,9 @@
 .module-body .t3-page-ce-body-inner .exampleContent > strong:first-child + br {
   display: none;
 }
-.module-body .t3-page-column-header {
-  display: none;
-}
 .module-body .t3-page-ce * {
   border: none;
+  border-spacing: 10px 0;
 }
 .module-body .t3-page-ce-dragitem {
   border: 1px dashed #ff8700;
@@ -169,6 +191,8 @@
 }
 .module-body .t3-page-ce-wrapper-new-ce .btn:hover {
   background-color: #ff8700;
+  color: white;
+  border-color: #ff8700;
 }
 
 /**

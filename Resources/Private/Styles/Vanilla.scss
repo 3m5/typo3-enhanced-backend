@@ -10,7 +10,7 @@ $typo3-color: #ff8700;
                 rect:first-of-type,
                 g,
                 g > path {
-                    fill: rgba(0, 0, 0, 0.3) !important;
+                    fill: none !important;
 
                     &[fill='#fff'], &[fill='#FFF'], &[fill='#ffffff'], &[fill='#FFFFFF'],
                     &[fill='#fff'] > *, &[fill='#FFF'] > *, &[fill='#ffffff'] > *, &[fill='#FFFFFF'] > * {
@@ -48,7 +48,8 @@ $typo3-color: #ff8700;
                         g > path {
                             fill: $typo3-color !important;
 
-                            &[fill='#fff'], &[fill='#FFF'], &[fill='#ffffff'], &[fill='#FFFFFF'] {
+                            &[fill='#fff'], &[fill='#FFF'], &[fill='#ffffff'], &[fill='#FFFFFF'],
+                            &[fill='#fff'] > *, &[fill='#FFF'] > *, &[fill='#ffffff'] > *, &[fill='#FFFFFF'] > * {
                                 fill: #fff !important;
                             }
                         }
@@ -123,15 +124,11 @@ $typo3-color: #ff8700;
         }
     }
 
-    // hide column header {
-    .t3-page-column-header {
-        display: none;
-    }
-
     // change content element borders
     .t3-page-ce {
         * {
             border: none;
+            border-spacing: 10px 0;
         }
 
         &-dragitem {
@@ -186,6 +183,8 @@ $typo3-color: #ff8700;
 
             &:hover {
                 background-color: $typo3-color;
+                color: white;
+                border-color: $typo3-color;
             }
         }
     }
