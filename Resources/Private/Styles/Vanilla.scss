@@ -6,11 +6,16 @@ $typo3-color: #ff8700;
     .modulemenu {
         &-icon {
             svg {
-                > path:first-child:not([fill='#fff']):not([fill='#FFF']),
+                > path:first-child,
                 rect:first-of-type,
-                g:not([fill='#fff']):not([fill='#FFF']),
-                g:not([fill='#fff']):not([fill='#FFF']) > path:not([fill='#fff']):not([fill='#FFF']) {
+                g,
+                g > path {
                     fill: rgba(0, 0, 0, 0.3) !important;
+
+                    &[fill='#fff'], &[fill='#FFF'], &[fill='#ffffff'], &[fill='#FFFFFF'],
+                    &[fill='#fff'] > *, &[fill='#FFF'] > *, &[fill='#ffffff'] > *, &[fill='#FFFFFF'] > * {
+                        fill: #fff !important;
+                    }
                 }
             }
         }
@@ -37,11 +42,15 @@ $typo3-color: #ff8700;
 
                 .modulemenu-icon {
                     svg {
-                        > path:first-child:not([fill='#fff']):not([fill='#FFF']),
+                        > path:first-child,
                         rect:first-of-type,
-                        g:not([fill='#fff']):not([fill='#FFF']),
-                        g:not([fill='#fff']):not([fill='#FFF']) > path:not([fill='#fff']):not([fill='#FFF']) {
+                        g,
+                        g > path {
                             fill: $typo3-color !important;
+
+                            &[fill='#fff'], &[fill='#FFF'], &[fill='#ffffff'], &[fill='#FFFFFF'] {
+                                fill: #fff !important;
+                            }
                         }
                     }
                 }
