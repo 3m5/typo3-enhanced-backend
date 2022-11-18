@@ -177,7 +177,7 @@
   justify-content: space-between;
 }
 .encbe .tree-toolbar .svg-toolbar__submenu .svg-toolbar__menuitem {
-  padding: 9px;
+  padding: 8px;
   transition: 0.4s all;
 }
 .encbe .tree-toolbar .svg-toolbar__submenu .svg-toolbar__menuitem:hover {

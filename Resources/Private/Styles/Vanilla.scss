@@ -1,106 +1,219 @@
 $typo3-color: #ff8700;
 
-// Sidebar left
-.scaffold-modulemenu {
-    // change icon colors
-    .modulemenu {
-        &-icon {
-            svg {
-                > path:first-child,
-                rect:first-of-type,
-                g,
-                g > path {
-                    fill: none !important;
+.module-docheader, .tree-toolbar {
+    .form-select, .form-control {
+        border: 1px solid #ddd;
+        font-size: 13px;
+        width: 100%;
+        padding: 8px 12px;
 
-                    &[fill='#fff'], &[fill='#FFF'], &[fill='#ffffff'], &[fill='#FFFFFF'],
-                    &[fill='#fff'] > *, &[fill='#FFF'] > *, &[fill='#ffffff'] > *, &[fill='#FFFFFF'] > * {
-                        fill: #fff !important;
+        &:focus {
+            box-shadow: inset 0 1px 2px rgba(0,0,0,.075),0 0 0 1px rgba($typo3-color, .25);
+        }
+    }
+}
+
+.module-docheader {
+    .form-select {
+        min-width: 150px;
+        cursor: pointer;
+    }
+
+    .module-docheader-bar:first-child {
+        margin-top: 7px;
+    }
+}
+
+.encbe {
+    // Sidebar left
+    .scaffold-modulemenu {
+        // change icon colors
+        .modulemenu {
+            &-icon {
+                svg {
+                    > path:first-child,
+                    rect:first-of-type,
+                    g,
+                    g > path {
+                        fill: none !important;
+
+                        &[fill='#fff'], &[fill='#FFF'], &[fill='#ffffff'], &[fill='#FFFFFF'],
+                        &[fill='#fff'] > *, &[fill='#FFF'] > *, &[fill='#ffffff'] > *, &[fill='#FFFFFF'] > * {
+                            fill: #fff !important;
+                        }
                     }
                 }
             }
-        }
 
-        button.modulemenu-action {
-            .modulemenu-icon {
-                display: none;
-            }
-
-            .modulemenu-name {
-                font-weight: bold;
-                text-transform: uppercase;
-                margin-left: 0;
-            }
-        }
-
-        &-action {
-            &-active, :hover {
-                background-color: transparent;
-
-                .modulemenu-name {
-                    color: $typo3-color;
+            button.modulemenu-action {
+                .modulemenu-icon {
+                    display: none;
                 }
 
-                .modulemenu-icon {
-                    svg {
-                        > path:first-child,
-                        rect:first-of-type,
-                        g,
-                        g > path {
-                            fill: $typo3-color !important;
+                .modulemenu-name {
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    margin-left: 0;
+                }
 
-                            &[fill='#fff'], &[fill='#FFF'], &[fill='#ffffff'], &[fill='#FFFFFF'],
-                            &[fill='#fff'] > *, &[fill='#FFF'] > *, &[fill='#ffffff'] > *, &[fill='#FFFFFF'] > * {
-                                fill: #fff !important;
+                .modulemenu-indicator {
+                    opacity: 0.3;
+                }
+
+                &:focus, &:active, &:hover {
+                    .modulemenu-indicator {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &-action {
+                &-active, :hover {
+                    background-color: transparent;
+
+                    .modulemenu-name {
+                        color: $typo3-color;
+                    }
+
+                    .modulemenu-icon {
+                        svg {
+                            > path:first-child,
+                            rect:first-of-type,
+                            g,
+                            g > path {
+                                fill: $typo3-color !important;
+
+                                &[fill='#fff'], &[fill='#FFF'], &[fill='#ffffff'], &[fill='#FFFFFF'],
+                                &[fill='#fff'] > *, &[fill='#FFF'] > *, &[fill='#ffffff'] > *, &[fill='#FFFFFF'] > * {
+                                    fill: #fff !important;
+                                }
                             }
                         }
                     }
                 }
             }
-        }
 
-        &-group {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-            border-radius: 0;
-            padding-bottom: 20px;
-        }
-    }
-}
-
-/*********************** Header ***************************/
-.scaffold-header {
-    // change order of elements in topbar right
-    .toolbar-list {
-        display: flex;
-
-        .toolbar-item-search {
-            order: 1;
-        }
-
-        #typo3-cms-backend-backend-toolbaritems-shortcuttoolbaritem {
-            order: 2;
-        }
-
-        #typo3-cms-backend-backend-toolbaritems-clearcachetoolbaritem {
-            order: 3;
-        }
-
-        #typo3-cms-backend-backend-toolbaritems-helptoolbaritem {
-            order: 4;
-        }
-
-        #typo3-cms-backend-backend-toolbaritems-systeminformationtoolbaritem {
-            order: 5;
-        }
-
-        .toolbar-item-user {
-            order: 6;
+            &-group {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+                border-radius: 0;
+                padding-bottom: 20px;
+            }
         }
     }
-}
 
+    /*********************** Header ***************************/
+    .scaffold-header {
+
+        // change order of elements in topbar right
+        .toolbar-list {
+            display: flex;
+
+            .toolbar-item-search {
+                order: 1;
+            }
+
+            #typo3-cms-backend-backend-toolbaritems-shortcuttoolbaritem {
+                order: 2;
+            }
+
+            #typo3-cms-backend-backend-toolbaritems-clearcachetoolbaritem {
+                order: 3;
+            }
+
+            #typo3-cms-backend-backend-toolbaritems-helptoolbaritem {
+                order: 4;
+            }
+
+            #typo3-cms-backend-backend-toolbaritems-systeminformationtoolbaritem {
+                order: 5;
+            }
+
+            .toolbar-item-user {
+                order: 6;
+            }
+        }
+    }
+
+    /*********************** Page Tree ***************************/
+    .tree-toolbar {
+
+        .svg-toolbar {
+            &__menu {
+                align-items: center;
+                margin: 2px 0;
+            }
+
+            &__search {
+                width: 100%;
+            }
+
+            &__submenu {
+                margin-bottom: 5px;
+                display: flex; justify-content: space-between;
+
+                .svg-toolbar__menuitem {
+                    padding: 8px;
+                    transition: 0.4s all;
+
+                    &:hover {
+                        background-color: $typo3-color;
+                        border-radius: 2px;
+                    }
+                }
+            }
+        }
+    }
+
+    .scaffold-content-navigation {
+        &-switcher .scaffold-content-navigation-switcher-btn {
+            padding: 8px;
+            margin-top: 4px;
+
+            &:hover, &:focus, &:active {
+                background-color: $typo3-color;
+                border: none;
+            }
+        }
+    }
+
+
+    /**
+    Scrollbar Styling
+     */
+
+    body::-webkit-scrollbar {
+        width: 15px; /* width of the entire scrollbar */
+    }
+
+    body::-webkit-scrollbar-thumb {
+        border-radius: 20px; /* roundness of the scroll thumb */
+        border: 3px solid; /* creates padding around scroll thumb */
+    }
+
+
+    /* Works on Firefox */
+    * {
+        scrollbar-width: thin;
+    }
+
+    /* Works on Chrome, Edge, and Safari */
+    *::-webkit-scrollbar {
+        width: 15px;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        border-radius: 20px;
+        border: 3px solid;
+    }
+}
 
 /*********************** Main Content ************************/
 .module-body {
+
+    .t3js-title-inlineedit {
+        margin-bottom: 0;
+    }
+
     // hide flags
     .t3js-flag {
         display: none;
@@ -180,6 +293,7 @@ $typo3-color: #ff8700;
             border-radius: 50%;
             height: 35px;
             width: 35px;
+            font-size: 0; // hides text "Content"
 
             &:hover {
                 background-color: $typo3-color;
@@ -188,33 +302,8 @@ $typo3-color: #ff8700;
             }
         }
     }
-}
 
-/**
-Scrollbar Styling
- */
-
-body::-webkit-scrollbar {
-    width: 15px; /* width of the entire scrollbar */
-}
-
-body::-webkit-scrollbar-thumb {
-    border-radius: 20px; /* roundness of the scroll thumb */
-    border: 3px solid; /* creates padding around scroll thumb */
-}
-
-
-/* Works on Firefox */
-* {
-    scrollbar-width: thin;
-}
-
-/* Works on Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-    width: 15px;
-}
-
-*::-webkit-scrollbar-thumb {
-    border-radius: 20px;
-    border: 3px solid;
+    .callout {
+        margin-top: 0;
+    }
 }

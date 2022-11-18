@@ -31,8 +31,7 @@ defined('TYPO3_MODE') || die();
         $renderer->loadRequireJsModule(
             'Backend',
             "function() { document.querySelectorAll('[data-identifier=\"actions-add\"]').forEach(button => {
-  button.setAttribute('title', 'Create new content element');
-  button.parentNode.innerHTML = button.outerHTML;
+
 }); }"
         );
     }
