@@ -236,8 +236,9 @@
 }
 .module-body .t3-page-ce-body-inner .exampleContent > strong:first-child {
   position: absolute;
-  top: 10px;
+  top: 8px;
   left: 40px;
+  font-size: 14px;
 }
 .module-body .t3-page-ce-body-inner .exampleContent > strong:first-child + br {
   display: none;
@@ -291,6 +292,17 @@
 .module-body .callout {
   margin-top: 0;
 }
+.module-body .alert {
+  background-color: white;
+  color: black;
+  border: 1px ridge var(--bs-alert-bg);
+}
+.module-body .alert .fa-circle {
+  opacity: 1 !important;
+}
+.module-body .alert .fa-circle::before {
+  color: var(--bs-alert-bg);
+}
 
 .module-docheader-bar .btn {
   padding: 6px 8px;
@@ -298,6 +310,9 @@
 }
 
 @media (prefers-color-scheme: dark) {
+  .scaffold, .module, html, body {
+    background-color: #343434;
+  }
   .module-body {
     background-color: #151515;
     color: white;
@@ -360,13 +375,51 @@
   .module-docheader .form-select::placeholder, .module-docheader .form-control::placeholder {
     color: #ccc;
   }
-  .svg-tree-wrapper .node-over:not(.node-selected) {
+  .svg-tree-wrapper .node-over:not(.node-selected), .svg-tree-wrapper .node-selected {
     fill: #151515;
     stroke: #151515;
   }
   #icon-apps-pagetree-root path {
     fill: #ff8700 !important;
   }
+  .module-body .alert {
+    background-color: #151515;
+    color: white;
+  }
+  /********************EDIT Content element*****************************/
+  .form-section {
+    background-color: #464646;
+  }
+  .nav-tabs {
+    background-color: #343434;
+  }
+  .nav-tabs > li > a.nav-link {
+    color: #ddd;
+  }
+  .nav-tabs > li > a.nav-link .active {
+    background-color: #464646;
+    color: white;
+    border-bottom-color: transparent;
+  }
+  .form-control, .form-select {
+    background-color: #232323;
+    color: #ddd;
+  }
+  .form-control:hover, .form-control:focus, .form-control:active, .form-select:hover, .form-select:focus, .form-select:active {
+    background-color: #151515;
+    color: white;
+  }
+  /******* RTE ***********/
+  .cke_top {
+    background-color: #232323 !important;
+  }
+  .cke_wysiwyg_frame, .cke_wysiwyg_div {
+    background-color: #151515 !important;
+  }
+  .cke_editable {
+    color: #ddd !important;
+  }
+  /******* RTE-End *************/
 }
 
 /*# sourceMappingURL=Vanilla.css.map */

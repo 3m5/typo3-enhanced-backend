@@ -245,8 +245,9 @@ $typo3-color: #ff8700;
     .t3-page-ce-body-inner .exampleContent {
         > strong:first-child {
             position: absolute;
-            top: 10px;
+            top: 8px;
             left: 40px;
+            font-size: 14px;
 
             + br {
                 display: none;
@@ -323,6 +324,20 @@ $typo3-color: #ff8700;
     .callout {
         margin-top: 0;
     }
+
+    // style warnings
+    .alert {
+        background-color: white;
+        color: black;
+        border: 1px ridge var(--bs-alert-bg);
+
+        .fa-circle {
+            opacity: 1 !important;
+            &::before {
+                color: var(--bs-alert-bg);
+            }
+        }
+    }
 }
 
 .module-docheader-bar {
@@ -335,8 +350,13 @@ $typo3-color: #ff8700;
 
 // Dark Theme
 @media (prefers-color-scheme: dark) {
+    $grey-light: #464646;
     $grey-replacement: #343434;
     $white-replacement: #151515;
+    .scaffold, .module, html, body {
+        background-color: $grey-replacement; // show dark background while loading everything
+    }
+
     .module-body {
         background-color: $white-replacement;
         color: white;
@@ -360,7 +380,7 @@ $typo3-color: #ff8700;
     }
 
     .btn-link {
-        color: #464646;
+        color: $grey-light;
 
         &:hover {
             color: #fff;
@@ -391,7 +411,7 @@ $typo3-color: #ff8700;
     }
 
     .t3-page-ce-body-inner, .table td, .table th {
-        background-color: #464646 !important;
+        background-color: $grey-light !important;
         color: white;
 
         a {
@@ -409,7 +429,7 @@ $typo3-color: #ff8700;
         }
 
         .form-select, .form-control {
-            background-color: #464646;
+            background-color: $grey-light;
             color: white;
 
             &::placeholder {
@@ -418,9 +438,11 @@ $typo3-color: #ff8700;
         }
     }
 
-    .svg-tree-wrapper .node-over:not(.node-selected) {
-        fill: $white-replacement;
-        stroke: $white-replacement;
+    .svg-tree-wrapper {
+        .node-over:not(.node-selected), .node-selected {
+            fill: $white-replacement;
+            stroke: $white-replacement;
+        }
     }
 
     #icon-apps-pagetree-root {
@@ -428,4 +450,55 @@ $typo3-color: #ff8700;
             fill: $typo3-color !important;
         }
     }
+
+    .module-body {
+        .alert {
+            background-color: $white-replacement;
+            color: white;
+        }
+    }
+
+    /********************EDIT Content element*****************************/
+    .form-section {
+        background-color: $grey-light;
+    }
+
+    .nav-tabs {
+        background-color: $grey-replacement;
+
+        > li > a.nav-link {
+            color: #ddd;
+
+            .active {
+                background-color: $grey-light;
+                color: white;
+                border-bottom-color: transparent;
+            }
+        }
+    }
+
+    .form-control, .form-select {
+        background-color: #232323;
+        color: #ddd;
+
+        &:hover, &:focus, &:active {
+            background-color: $white-replacement;
+            color: white;
+        }
+    }
+
+    /******* RTE ***********/
+    .cke_top {
+        background-color: #232323 !important;
+    }
+
+    .cke_wysiwyg_frame, .cke_wysiwyg_div {
+        background-color: $white-replacement !important;
+    }
+
+    .cke_editable {
+        color: #ddd !important;
+    }
+
+    /******* RTE-End *************/
 }
