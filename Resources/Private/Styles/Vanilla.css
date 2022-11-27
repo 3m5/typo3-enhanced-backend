@@ -164,6 +164,23 @@
 .encbe .scaffold-header .toolbar-list .toolbar-item-user {
   order: 6;
 }
+.encbe .module-docheader-bar .btn {
+  padding: 6px 8px;
+}
+.encbe .toolbar-item-search-field {
+  background-color: #151515;
+  height: 40px;
+}
+.encbe #live-search-box {
+  border-bottom: 1px solid #eaeaea;
+}
+.encbe #live-search-box:focus, .encbe #live-search-box:active {
+  border-bottom-color: white;
+}
+.encbe .svg-tree-loader {
+  top: 83px;
+  height: calc(100% - 83px);
+}
 .encbe .tree-toolbar .svg-toolbar__menu {
   align-items: center;
   margin: 2px 0;
@@ -276,6 +293,43 @@
 }
 .module-body .callout {
   margin-top: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .module-body {
+    background-color: #151515;
+    color: white;
+  }
+  .module-body .button {
+    color: #ccc;
+  }
+  .module-body .button:hover {
+    color: white;
+  }
+  .t3-grid-cell {
+    background-color: #343434;
+  }
+  .t3-page-ce .t3-page-ce-footer, .t3-page-ce .t3-page-ce-header {
+    background-color: #343434;
+  }
+  .t3-page-column-header {
+    background-color: #151515;
+  }
+  .t3-page-ce-body-inner, .table td, .table th {
+    background-color: #464646 !important;
+    color: white;
+  }
+  .t3-page-ce-body-inner a, .table td a, .table th a {
+    color: white;
+  }
+  .module-docheader {
+    background-color: #343434;
+    color: #ddd;
+  }
+  .module-docheader .btn {
+    background-color: #343434;
+    color: white;
+  }
 }
 
 /*# sourceMappingURL=Vanilla.css.map */

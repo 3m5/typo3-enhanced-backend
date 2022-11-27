@@ -134,7 +134,30 @@ $typo3-color: #ff8700;
         }
     }
 
+    .module-docheader-bar {
+        .btn {
+            padding: 6px 8px;
+        }
+    }
+
+    .toolbar-item-search-field {
+        background-color: #151515;
+        height: 40px;
+    }
+
+    #live-search-box {
+        border-bottom: 1px solid #eaeaea;
+
+        &:focus, &:active {
+            border-bottom-color: white;
+        }
+    }
+
     /*********************** Page Tree ***************************/
+    .svg-tree-loader {
+        top: 83px;
+        height: calc(100% - 83px);
+    }
     .tree-toolbar {
 
         .svg-toolbar {
@@ -305,5 +328,57 @@ $typo3-color: #ff8700;
 
     .callout {
         margin-top: 0;
+    }
+}
+
+
+// Dark Theme
+@media (prefers-color-scheme: dark) {
+    $grey-replacement: #343434;
+    $white-replacement: #151515;
+    .module-body {
+        background-color: $white-replacement;
+        color: white;
+
+        .button {
+            color: #ccc;
+
+            &:hover {
+                color: white;
+            }
+        }
+    }
+
+    .t3-grid-cell {
+        background-color: $grey-replacement;
+    }
+
+    .t3-page-ce  {
+        .t3-page-ce-footer, .t3-page-ce-header {
+            background-color: $grey-replacement;
+        }
+    }
+
+    .t3-page-column-header {
+        background-color: $white-replacement;
+    }
+
+    .t3-page-ce-body-inner, .table td, .table th {
+        background-color: #464646 !important;
+        color: white;
+
+        a {
+            color: white;
+        }
+    }
+
+    .module-docheader {
+        background-color: $grey-replacement;
+        color: #ddd;
+
+        .btn {
+            background-color: $grey-replacement;
+            color: white;
+        }
     }
 }
