@@ -134,12 +134,6 @@ $typo3-color: #ff8700;
         }
     }
 
-    .module-docheader-bar {
-        .btn {
-            padding: 6px 8px;
-        }
-    }
-
     .toolbar-item-search-field {
         background-color: #151515;
         height: 40px;
@@ -331,6 +325,13 @@ $typo3-color: #ff8700;
     }
 }
 
+.module-docheader-bar {
+    .btn {
+        padding: 6px 8px;
+        height: 30px;
+    }
+}
+
 
 // Dark Theme
 @media (prefers-color-scheme: dark) {
@@ -347,10 +348,36 @@ $typo3-color: #ff8700;
                 color: white;
             }
         }
+
+        .icon-markup, .t3-page-ce-wrapper-new-ce .btn {
+            color: white;
+        }
+    }
+
+    .btn.btn-default {
+        background: #292929;
+        color: white;
+    }
+
+    .btn-link {
+        color: #464646;
+
+        &:hover {
+            color: #fff;
+        }
     }
 
     .t3-grid-cell {
         background-color: $grey-replacement;
+    }
+
+    .svg-toolbar,
+    .scaffold-content-navigation-component .navigation-tree-container {
+        background-color: $grey-replacement;
+
+        .node-name {
+            fill: white;
+        }
     }
 
     .t3-page-ce  {
@@ -379,6 +406,26 @@ $typo3-color: #ff8700;
         .btn {
             background-color: $grey-replacement;
             color: white;
+        }
+
+        .form-select, .form-control {
+            background-color: #464646;
+            color: white;
+
+            &::placeholder {
+                color: #ccc;
+            }
+        }
+    }
+
+    .svg-tree-wrapper .node-over:not(.node-selected) {
+        fill: $white-replacement;
+        stroke: $white-replacement;
+    }
+
+    #icon-apps-pagetree-root {
+        path {
+            fill: $typo3-color !important;
         }
     }
 }
