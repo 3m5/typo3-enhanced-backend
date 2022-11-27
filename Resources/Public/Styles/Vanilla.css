@@ -239,6 +239,10 @@
   top: 8px;
   left: 40px;
   font-size: 14px;
+  /** hide too long text in headline */
+  height: 25px;
+  overflow: hidden;
+  margin-right: 120px;
 }
 .module-body .t3-page-ce-body-inner .exampleContent > strong:first-child + br {
   display: none;

@@ -248,6 +248,10 @@ $typo3-color: #ff8700;
             top: 8px;
             left: 40px;
             font-size: 14px;
+            /** hide too long text in headline */
+            height: 25px;
+            overflow: hidden;
+            margin-right: 120px;
 
             + br {
                 display: none;
