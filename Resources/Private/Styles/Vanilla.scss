@@ -11,6 +11,13 @@ $typo3-color: #ff8700;
             box-shadow: inset 0 1px 2px rgba(0,0,0,.075),0 0 0 1px rgba($typo3-color, .25);
         }
     }
+
+    .form-control {
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        background-color: transparent;
+    }
 }
 
 .module-docheader {
@@ -27,8 +34,12 @@ $typo3-color: #ff8700;
 .encbe {
     // Sidebar left
     .scaffold-modulemenu {
+        z-index: 100;
+
         // change icon colors
         .modulemenu {
+            margin-bottom: 45px;
+
             &-icon {
                 svg {
                     > path:first-child,
@@ -98,6 +109,21 @@ $typo3-color: #ff8700;
                 border-radius: 0;
                 padding-bottom: 20px;
             }
+        }
+    }
+
+    .topbar-header {
+        padding-left: 0;
+    }
+
+    .topbar-button {
+        &.topbar-button-modulemenu {
+            position: fixed;
+            bottom: 0;
+            top: auto;
+            left: 0;
+            z-index: 100000;
+            background: #151515;
         }
     }
 
@@ -257,6 +283,10 @@ $typo3-color: #ff8700;
                 display: none;
             }
         }
+
+        img {
+            margin: 5px 5px 5px 0;
+        }
     }
 
     // change content element borders
@@ -267,10 +297,10 @@ $typo3-color: #ff8700;
         }
 
         &-dragitem {
-            border: 1px dashed $typo3-color;
+            border: 1px dashed #777;
 
             &:hover {
-                border-left: 1px solid $typo3-color;
+                border-left: 1px solid #777;
             }
         }
 
@@ -330,15 +360,32 @@ $typo3-color: #ff8700;
     }
 
     // style warnings
-    .alert {
+    .alert, .callout {
         background-color: white;
         color: black;
-        border: 1px ridge var(--bs-alert-bg);
+        border: 1px ridge;
 
         .fa-circle {
             opacity: 1 !important;
+        }
+    }
+
+    .alert {
+        border-color: var(--bs-alert-bg);
+
+        .fa-circle {
             &::before {
                 color: var(--bs-alert-bg);
+            }
+        }
+    }
+
+    .callout {
+        border-color: #6daae0;
+
+        .fa-circle {
+            &::before {
+                color: #6daae0;
             }
         }
     }
@@ -357,7 +404,7 @@ $typo3-color: #ff8700;
     $grey-light: #464646;
     $grey-replacement: #343434;
     $white-replacement: #151515;
-    .scaffold, .module, html, body {
+    .scaffold-content, .module {
         background-color: $grey-replacement; // show dark background while loading everything
     }
 
@@ -402,6 +449,10 @@ $typo3-color: #ff8700;
         .node-name {
             fill: white;
         }
+    }
+
+    .scaffold-content-navigation-switcher {
+        background: $grey-replacement !important;
     }
 
     .t3-page-ce  {
@@ -456,9 +507,13 @@ $typo3-color: #ff8700;
     }
 
     .module-body {
-        .alert {
+        .alert, .callout {
             background-color: $white-replacement;
             color: white;
+
+            a {
+                color: #ddd;
+            }
         }
     }
 

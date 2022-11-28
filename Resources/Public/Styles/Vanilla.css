@@ -7,6 +7,12 @@
 .module-docheader .form-select:focus, .module-docheader .form-control:focus, .tree-toolbar .form-select:focus, .tree-toolbar .form-control:focus {
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 0 1px rgba(255, 135, 0, 0.25);
 }
+.module-docheader .form-control, .tree-toolbar .form-control {
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  background-color: transparent;
+}
 
 .module-docheader .form-select {
   min-width: 150px;
@@ -24,6 +30,12 @@
    */
   /* Works on Firefox */
   /* Works on Chrome, Edge, and Safari */
+}
+.encbe .scaffold-modulemenu {
+  z-index: 100;
+}
+.encbe .scaffold-modulemenu .modulemenu {
+  margin-bottom: 45px;
 }
 .encbe .scaffold-modulemenu .modulemenu-icon svg > path:first-child,
 .encbe .scaffold-modulemenu .modulemenu-icon svg rect:first-of-type,
@@ -143,6 +155,17 @@
   border-radius: 0;
   padding-bottom: 20px;
 }
+.encbe .topbar-header {
+  padding-left: 0;
+}
+.encbe .topbar-button.topbar-button-modulemenu {
+  position: fixed;
+  bottom: 0;
+  top: auto;
+  left: 0;
+  z-index: 100000;
+  background: #151515;
+}
 .encbe .scaffold-header .toolbar-list {
   display: flex;
 }
@@ -247,15 +270,18 @@
 .module-body .t3-page-ce-body-inner .exampleContent > strong:first-child + br {
   display: none;
 }
+.module-body .t3-page-ce-body-inner .exampleContent img {
+  margin: 5px 5px 5px 0;
+}
 .module-body .t3-page-ce * {
   border: none;
   border-spacing: 10px 0;
 }
 .module-body .t3-page-ce-dragitem {
-  border: 1px dashed #ff8700;
+  border: 1px dashed #777;
 }
 .module-body .t3-page-ce-dragitem:hover {
-  border-left: 1px solid #ff8700;
+  border-left: 1px solid #777;
 }
 .module-body .t3-page-ce .t3-page-ce-body {
   margin-bottom: 0;
@@ -296,16 +322,25 @@
 .module-body .callout {
   margin-top: 0;
 }
-.module-body .alert {
+.module-body .alert, .module-body .callout {
   background-color: white;
   color: black;
-  border: 1px ridge var(--bs-alert-bg);
+  border: 1px ridge;
 }
-.module-body .alert .fa-circle {
+.module-body .alert .fa-circle, .module-body .callout .fa-circle {
   opacity: 1 !important;
+}
+.module-body .alert {
+  border-color: var(--bs-alert-bg);
 }
 .module-body .alert .fa-circle::before {
   color: var(--bs-alert-bg);
+}
+.module-body .callout {
+  border-color: #6daae0;
+}
+.module-body .callout .fa-circle::before {
+  color: #6daae0;
 }
 
 .module-docheader-bar .btn {
@@ -314,7 +349,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .scaffold, .module, html, body {
+  .scaffold-content, .module {
     background-color: #343434;
   }
   .module-body {
@@ -351,6 +386,9 @@
   .scaffold-content-navigation-component .navigation-tree-container .node-name {
     fill: white;
   }
+  .scaffold-content-navigation-switcher {
+    background: #343434 !important;
+  }
   .t3-page-ce .t3-page-ce-footer, .t3-page-ce .t3-page-ce-header {
     background-color: #343434;
   }
@@ -386,9 +424,12 @@
   #icon-apps-pagetree-root path {
     fill: #ff8700 !important;
   }
-  .module-body .alert {
+  .module-body .alert, .module-body .callout {
     background-color: #151515;
     color: white;
+  }
+  .module-body .alert a, .module-body .callout a {
+    color: #ddd;
   }
   /********************EDIT Content element*****************************/
   .form-section {
