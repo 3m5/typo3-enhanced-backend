@@ -21,6 +21,8 @@ $typo3-color: #ff8700;
 }
 
 .module-docheader {
+    min-height: 84px;
+
     .form-select {
         min-width: 150px;
         cursor: pointer;
@@ -112,54 +114,7 @@ $typo3-color: #ff8700;
         }
     }
 
-    .topbar-header {
-        padding-left: 0;
-    }
-
-    .topbar-button {
-        &.topbar-button-modulemenu {
-            position: fixed;
-            bottom: 0;
-            top: auto;
-            left: 0;
-            z-index: 100000;
-            background: #151515;
-        }
-    }
-
     /*********************** Header ***************************/
-    .scaffold-header {
-
-        // change order of elements in topbar right
-        .toolbar-list {
-            display: flex;
-
-            .toolbar-item-search {
-                order: 1;
-            }
-
-            #typo3-cms-backend-backend-toolbaritems-shortcuttoolbaritem {
-                order: 2;
-            }
-
-            #typo3-cms-backend-backend-toolbaritems-clearcachetoolbaritem {
-                order: 3;
-            }
-
-            #typo3-cms-backend-backend-toolbaritems-helptoolbaritem {
-                order: 4;
-            }
-
-            #typo3-cms-backend-backend-toolbaritems-systeminformationtoolbaritem {
-                order: 5;
-            }
-
-            .toolbar-item-user {
-                order: 6;
-            }
-        }
-    }
-
     .toolbar-item-search-field {
         background-color: #151515;
         height: 40px;
@@ -257,11 +212,6 @@ $typo3-color: #ff8700;
         margin-bottom: 0;
     }
 
-    // hide flags
-    .t3js-flag {
-        display: none;
-    }
-
     // change CE-Header color
     .t3-page-ce .t3-page-ce-header {
         background-color: transparent;
@@ -269,23 +219,12 @@ $typo3-color: #ff8700;
 
     // set headline in top bar of content element
     .t3-page-ce-body-inner .exampleContent {
-        > strong:first-child {
-            position: absolute;
-            top: 8px;
-            left: 40px;
-            font-size: 14px;
-            /** hide too long text in headline */
-            height: 25px;
-            overflow: hidden;
-            margin-right: 120px;
-
-            + br {
-                display: none;
-            }
-        }
-
         img {
             margin: 5px 5px 5px 0;
+        }
+
+        .icon-markup img {
+            margin: 0;
         }
     }
 
@@ -306,17 +245,6 @@ $typo3-color: #ff8700;
 
         .t3-page-ce-body {
             margin-bottom: 0;
-
-            &-inner {
-                table {
-                    margin: -10px;
-                    width: calc(100% + 20px);
-                }
-
-                .exampleContent > br:last-child {
-                    display: none;
-                }
-            }
         }
 
         &-header, &-body {
@@ -336,7 +264,6 @@ $typo3-color: #ff8700;
 
     // change button appearance between content elements
     .t3-page-ce-wrapper-new-ce {
-        text-align: center;
         margin-top: 10px;
 
         .btn {
@@ -396,168 +323,4 @@ $typo3-color: #ff8700;
         padding: 6px 8px;
         height: 30px;
     }
-}
-
-
-// Dark Theme
-@media (prefers-color-scheme: dark) {
-    $grey-light: #464646;
-    $grey-replacement: #343434;
-    $white-replacement: #151515;
-    .scaffold-content, .module {
-        background-color: $grey-replacement; // show dark background while loading everything
-    }
-
-    .module-body {
-        background-color: $white-replacement;
-        color: white;
-
-        .button {
-            color: #ccc;
-
-            &:hover {
-                color: white;
-            }
-        }
-
-        .icon-markup, .t3-page-ce-wrapper-new-ce .btn {
-            color: white;
-        }
-    }
-
-    .btn.btn-default {
-        background: #292929;
-        color: white;
-    }
-
-    .btn-link {
-        color: $grey-light;
-
-        &:hover {
-            color: #fff;
-        }
-    }
-
-    .t3-grid-cell {
-        background-color: $grey-replacement;
-    }
-
-    .svg-toolbar,
-    .scaffold-content-navigation-component .navigation-tree-container {
-        background-color: $grey-replacement;
-
-        .node-name {
-            fill: white;
-        }
-    }
-
-    .scaffold-content-navigation-switcher {
-        background: $grey-replacement !important;
-    }
-
-    .t3-page-ce  {
-        .t3-page-ce-footer, .t3-page-ce-header {
-            background-color: $grey-replacement;
-        }
-    }
-
-    .t3-page-column-header {
-        background-color: $white-replacement;
-    }
-
-    .t3-page-ce-body-inner, .table td, .table th {
-        background-color: $grey-light !important;
-        color: white;
-
-        a {
-            color: white;
-        }
-    }
-
-    .module-docheader {
-        background-color: $grey-replacement;
-        color: #ddd;
-
-        .btn {
-            background-color: $grey-replacement;
-            color: white;
-        }
-
-        .form-select, .form-control {
-            background-color: $grey-light;
-            color: white;
-
-            &::placeholder {
-                color: #ccc;
-            }
-        }
-    }
-
-    .svg-tree-wrapper {
-        .node-over:not(.node-selected), .node-selected {
-            fill: $white-replacement;
-            stroke: $white-replacement;
-        }
-    }
-
-    #icon-apps-pagetree-root {
-        path {
-            fill: $typo3-color !important;
-        }
-    }
-
-    .module-body {
-        .alert, .callout {
-            background-color: $white-replacement;
-            color: white;
-
-            a {
-                color: #ddd;
-            }
-        }
-    }
-
-    /********************EDIT Content element*****************************/
-    .form-section {
-        background-color: $grey-light;
-    }
-
-    .nav-tabs {
-        background-color: $grey-replacement;
-
-        > li > a.nav-link {
-            color: #ddd;
-
-            .active {
-                background-color: $grey-light;
-                color: white;
-                border-bottom-color: transparent;
-            }
-        }
-    }
-
-    .form-control, .form-select {
-        background-color: #232323;
-        color: #ddd;
-
-        &:hover, &:focus, &:active {
-            background-color: $white-replacement;
-            color: white;
-        }
-    }
-
-    /******* RTE ***********/
-    .cke_top {
-        background-color: #232323 !important;
-    }
-
-    .cke_wysiwyg_frame, .cke_wysiwyg_div {
-        background-color: $white-replacement !important;
-    }
-
-    .cke_editable {
-        color: #ddd !important;
-    }
-
-    /******* RTE-End *************/
 }
