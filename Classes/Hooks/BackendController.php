@@ -2,7 +2,10 @@
 declare(strict_types=1);
 
 namespace DMF\EnhancedBackend\Hooks;
+use DMF\EnhancedBackend\Service\BackendUserService;
+use DMF\EnhancedBackend\Service\ThemeService;
 use TYPO3\CMS\Backend\Controller\BackendController as Typo3BackendController;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  *
@@ -41,6 +44,8 @@ class BackendController
      * @return void
      */
     public function renderPostProcess(array &$params, Typo3BackendController &$backendController):void {
+        $themeService = GeneralUtility::makeInstance(ThemeService::class);
+        $themeService->isVanillaActive();
         // TODO Add Service for getting classes of user-settings
         $bodyClasses = implode('' , [
             'encbe'

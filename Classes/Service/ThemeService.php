@@ -25,11 +25,21 @@ class ThemeService
     private const THEME_NAME_CUSTOM = 'custom';
 
     /**
+     * @var BackendUserService
+     */
+    private BackendUserService $backendUserService;
+
+    public function __construct(BackendUserService $backendUserService)
+    {
+        $this->backendUserService = $backendUserService;
+    }
+
+    /**
      * @return bool
      */
     public function isModernActive(): bool
     {
-        return false;
+        return $this->isThemeActiveByName(self::THEME_NAME_MODERN);
     }
 
     /**
@@ -37,13 +47,18 @@ class ThemeService
      */
     public function isVanillaActive(): bool
     {
-        return false;
+        return $this->isThemeActiveByName(self::THEME_NAME_VANILLA);
     }
 
     /**
      * @return bool
      */
     public function isCustomActive(): bool
+    {
+        return $this->isThemeActiveByName(self::THEME_NAME_CUSTOM);
+    }
+
+    public function isAnyThemeSelected(): bool
     {
         return false;
     }
@@ -54,6 +69,8 @@ class ThemeService
      */
     private function isThemeActiveByName(string $themeName): bool
     {
+        $backendUserSettings = $this->backendUserService->getBackendUserSettings();
+
         return false;
     }
 

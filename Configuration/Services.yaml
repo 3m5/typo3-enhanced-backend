@@ -5,5 +5,8 @@ services:
     autoconfigure: true
     public: false
 
-  TYPO3\CMS\Core\:
-    resource: '../Classes/*'
+  DMF\EnhancedBackend\Service\ThemeService:
+    public: true
+
+  DMF\EnhancedBackend\Service\BackendUserService:
+    public: true
