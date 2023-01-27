@@ -1,8 +1,10 @@
 <?php
+
 declare(strict_types=1);
 
 namespace DMF\EnhancedBackend\Utility;
 
+use DMF\EnhancedBackend\Service\BackendUserService;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\Localization\LanguageService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -10,10 +12,14 @@ use TYPO3\CMS\Extbase\Service\ImageService;
 
 class ThemeUtility
 {
+    /**
+     * TODO delete, because moved to {@link BackendUserService}
+     * @var string
+     */
     private const FIELD_NAME = 'tx_enhancedbackend_theme';
 
     private array $configuration;
-    private mixed $value;
+    private $value;
 
     public function render(array $conf): string
     {
@@ -81,7 +87,7 @@ class ThemeUtility
             $image = $imageService->getImage($item['image'], null, false);
             $image = $imageService->applyProcessingInstructions($image, ['width' => 200]);
 
-            $content .= '<div class="btn btn-default"><img src="' . $image->getPublicUrl() .'" alt=""></div>';
+            $content .= '<div class="btn btn-default"><img src="' . $image->getPublicUrl() . '" alt=""></div>';
         }
 
         $content .= '<p><b>' . $this->getLanguageService()->sL($item['label']) . '</b>';

@@ -1,0 +1,12 @@
+services:
+  # general settings
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  DMF\EnhancedBackend\Service\ThemeService:
+    public: true
+
+  DMF\EnhancedBackend\Service\BackendUserService:
+    public: true
