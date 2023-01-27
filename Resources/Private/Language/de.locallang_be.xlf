@@ -18,8 +18,8 @@
 				<target>Theme</target>
 			</trans-unit>
 			<trans-unit id="user_settings.theme.description">
-				<source>Choose a theme to customize the backend visually and funcationally according to your needs. Use the Vanilla+Theme for UI/UX improvemenets, the Modern-Theme for a modern look and feel or the Custom-Theme to customize the backend according to your individual needs.</source>
-				<target>Wählen Sie ein Theme, um das Backend optisch und funktional an Ihre Bedürfnisse anzupassen. Verwenden Sie das Vanilla+Theme für UI/UX-Verbesserungen, das Modern-Theme für ein modernes Look and Feel oder das Custom-Theme, um das Backend nach Ihren individuellen Bedürfnissen zu gestalten.</target>
+				<source><![CDATA[Choose a theme to customize the backend visually and functionally according to your needs. Use the <i>Vanilla+</i> for UI/UX improvements, the <i>Modern</i> for a modern look and feel or the <i>Custom</i> option to customize the backend according to your individual needs.]]></source>
+				<target><![CDATA[Wähle das Theme, um das Backend visuell und funktionell nach Deinen Wünschen anzupassen. Verwende <i>Vanilla+</i> für UI/UX Verbesserungen, <i>Modern</i> für einen modernen Look und <i>Angepasst</i>, um das Backend Deinen Bedürfnissen entsprechend anzupassen.]]></target>
 			</trans-unit>
 			<trans-unit id="user_settings.theme.default">
 				<source>Default</source>

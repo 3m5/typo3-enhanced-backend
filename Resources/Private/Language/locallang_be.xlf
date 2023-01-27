@@ -10,12 +10,15 @@
 			<trans-unit id="user_settings.darkmode">
 				<source>Enable dark mode</source>
 			</trans-unit>
+			<trans-unit id="be_groups.tx_enhancedbackend_themes">
+				<source>Allowed Backend Themes</source>
+			</trans-unit>
 			<!-- Theme -->
 			<trans-unit id="user_settings.theme">
 				<source>Theme</source>
 			</trans-unit>
 			<trans-unit id="user_settings.theme.description">
-				<source>Choose a theme to customize the backend visually and funcationally according to your needs. Use the Vanilla+Theme for UI/UX improvemenets, the Modern-Theme for a modern look and feel or the Custom-Theme to customize the backend according to your individual needs.</source>
+				<source><![CDATA[Choose a theme to customize the backend visually and functionally according to your needs. Use the <i>Vanilla+</i> for UI/UX improvements, the <i>Modern</i> for a modern look and feel or the <i>Custom</i> option to customize the backend according to your individual needs.]]></source>
 			</trans-unit>
 			<trans-unit id="user_settings.theme.default">
 				<source>Default</source>
