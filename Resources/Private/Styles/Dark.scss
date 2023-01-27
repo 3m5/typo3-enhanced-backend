@@ -1,10 +1,9 @@
 $typo3-color: #ff8700;
+$grey-light: #464646;
+$grey-replacement: #343434;
+$white-replacement: #151515;
 
-// Dark Theme
-@media (prefers-color-scheme: dark) {
-    $grey-light: #464646;
-    $grey-replacement: #343434;
-    $white-replacement: #151515;
+@mixin dark-theme {
     .scaffold-content, .module {
         background-color: $grey-replacement; // show dark background while loading everything
     }
@@ -172,34 +171,45 @@ $typo3-color: #ff8700;
         background-color: #232323;
     }
 
-    .enbe {
-        .input-group {
-            &-addon {
-                color: #ddd;
-            }
+    .input-group {
+        &-addon {
+            color: #ddd;
         }
+    }
 
-        .t3-new-content-element-wizard-window {
-            .media-new-content-element-wizard {
-                .media {
-                    &-body {
-                        color: #ddd;
-                    }
+    .t3-new-content-element-wizard-window {
+        .media-new-content-element-wizard {
+            .media {
+                &-body {
+                    color: #ddd;
+                }
 
-                    &:hover {
-                        background-color: $white-replacement !important;
-                    }
+                &:hover {
+                    background-color: $white-replacement !important;
                 }
             }
         }
-
-        .modal-header {
-            background-color: $white-replacement;
-            color: #ddd;
-        }
-
-        .modal-backdrop.show {
-            opacity: 0.6;
-        }
     }
+
+    .modal-header {
+        background-color: $white-replacement;
+        color: #ddd;
+    }
+
+    .modal-backdrop.show {
+        opacity: 0.6;
+    }
+
+    .content-tree {
+        color: white;
+    }
+}
+
+// Dark Theme
+@media (prefers-color-scheme: dark) {
+    //@include dark-theme;
+}
+
+.enbe.color-mode--system {
+    @include dark-theme;
 }

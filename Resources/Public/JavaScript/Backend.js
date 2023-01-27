@@ -4,18 +4,18 @@ window.addEventListener('load', (event) => {
 
     const contentTree = document.createElement("div");
     contentTree.classList.add('content-tree');
-    contentTree.innerHTML = 'Content Tree';
+    contentTree.innerHTML = '<div class="headline">Content Tree</div>';
 
-    // Get elements with class "example"
-    let gridElements = document.getElementsByClassName(".t3-grid-cell");
     // Create an empty string to store the HTML list
-    let htmlList = "<ul>";
-    // Loop through the elements
+    const htmlList = document.createElement("ul");
+
+    const gridElements = document.getElementsByClassName("t3-grid-cell");
+    console.log(gridElements);
     for (let i = 0; i < gridElements.length; i++) {
-      console.log(gridElements[i].find('.t3-page-column-header'));
-      htmlList += "<li>" + gridElements[i].find('.t3-page-column-header').textContent + "</li>";
+      const listEntry = document.createElement("li");
+      listEntry.innerHTML = gridElements[i].find('.t3-page-column-header').textContent;
+      htmlList.append(listEntry);
     }
-    htmlList += "</ul>";
 
     contentTree.append(htmlList);
     $pageNavigation.append(contentTree);
