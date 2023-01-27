@@ -25,6 +25,6 @@ defined('TYPO3_MODE') || die();
       'before:edit_RTE'
     );
 
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_pagerenderer.php']['render-preProcess'][] = \DMF\EnhancedBackend\Hooks\BackendStyles::class.'->addJSFile';
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_pagerenderer.php']['render-preProcess'][] = \DMF\EnhancedBackend\Hooks\BackendStyles::class.'->addT3EnBeFiles';
 
 })();

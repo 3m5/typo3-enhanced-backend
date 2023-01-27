@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace DMF\EnhancedBackend\Hooks;
 
+use DMF\EnhancedBackend\Service\ThemeService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
@@ -19,10 +20,13 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 class BackendStyles
 {
 
-    public function addJSFile()
+    public function addT3EnBeFiles()
     {
         $renderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
         $renderer->addJsFile(GeneralUtility::getFileAbsFileName('EXT:enhanced_backend/Resources/Public/JavaScript/Backend.js'), 'text/javascript', false, false, '', true, '|', false, '');
+
+        $themeService = GeneralUtility::makeInstance(ThemeService::class);
+
 
     }
 
