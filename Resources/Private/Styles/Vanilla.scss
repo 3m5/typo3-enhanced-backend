@@ -69,29 +69,31 @@ $typo3-color: #ff8700;
 }
 
 .enbe {
+
+    .modulemenu-icon, .card-icon {
+        svg {
+            > path:first-child,
+            rect:first-of-type,
+            g,
+            g > path {
+                fill: none !important;
+
+                &[fill='#fff'], &[fill='#FFF'], &[fill='#ffffff'], &[fill='#FFFFFF'],
+                &[fill='#fff'] > *, &[fill='#FFF'] > *, &[fill='#ffffff'] > *, &[fill='#FFFFFF'] > * {
+                    fill: #fff !important;
+                }
+            }
+        }
+    }
     // Sidebar left
     .scaffold-modulemenu {
         z-index: 100;
+
 
         // change icon colors
         .modulemenu {
             margin-bottom: 45px;
 
-            &-icon {
-                svg {
-                    > path:first-child,
-                    rect:first-of-type,
-                    g,
-                    g > path {
-                        fill: none !important;
-
-                        &[fill='#fff'], &[fill='#FFF'], &[fill='#ffffff'], &[fill='#FFFFFF'],
-                        &[fill='#fff'] > *, &[fill='#FFF'] > *, &[fill='#ffffff'] > *, &[fill='#FFFFFF'] > * {
-                            fill: #fff !important;
-                        }
-                    }
-                }
-            }
 
             button.modulemenu-action {
                 .modulemenu-icon {

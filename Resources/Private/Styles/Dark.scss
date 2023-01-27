@@ -48,6 +48,12 @@ $white-replacement: #151515;
         background-color: $grey-replacement;
     }
 
+    .card {
+        background-color: $grey-replacement;
+        border: none;
+        color: #ddd;
+    }
+
     .svg-toolbar,
     .scaffold-content-navigation-component .navigation-tree-container {
         background-color: $grey-replacement;
