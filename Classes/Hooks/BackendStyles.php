@@ -30,15 +30,24 @@ class BackendStyles
         {
             case ThemeService::THEME_NAME_MODERN:
                 $renderer->addCssFile(GeneralUtility::getFileAbsFileName('EXT:enhanced_backend/Resources/Public/Styles/Modern.css'));
+                $renderer->setHtmlTag($this->addClasstoHtml($renderer->getHtmlTag(),'enbe enbe-theme enbe-theme--modern'));
+
                 break;
             case ThemeService::THEME_NAME_VANILLA:
                 $renderer->addCssFile(GeneralUtility::getFileAbsFileName('EXT:enhanced_backend/Resources/Public/Styles/Vanilla.css'));
+                $renderer->setHtmlTag($this->addClasstoHtml($renderer->getHtmlTag(),'enbe enbe-theme enbe-theme--vanilla'));
                 break;
             case ThemeService::THEME_NAME_CUSTOM:
                 $renderer->addCssFile(GeneralUtility::getFileAbsFileName('EXT:enhanced_backend/Resources/Public/Styles/Custom.css'));
+                $renderer->setHtmlTag($this->addClasstoHtml($renderer->getHtmlTag(),'enbe enbe-theme enbe-theme--custom'));
                 break;
         }
         $renderer->addCssFile(GeneralUtility::getFileAbsFileName('EXT:enhanced_backend/Resources/Public/Styles/Dark.css'));
+    }
+
+    private function addClasstoHtml($htmltag, $class)
+    {
+        return str_replace($htmltag,'<html ', '<html class="'.$class.'" ');
     }
 
 }
