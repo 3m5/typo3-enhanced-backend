@@ -26,19 +26,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 class BackendController
 {
     /**
-     * Add inline css if needed
-     *
-     * todo remove
-     *
-     * @param array $params
-     * @param Typo3BackendController $backendController
-     * @return void
-     */
-    public function renderPreProcess(array &$params, Typo3BackendController &$backendController): void
-    {
-    }
-
-    /**
      * Hook after rendering the backend content (html) completely
      *
      * Used to set body classes based on user settings
@@ -57,7 +44,5 @@ class BackendController
             // TODO add existence check of replaceable html tag for adding class
             $params['content'] = preg_replace('~<html~', '<html class="' . $bodyClasses . '"', $params['content']);
         }
-        // TODO Add Service for getting classes of user-settings
-
     }
 }
