@@ -3,34 +3,42 @@
 	<file source-language="en" target-language="de" datatype="plaintext" original="EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf" date="2022-04-23T21:39:37Z" product-name="enhanced_backend">
 		<header/>
 		<body>
+			<!-- General -->
 			<trans-unit id="user_settings.active">
 				<source>Enable enhanced backend visuals</source>
 				<target>Aktiviere verbesserte optische Verbesserungen</target>
 			</trans-unit>
+			<trans-unit id="user_settings.darkmode">
+				<source>Enable dark mode</source>
+				<target>Aktiviere dark mode</target>
+			</trans-unit>
+			<!-- Theme -->
 			<trans-unit id="user_settings.theme">
 				<source>Theme</source>
 				<target>Theme</target>
 			</trans-unit>
 			<trans-unit id="user_settings.theme.description">
-				<source>Choose a theme to customize the backend visually and functionally according to your needs...</source>
-				<target>Wähle das Theme, um das Backend visuell und funktionell nach Deinen Wünschen anzupassen...</target>
+				<source>Choose a theme to customize the backend visually and funcationally according to your needs. Use the Vanilla+Theme for UI/UX improvemenets, the Modern-Theme for a modern look and feel or the Custom-Theme to customize the backend according to your individual needs.</source>
+				<target>Wählen Sie ein Theme, um das Backend optisch und funktional an Ihre Bedürfnisse anzupassen. Verwenden Sie das Vanilla+Theme für UI/UX-Verbesserungen, das Modern-Theme für ein modernes Look and Feel oder das Custom-Theme, um das Backend nach Ihren individuellen Bedürfnissen zu gestalten.</target>
 			</trans-unit>
 			<trans-unit id="user_settings.theme.default">
 				<source>Default</source>
 				<target>Standard</target>
 			</trans-unit>
 			<trans-unit id="user_settings.theme.default.description">
-				<source>Default TYPO3 Backend.</source>
-				<target>Standard TYPO3 Backend.</target>
+				<source>Use the default TYPO3 backend styles and functions.</source>
+				<target>Verwenden Sie die Standard-Stil und -Funktionen des TYPO3-Backends.</target>
 			</trans-unit>
+			<!-- Vanilla -->
 			<trans-unit id="user_settings.theme.vanilla">
 				<source>Vanilla+</source>
 				<target>Vanilla+</target>
 			</trans-unit>
 			<trans-unit id="user_settings.theme.vanilla.description">
 				<source>A TYPO3-a-like theme with UI/UX improvements.</source>
-				<target>Ein TYPO3-ähnliches Theme mit UI/UX Verbesserungen.</target>
+				<target>Ein Theme das sich am TYPO3-Standard orientiert, aber UI/UX-Verbesserungen beinhaltet.</target>
 			</trans-unit>
+			<!-- Modern -->
 			<trans-unit id="user_settings.theme.modern">
 				<source>Modern</source>
 				<target>Modern</target>
@@ -38,6 +46,15 @@
 			<trans-unit id="user_settings.theme.modern.description">
 				<source>A modern makeover of the TYPO3 Backend with visuell improvements.</source>
 				<target>Eine moderne Überarbeitung des TYPO3 Backends mit visuellen Verbesserungen.</target>
+			</trans-unit>
+			<!-- Custom -->
+			<trans-unit id="user_settings.theme.custom">
+				<source>Custom</source>
+				<target>Custom</target>
+			</trans-unit>
+			<trans-unit id="user_settings.theme.custom.description">
+				<source>Select your favorite features to customize the TYPO3 Backend for your needs.</source>
+				<target>Wählen Sie Ihre bevorzugten Funktionen, um das TYPO3 Backend an Ihre Bedürfnisse anzupassen.</target>
 			</trans-unit>
 		</body>
 	</file>

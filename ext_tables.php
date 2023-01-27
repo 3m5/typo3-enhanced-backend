@@ -1,18 +1,22 @@
 <?php
 
+use DMF\EnhancedBackend\Service\BackendUserService;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+
 defined('TYPO3_MODE') || die();
 
 (static function () {
     // Add stylesheet directories to backend (just an example for now)
     $GLOBALS['TBE_STYLES']['skins']['enhanced_backend']['stylesheetDirectories']['basic'] = 'EXT:enhanced_backend/Resources/Public/Styles/';
 
-    // Extend user settings in backend
-    // @see https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/Configuration/UserSettingsConfiguration/Extending.html#user-settings-extending
-    // @see
-    // TODO add items
-    // TODO configure image select
+    /**
+     * Enable
+     * Add enable single select to user settings
+     *
+     * @see https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/Configuration/UserSettingsConfiguration/Extending.html#user-settings-extending
+     */
     $GLOBALS['TYPO3_USER_SETTINGS']['columns']['tx_enhancedbackend_active'] = [
-      'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang.xlf:user_settings.active',
+      'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.active',
       'type' => 'select',
       'renderType' => 'selectSingle',
       'items' => [
@@ -20,10 +24,13 @@ defined('TYPO3_MODE') || die();
           1 => "enabled"
       ],
     ];
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToUserSettings(
-      'tx_enhancedbackend_active',
-      'before:edit_RTE'
-    );
+
+    /**
+     * Theme selection
+     * Add custom theme selection to backend
+     *
+     * @see https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/Configuration/UserSettingsConfiguration/Extending.html#user-settings-extending
+     */
     $GLOBALS['TYPO3_USER_SETTINGS']['columns']['tx_enhancedbackend_theme'] = [
         'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme',
         'description' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.description',
@@ -46,17 +53,36 @@ defined('TYPO3_MODE') || die();
                 'image' => 'EXT:enhanced_backend/Resources/Public/Images/modern.png',
             ],
             \DMF\EnhancedBackend\Service\ThemeService::THEME_NAME_CUSTOM => [
-                'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.modern',
-                'description' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.modern.description',
-                'image' => 'EXT:enhanced_backend/Resources/Public/Images/modern.png',
+                'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.custom',
+                'description' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.custom.description',
+                'image' => 'EXT:enhanced_backend/Resources/Public/Images/custom.png',
             ],
         ],
     ];
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToUserSettings(
-        'tx_enhancedbackend_theme',
+
+
+
+    /**
+     * Dark mode
+     *
+     * Add dark mode single select
+     */
+    $GLOBALS['TYPO3_USER_SETTINGS']['columns'][BackendUserService::FIELD_NAME_DARKMODE] = [
+        'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.darkmode',
+        'type' => 'select',
+        'renderType' => 'selectSingle',
+        'items' => [
+            0 => "disabled",
+            1 => "enabled"
+        ],
+    ];
+
+    ExtensionManagementUtility::addFieldsToUserSettings(
+        'tx_enhancedbackend_active, tx_enhancedbackend_theme, '. BackendUserService::FIELD_NAME_DARKMODE,
         'after:avatar'
     );
 
+    // TODO add comment what this thing is doing :D
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_pagerenderer.php']['render-preProcess'][] = \DMF\EnhancedBackend\Hooks\BackendStyles::class.'->addT3EnBeFiles';
 
 })();
