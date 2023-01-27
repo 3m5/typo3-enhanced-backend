@@ -88,6 +88,14 @@ class ThemeService
     }
 
     /**
+     * @return string|null
+     */
+    public function getActiveThemeName()
+    {
+        return $this->backendUserService->getActiveThemeName();
+    }
+
+    /**
      * @return string[]
      */
     public static function getThemeList(): array

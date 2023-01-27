@@ -26,8 +26,18 @@ class BackendStyles
         $renderer->addJsFile(GeneralUtility::getFileAbsFileName('EXT:enhanced_backend/Resources/Public/JavaScript/Backend.js'), 'text/javascript', false, false, '', true, '|', false, '');
 
         $themeService = GeneralUtility::makeInstance(ThemeService::class);
-
-
+        switch ($themeService->getActiveThemeName())
+        {
+            case ThemeService::THEME_NAME_MODERN:
+                $renderer->addCssFile(GeneralUtility::getFileAbsFileName('EXT:enhanced_backend/Resources/Public/Styles/Modern.css'));
+                break;
+            case ThemeService::THEME_NAME_VANILLA:
+                $renderer->addCssFile(GeneralUtility::getFileAbsFileName('EXT:enhanced_backend/Resources/Public/Styles/Vanilla.css'));
+                break;
+            case ThemeService::THEME_NAME_CUSTOM:
+                $renderer->addCssFile(GeneralUtility::getFileAbsFileName('EXT:enhanced_backend/Resources/Public/Styles/Custom.css'));
+                break;
+        }
     }
 
 }

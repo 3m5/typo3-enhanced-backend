@@ -17,9 +17,27 @@ class ThemeUtility
      * @var string
      */
     private const FIELD_NAME = 'tx_enhancedbackend_theme';
+    private const DEFAULT_THEME = 'default';
 
     private array $configuration;
     private $value;
+
+    public function itemsForBeGroup(array &$conf): void
+    {
+        $items = $conf['items'];
+        $themes = $GLOBALS['TYPO3_USER_SETTINGS']['columns']['tx_enhancedbackend_theme']['items'];
+        foreach($themes as $key => $theme) {
+            if($key !== self::DEFAULT_THEME) {
+                $items[] = [
+                    $theme['label'],
+                    $key,
+                    $theme['image'],
+                ];
+            }
+        }
+
+        $conf['items'] = $items;
+    }
 
     public function render(array $conf): string
     {
@@ -38,9 +56,11 @@ class ThemeUtility
         $html[] = '<div class="row">';
 
         foreach ($this->configuration['items'] as $key => $item) {
-            $html[] = '<div class="col-xs-12 col-md-2">';
-            $html[] = $this->renderItem($key, $item);
-            $html[] = '</div>';
+            if ($this->isAllowedTheme($key)) {
+                $html[] = '<div class="col-xs-12 col-md-2">';
+                $html[] = $this->renderItem($key, $item);
+                $html[] = '</div>';
+            }
         }
 
         $html[] = '</div>';
@@ -98,6 +118,32 @@ class ThemeUtility
         $content .= '</p></label>';
 
         return $content;
+    }
+
+    protected function isAllowedTheme($theme): bool
+    {
+        if($theme === self::DEFAULT_THEME) {
+            return true;
+        }
+
+        $backendUser = $this->getBackendUser();
+        if($backendUser->isAdmin()) {
+            return true;
+        }
+
+        $themeGroups = array_map(
+            function($group) {
+                return GeneralUtility::trimExplode(',', $group['tx_enhancedbackend_themes']);
+            }, $backendUser->userGroups
+        );
+
+        foreach($themeGroups as $themes) {
+            if (in_array($theme, $themes)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     protected function getBackendUser(): BackendUserAuthentication
