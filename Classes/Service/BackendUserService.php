@@ -22,6 +22,8 @@ use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
  */
 class BackendUserService
 {
+    private const FIELD_NAME = 'tx_enhancedbackend_theme';
+
     /**
      * @return array|null
      */
@@ -32,6 +34,19 @@ class BackendUserService
         }
 
         return $GLOBALS['BE_USER']->uc;
+    }
+
+    /**
+     * Gets the selected active theme set by user settings of backend user
+     *
+     * @return string|null
+     */
+    public function getActiveThemeName():?string {
+        $userSettings = $this->getBackendUserSettings();
+        if(array_key_exists(self::FIELD_NAME, $userSettings)) {
+            return $userSettings[self::FIELD_NAME];
+        }
+        return null;
     }
 
     /**

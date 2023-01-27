@@ -20,9 +20,9 @@ namespace DMF\EnhancedBackend\Service;
  */
 class ThemeService
 {
-    private const THEME_NAME_VANILLA = 'vanilla';
-    private const THEME_NAME_MODERN = 'modern';
-    private const THEME_NAME_CUSTOM = 'custom';
+    public const THEME_NAME_VANILLA = 'vanilla';
+    public const THEME_NAME_MODERN = 'modern';
+    public const THEME_NAME_CUSTOM = 'custom';
 
     /**
      * @var BackendUserService
