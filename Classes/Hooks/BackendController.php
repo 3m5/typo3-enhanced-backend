@@ -39,11 +39,11 @@ class BackendController
         $themeService = GeneralUtility::makeInstance(ThemeService::class);
         if($themeService->isAnyThemeSelected())
         {
-            $bodyClasses = implode('', [
+            $bodyClasses = implode(' ', [
                 'enbe'
             ]);
             if ($themeService->isCustomActive()) {
-                $bodyClasses = implode('', [
+                $bodyClasses = implode(' ', [
                     'enbe enbe-theme enbe-theme--custom'
                 ]);
             }
