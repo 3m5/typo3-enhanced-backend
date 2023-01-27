@@ -1,185 +1,3 @@
-.encbe {
-  /** change toggle button position in sidebar **/
-}
-.encbe .scaffold-header .toolbar-list {
-  display: flex;
-}
-.encbe .scaffold-header .toolbar-list .toolbar-item-search {
-  order: 1;
-}
-.encbe .scaffold-header .toolbar-list #typo3-cms-backend-backend-toolbaritems-shortcuttoolbaritem {
-  order: 2;
-}
-.encbe .scaffold-header .toolbar-list #typo3-cms-backend-backend-toolbaritems-clearcachetoolbaritem {
-  order: 3;
-}
-.encbe .scaffold-header .toolbar-list #typo3-cms-backend-backend-toolbaritems-helptoolbaritem {
-  order: 4;
-}
-.encbe .scaffold-header .toolbar-list #typo3-cms-backend-backend-toolbaritems-systeminformationtoolbaritem {
-  order: 5;
-}
-.encbe .scaffold-header .toolbar-list .toolbar-item-user {
-  order: 6;
-}
-.encbe .topbar-header {
-  padding-left: 0;
-}
-.encbe .topbar-button.topbar-button-modulemenu {
-  position: fixed;
-  bottom: 0;
-  top: auto;
-  left: 0;
-  z-index: 100000;
-  background: #151515;
-}
-
-/*********************** Main Content ************************/
-.module-body .t3js-flag {
-  display: none;
-}
-.module-body .t3-page-ce-body-inner .exampleContent > strong:first-child {
-  position: absolute;
-  top: 8px;
-  left: 40px;
-  font-size: 14px;
-  /** hide too long text in headline */
-  height: 25px;
-  overflow: hidden;
-  margin-right: 120px;
-}
-.module-body .t3-page-ce-body-inner .exampleContent > strong:first-child + br {
-  display: none;
-}
-.module-body .t3-page-ce .t3-page-ce-body-inner table {
-  margin: -10px;
-  width: calc(100% + 20px);
-}
-.module-body .t3-page-ce .t3-page-ce-body-inner .exampleContent > br:last-child {
-  display: none;
-}
-.module-body .t3-page-ce-wrapper-new-ce {
-  text-align: center;
-}
-
-@media (prefers-color-scheme: dark) {
-  .scaffold-content, .module {
-    background-color: #343434;
-  }
-  .module-body {
-    background-color: #151515;
-    color: white;
-  }
-  .module-body .button {
-    color: #ccc;
-  }
-  .module-body .button:hover {
-    color: white;
-  }
-  .module-body .icon-markup, .module-body .t3-page-ce-wrapper-new-ce .btn {
-    color: white;
-  }
-  .btn.btn-default {
-    background: #292929;
-    color: white;
-  }
-  .btn-link {
-    color: #464646;
-  }
-  .btn-link:hover {
-    color: #fff;
-  }
-  .t3-grid-cell {
-    background-color: #343434;
-  }
-  .svg-toolbar,
-  .scaffold-content-navigation-component .navigation-tree-container {
-    background-color: #343434;
-  }
-  .svg-toolbar .node-name,
-  .scaffold-content-navigation-component .navigation-tree-container .node-name {
-    fill: white;
-  }
-  .scaffold-content-navigation-switcher {
-    background: #343434 !important;
-  }
-  .t3-page-ce .t3-page-ce-footer, .t3-page-ce .t3-page-ce-header {
-    background-color: #343434;
-  }
-  .t3-page-column-header {
-    background-color: #151515;
-  }
-  .t3-page-ce-body-inner, .table td, .table th {
-    background-color: #464646 !important;
-    color: white;
-  }
-  .t3-page-ce-body-inner a, .table td a, .table th a {
-    color: white;
-  }
-  .module-docheader {
-    background-color: #343434;
-    color: #ddd;
-  }
-  .module-docheader .btn {
-    background-color: #343434;
-    color: white;
-  }
-  .module-docheader .form-select, .module-docheader .form-control {
-    background-color: #464646;
-    color: white;
-  }
-  .module-docheader .form-select::placeholder, .module-docheader .form-control::placeholder {
-    color: #ccc;
-  }
-  .svg-tree-wrapper .node-over:not(.node-selected), .svg-tree-wrapper .node-selected {
-    fill: #151515;
-    stroke: #151515;
-  }
-  #icon-apps-pagetree-root path {
-    fill: #ff8700 !important;
-  }
-  .module-body .alert, .module-body .callout {
-    background-color: #151515;
-    color: white;
-  }
-  .module-body .alert a, .module-body .callout a {
-    color: #ddd;
-  }
-  /********************EDIT Content element*****************************/
-  .form-section {
-    background-color: #464646;
-  }
-  .nav-tabs {
-    background-color: #343434;
-  }
-  .nav-tabs > li > a.nav-link {
-    color: #ddd;
-  }
-  .nav-tabs > li > a.nav-link .active {
-    background-color: #464646;
-    color: white;
-    border-bottom-color: transparent;
-  }
-  .form-control, .form-select {
-    background-color: #232323;
-    color: #ddd;
-  }
-  .form-control:hover, .form-control:focus, .form-control:active, .form-select:hover, .form-select:focus, .form-select:active {
-    background-color: #151515;
-    color: white;
-  }
-  /******* RTE ***********/
-  .cke_top {
-    background-color: #232323 !important;
-  }
-  .cke_wysiwyg_frame, .cke_wysiwyg_div {
-    background-color: #151515 !important;
-  }
-  .cke_editable {
-    color: #ddd !important;
-  }
-  /******* RTE-End *************/
-}
 .module-docheader .form-select, .module-docheader .form-control, .tree-toolbar .form-select, .tree-toolbar .form-control {
   border: 1px solid #ddd;
   font-size: 13px;
@@ -478,6 +296,193 @@
 .module-docheader-bar .btn {
   padding: 6px 8px;
   height: 30px;
+}
+
+.encbe {
+  /** change toggle button position in sidebar **/
+}
+.encbe .scaffold-header .toolbar-list {
+  display: flex;
+}
+.encbe .scaffold-header .toolbar-list .toolbar-item-search {
+  order: 1;
+}
+.encbe .scaffold-header .toolbar-list #typo3-cms-backend-backend-toolbaritems-shortcuttoolbaritem {
+  order: 2;
+}
+.encbe .scaffold-header .toolbar-list #typo3-cms-backend-backend-toolbaritems-clearcachetoolbaritem {
+  order: 3;
+}
+.encbe .scaffold-header .toolbar-list #typo3-cms-backend-backend-toolbaritems-helptoolbaritem {
+  order: 4;
+}
+.encbe .scaffold-header .toolbar-list #typo3-cms-backend-backend-toolbaritems-systeminformationtoolbaritem {
+  order: 5;
+}
+.encbe .scaffold-header .toolbar-list .toolbar-item-user {
+  order: 6;
+}
+.encbe .topbar-header {
+  padding-left: 0;
+}
+.encbe .topbar-button.topbar-button-modulemenu {
+  position: fixed;
+  bottom: 0;
+  top: auto;
+  left: 0;
+  z-index: 100000;
+  background: #151515;
+}
+
+/*********************** Main Content ************************/
+.module-body .t3js-flag {
+  display: none;
+}
+.module-body .t3-page-ce-body-inner .exampleContent > strong:first-child {
+  position: absolute;
+  top: 8px;
+  left: 40px;
+  font-size: 14px;
+  /** hide too long text in headline */
+  height: 25px;
+  overflow: hidden;
+  margin-right: 120px;
+}
+.module-body .t3-page-ce-body-inner .exampleContent > strong:first-child + br {
+  display: none;
+}
+.module-body .t3-page-ce .t3-page-ce-body-inner table {
+  margin: -10px;
+  width: calc(100% + 20px);
+}
+.module-body .t3-page-ce .t3-page-ce-body-inner .exampleContent > br:last-child {
+  display: none;
+}
+.module-body .t3-page-ce-wrapper-new-ce {
+  text-align: center;
+}
+
+@media (prefers-color-scheme: dark) {
+  .scaffold-content, .module {
+    background-color: #343434;
+  }
+  .module-body {
+    background-color: #151515;
+    color: white;
+  }
+  .module-body .alert, .module-body .callout {
+    background-color: #151515;
+    color: white;
+  }
+  .module-body .button {
+    color: #ccc;
+  }
+  .module-body .button:hover {
+    color: white;
+  }
+  .module-body .icon-markup, .module-body .t3-page-ce-wrapper-new-ce .btn {
+    color: white;
+  }
+  .btn.btn-default {
+    background: #292929;
+    color: white;
+  }
+  .btn-link {
+    color: #464646;
+  }
+  .btn-link:hover {
+    color: #fff;
+  }
+  .t3-grid-cell {
+    background-color: #343434;
+  }
+  .svg-toolbar,
+  .scaffold-content-navigation-component .navigation-tree-container {
+    background-color: #343434;
+  }
+  .svg-toolbar .node-name,
+  .scaffold-content-navigation-component .navigation-tree-container .node-name {
+    fill: white;
+  }
+  .scaffold-content-navigation-switcher {
+    background: #343434 !important;
+  }
+  .t3-page-ce .t3-page-ce-footer, .t3-page-ce .t3-page-ce-header {
+    background-color: #343434;
+  }
+  .t3-page-column-header {
+    background-color: #151515;
+  }
+  .t3-page-ce-body-inner, .table td, .table th {
+    background-color: #464646 !important;
+    color: white;
+  }
+  .t3-page-ce-body-inner a, .table td a, .table th a {
+    color: white;
+  }
+  .module-docheader {
+    background-color: #343434;
+    color: #ddd;
+  }
+  .module-docheader .btn {
+    background-color: #343434;
+    color: white;
+  }
+  .module-docheader .form-select, .module-docheader .form-control {
+    background-color: #464646;
+    color: white;
+  }
+  .module-docheader .form-select::placeholder, .module-docheader .form-control::placeholder {
+    color: #ccc;
+  }
+  .svg-tree-wrapper .node-over:not(.node-selected), .svg-tree-wrapper .node-selected {
+    fill: #151515;
+    stroke: #151515;
+  }
+  #icon-apps-pagetree-root path {
+    fill: #ff8700 !important;
+  }
+  .module-body .alert, .module-body .callout {
+    background-color: #151515;
+    color: white;
+  }
+  .module-body .alert a, .module-body .callout a {
+    color: #ddd;
+  }
+  /********************EDIT Content element*****************************/
+  .form-section {
+    background-color: #464646;
+  }
+  .nav-tabs {
+    background-color: #343434;
+  }
+  .nav-tabs > li > a.nav-link {
+    color: #ddd;
+  }
+  .nav-tabs > li > a.nav-link .active {
+    background-color: #464646;
+    color: white;
+    border-bottom-color: transparent;
+  }
+  .form-control, .form-select {
+    background-color: #232323;
+    color: #ddd;
+  }
+  .form-control:hover, .form-control:focus, .form-control:active, .form-select:hover, .form-select:focus, .form-select:active {
+    background-color: #151515;
+    color: white;
+  }
+  /******* RTE ***********/
+  .cke_top {
+    background-color: #232323 !important;
+  }
+  .cke_wysiwyg_frame, .cke_wysiwyg_div {
+    background-color: #151515 !important;
+  }
+  .cke_editable {
+    color: #ddd !important;
+  }
+  /******* RTE-End *************/
 }
 
 /*# sourceMappingURL=Vanilla.css.map */
