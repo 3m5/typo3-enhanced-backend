@@ -23,6 +23,10 @@
 			<trans-unit id="user_settings.theme.default.description">
 				<source>Use the default TYPO3 backend styles and functions.</source>
 			</trans-unit>
+			<trans-unit id="be_groups.tx_enhancedbackend_themes">
+				<source>Allowed Backend Themes</source>
+				<target>Erlaubte Backend Themes</target>
+			</trans-unit>
 			<!-- Vanilla -->
 			<trans-unit id="user_settings.theme.vanilla">
 				<source>Vanilla+</source>
