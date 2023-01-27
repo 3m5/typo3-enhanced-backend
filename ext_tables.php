@@ -1,11 +1,8 @@
 <?php
 
-use DMF\EnhancedBackend\Service\ThemeService;
-
 defined('TYPO3_MODE') || die();
 
 (static function () {
-
     // Add stylesheet directories to backend (just an example for now)
     $GLOBALS['TBE_STYLES']['skins']['enhanced_backend']['stylesheetDirectories']['basic'] = 'EXT:enhanced_backend/Resources/Public/Styles/';
 
@@ -15,7 +12,7 @@ defined('TYPO3_MODE') || die();
     // TODO add items
     // TODO configure image select
     $GLOBALS['TYPO3_USER_SETTINGS']['columns']['tx_enhancedbackend_active'] = [
-      'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.active',
+      'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang.xlf:user_settings.active',
       'type' => 'select',
       'renderType' => 'selectSingle',
       'items' => [
@@ -59,4 +56,7 @@ defined('TYPO3_MODE') || die();
         'tx_enhancedbackend_theme',
         'after:avatar'
     );
+
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_pagerenderer.php']['render-preProcess'][] = \DMF\EnhancedBackend\Hooks\BackendStyles::class.'->addT3EnBeFiles';
+
 })();
