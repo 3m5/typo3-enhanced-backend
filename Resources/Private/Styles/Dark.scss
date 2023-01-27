@@ -125,7 +125,8 @@ $white-replacement: #151515;
 
     /********************EDIT Content element*****************************/
     .form-section {
-        background-color: $grey-light;
+        background-color: #252525;
+        border: none;
     }
 
     .nav-tabs {
@@ -138,6 +139,13 @@ $white-replacement: #151515;
                 background-color: $grey-light;
                 color: white;
                 border-bottom-color: transparent;
+            }
+
+            &.active {
+                background-color: transparent;
+                border-color: transparent;
+                border-bottom: 2px solid $typo3-color;
+                color: $typo3-color;
             }
         }
     }

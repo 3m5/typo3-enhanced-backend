@@ -2,7 +2,7 @@ $typo3-color: #ff8700;
 
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
-.enbe *, .enbe .t3-page-ce-body {
+.enbe *:not(.fa), .enbe .t3-page-ce-body {
     font-family: 'Inter';
 }
 
