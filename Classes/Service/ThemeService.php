@@ -73,9 +73,28 @@ class ThemeService
         return false;
     }
 
+    /**
+     * @return bool
+     */
     public function isDarkModeEnabled(): bool
     {
-        return $this->backendUserService->isDarkModeEnabled();
+        return ($this->backendUserService->getDarkMode() === '');
+    }
+
+    /**
+     * @return bool
+     */
+    public function isLightModeEnabled(): bool
+    {
+        return ($this->backendUserService->getDarkMode() === '');
+    }
+
+    /**
+     * @return bool
+     */
+    public function isLSystemModeEnabled(): bool
+    {
+        return ($this->backendUserService->getDarkMode() === '');
     }
 
     /**

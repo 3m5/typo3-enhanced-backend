@@ -38,6 +38,7 @@ class BackendStyles
                 $renderer->addCssFile(GeneralUtility::getFileAbsFileName('EXT:enhanced_backend/Resources/Public/Styles/Custom.css'));
                 break;
         }
+        $renderer->addCssFile(GeneralUtility::getFileAbsFileName('EXT:enhanced_backend/Resources/Public/Styles/Dark.css'));
     }
 
 }

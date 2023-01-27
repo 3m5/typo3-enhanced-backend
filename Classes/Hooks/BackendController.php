@@ -36,20 +36,34 @@ class BackendController
      */
     public function renderPostProcess(array &$params, Typo3BackendController &$backendController): void
     {
+        $bodyClasses = [];
         $themeService = GeneralUtility::makeInstance(ThemeService::class);
         if($themeService->isAnyThemeSelected())
         {
-            $bodyClasses = implode(' ', [
-                'enbe'
-            ]);
+            $bodyClasses[] = 'enbe';
             if ($themeService->isCustomActive()) {
-                $bodyClasses = implode(' ', [
-                    'enbe enbe-theme enbe-theme--custom'
-                ]);
+                $bodyClasses[] = 'enbe-theme';
+                $bodyClasses[] = 'enbe-theme--custom';
             }
-            // TODO add existence check of replaceable html tag for adding class
-            $params['content'] = preg_replace('~<html~', '<html class="' . $bodyClasses . '"', $params['content']);
         }
+
+        // Darkmode(s)
+        if($themeService->isDarkModeEnabled()) {
+            $bodyClasses[] = 'color-mode--dark';
+        }
+        if($themeService->isLightModeEnabled()) {
+            $bodyClasses[] = 'color-mode--light';
+        }
+        if($themeService->isLSystemModeEnabled()) {
+            $bodyClasses[] = 'color-mode--system';
+        }
+
+        // Apply css classes to body
+        if(count($bodyClasses) > 0) {
+            $params['content'] = preg_replace('~<html~', '<html class="' . implode(' ', $bodyClasses) . '"', $params['content']);
+        };
+
+
 
     }
 }

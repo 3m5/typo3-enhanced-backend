@@ -26,6 +26,9 @@ class BackendUserService
     public const FIELD_NAME_THEME = self::FIELD_NAME_PREFIX . '_theme';
     public const FIELD_NAME_ACTIVE = self::FIELD_NAME_PREFIX . '_active';
     public const FIELD_NAME_DARKMODE = self::FIELD_NAME_PREFIX . '_darkmode';
+    public const FIELD_VALUE_DARKMODE = 'darkmode';
+    public const FIELD_VALUE_LIGHTMODE = 'lightmode';
+    public const FIELD_VALUE_SYSTEMMODE = 'systemmode';
 
     /**
      * @return array|null
@@ -47,19 +50,24 @@ class BackendUserService
     public function getActiveThemeName(): ?string
     {
         $userSettings = $this->getBackendUserSettings();
-        if (array_key_exists(self::FIELD_NAME_THEME, $userSettings)) {
+        if ($userSettings && array_key_exists(self::FIELD_NAME_THEME, $userSettings)) {
             return $userSettings[self::FIELD_NAME_THEME];
         }
         return null;
     }
 
-    public function isDarkModeEnabled(): bool
+    /**
+     * Get the selected dark mode set by user settings of the backend user
+     *
+     * @return string|null
+     */
+    public function getDarkMode(): ?string
     {
         $userSettings = $this->getBackendUserSettings();
-        if (array_key_exists(self::FIELD_NAME_DARKMODE, $userSettings) && $userSettings[self::FIELD_NAME_DARKMODE]) {
-            return true;
+        if ($userSettings && array_key_exists(self::FIELD_NAME_DARKMODE, $userSettings)) {
+            return $userSettings[self::FIELD_NAME_THEME];
         }
-        return false;
+        return null;
     }
 
     /**

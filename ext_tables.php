@@ -70,8 +70,9 @@ defined('TYPO3_MODE') || die();
         'type' => 'select',
         'renderType' => 'selectSingle',
         'items' => [
-            0 => "disabled",
-            1 => "enabled"
+            BackendUserService::FIELD_VALUE_LIGHTMODE => "Light",
+            BackendUserService::FIELD_VALUE_DARKMODE => "Darkmode",
+            BackendUserService::FIELD_VALUE_SYSTEMMODE => 'System'
         ],
     ];
 
