@@ -119,6 +119,9 @@
     color: #ddd !important;
   }
   /******* RTE-End *************/
+  .t3-new-content-element-wizard-window, .tabpanel, .tab-content {
+    background-color: #232323;
+  }
 }
 
 /*# sourceMappingURL=Dark.css.map */

@@ -167,4 +167,39 @@ $typo3-color: #ff8700;
     }
 
     /******* RTE-End *************/
+
+    .t3-new-content-element-wizard-window, .tabpanel, .panel-tab {
+        background-color: #232323;
+    }
+
+    .encbe {
+        .input-group {
+            &-addon {
+                color: #ddd;
+            }
+        }
+
+        .t3-new-content-element-wizard-window {
+            .media-new-content-element-wizard {
+                .media {
+                    &-body {
+                        color: #ddd;
+                    }
+
+                    &:hover {
+                        background-color: $white-replacement !important;
+                    }
+                }
+            }
+        }
+
+        .modal-header {
+            background-color: $white-replacement;
+            color: #ddd;
+        }
+
+        .modal-backdrop.show {
+            opacity: 0.6;
+        }
+    }
 }
