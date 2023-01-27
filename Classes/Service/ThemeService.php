@@ -78,7 +78,7 @@ class ThemeService
      */
     public function isDarkModeEnabled(): bool
     {
-        return ($this->backendUserService->getDarkMode() === '');
+        return ($this->backendUserService->getDarkMode() === BackendUserService::FIELD_VALUE_DARKMODE);
     }
 
     /**
@@ -86,7 +86,7 @@ class ThemeService
      */
     public function isLightModeEnabled(): bool
     {
-        return ($this->backendUserService->getDarkMode() === '');
+        return ($this->backendUserService->getDarkMode() === BackendUserService::FIELD_VALUE_LIGHTMODE);
     }
 
     /**
@@ -94,7 +94,7 @@ class ThemeService
      */
     public function isLSystemModeEnabled(): bool
     {
-        return ($this->backendUserService->getDarkMode() === '');
+        return ($this->backendUserService->getDarkMode() === BackendUserService::FIELD_VALUE_SYSTEMMODE);
     }
 
     /**

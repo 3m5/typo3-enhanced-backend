@@ -65,7 +65,7 @@ class BackendUserService
     {
         $userSettings = $this->getBackendUserSettings();
         if ($userSettings && array_key_exists(self::FIELD_NAME_DARKMODE, $userSettings)) {
-            return $userSettings[self::FIELD_NAME_THEME];
+            return $userSettings[self::FIELD_NAME_DARKMODE];
         }
         return null;
     }
