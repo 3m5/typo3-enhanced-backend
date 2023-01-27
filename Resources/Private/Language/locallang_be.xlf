@@ -6,6 +6,30 @@
 			<trans-unit id="user_settings.active">
 				<source>Enable enhanced backend visuals</source>
 			</trans-unit>
+			<trans-unit id="user_settings.theme">
+				<source>Theme</source>
+			</trans-unit>
+			<trans-unit id="user_settings.theme.description">
+				<source>Choose a theme to customize the backend visually and functionally according to your needs...</source>
+			</trans-unit>
+			<trans-unit id="user_settings.theme.default">
+				<source>Default</source>
+			</trans-unit>
+			<trans-unit id="user_settings.theme.default.description">
+				<source>Default TYPO3 Backend.</source>
+			</trans-unit>
+			<trans-unit id="user_settings.theme.vanilla">
+				<source>Vanilla+</source>
+			</trans-unit>
+			<trans-unit id="user_settings.theme.vanilla.description">
+				<source>A TYPO3-a-like theme with UI/UX improvements.</source>
+			</trans-unit>
+			<trans-unit id="user_settings.theme.modern">
+				<source>Modern</source>
+			</trans-unit>
+			<trans-unit id="user_settings.theme.modern.description">
+				<source>A modern makeover of the TYPO3 Backend with visuell improvements.</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
