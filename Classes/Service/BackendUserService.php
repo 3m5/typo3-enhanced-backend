@@ -22,7 +22,10 @@ use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
  */
 class BackendUserService
 {
-    private const FIELD_NAME = 'tx_enhancedbackend_theme';
+    public const FIELD_NAME_PREFIX = 'tx_enhancedbackend';
+    public const FIELD_NAME_THEME = self::FIELD_NAME_PREFIX . '_theme';
+    public const FIELD_NAME_ACTIVE = self::FIELD_NAME_PREFIX . '_active';
+    public const FIELD_NAME_DARKMODE = self::FIELD_NAME_PREFIX . '_darkmode';
 
     /**
      * @return array|null
@@ -41,12 +44,22 @@ class BackendUserService
      *
      * @return string|null
      */
-    public function getActiveThemeName():?string {
+    public function getActiveThemeName(): ?string
+    {
         $userSettings = $this->getBackendUserSettings();
-        if(array_key_exists(self::FIELD_NAME, $userSettings)) {
-            return $userSettings[self::FIELD_NAME];
+        if (array_key_exists(self::FIELD_NAME_THEME, $userSettings)) {
+            return $userSettings[self::FIELD_NAME_THEME];
         }
         return null;
+    }
+
+    public function isDarkModeEnabled(): bool
+    {
+        $userSettings = $this->getBackendUserSettings();
+        if (array_key_exists(self::FIELD_NAME_DARKMODE, $userSettings) && $userSettings[self::FIELD_NAME_DARKMODE]) {
+            return true;
+        }
+        return false;
     }
 
     /**

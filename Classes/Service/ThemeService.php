@@ -73,6 +73,11 @@ class ThemeService
         return false;
     }
 
+    public function isDarkModeEnabled(): bool
+    {
+        return $this->backendUserService->isDarkModeEnabled();
+    }
+
     /**
      * @param string $themeName
      * @return bool
@@ -93,4 +98,5 @@ class ThemeService
             self::THEME_NAME_CUSTOM
         ];
     }
+
 }
