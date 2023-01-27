@@ -39,6 +39,11 @@
 				<source>A modern makeover of the TYPO3 Backend with visuell improvements.</source>
 				<target>Eine moderne Überarbeitung des TYPO3 Backends mit visuellen Verbesserungen.</target>
 			</trans-unit>
+
+			<trans-unit id="be_groups.tx_enhancedbackend_themes">
+				<source>Allowed Backend Themes</source>
+				<target>Erlaubte Backend Themes</target>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

@@ -30,6 +30,10 @@
 			<trans-unit id="user_settings.theme.modern.description">
 				<source>A modern makeover of the TYPO3 Backend with visuell improvements.</source>
 			</trans-unit>
+
+			<trans-unit id="be_groups.tx_enhancedbackend_themes">
+				<source>Allowed Backend Themes</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
