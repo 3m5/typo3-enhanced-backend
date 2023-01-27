@@ -1,3 +1,2 @@
-document.querySelectorAll('[data-identifier="actions-add"]').forEach(button => {
-  //button.parentNode.innerHTML = button.outerHTML;
-});
+window.addEventListener('load', (event) => {document.querySelector('body').classList.add('test')});
+console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaa')
