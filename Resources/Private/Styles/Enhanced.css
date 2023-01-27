@@ -1,0 +1,65 @@
+.encbe {
+  /** change toggle button position in sidebar **/
+}
+.encbe .scaffold-header .toolbar-list {
+  display: flex;
+}
+.encbe .scaffold-header .toolbar-list .toolbar-item-search {
+  order: 1;
+}
+.encbe .scaffold-header .toolbar-list #typo3-cms-backend-backend-toolbaritems-shortcuttoolbaritem {
+  order: 2;
+}
+.encbe .scaffold-header .toolbar-list #typo3-cms-backend-backend-toolbaritems-clearcachetoolbaritem {
+  order: 3;
+}
+.encbe .scaffold-header .toolbar-list #typo3-cms-backend-backend-toolbaritems-helptoolbaritem {
+  order: 4;
+}
+.encbe .scaffold-header .toolbar-list #typo3-cms-backend-backend-toolbaritems-systeminformationtoolbaritem {
+  order: 5;
+}
+.encbe .scaffold-header .toolbar-list .toolbar-item-user {
+  order: 6;
+}
+.encbe .topbar-header {
+  padding-left: 0;
+}
+.encbe .topbar-button.topbar-button-modulemenu {
+  position: fixed;
+  bottom: 0;
+  top: auto;
+  left: 0;
+  z-index: 100000;
+  background: #151515;
+}
+
+/*********************** Main Content ************************/
+.module-body .t3js-flag {
+  display: none;
+}
+.module-body .t3-page-ce-body-inner .exampleContent > strong:first-child {
+  position: absolute;
+  top: 8px;
+  left: 40px;
+  font-size: 14px;
+  /** hide too long text in headline */
+  height: 25px;
+  overflow: hidden;
+  margin-right: 120px;
+}
+.module-body .t3-page-ce-body-inner .exampleContent > strong:first-child + br {
+  display: none;
+}
+.module-body .t3-page-ce .t3-page-ce-body-inner table {
+  margin: -10px;
+  width: calc(100% + 20px);
+}
+.module-body .t3-page-ce .t3-page-ce-body-inner .exampleContent > br:last-child {
+  display: none;
+}
+.module-body .t3-page-ce-wrapper-new-ce {
+  text-align: center;
+}
+
+/*# sourceMappingURL=Enhanced.css.map */

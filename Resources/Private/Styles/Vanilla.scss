@@ -335,6 +335,10 @@ $typo3-color: #ff8700;
 /************* New Folder "Add Contentelement" ************/
 .encbe {
     .t3-new-content-element-wizard-window {
+        .panel {
+            margin-bottom: 0;
+        }
+
         .input-group {
             margin: 16px 0;
 

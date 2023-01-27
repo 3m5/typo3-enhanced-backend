@@ -24,10 +24,5 @@
 # Ignore IDE settings
 .idea
 Resources/Private/Styles/Vanilla.css.map
-Resources/Private/Styles/Dark.css
 Resources/Private/Styles/Dark.css.map
-Resources/Private/Styles/Dark.scss
-Resources/Private/Styles/Enhanced.css
 Resources/Private/Styles/Enhanced.css.map
-Resources/Private/Styles/Enhanced.scss
-Resources/Private/Styles/Vanilla.css
