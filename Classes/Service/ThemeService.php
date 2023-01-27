@@ -69,9 +69,7 @@ class ThemeService
      */
     private function isThemeActiveByName(string $themeName): bool
     {
-        $backendUserSettings = $this->backendUserService->getBackendUserSettings();
-
-        return false;
+        return ($this->backendUserService->getActiveThemeName() === $themeName);
     }
 
     /**
