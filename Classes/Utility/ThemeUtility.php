@@ -52,7 +52,6 @@ class ThemeUtility
             $html[] = '</div></div>';
         }
 
-        $html[] = $this->renderStyle();
         $html[] = '<div class="row">';
 
         foreach ($this->configuration['items'] as $key => $item) {
@@ -79,19 +78,6 @@ class ThemeUtility
         }
 
         $this->value = $value;
-    }
-
-    protected function renderStyle(): string
-    {
-        $style = [];
-        $style[] = '<style>';
-        $style[] = 'label.user-theme input {display:none;}';
-        $style[] = 'label.user-theme img {max-width:100%;}';
-        $style[] = 'label.user-theme p {margin-top:15px;}';
-        $style[] = 'label.user-theme :checked ~ p {color:red;}'; // TODO
-        $style[] = '</style>';
-
-        return implode('', $style);
     }
 
     protected function renderItem(string $key, array $item): string
