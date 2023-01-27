@@ -170,7 +170,7 @@ $typo3-color: #ff8700;
 
     .scaffold-content-navigation {
         position: relative;
-        &-component {
+        /*&-component {
             max-height: 50vh;
         }
 
@@ -178,7 +178,7 @@ $typo3-color: #ff8700;
             max-height: 50vh;
             position: absolute;
             top: 50vh;
-        }
+        }*/
 
         &-switcher .scaffold-content-navigation-switcher-btn {
             padding: 8px;
