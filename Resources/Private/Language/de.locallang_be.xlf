@@ -12,8 +12,8 @@
 				<target>Theme</target>
 			</trans-unit>
 			<trans-unit id="user_settings.theme.description">
-				<source>Choose a theme to customize the backend visually and functionally according to your needs...</source>
-				<target>Wähle das Theme, um das Backend visuell und funktionell nach Deinen Wünschen anzupassen...</target>
+				<source><![CDATA[Choose a theme to customize the backend visually and functionally according to your needs. Use the <i>Vanilla+</i> for UI/UX improvements, the <i>Modern</i> for a modern look and feel or the <i>Custom</i> option to customize the backend according to your individual needs.]]></source>
+				<target><![CDATA[Wähle das Theme, um das Backend visuell und funktionell nach Deinen Wünschen anzupassen. Verwende <i>Vanilla+</i> für UI/UX Verbesserungen, <i>Modern</i> für einen modernen Look und <i>Angepasst</i>, um das Backend Deinen Bedürfnissen entsprechend anzupassen.]]></target>
 			</trans-unit>
 			<trans-unit id="user_settings.theme.default">
 				<source>Default</source>
@@ -38,6 +38,14 @@
 			<trans-unit id="user_settings.theme.modern.description">
 				<source>A modern makeover of the TYPO3 Backend with visuell improvements.</source>
 				<target>Eine moderne Überarbeitung des TYPO3 Backends mit visuellen Verbesserungen.</target>
+			</trans-unit>
+			<trans-unit id="user_settings.theme.custom">
+				<source>Custom</source>
+				<target>Angepasst</target>
+			</trans-unit>
+			<trans-unit id="user_settings.theme.custom.description">
+				<source>Select your favorite features to customize the TYPO3 Backend for your needs.</source>
+				<target>Wähle Deine bevorzugten Features, um das TYPO3 Backend entsprechend Deinen Bedürfnissen anzupassen.</target>
 			</trans-unit>
 
 			<trans-unit id="be_groups.tx_enhancedbackend_themes">

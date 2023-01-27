@@ -44,9 +44,9 @@ defined('TYPO3_MODE') || die();
                 'image' => 'EXT:enhanced_backend/Resources/Public/Images/modern.png',
             ],
             \DMF\EnhancedBackend\Service\ThemeService::THEME_NAME_CUSTOM => [
-                'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.modern',
-                'description' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.modern.description',
-                'image' => 'EXT:enhanced_backend/Resources/Public/Images/modern.png',
+                'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.custom',
+                'description' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.custom.description',
+                'image' => 'EXT:enhanced_backend/Resources/Public/Images/custom.png',
             ],
         ],
     ];

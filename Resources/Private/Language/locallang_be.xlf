@@ -10,7 +10,7 @@
 				<source>Theme</source>
 			</trans-unit>
 			<trans-unit id="user_settings.theme.description">
-				<source>Choose a theme to customize the backend visually and functionally according to your needs...</source>
+				<source><![CDATA[Choose a theme to customize the backend visually and functionally according to your needs. Use the <i>Vanilla+</i> for UI/UX improvements, the <i>Modern</i> for a modern look and feel or the <i>Custom</i> option to customize the backend according to your individual needs.]]></source>
 			</trans-unit>
 			<trans-unit id="user_settings.theme.default">
 				<source>Default</source>
@@ -29,6 +29,12 @@
 			</trans-unit>
 			<trans-unit id="user_settings.theme.modern.description">
 				<source>A modern makeover of the TYPO3 Backend with visuell improvements.</source>
+			</trans-unit>
+			<trans-unit id="user_settings.theme.custom">
+				<source>Custom</source>
+			</trans-unit>
+			<trans-unit id="user_settings.theme.custom.description">
+				<source>Select your favorite features to customize the TYPO3 Backend for your needs.</source>
 			</trans-unit>
 
 			<trans-unit id="be_groups.tx_enhancedbackend_themes">
