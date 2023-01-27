@@ -37,12 +37,19 @@ class BackendController
     public function renderPostProcess(array &$params, Typo3BackendController &$backendController): void
     {
         $themeService = GeneralUtility::makeInstance(ThemeService::class);
-        if ($themeService->isCustomActive()) {
+        if($themeService->isAnyThemeSelected())
+        {
             $bodyClasses = implode('', [
-                'enbe-theme enbe-theme--custom'
+                'enbe'
             ]);
+            if ($themeService->isCustomActive()) {
+                $bodyClasses = implode('', [
+                    'enbe enbe-theme enbe-theme--custom'
+                ]);
+            }
             // TODO add existence check of replaceable html tag for adding class
             $params['content'] = preg_replace('~<html~', '<html class="' . $bodyClasses . '"', $params['content']);
         }
+
     }
 }
