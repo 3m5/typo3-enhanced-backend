@@ -35,17 +35,17 @@ defined('TYPO3_MODE') || die();
                 'description' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.default.description',
                 'image' => 'EXT:enhanced_backend/Resources/Public/Images/default.png',
             ],
-            ThemeService::THEME_NAME_VANILLA => [
+            \DMF\EnhancedBackend\Service\ThemeService::THEME_NAME_VANILLA => [
                 'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.vanilla',
                 'description' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.vanilla.description',
                 'image' => 'EXT:enhanced_backend/Resources/Public/Images/vanilla.png',
             ],
-            ThemeService::THEME_NAME_MODERN => [
+            \DMF\EnhancedBackend\Service\ThemeService::THEME_NAME_MODERN => [
                 'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.modern',
                 'description' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.modern.description',
                 'image' => 'EXT:enhanced_backend/Resources/Public/Images/modern.png',
             ],
-            ThemeService::THEME_NAME_CUSTOM => [
+            \DMF\EnhancedBackend\Service\ThemeService::THEME_NAME_CUSTOM => [
                 'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.modern',
                 'description' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.modern.description',
                 'image' => 'EXT:enhanced_backend/Resources/Public/Images/modern.png',

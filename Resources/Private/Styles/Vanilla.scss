@@ -2,7 +2,7 @@ $typo3-color: #ff8700;
 
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
-.encbe *, .encbe .t3-page-ce-body {
+.enbe *, .enbe .t3-page-ce-body {
     font-family: 'Inter';
 }
 
@@ -39,7 +39,7 @@ $typo3-color: #ff8700;
     }
 }
 
-.encbe {
+.enbe {
     // Sidebar left
     .scaffold-modulemenu {
         z-index: 100;
@@ -333,7 +333,7 @@ $typo3-color: #ff8700;
 }
 
 /************* New Folder "Add Contentelement" ************/
-.encbe {
+.enbe {
     .t3-new-content-element-wizard-window {
         .panel {
             margin-bottom: 0;
