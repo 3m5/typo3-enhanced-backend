@@ -58,8 +58,18 @@ class ThemeService
         return $this->isThemeActiveByName(self::THEME_NAME_CUSTOM);
     }
 
+    /**
+     * Checks if a valid theme is active for user
+     *
+     * @return bool
+     */
     public function isAnyThemeSelected(): bool
     {
+        foreach (self::getThemeList() as $themeName) {
+            if ($this->isThemeActiveByName($themeName)) {
+                return true;
+            }
+        }
         return false;
     }
 
