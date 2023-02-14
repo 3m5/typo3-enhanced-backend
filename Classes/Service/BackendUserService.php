@@ -5,6 +5,9 @@ declare(strict_types=1);
 namespace DMF\EnhancedBackend\Service;
 
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
+use TYPO3\CMS\Core\Configuration\Loader\YamlFileLoader;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  *
@@ -29,6 +32,37 @@ class BackendUserService
     public const FIELD_VALUE_DARKMODE = 'darkmode';
     public const FIELD_VALUE_LIGHTMODE = 'lightmode';
     public const FIELD_VALUE_SYSTEMMODE = 'systemmode';
+
+    public const YAML_CONFIG_FILE ='EXT:enhanced_backend/Configuration/Yaml/Styles.yaml';
+
+
+    public static function addFieldsToUsersettings()
+    {
+        $yamlfileloader = new YamlFileLoader();
+        $config = $yamlfileloader->load(self::YAML_CONFIG_FILE);
+        $ids =[];
+        foreach ($config as $sector => $features)
+        {
+            if($features)
+            {
+                foreach ($features as $featurename => $feature)
+                {
+                    $id = BackendUserService::FIELD_NAME_PREFIX.'_'.$sector.'_'.$featurename;
+                    $GLOBALS['TYPO3_USER_SETTINGS']['columns'][$id] = [
+                        'label' => $feature['title'],
+                        'type' =>  $feature['type']
+                    ];
+                    $ids[] = $id;
+
+                }
+
+            }
+        }
+        ExtensionManagementUtility::addFieldsToUserSettings(
+            '--div--;LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.enba.tab_label,'.implode(',',$ids)
+        );
+
+    }
 
     /**
      * @return array|null
@@ -55,6 +89,8 @@ class BackendUserService
         }
         return null;
     }
+
+
 
     /**
      * Get the selected dark mode set by user settings of the backend user

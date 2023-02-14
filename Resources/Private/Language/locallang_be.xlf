@@ -4,6 +4,9 @@
 		<header/>
 		<body>
 			<!-- General -->
+			<trans-unit id="user_settings.enba.tab_label">
+				<source>Enhanced Backend</source>
+			</trans-unit>
 			<trans-unit id="user_settings.active">
 				<source>Enable enhanced backend visuals</source>
 			</trans-unit>

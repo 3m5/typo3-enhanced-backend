@@ -7,21 +7,8 @@ defined('TYPO3_MODE') || die();
 
 (static function () {
 
-    /**
-     * Enable
-     * Add enable single select to user settings
-     *
-     * @see https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/Configuration/UserSettingsConfiguration/Extending.html#user-settings-extending
-     */
-    $GLOBALS['TYPO3_USER_SETTINGS']['columns']['tx_enhancedbackend_active'] = [
-      'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.active',
-      'type' => 'select',
-      'renderType' => 'selectSingle',
-      'items' => [
-          0 => "disabled",
-          1 => "enabled"
-      ],
-    ];
+    BackendUserService::addFieldsToUsersettings();
+
 
     /**
      * Theme selection
