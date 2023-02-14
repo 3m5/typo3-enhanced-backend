@@ -1,0 +1,7 @@
+@import "Mixins/ChangeIconColors";
+
+.sidebar {
+    &__changeIconColors {
+        @include sidebar__changeIconColors;
+    }
+}

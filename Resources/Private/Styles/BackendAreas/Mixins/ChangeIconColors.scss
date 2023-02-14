@@ -1,0 +1,98 @@
+@mixin sidebar__changeIconColors {
+    .scaffold-modulemenu {
+        z-index: 100;
+
+        // change icon colors
+        .modulemenu {
+            margin-bottom: 45px;
+
+
+            button.modulemenu-action {
+                .modulemenu-icon {
+                    display: none;
+                }
+
+                .modulemenu-name {
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    margin-left: 0;
+                }
+
+                .modulemenu-indicator {
+                    opacity: 0.3;
+                }
+
+                &:focus, &:active, &:hover {
+                    .modulemenu-indicator {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &-action {
+                &-active, :hover {
+                    background-color: transparent;
+
+                    .modulemenu-name {
+                        color: $typo3-color;
+                    }
+
+                    .modulemenu-icon {
+                        svg {
+                            > path:first-child,
+                            rect:first-of-type,
+                            g,
+                            g > path {
+                                fill: $typo3-color !important;
+
+                                &[fill='#fff'], &[fill='#FFF'], &[fill='#ffffff'], &[fill='#FFFFFF'],
+                                &[fill='#fff'] > *, &[fill='#FFF'] > *, &[fill='#ffffff'] > *, &[fill='#FFFFFF'] > * {
+                                    fill: #fff !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &-group {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 0;
+                padding-bottom: 20px;
+
+                > button:not(:disabled) {
+                    .modulemenu-indicator {
+                        &::before {
+                            left: 6px;
+                        }
+
+                        &::after {
+                            right: 7px;
+                        }
+
+                        &::before, &::after {
+                            width: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    .modulemenu-icon, .card-icon {
+        svg {
+            > path:first-child,
+            rect:first-of-type,
+            g,
+            g > path {
+                fill: none !important;
+
+                &[fill='#fff'], &[fill='#FFF'], &[fill='#ffffff'], &[fill='#FFFFFF'],
+                &[fill='#fff'] > *, &[fill='#FFF'] > *, &[fill='#ffffff'] > *, &[fill='#FFFFFF'] > * {
+                    fill: #fff !important;
+                }
+            }
+        }
+    }
+}

@@ -38,11 +38,11 @@ function reloadPage() {
   window.parent.location.reload();
 }
 
-// window.addEventListener('load', (event) => {
-//   const $saveButton = document.querySelector(".btn[name='data[save]']");
-//   if(!!$saveButton) {
-//     $saveButton.onclick = reloadPage;
-//   }
-// });
+window.addEventListener('load', (event) => {
+  /*const $saveButton = document.querySelector(".btn[name='data[save]']");
+  if(!!$saveButton) {
+    $saveButton.onclick = reloadPage;
+  }*/
+});
 
 
