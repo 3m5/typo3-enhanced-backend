@@ -1,0 +1,14 @@
+@mixin headbar__modernizeSearchInput {
+    .toolbar-item-search-field {
+        background-color: #151515;
+        height: 40px;
+    }
+
+    #live-search-box {
+        border-bottom: 1px solid #eaeaea;
+
+        &:focus, &:active {
+            border-bottom-color: white;
+        }
+    }
+}

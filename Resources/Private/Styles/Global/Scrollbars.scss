@@ -1,0 +1,7 @@
+@import "Mixins/Scrollbars";
+
+.global {
+    &__scrollbars {
+       @include global__scrollbars;
+    }
+}
