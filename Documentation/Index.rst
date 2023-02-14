@@ -5,10 +5,10 @@ Enhanced Backend
 ===========
 
 :Extension key:
-   news
+   enhanced-backend
 
 :Package name:
-   dmf/enhanced-backend
+   3m5/enhanced-backend
 
 :Version:
    |alpha|
