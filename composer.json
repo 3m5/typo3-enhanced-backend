@@ -5,22 +5,30 @@
 	"authors": [
 		{
 			"name": "Jan Suchandt",
-			"role": "Product Manager"
+			"email": "jan.suchandt@3m5.de",
+			"homepage": "https://www.3m5.de",
+			"role": "Developer"
 		},
 		{
 			"name": "Steffen Thiele",
+			"email": "steffen.thiele@3m5.de",
+			"homepage": "https://www.3m5.de",
 			"role": "Developer"
 		},
 		{
 			"name": "Nicole Schneider",
+			"email": "nicole.schneider@3m5.de",
+			"homepage": "https://www.3m5.de",
 			"role": "Developer"
 		},
 		{
 			"name": "Felix Hellwig",
-			"role": "UI/UX expert"
+			"email": "nicole.schneider@3m5.de",
+			"homepage": "https://www.3m5.de",
+			"role": "Developer"
 		}
 	],
-	"license": "GPL-2.0-or-later",
+	"license": "GPL-3.0-or-later",
 	"require": {
 		"typo3/cms-core": "^11.0",
 		"typo3/cms-backend": "^11.0",
