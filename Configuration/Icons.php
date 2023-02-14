@@ -15,8 +15,36 @@ return [
         // the source SVG for the SvgIconProvider
         'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Bookmark.svg',
     ],
+    # bookmark
+    'actions-system-shortcut-new' => [
+        // icon provider class
+        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        // the source SVG for the SvgIconProvider
+        'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Bookmark.svg',
+    ],
     # cache
     'apps-toolbar-menu-cache' => [
+        // icon provider class
+        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        // the source SVG for the SvgIconProvider
+        'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Eraser.svg',
+    ],
+    # cache frontend in toolbar
+    'actions-system-cache-clear-impact-low' => [
+        // icon provider class
+        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        // the source SVG for the SvgIconProvider
+        'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Eraser.svg',
+    ],
+    # cache frontend in toolbar
+    'actions-system-cache-clear-impact-high' => [
+        // icon provider class
+        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        // the source SVG for the SvgIconProvider
+        'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Eraser.svg',
+    ],
+    # cache on page module
+    'actions-system-cache-clear' => [
         // icon provider class
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         // the source SVG for the SvgIconProvider
