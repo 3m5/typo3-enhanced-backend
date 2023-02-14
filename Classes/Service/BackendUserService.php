@@ -33,7 +33,7 @@ class BackendUserService
     public const FIELD_VALUE_LIGHTMODE = 'lightmode';
     public const FIELD_VALUE_SYSTEMMODE = 'systemmode';
 
-    public const YAML_CONFIG_FILE ='EXT:enhanced_backend/Configuration/Yaml/Styles.yaml';
+    public const YAML_CONFIG_FILE ='EXT:enhanced-backend/Configuration/Yaml/Styles.yaml';
 
 
     public static function addFieldsToUsersettings()
