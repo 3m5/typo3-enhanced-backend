@@ -1,4 +1,5 @@
-@import "Mixins/ChangeIconColors";
+@import "Mixins/SidebarChangeIconColors";
+@import "Mixins/SidebarRearrangeToggleButton";
 
 .sidebar {
     &__changeIconColors {

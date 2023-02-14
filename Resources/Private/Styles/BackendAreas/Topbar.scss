@@ -1,8 +1,12 @@
-@import "Mixins/ModernizeSearchInput";
-@import "Mixins/RearrangeTopbar";
+@import "Mixins/TopbarEnhanceSearchWidget";
+@import "Mixins/TopbarEnhanceWidgetOrder";
 
 .topbar {
-    @include topbar__modernizeSearchInput;
-    @include topbar__rearrange;
+    &__enhanceSearchWidget {
+        @include topbar__enhanceSearchWidget;
+    }
+    &__enhanceWidgetOrder {
+        @include topbar__enhanceWidgetOrder;
+    }
 }
 

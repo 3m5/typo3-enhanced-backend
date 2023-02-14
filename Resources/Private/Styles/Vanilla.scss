@@ -1,14 +1,16 @@
+/* TODO: remove this file when yaml-config is working */
+
 $typo3-color: #ff8700;
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 @import "Global/Mixins/ChangeTypography";
 @import "Global/Mixins/Scrollbars";
 
-@import "BackendAreas/Mixins/ChangeIconColors";
-@import "BackendAreas/Mixins/ModernizeSearchInput";
+@import "BackendAreas/Mixins/SidebarChangeIconColors";
+@import "BackendAreas/Mixins/TopbarEnhanceSearchWidget";
 @import "BackendAreas/Mixins/PagetreeToolbar";
 @import "BackendAreas/Mixins/ContentArea";
-@import "BackendAreas/Mixins/RearrangeTopbar";
+@import "BackendAreas/Mixins/TopbarEnhanceWidgetOrder";
 @import "BackendAreas/Mixins/SidebarRearrangeToggleButton";
 @import "UserSettings/UserSettings";
 @import "BackendAreas/Mixins/ContentTree";
@@ -20,8 +22,8 @@ $typo3-color: #ff8700;
     @include sidebar__changeIconColors;
     @include sidebar__rearrangeToggleButton;
 
-    @include topbar__modernizeSearchInput;
-    @include topbar__rearrange;
+    @include topbar__enhanceSearchWidget;
+    @include topbar__enhanceWidgetOrder;
 
     @include contentarea__pageview;
     @include contentarea__addcontentelement;
