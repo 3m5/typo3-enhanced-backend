@@ -4,23 +4,27 @@ $typo3-color: #ff8700;
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 @import "Global/Mixins/ChangeTypography";
+@import "Global/Mixins/EnhanceIcons";
 @import "Global/Mixins/Scrollbars";
 
 @import "BackendAreas/Mixins/SidebarChangeIconColors";
-@import "BackendAreas/Mixins/TopbarEnhanceSearchWidget";
+@import "BackendAreas/Mixins/SidebarEnhanceTogglePosition";
 @import "BackendAreas/Mixins/PagetreeEnhanceToolbarUI";
 @import "BackendAreas/Mixins/ContentArea";
+@import "BackendAreas/Mixins/TopbarEnhanceSearchWidget";
 @import "BackendAreas/Mixins/TopbarEnhanceWidgetOrder";
-@import "BackendAreas/Mixins/SidebarEnhanceTogglePosition";
 @import "UserSettings/UserSettings";
 @import "BackendAreas/Mixins/ContentTree";
 
 .enbe {
     @include global__changeTypography;
+    @include global__enhanceIcons;
     @include global__scrollbars;
 
     @include sidebar__changeIconColors;
     @include sidebar__enhanceTogglePosition;
+
+    @include pagetree__enhanceToolbarUI;
 
     @include topbar__enhanceSearchWidget;
     @include topbar__enhanceWidgetOrder;
