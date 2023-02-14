@@ -1,8 +1,6 @@
-.. include:: /Includes.rst.txt
-
-===========
+================
 Enhanced Backend
-===========
+================
 
 :Extension key:
    enhanced-backend
