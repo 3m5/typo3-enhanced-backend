@@ -1,5 +1,5 @@
 @import "Mixins/SidebarChangeIconColors";
-@import "Mixins/SidebarRearrangeToggleButton";
+@import "Mixins/SidebarEnhanceTogglePosition";
 
 .sidebar {
     &__changeIconColors {
@@ -7,6 +7,6 @@
     }
 
     &__rearrangeToggleButton {
-        @include sidebar__rearrangeToggleButton;
+        @include sidebar__enhanceTogglePosition;
     }
 }

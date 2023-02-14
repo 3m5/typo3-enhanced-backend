@@ -8,10 +8,10 @@ $typo3-color: #ff8700;
 
 @import "BackendAreas/Mixins/SidebarChangeIconColors";
 @import "BackendAreas/Mixins/TopbarEnhanceSearchWidget";
-@import "BackendAreas/Mixins/PagetreeToolbar";
+@import "BackendAreas/Mixins/PagetreeEnhanceToolbarUI";
 @import "BackendAreas/Mixins/ContentArea";
 @import "BackendAreas/Mixins/TopbarEnhanceWidgetOrder";
-@import "BackendAreas/Mixins/SidebarRearrangeToggleButton";
+@import "BackendAreas/Mixins/SidebarEnhanceTogglePosition";
 @import "UserSettings/UserSettings";
 @import "BackendAreas/Mixins/ContentTree";
 
@@ -20,7 +20,7 @@ $typo3-color: #ff8700;
     @include global__scrollbars;
 
     @include sidebar__changeIconColors;
-    @include sidebar__rearrangeToggleButton;
+    @include sidebar__enhanceTogglePosition;
 
     @include topbar__enhanceSearchWidget;
     @include topbar__enhanceWidgetOrder;
