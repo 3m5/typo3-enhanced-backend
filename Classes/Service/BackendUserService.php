@@ -59,7 +59,7 @@ class BackendUserService
             }
         }
         ExtensionManagementUtility::addFieldsToUserSettings(
-            '--div--;LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.enba.tab_label,'.implode(',',$ids)
+            '--div--;LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.enba.tab_label,'.implode(',',$ids)
         );
 
     }
