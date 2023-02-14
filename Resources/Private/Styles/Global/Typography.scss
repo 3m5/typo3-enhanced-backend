@@ -1,0 +1,9 @@
+@import "Mixins/ChangeTypography";
+
+.global {
+    &__changeTypography {
+        @include global__changeTypography;
+    }
+}
+
+

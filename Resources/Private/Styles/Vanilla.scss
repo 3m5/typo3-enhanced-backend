@@ -1,36 +1,19 @@
 $typo3-color: #ff8700;
-
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
-.enbe *:not(.fa), .enbe .t3-page-ce-body {
-    font-family: 'Inter';
-}
+@import "Global/Mixins/ChangeTypography";
+@import "Global/Mixins/Scrollbars";
 
-/******* User Settings ******/
-#user-setup-wrapper {
-    label.user-theme {
-        margin-top: 16px;
+@import "BackendAreas/Mixins/ChangeIconColors";
+@import "BackendAreas/Mixins/ModernizeSearchInput";
 
-        input {
-            display: none;
-        }
+@import "UserSettings/UserSettings";
 
-        img {
-            max-width: 100%;
-        }
-
-        p {
-            margin-top: 15px;
-        }
-
-        .btn {
-            border: 2px solid transparent;
-        }
-
-        :checked ~ .btn {
-            border-color: $typo3-color;
-        }
-    }
+.enbe {
+    @include global__changeTypography;
+    @include global__scrollbars;
+    @include sidebar__changeIconColors;
+    @include headbar__modernizeSearchInput;
 }
 
 /****** View **************/
@@ -70,100 +53,6 @@ $typo3-color: #ff8700;
 
 .enbe {
 
-    .modulemenu-icon, .card-icon {
-        svg {
-            > path:first-child,
-            rect:first-of-type,
-            g,
-            g > path {
-                fill: none !important;
-
-                &[fill='#fff'], &[fill='#FFF'], &[fill='#ffffff'], &[fill='#FFFFFF'],
-                &[fill='#fff'] > *, &[fill='#FFF'] > *, &[fill='#ffffff'] > *, &[fill='#FFFFFF'] > * {
-                    fill: #fff !important;
-                }
-            }
-        }
-    }
-    // Sidebar left
-    .scaffold-modulemenu {
-        z-index: 100;
-
-
-        // change icon colors
-        .modulemenu {
-            margin-bottom: 45px;
-
-
-            button.modulemenu-action {
-                .modulemenu-icon {
-                    display: none;
-                }
-
-                .modulemenu-name {
-                    font-weight: bold;
-                    text-transform: uppercase;
-                    margin-left: 0;
-                }
-
-                .modulemenu-indicator {
-                    opacity: 0.3;
-                }
-
-                &:focus, &:active, &:hover {
-                    .modulemenu-indicator {
-                        opacity: 1;
-                    }
-                }
-            }
-
-            &-action {
-                &-active, :hover {
-                    background-color: transparent;
-
-                    .modulemenu-name {
-                        color: $typo3-color;
-                    }
-
-                    .modulemenu-icon {
-                        svg {
-                            > path:first-child,
-                            rect:first-of-type,
-                            g,
-                            g > path {
-                                fill: $typo3-color !important;
-
-                                &[fill='#fff'], &[fill='#FFF'], &[fill='#ffffff'], &[fill='#FFFFFF'],
-                                &[fill='#fff'] > *, &[fill='#FFF'] > *, &[fill='#ffffff'] > *, &[fill='#FFFFFF'] > * {
-                                    fill: #fff !important;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            &-group {
-                border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-                border-radius: 0;
-                padding-bottom: 20px;
-            }
-        }
-    }
-
-    /*********************** Header ***************************/
-    .toolbar-item-search-field {
-        background-color: #151515;
-        height: 40px;
-    }
-
-    #live-search-box {
-        border-bottom: 1px solid #eaeaea;
-
-        &:focus, &:active {
-            border-bottom-color: white;
-        }
-    }
 
     /*********************** Page Tree ***************************/
     .svg-tree-loader {
@@ -223,34 +112,7 @@ $typo3-color: #ff8700;
     }
 
 
-    /**
-    Scrollbar Styling
-     */
 
-    body::-webkit-scrollbar {
-        width: 15px; /* width of the entire scrollbar */
-    }
-
-    body::-webkit-scrollbar-thumb {
-        border-radius: 20px; /* roundness of the scroll thumb */
-        border: 3px solid; /* creates padding around scroll thumb */
-    }
-
-
-    /* Works on Firefox */
-    * {
-        scrollbar-width: thin;
-    }
-
-    /* Works on Chrome, Edge, and Safari */
-    *::-webkit-scrollbar {
-        width: 15px;
-    }
-
-    *::-webkit-scrollbar-thumb {
-        border-radius: 20px;
-        border: 3px solid;
-    }
 }
 
 /*********************** Main Content ************************/
