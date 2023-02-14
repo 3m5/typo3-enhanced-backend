@@ -6,21 +6,21 @@ return [
         // icon provider class
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         // the source SVG for the SvgIconProvider
-        'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Caret-left.svg',
+        'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Caret-double-left.svg',
     ],
     # bookmark
     'apps-toolbar-menu-shortcut' => [
         // icon provider class
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         // the source SVG for the SvgIconProvider
-        'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Bookmark-simple.svg',
+        'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Bookmark.svg',
     ],
     # cache
     'apps-toolbar-menu-cache' => [
         // icon provider class
         'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
         // the source SVG for the SvgIconProvider
-        'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Lightning.svg',
+        'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Eraser.svg',
     ],
     # help
     'apps-toolbar-menu-help' => [
