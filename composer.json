@@ -1,5 +1,5 @@
 {
-	"name": "3m5/enhanced-backend",
+	"name": "3m5/typo3-enhanced-backend",
 	"type": "typo3-cms-extension",
 	"description": "The Enhanced Backend Extension improves the user experience (UX) in the TYPO3 backend, provides customization options for editors and improves the look and feel of TYPO3 so that it represents a modern and intuitive eCMS.",
 	"authors": [
