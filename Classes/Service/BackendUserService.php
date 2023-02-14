@@ -25,7 +25,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 class BackendUserService
 {
-    public const FIELD_NAME_PREFIX = 'tx_enhancedbackend';
+    public const FIELD_NAME_PREFIX = 'enba';
     public const FIELD_NAME_THEME = self::FIELD_NAME_PREFIX . '_theme';
     public const FIELD_NAME_ACTIVE = self::FIELD_NAME_PREFIX . '_active';
     public const FIELD_NAME_DARKMODE = self::FIELD_NAME_PREFIX . '_darkmode';
@@ -47,7 +47,7 @@ class BackendUserService
             {
                 foreach ($features as $featurename => $feature)
                 {
-                    $id = BackendUserService::FIELD_NAME_PREFIX.'_'.$sector.'_'.$featurename;
+                    $id = BackendUserService::FIELD_NAME_PREFIX.'_'.$sector.'__'.$featurename;
                     $GLOBALS['TYPO3_USER_SETTINGS']['columns'][$id] = [
                         'label' => $feature['title'],
                         'type' =>  $feature['type']
