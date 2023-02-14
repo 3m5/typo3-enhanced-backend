@@ -1,0 +1,18 @@
+@mixin sidebar__rearrangeToggleButton {
+    /** change toggle button position in sidebar **/
+    .topbar-header {
+        padding-left: 0;
+    }
+
+    .topbar-button {
+        &.topbar-button-modulemenu {
+            position: fixed;
+            bottom: 0;
+            top: auto;
+            left: 0;
+            z-index: 100000;
+            background: #151515;
+            width: 64px;
+        }
+    }
+}

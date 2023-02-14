@@ -45,11 +45,6 @@ defined('TYPO3_MODE') || die();
                 'description' => 'LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.vanilla.description',
                 'image' => 'EXT:enhanced-backend/Resources/Public/Images/vanilla.png',
             ],
-            \DMF\EnhancedBackend\Service\ThemeService::THEME_NAME_MODERN => [
-                'label' => 'LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.modern',
-                'description' => 'LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.modern.description',
-                'image' => 'EXT:enhanced-backend/Resources/Public/Images/modern.png',
-            ],
             \DMF\EnhancedBackend\Service\ThemeService::THEME_NAME_CUSTOM => [
                 'label' => 'LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.custom',
                 'description' => 'LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.custom.description',

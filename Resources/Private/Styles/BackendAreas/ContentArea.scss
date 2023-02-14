@@ -1,0 +1,7 @@
+.contentarea {
+    @include contentarea__pageview;
+    @include contentarea__rearrange;
+
+    @include contentarea__addcontentelement;
+    @include contentarea__toolbar;
+}

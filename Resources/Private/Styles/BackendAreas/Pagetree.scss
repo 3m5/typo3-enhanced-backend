@@ -1,0 +1,7 @@
+@import "Mixins/PagetreeToolbar";
+
+.pagetree {
+    &__toolbar {
+        @include pagetree__toolbar;
+    }
+}

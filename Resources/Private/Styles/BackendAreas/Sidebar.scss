@@ -4,4 +4,8 @@
     &__changeIconColors {
         @include sidebar__changeIconColors;
     }
+
+    &__rearrangeToggleButton {
+        @include sidebar__rearrangeToggleButton;
+    }
 }

@@ -1,0 +1,45 @@
+@mixin pagetree__toolbar {
+    .svg-tree-loader {
+        top: 83px;
+        height: calc(100% - 83px);
+    }
+    .tree-toolbar {
+        .svg-toolbar {
+            &__menu {
+                align-items: center;
+                margin: 2px 0;
+            }
+
+            &__search {
+                width: 100%;
+            }
+
+            &__submenu {
+                margin-bottom: 5px;
+                display: flex; justify-content: space-between;
+
+                .svg-toolbar__menuitem {
+                    padding: 8px;
+                    transition: 0.4s all;
+
+                    &:hover {
+                        background-color: $typo3-color;
+                        border-radius: 2px;
+                    }
+                }
+            }
+        }
+    }
+
+    .scaffold-content-navigation {
+        &-switcher .scaffold-content-navigation-switcher-btn {
+            padding: 8px;
+            margin-top: 4px;
+
+            &:hover, &:focus, &:active {
+                background-color: $typo3-color;
+                border: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+@import "Mixins/ModernizeSearchInput";
+@import "Mixins/RearrangeTopbar";
+
+.topbar {
+    @include topbar__modernizeSearchInput;
+    @include topbar__rearrange;
+}
+
