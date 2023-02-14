@@ -1,4 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
+@import "Global/Variables";
 @import "Global/Typography";
+@import "Global/Scrollbars";
+
+@import "BackendAreas/ContentArea";
+@import "BackendAreas/Topbar";
 @import "BackendAreas/Sidebar";
+@import "BackendAreas/Pagetree";
+
+@import "UserSettings/UserSettings";

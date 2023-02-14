@@ -1,0 +1,12 @@
+@import "Mixins/TopbarEnhanceSearchWidget";
+@import "Mixins/TopbarEnhanceWidgetOrder";
+
+.topbar {
+    &__enhanceSearchWidget {
+        @include topbar__enhanceSearchWidget;
+    }
+    &__enhanceWidgetOrder {
+        @include topbar__enhanceWidgetOrder;
+    }
+}
+

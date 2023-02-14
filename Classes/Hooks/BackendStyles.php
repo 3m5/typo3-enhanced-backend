@@ -30,10 +30,6 @@ class BackendStyles
         if ($themeService->isAnyThemeSelected()) {
             $bodyCssClasses[] = 'enbe-theme';
             switch ($themeService->getActiveThemeName()) {
-                case ThemeService::THEME_NAME_MODERN:
-                    $renderer->addCssFile(GeneralUtility::getFileAbsFileName('EXT:enhanced-backend/Resources/Public/Styles/Modern.css'));
-                    $bodyCssClasses[] = 'enbe-theme--modern';
-                    break;
                 case ThemeService::THEME_NAME_VANILLA:
                     $renderer->addCssFile(GeneralUtility::getFileAbsFileName('EXT:enhanced-backend/Resources/Public/Styles/Vanilla.css'));
                     $bodyCssClasses[] = 'enbe-theme--vanilla';
