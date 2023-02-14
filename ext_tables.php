@@ -14,7 +14,7 @@ defined('TYPO3_MODE') || die();
      * @see https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/Configuration/UserSettingsConfiguration/Extending.html#user-settings-extending
      */
     $GLOBALS['TYPO3_USER_SETTINGS']['columns']['tx_enhancedbackend_active'] = [
-      'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.active',
+      'label' => 'LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.active',
       'type' => 'select',
       'renderType' => 'selectSingle',
       'items' => [
@@ -30,30 +30,30 @@ defined('TYPO3_MODE') || die();
      * @see https://docs.typo3.org/m/typo3/reference-coreapi/10.4/en-us/Configuration/UserSettingsConfiguration/Extending.html#user-settings-extending
      */
     $GLOBALS['TYPO3_USER_SETTINGS']['columns']['tx_enhancedbackend_theme'] = [
-        'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme',
-        'description' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.description',
+        'label' => 'LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme',
+        'description' => 'LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.description',
         'type' => 'user',
         'userFunc' => \DMF\EnhancedBackend\Utility\ThemeUtility::class . '->render',
         'items' => [
             'default' => [
-                'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.default',
-                'description' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.default.description',
-                'image' => 'EXT:enhanced_backend/Resources/Public/Images/default.png',
+                'label' => 'LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.default',
+                'description' => 'LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.default.description',
+                'image' => 'EXT:enhanced-backend/Resources/Public/Images/default.png',
             ],
             \DMF\EnhancedBackend\Service\ThemeService::THEME_NAME_VANILLA => [
-                'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.vanilla',
-                'description' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.vanilla.description',
-                'image' => 'EXT:enhanced_backend/Resources/Public/Images/vanilla.png',
+                'label' => 'LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.vanilla',
+                'description' => 'LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.vanilla.description',
+                'image' => 'EXT:enhanced-backend/Resources/Public/Images/vanilla.png',
             ],
             \DMF\EnhancedBackend\Service\ThemeService::THEME_NAME_MODERN => [
-                'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.modern',
-                'description' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.modern.description',
-                'image' => 'EXT:enhanced_backend/Resources/Public/Images/modern.png',
+                'label' => 'LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.modern',
+                'description' => 'LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.modern.description',
+                'image' => 'EXT:enhanced-backend/Resources/Public/Images/modern.png',
             ],
             \DMF\EnhancedBackend\Service\ThemeService::THEME_NAME_CUSTOM => [
-                'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.custom',
-                'description' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.custom.description',
-                'image' => 'EXT:enhanced_backend/Resources/Public/Images/custom.png',
+                'label' => 'LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.custom',
+                'description' => 'LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.custom.description',
+                'image' => 'EXT:enhanced-backend/Resources/Public/Images/custom.png',
             ],
         ],
     ];
@@ -66,7 +66,7 @@ defined('TYPO3_MODE') || die();
      * Add dark mode single select
      */
     $GLOBALS['TYPO3_USER_SETTINGS']['columns'][BackendUserService::FIELD_NAME_DARKMODE] = [
-        'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.darkmode',
+        'label' => 'LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.darkmode',
         'type' => 'select',
         'renderType' => 'selectSingle',
         'items' => [

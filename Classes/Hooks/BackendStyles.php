@@ -23,7 +23,7 @@ class BackendStyles
     public function addT3EnBeFiles()
     {
         $renderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
-        $renderer->addJsFile(GeneralUtility::getFileAbsFileName('EXT:enhanced_backend/Resources/Public/JavaScript/Backend.js'), 'text/javascript', false, false, '', true, '|', false, '');
+        $renderer->addJsFile(GeneralUtility::getFileAbsFileName('EXT:enhanced-backend/Resources/Public/JavaScript/Backend.js'), 'text/javascript', false, false, '', true, '|', false, '');
 
         $themeService = GeneralUtility::makeInstance(ThemeService::class);
         $bodyCssClasses = ['enbe'];
@@ -31,21 +31,21 @@ class BackendStyles
             $bodyCssClasses[] = 'enbe-theme';
             switch ($themeService->getActiveThemeName()) {
                 case ThemeService::THEME_NAME_MODERN:
-                    $renderer->addCssFile(GeneralUtility::getFileAbsFileName('EXT:enhanced_backend/Resources/Public/Styles/Modern.css'));
+                    $renderer->addCssFile(GeneralUtility::getFileAbsFileName('EXT:enhanced-backend/Resources/Public/Styles/Modern.css'));
                     $bodyCssClasses[] = 'enbe-theme--modern';
                     break;
                 case ThemeService::THEME_NAME_VANILLA:
-                    $renderer->addCssFile(GeneralUtility::getFileAbsFileName('EXT:enhanced_backend/Resources/Public/Styles/Vanilla.css'));
+                    $renderer->addCssFile(GeneralUtility::getFileAbsFileName('EXT:enhanced-backend/Resources/Public/Styles/Vanilla.css'));
                     $bodyCssClasses[] = 'enbe-theme--vanilla';
                     break;
                 case ThemeService::THEME_NAME_CUSTOM:
-                    $renderer->addCssFile(GeneralUtility::getFileAbsFileName('EXT:enhanced_backend/Resources/Public/Styles/Custom.css'));
+                    $renderer->addCssFile(GeneralUtility::getFileAbsFileName('EXT:enhanced-backend/Resources/Public/Styles/Custom.css'));
                     $bodyCssClasses[] = 'enbe-theme--custom';
                     break;
             }
         }
 
-        $renderer->addCssFile(GeneralUtility::getFileAbsFileName('EXT:enhanced_backend/Resources/Public/Styles/Dark.css'));
+        $renderer->addCssFile(GeneralUtility::getFileAbsFileName('EXT:enhanced-backend/Resources/Public/Styles/Dark.css'));
         if ($themeService->isDarkModeEnabled()) {
             $bodyCssClasses[] = 'color-mode--dark';
         }
