@@ -130,5 +130,25 @@ return [
         // the source SVG for the SvgIconProvider
         'source' => 'EXT:enhanced-backend/Resources/Public/Icons/LinkSimple.svg',
     ],
-
+    # add mount point
+    'apps-pagetree-page-mountpoint' => [
+        // icon provider class
+        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        // the source SVG for the SvgIconProvider
+        'source' => 'EXT:enhanced-backend/Resources/Public/Icons/FlagBanner.svg',
+    ],
+    # add shortcut
+    'apps-pagetree-page-shortcut' => [
+        // icon provider class
+        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        // the source SVG for the SvgIconProvider
+        'source' => 'EXT:enhanced-backend/Resources/Public/Icons/ArrowBendUpRight.svg',
+    ],
+    # add backend user section
+    'apps-pagetree-page-backend-users' => [
+        // icon provider class
+        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        // the source SVG for the SvgIconProvider
+        'source' => 'EXT:enhanced-backend/Resources/Public/Icons/LockKeyOpen.svg',
+    ],
 ];
