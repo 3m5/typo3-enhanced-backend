@@ -9,6 +9,7 @@ $icon-size--phosphor: 20px;
 }
 
 @mixin global__enhanceIcons {
+    // Top bars
     .scaffold-header, .module-docheader-bar-buttons {
         .icon-size-small {
             width: $icon-size--phosphor;
@@ -23,6 +24,15 @@ $icon-size--phosphor: 20px;
     }
 
     .module-docheader-bar-buttons {
+        .btn {
+            display: flex;
+            align-items: flex-end;
+
+            .icon {
+                margin-right: 4px;
+            }
+        }
+
         .icon-markup {
             img {
                 @include svg-color--black;
@@ -33,6 +43,30 @@ $icon-size--phosphor: 20px;
             img {
                 @include svg-color--white;
             }
+        }
+    }
+
+    // PageTree
+    .tree-toolbar {
+        .svg-toolbar {
+            &__submenu {
+                typo3-backend-icon {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+
+    // Content area
+    .t3js-title-inlineedit {
+        typo3-backend-icon {
+            font-size: 20px;
+        }
+    }
+
+    .t3-page-ce-body-inner .exampleContent {
+        .icon-markup img {
+            transform: scale(1.1);
         }
     }
 }

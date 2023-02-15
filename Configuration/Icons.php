@@ -151,4 +151,48 @@ return [
         // the source SVG for the SvgIconProvider
         'source' => 'EXT:enhanced-backend/Resources/Public/Icons/LockKeyOpen.svg',
     ],
+    # edit pencil
+    'actions-open' => [
+        // icon provider class
+        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        // the source SVG for the SvgIconProvider
+        'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Pencil.svg',
+    ],
+    # edit trash
+    'actions-edit-delete' => [
+        // icon provider class
+        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        // the source SVG for the SvgIconProvider
+        'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Trash.svg',
+    ],
+    ### TOOL BAR
+    # edit save
+    'actions-document-save' => [
+        // icon provider class
+        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        // the source SVG for the SvgIconProvider
+        'source' => 'EXT:enhanced-backend/Resources/Public/Icons/FloppyDisk.svg',
+    ],
+    # close
+    'actions-close' => [
+        // icon provider class
+        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        // the source SVG for the SvgIconProvider
+        'source' => 'EXT:enhanced-backend/Resources/Public/Icons/X.svg',
+    ],
+    # add
+    'actions-add' => [
+        // icon provider class
+        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        // the source SVG for the SvgIconProvider
+        'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Plus.svg',
+    ],
+    # view
+    'actions-view' => [
+        // icon provider class
+        'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        // the source SVG for the SvgIconProvider
+        'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Eye.svg',
+    ],
+
 ];
