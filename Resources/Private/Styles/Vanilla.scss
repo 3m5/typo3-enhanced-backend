@@ -9,19 +9,27 @@
 }
 
 $typo3-color: #ff8700;
-@import "Global/Typography";
-
 @import "Global/Mixins/ChangeTypography";
+@import "Global/Mixins/EnhanceIcons";
 @import "Global/Mixins/Scrollbars";
 
 @import "BackendAreas/Mixins/SidebarChangeIconColors";
-@import "BackendAreas/Mixins/TopbarEnhanceSearchWidget";
+@import "BackendAreas/Mixins/SidebarEnhanceTogglePosition";
 @import "BackendAreas/Mixins/PagetreeEnhanceToolbarUI";
 @import "BackendAreas/Mixins/ContentArea";
+@import "BackendAreas/Mixins/TopbarEnhanceSearchWidget";
 @import "BackendAreas/Mixins/TopbarEnhanceWidgetOrder";
 @import "BackendAreas/Mixins/SidebarEnhanceTogglePosition";
 @import "UserSettings/UserSettings";
 @import "BackendAreas/Mixins/ContentTree";
+
+@font-face {
+    font-family: 'Inter Regular';
+    src: url('../../Public/Static/Font/Inter-Regular.woff2?20230214') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 .enbe {
     @include global__changeTypography;
