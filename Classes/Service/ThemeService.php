@@ -21,7 +21,6 @@ namespace DMF\EnhancedBackend\Service;
 class ThemeService
 {
     public const THEME_NAME_VANILLA = 'vanilla';
-    public const THEME_NAME_MODERN = 'modern';
     public const THEME_NAME_CUSTOM = 'custom';
 
     /**
@@ -32,14 +31,6 @@ class ThemeService
     public function __construct(BackendUserService $backendUserService)
     {
         $this->backendUserService = $backendUserService;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isModernActive(): bool
-    {
-        return $this->isThemeActiveByName(self::THEME_NAME_MODERN);
     }
 
     /**
@@ -121,7 +112,6 @@ class ThemeService
     {
         return [
             self::THEME_NAME_VANILLA,
-            self::THEME_NAME_MODERN,
             self::THEME_NAME_CUSTOM
         ];
     }
