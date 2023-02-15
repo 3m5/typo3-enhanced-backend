@@ -33,34 +33,35 @@ class BackendUserService
     public const FIELD_VALUE_LIGHTMODE = 'lightmode';
     public const FIELD_VALUE_SYSTEMMODE = 'systemmode';
 
-    public const YAML_CONFIG_FILE ='EXT:enhanced-backend/Configuration/Yaml/Styles.yaml';
+    public const YAML_CONFIG_FILE ='EXT:enhanced-backend/Configuration/Yaml/Features.yaml';
 
 
     public static function addFieldsToUsersettings()
     {
         $yamlfileloader = new YamlFileLoader();
         $config = $yamlfileloader->load(self::YAML_CONFIG_FILE);
-        $ids =[];
-        foreach ($config as $sector => $features)
+        if($groups = $config['groups'])
         {
-            if($features)
+            $ids =[];
+            foreach ($groups as $groupName => $group)
             {
-                foreach ($features as $featurename => $feature)
+                if($features = $group['features'])
                 {
-                    $id = BackendUserService::FIELD_NAME_PREFIX.'_'.$sector.'__'.$featurename;
-                    $GLOBALS['TYPO3_USER_SETTINGS']['columns'][$id] = [
-                        'label' => $feature['title'],
-                        'type' =>  $feature['type']
-                    ];
-                    $ids[] = $id;
-
+                    foreach ($features as $featureName => $feature)
+                    {
+                        $id = BackendUserService::FIELD_NAME_PREFIX.'_'.$groupName.'__'.$featureName;
+                        $GLOBALS['TYPO3_USER_SETTINGS']['columns'][$id] = [
+                            'label' => $feature['title'],
+                            'type' =>  $feature['type']
+                        ];
+                        $ids[] = $id;
+                    }
                 }
-
             }
+            ExtensionManagementUtility::addFieldsToUserSettings(
+                '--div--;LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.enba.tab_label,'.implode(',',$ids)
+            );
         }
-        ExtensionManagementUtility::addFieldsToUserSettings(
-            '--div--;LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.enba.tab_label,'.implode(',',$ids)
-        );
 
     }
 
