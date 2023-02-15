@@ -1,7 +1,15 @@
 /* TODO: remove this file when yaml-config is working */
 
+@font-face {
+    font-family: 'Inter Regular';
+    src: url('../../Public/Static/Font/Inter-Regular.woff2?20230214') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 $typo3-color: #ff8700;
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import "Global/Typography";
 
 @import "Global/Mixins/ChangeTypography";
 @import "Global/Mixins/EnhanceIcons";
