@@ -1,8 +1,13 @@
 @import "Mixins/ChangeTypography";
+@import "Mixins/EnhanceIcons";
 
 .global {
     &__changeTypography {
         @include global__changeTypography;
+    }
+
+    &__enhanceIcons {
+        @include global__enhanceIcons;
     }
 }
 
