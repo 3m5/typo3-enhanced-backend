@@ -1,8 +1,38 @@
+$icon-size--phosphor: 20px;
+
+@mixin svg-color--black {
+    filter: brightness(0) saturate(100%);
+}
+
+@mixin svg-color--white {
+    filter: brightness(0) saturate(100%) invert(100%);
+}
+
 @mixin global__enhanceIcons {
-    .scaffold-header {
+    .scaffold-header, .module-docheader-bar-buttons {
         .icon-size-small {
-            width: 20px;
-            height: 20px;
+            width: $icon-size--phosphor;
+            height: $icon-size--phosphor;
+        }
+    }
+
+    .scaffold-header {
+        svg {
+            @include svg-color--white;
+        }
+    }
+
+    .module-docheader-bar-buttons {
+        .icon-markup {
+            img {
+                @include svg-color--black;
+            }
+        }
+
+        .dropdown-menu {
+            img {
+                @include svg-color--white;
+            }
         }
     }
 }
