@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace DMF\EnhancedBackend\Hooks;
 
-use DMF\EnhancedBackend\Service\ThemeService;
+use DMF\EnhancedBackend\Service\BackendUserService;
+use DMF\EnhancedBackend\Service\FeatureService;
+use DMF\EnhancedBackend\Utility\BackendUtility;
+use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
@@ -19,45 +22,69 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  **/
 class BackendStyles
 {
+    protected FeatureService $featureService;
 
-    public function addT3EnBeFiles()
+    public function addEnBaFrontendFiles()
     {
-        $renderer = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Page\PageRenderer::class);
-        $renderer->addJsFile(GeneralUtility::getFileAbsFileName('EXT:enhanced-backend/Resources/Public/JavaScript/Backend.js'), 'text/javascript', false, false, '', true, '|', false, '');
-
-        $themeService = GeneralUtility::makeInstance(ThemeService::class);
-        $bodyCssClasses = ['enbe'];
-        if ($themeService->isAnyThemeSelected()) {
-            $bodyCssClasses[] = 'enbe-theme';
-            switch ($themeService->getActiveThemeName()) {
-                case ThemeService::THEME_NAME_VANILLA:
-                    $renderer->addCssFile(GeneralUtility::getFileAbsFileName('EXT:enhanced-backend/Resources/Public/Styles/Vanilla.css'));
-                    $bodyCssClasses[] = 'enbe-theme--vanilla';
-                    break;
-                case ThemeService::THEME_NAME_CUSTOM:
-                    $renderer->addCssFile(GeneralUtility::getFileAbsFileName('EXT:enhanced-backend/Resources/Public/Styles/Custom.css'));
-                    $bodyCssClasses[] = 'enbe-theme--custom';
-                    break;
-            }
+        // Apply css/js and body classes only for backend
+        if(!BackendUtility::isBackendRequest()) {
+            return;
         }
 
-        $renderer->addCssFile(GeneralUtility::getFileAbsFileName('EXT:enhanced-backend/Resources/Public/Styles/Dark.css'));
-        if ($themeService->isDarkModeEnabled()) {
-            $bodyCssClasses[] = 'color-mode--dark';
-        }
-        if ($themeService->isLightModeEnabled()) {
-            $bodyCssClasses[] = 'color-mode--light';
-        }
-        if ($themeService->isLSystemModeEnabled()) {
-            $bodyCssClasses[] = 'color-mode--system';
-        }
-
-        $renderer->setHtmlTag($this->addClasstoHtml($renderer->getHtmlTag(), implode(' ', $bodyCssClasses)));
+        $this->featureService = GeneralUtility::makeInstance(FeatureService::class);
+        $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
+        $pageRenderer->addCssFile($this->getDefaultCssFile());
+        $pageRenderer->addJsFile(
+            GeneralUtility::getFileAbsFileName($this->getDefaultJsFile()),
+            'text/javascript',
+            false,
+            false,
+            '',
+            true,
+            '|',
+            false,
+            ''
+        );
+        $bodyCssClasses = $this->getCssBodyClasses();
+        $htmlTag = $pageRenderer->getHtmlTag();
+        $newHtmlTag = $this->addClassestoHtml(
+            $htmlTag,
+            implode(' ', $bodyCssClasses)
+        );
+        $pageRenderer->setHtmlTag($newHtmlTag);
     }
 
-    private function addClasstoHtml($htmltag, $class)
+    private function getDefaultCssFile()
     {
-        return str_replace($htmltag, '<html ', '<html class="' . $class . '" ');
+        return GeneralUtility::getFileAbsFileName('EXT:enhanced-backend/Resources/Public/Styles/Vanilla.css');
     }
 
+    private function getDefaultJsFile()
+    {
+        return GeneralUtility::getFileAbsFileName('EXT:enhanced-backend/Resources/Public/JavaScript/Features.js');
+    }
+
+    private function getCssBodyClasses(): array
+    {
+        // Default body class
+        $bodyCssClasses = [
+            BackendUserService::FIELD_NAME_PREFIX
+        ];
+
+        // Feature based body classes
+        foreach ($this->featureService->getAllActiveFeatures() as $feature) {
+            $bodyCssClasses[] = $feature->getId();
+        }
+        return $bodyCssClasses;
+    }
+
+    /**
+     * @param $htmlTag
+     * @param $bodyCssClasses
+     * @return array|string|string[]
+     */
+    private function addClassestoHtml($htmlTag, $bodyCssClasses)
+    {
+        return str_replace('<html ', '<html class="' . $bodyCssClasses . '" ', $htmlTag);
+    }
 }
