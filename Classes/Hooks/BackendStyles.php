@@ -27,6 +27,7 @@ class BackendStyles
 
         $themeService = GeneralUtility::makeInstance(ThemeService::class);
         $bodyCssClasses = ['enbe'];
+        $renderer->addCssFile(GeneralUtility::getFileAbsFileName('EXT:enhanced-backend/Resources/Public/Styles/Vanilla.css'));
         if ($themeService->isAnyThemeSelected()) {
             $bodyCssClasses[] = 'enbe-theme';
             switch ($themeService->getActiveThemeName()) {
