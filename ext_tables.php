@@ -3,7 +3,7 @@
 use DMF\EnhancedBackend\Hooks\BackendStyles;
 use DMF\EnhancedBackend\Service\BackendUserService;
 
-defined('TYPO3_MODE') || die();
+defined('TYPO3') || die();
 
 (static function () {
 

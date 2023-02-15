@@ -7,6 +7,11 @@ groups:
         description: Darkmode
         type: check
         preset:
+      - enhancedIcons:
+        title: Optimierte Icons
+        type: check
+        description:
+        preset:
   topbar:
     title: Header-Bereich
     features:

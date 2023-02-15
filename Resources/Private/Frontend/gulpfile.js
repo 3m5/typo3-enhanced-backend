@@ -12,7 +12,8 @@ const destCss = "../../Public/Styles";
 
 const sourceCss = [
          '../Styles/Vanilla.scss',
-         '../Styles/Dark.scss'
+         '../Styles/Dark.scss',
+         '../Styles/Features.scss'
     ]
 
 // handle arguments
