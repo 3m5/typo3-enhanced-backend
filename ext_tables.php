@@ -3,7 +3,7 @@
 use DMF\EnhancedBackend\Service\BackendUserService;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 
-defined('TYPO3_MODE') || die();
+defined('TYPO3') || die();
 
 (static function () {
 
