@@ -1,4 +1,9 @@
 groups:
+  global:
+    features:
+      enhancedIcons:
+        title: Optimierte Icons
+        type: check
   headbar:
     title: Header-Bereich
     features:
