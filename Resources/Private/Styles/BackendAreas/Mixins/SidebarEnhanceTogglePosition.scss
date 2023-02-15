@@ -11,8 +11,27 @@
             top: auto;
             left: 0;
             z-index: 100000;
-            background: #151515;
             width: 64px;
+            padding-right: 0;
+            text-align: center;
+
+            .icon {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .scaffold-modulemenu-expanded {
+        .topbar-button {
+            &.topbar-button-modulemenu {
+                width: 240px;
+                text-align: right;
+                padding-right: 16px;
+
+                .icon {
+                    transform: rotate(0deg);
+                }
+            }
         }
     }
 }
