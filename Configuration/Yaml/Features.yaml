@@ -1,23 +1,37 @@
 groups:
-  headbar:
+  global:
+    title: Global
+    Features:
+      - id: darkmode
+        title: Darkmode
+        description: Darkmode
+        type: check
+        preset:
+  topbar:
     title: Header-Bereich
     features:
-      sidebarToggle:
+      - id: sidebarToggle
         title: Icon Sidebar verschieben
         description: Icon am unteren Rand der Sidebar umpositionieren
         type: check
-        profil:
+        preset:
           - modern
-        backendUsergroup: true
-      customTitle:
+      - id: customTitle
         title: Custom Site title
         description: Custom Site title
         type: text
-        profil:
+        preset:
           - vanilla
           - modern
-        backendUsergroup: true
   sidebar:
+    title: Seitenleiste
   pageTree:
-  contentTopbar:
+    title: Seitenbaum
+  contentNavigation:
+    title: Inhaltsnavigation
   contentArea:
+    title: Inhaltsbereich
+  contentElementWizard:
+    title: Inhaltselementwizard
+
+
