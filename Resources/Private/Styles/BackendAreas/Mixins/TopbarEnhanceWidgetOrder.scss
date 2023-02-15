@@ -1,0 +1,32 @@
+@mixin topbar__enhanceWidgetOrder {
+    .scaffold-header {
+        // change order of elements in topbar right
+        .toolbar-list {
+            display: flex;
+
+            .toolbar-item-search {
+                order: 1;
+            }
+
+            #typo3-cms-backend-backend-toolbaritems-shortcuttoolbaritem {
+                order: 2;
+            }
+
+            #typo3-cms-backend-backend-toolbaritems-clearcachetoolbaritem {
+                order: 3;
+            }
+
+            #typo3-cms-backend-backend-toolbaritems-helptoolbaritem {
+                order: 4;
+            }
+
+            #typo3-cms-backend-backend-toolbaritems-systeminformationtoolbaritem {
+                order: 5;
+            }
+
+            .toolbar-item-user {
+                order: 6;
+            }
+        }
+    }
+}
