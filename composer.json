@@ -31,6 +31,7 @@
 	"license": "GPL-3.0-or-later",
 	"require": {
 		"typo3/cms-core": "^11.0",
+		"typo3/cms-setup": "^11.0",
 		"typo3/cms-backend": "^11.0",
 		"typo3/cms-sys-note": "^11.0"
 	},
