@@ -1,0 +1,8 @@
+@mixin global__enhanceIcons {
+    .scaffold-header {
+        .icon-size-small {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
