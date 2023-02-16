@@ -1,9 +1,17 @@
-@import "Mixins/ContentArea";
+@import "Mixins/ContentArea/EnhancedOverviewUI";
+@import "Mixins/ContentArea/EnhancedContentElementPositioning";
+@import "Mixins/ContentArea/EnhancedToolbar";
 
-.contentarea {
-    @include contentarea__pageview;
-    @include contentarea__rearrange;
+.enba-contentArea {
+    &__enhancedOverviewUI {
+        @include contentArea__enhancedOverviewUI;
+    }
 
-    @include contentarea__addcontentelement;
-    @include contentarea__toolbar;
+    &__enhancedContentElementPositioning {
+        @include contentArea__enhancedContentElementPositioning;
+    }
+
+    &__enhancedOverviewUI {
+        @include contentArea__enhancedToolbar;
+    }
 }

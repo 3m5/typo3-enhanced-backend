@@ -79,7 +79,42 @@ groups:
     title: Inhaltsnavigation
   contentArea:
     title: Inhaltsbereich
+    features:
+      - id: enhancedOverviewUI
+        title: Inhaltsbereich optimieren
+        description: TODO
+        type: check
+        preset:
+          - vanilla
+          - modern
+      - id: enhancedContentElementPositioning
+        title: Komprimierte Ansicht von Inhaltselementen
+        description: Buttons und Titel werden repositioniert für einen besseren Überblick. Außerdem sind alle Flaggen ausgeblendet, um Redundanz zu verringern.
+        type: check
+        preset:
+          - modern
+      - id: enhancedToolbar
+        title: Optimierte Toolbar
+        description: Abstände sind im Einklang mit der Toolbar des Seitenbaums. Größere Klickflächen erleichtern die Arbeit.
+        type: check
+        preset:
+          - vanilla
+          - modern
   contentElementWizard:
     title: Inhaltselementwizard
+    features:
+      - id: enhancedToolbar
+        title: Optimierte Toolbar
+        description: Buttons und Titel werden repositioniert für einen besseren Überblick. Außerdem sind alle Flaggen ausgeblendet, um Redundanz zu verringern.
+        type: check
+        preset:
+          - vanilla
+          - modern
+      - id: enhancedUI
+        title: Kachelansicht
+        description: Beschreibungstexte sind als Tooltips verfügbar, Icons und Überschriften stehen im Fokus.
+        type: check
+        preset:
+          - modern
 
 

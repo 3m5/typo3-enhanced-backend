@@ -1,0 +1,42 @@
+@mixin contentArea__enhancedToolbar {
+    .module-docheader {
+        min-height: 86px;
+
+        .form-select {
+            min-width: 150px;
+            cursor: pointer;
+        }
+
+        &-bar {
+            &:first-child {
+                margin-top: 7px;
+            }
+
+            .btn {
+                padding: 4px 8px;
+                height: 30px;
+            }
+        }
+    }
+
+    .module-docheader {
+        .form-select, .form-control {
+            border: 1px solid #ddd;
+            font-size: 13px;
+            width: 100%;
+            padding: 8px 12px;
+
+            &:focus {
+                box-shadow: inset 0 1px 2px rgba(0,0,0,.075),0 0 0 1px rgba($typo3-color, .25);
+            }
+        }
+
+        .form-control {
+            border-top-color: transparent;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            background-color: transparent;
+        }
+    }
+
+}
