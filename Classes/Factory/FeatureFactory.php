@@ -55,7 +55,7 @@ class FeatureFactory
                     foreach ($featuresConfig as $featureConfig) {
                         // TODO add to construct
                         $feature = new Feature();
-                        $featureId = BackendUserService::FIELD_NAME_PREFIX . '_' . $groupId . '__' . $featureConfig['id'];
+                        $featureId = BackendUserService::FIELD_NAME_PREFIX . '-' . $groupId . '__' . $featureConfig['id'];
                         $feature->setId($featureId);
                         $feature->setGroup($group);
                         $feature->setTitle($featureConfig['title']);

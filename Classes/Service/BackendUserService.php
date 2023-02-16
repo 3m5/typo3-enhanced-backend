@@ -112,7 +112,7 @@ class BackendUserService
      */
     private function isEnBaUserSettingById(string $userSettingsId): bool
     {
-        return (preg_match('~' . self::FIELD_NAME_PREFIX . '_[A-Za-z_]+$~', $userSettingsId) !== 1);
+        return (preg_match('~' . self::FIELD_NAME_PREFIX . '-[A-Za-z_]+$~', $userSettingsId) !== 1);
     }
 
 }
