@@ -7,7 +7,8 @@ class IconService
     public function __construct()
     {
         if (!$GLOBALS['BE_USER']) {
-            \TYPO3\CMS\Core\Core\Bootstrap::initializeBackendUser();
+            // TODO DO NOT USE AT THE MOMENT
+            //\TYPO3\CMS\Core\Core\Bootstrap::initializeBackendUser();
         }
     }
 

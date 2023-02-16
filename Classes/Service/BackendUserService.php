@@ -6,6 +6,7 @@ namespace DMF\EnhancedBackend\Service;
 
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\Core\Bootstrap;
+use TYPO3\CMS\Core\SingletonInterface;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -23,19 +24,21 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 /**
  * Service for handling backend user settings
  */
-class BackendUserService
+class BackendUserService implements SingletonInterface
 {
     // TODO move to more central place
     public const FIELD_NAME_PREFIX = 'enba';
     public const FIELD_NAME_PRESET = self::FIELD_NAME_PREFIX . '_preset';
     public const YAML_CONFIG_FILE = 'EXT:enhanced-backend/Configuration/Yaml/Features.yaml';
 
+    protected array $userSettings = [];
+
     /**
      * Add custom EnBa user settings
      *
      * @return void
      */
-    public static function addFieldsToUserSettings()
+    public function addFieldsToUserSettings()
     {
         $featureService = GeneralUtility::makeInstance(FeatureService::class);
         $featureIds = [];
@@ -83,23 +86,25 @@ class BackendUserService
      */
     private function getBackendUserSettings(): ?array
     {
-        if (!$this->isBackendUserLoggedIn()) {
+
+        if(count($this->userSettings) > 0) {
+            return $this->userSettings;
+        }
+        if (!$this->isBackendUserAvailable()) {
             // TODO THIS IS AN WORKAROUND because the at some point the be user is not initialized
-            if (!$GLOBALS['BE_USER']) {
-                Bootstrap::initializeBackendUser();
-            }
+            \TYPO3\CMS\Core\Core\Bootstrap::initializeBackendUser();
             if (!$GLOBALS['BE_USER']) {
                 return [];
             }
         }
-
-        return $GLOBALS['BE_USER']->uc;
+        $this->userSettings = $GLOBALS['BE_USER']->uc;
+        return $this->uc;
     }
 
     /**
      * @return bool
      */
-    private function isBackendUserLoggedIn(): bool
+    private function isBackendUserAvailable(): bool
     {
         return $GLOBALS['BE_USER'] instanceof BackendUserAuthentication;
     }
