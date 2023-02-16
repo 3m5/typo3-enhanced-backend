@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace DMF\EnhancedBackend\Service;
 
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
-use TYPO3\CMS\Core\Configuration\Loader\YamlFileLoader;
+use TYPO3\CMS\Core\Core\Bootstrap;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -21,90 +21,79 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  **/
 
 /**
- * Service for handling theme, e.g. check is theme is active or getting list of all available themes
+ * Service for handling backend user settings
  */
 class BackendUserService
 {
+    // TODO move to more central place
     public const FIELD_NAME_PREFIX = 'enba';
-    public const FIELD_NAME_THEME = self::FIELD_NAME_PREFIX . '_theme';
-    public const FIELD_NAME_ACTIVE = self::FIELD_NAME_PREFIX . '_active';
-    public const FIELD_NAME_DARKMODE = self::FIELD_NAME_PREFIX . '_darkmode';
-    public const FIELD_VALUE_DARKMODE = 'darkmode';
-    public const FIELD_VALUE_LIGHTMODE = 'lightmode';
-    public const FIELD_VALUE_SYSTEMMODE = 'systemmode';
+    public const FIELD_NAME_PRESET = self::FIELD_NAME_PREFIX . '_preset';
+    public const YAML_CONFIG_FILE = 'EXT:enhanced-backend/Configuration/Yaml/Features.yaml';
 
-    public const YAML_CONFIG_FILE ='EXT:enhanced-backend/Configuration/Yaml/Features.yaml';
-
-
-    public static function addFieldsToUsersettings()
+    /**
+     * Add custom EnBa user settings
+     *
+     * @return void
+     */
+    public static function addFieldsToUserSettings()
     {
-        $yamlfileloader = new YamlFileLoader();
-        $config = $yamlfileloader->load(self::YAML_CONFIG_FILE);
-        if($groups = $config['groups'])
-        {
-            $ids =[];
-            foreach ($groups as $groupName => $group)
-            {
-                if($features = $group['features'])
-                {
-                    foreach ($features as $featureName => $feature)
-                    {
-                        $id = BackendUserService::FIELD_NAME_PREFIX.'_'.$groupName.'__'.$featureName;
-                        $GLOBALS['TYPO3_USER_SETTINGS']['columns'][$id] = [
-                            'label' => $feature['title'],
-                            'type' =>  $feature['type']
-                        ];
-                        $ids[] = $id;
-                    }
-                }
-            }
-            ExtensionManagementUtility::addFieldsToUserSettings(
-                '--div--;LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.enba.tab_label,'.implode(',',$ids)
-            );
+        $featureService = GeneralUtility::makeInstance(FeatureService::class);
+        $featureIds = [];
+        foreach ($featureService->getAllFeatures() as $feature) {
+            $GLOBALS['TYPO3_USER_SETTINGS']['columns'][$feature->getId()] = [
+                'label' => $feature->getTitle(),
+                // Not available at the moment in TCA user settings (Allowed values: button, check, password, select, text, user)
+                //  https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/Configuration/UserSettingsConfiguration/Columns.html
+                'description' => $feature->getDescription(),
+                'type' => $feature->getType()
+            ];
+            $featureIds[] = $feature->getId();
         }
-
+        ExtensionManagementUtility::addFieldsToUserSettings(
+            '--div--;LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.enba.tab_label,' . implode(',', $featureIds)
+        );
     }
 
     /**
+     * Get all active features by user settings of backend user for EnBa
+     *
+     * @return array
+     */
+    public function getFeatureSettings(): array
+    {
+        $allBeUserSettings = $this->getBackendUserSettings();
+        if (!$allBeUserSettings || count($allBeUserSettings) === 0) {
+            return [];
+        }
+
+        $featureSettings = [];
+        foreach ($allBeUserSettings as $userSettingIdentifier => $userSetting) {
+            if (!$this->isEnbaUserSettingById($userSettingIdentifier)) {
+                $featureSettings[$userSettingIdentifier] = $userSetting;
+            }
+        }
+
+        return $featureSettings;
+    }
+
+    /**
+     * Get all backend user settings
+     *
      * @return array|null
      */
-    public function getBackendUserSettings(): ?array
+    private function getBackendUserSettings(): ?array
     {
         if (!$this->isBackendUserLoggedIn()) {
-            return null;
+            // TODO THIS IS AN WORKAROUND because the at some point the be user is not initialized
+            if (!$GLOBALS['BE_USER']) {
+                Bootstrap::initializeBackendUser();
+            }
+            if (!$GLOBALS['BE_USER']) {
+                return [];
+            }
         }
 
         return $GLOBALS['BE_USER']->uc;
-    }
-
-    /**
-     * Gets the selected active theme set by user settings of backend user
-     *
-     * @return string|null
-     */
-    public function getActiveThemeName(): ?string
-    {
-        $userSettings = $this->getBackendUserSettings();
-        if ($userSettings && array_key_exists(self::FIELD_NAME_THEME, $userSettings)) {
-            return $userSettings[self::FIELD_NAME_THEME];
-        }
-        return null;
-    }
-
-
-
-    /**
-     * Get the selected dark mode set by user settings of the backend user
-     *
-     * @return string|null
-     */
-    public function getDarkMode(): ?string
-    {
-        $userSettings = $this->getBackendUserSettings();
-        if ($userSettings && array_key_exists(self::FIELD_NAME_DARKMODE, $userSettings)) {
-            return $userSettings[self::FIELD_NAME_DARKMODE];
-        }
-        return null;
     }
 
     /**
@@ -113,6 +102,17 @@ class BackendUserService
     private function isBackendUserLoggedIn(): bool
     {
         return $GLOBALS['BE_USER'] instanceof BackendUserAuthentication;
+    }
+
+    /**
+     * Checks if a user settings belongs to EnBa by convention
+     *
+     * @param string $userSettingsId
+     * @return bool
+     */
+    private function isEnBaUserSettingById(string $userSettingsId): bool
+    {
+        return (preg_match('~' . self::FIELD_NAME_PREFIX . '_[A-Za-z_]+$~', $userSettingsId) !== 1);
     }
 
 }

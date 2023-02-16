@@ -10,6 +10,9 @@ use TYPO3\CMS\Core\Localization\LanguageService;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Service\ImageService;
 
+/**
+ * @deprecated
+ */
 class ThemeUtility
 {
     /**
