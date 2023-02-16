@@ -14,7 +14,7 @@ class IconService
     public function setIcons(): array
     {
         //TODO: ersetze direkte Prüfung durch FeatureService
-        if ($GLOBALS['BE_USER']->uc['enba_global__enhancedIcons']) {
+        if ($GLOBALS['BE_USER']->uc['enba-global__enhancedIcons']) {
 
             return [
                 ### SIDEBAR

@@ -1,27 +1,33 @@
 groups:
   global:
     title: Global
-    Features:
-      - id: darkmode
+    features:
+      -
+        id: darkmode
         title: Darkmode
         description: Darkmode
         type: check
         preset:
-      - enhancedIcons:
+          - modern
+      -
+        id: enhancedIcons
         title: Optimierte Icons
         type: check
-        description:
+        description: bla
         preset:
+          - modern
   topbar:
     title: Header-Bereich
     features:
-      - id: sidebarToggle
+      -
+        id: sidebarToggle
         title: Icon Sidebar verschieben
         description: Icon am unteren Rand der Sidebar umpositionieren
         type: check
         preset:
           - modern
-      - id: customTitle
+      -
+        id: customTitle
         title: Custom Site title
         description: Custom Site title
         type: text
