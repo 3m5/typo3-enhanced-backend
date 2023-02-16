@@ -6,6 +6,8 @@ namespace DMF\EnhancedBackend\Service;
 
 use DMF\EnhancedBackend\Factory\FeatureFactory;
 use DMF\EnhancedBackend\Model\Feature;
+use TYPO3\CMS\Core\SingletonInterface;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  *
@@ -21,7 +23,7 @@ use DMF\EnhancedBackend\Model\Feature;
 /**
  * Managing features collected by configuration and user settings
  */
-class FeatureService
+class FeatureService implements SingletonInterface
 {
 
     /**
@@ -39,11 +41,11 @@ class FeatureService
      */
     protected array $features = [];
 
-    public function __construct(FeatureFactory $featureFactory, BackendUserService $backendUserService)
+    public function __construct()
     {
-        $this->featureFactory = $featureFactory;
-        $this->backendUserService = $backendUserService;
-        $this->features = $featureFactory->create();
+        $this->featureFactory = GeneralUtility::makeInstance(FeatureFactory::class);;
+        $this->backendUserService = GeneralUtility::makeInstance(BackendUserService::class);
+        $this->features = $this->featureFactory->create();
         $this->setActiveStatesByBackendUser();
     }
 

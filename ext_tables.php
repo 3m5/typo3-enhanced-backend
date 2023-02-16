@@ -2,15 +2,15 @@
 
 use DMF\EnhancedBackend\Hooks\BackendStyles;
 use DMF\EnhancedBackend\Service\BackendUserService;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 defined('TYPO3') || die();
 
-(static function () {
-
+(function () {
     // Extend user settings
-    BackendUserService::addFieldsToUserSettings();
+    $backendUserService = GeneralUtility::makeInstance(BackendUserService::class);
+    $backendUserService->addFieldsToUserSettings();
 
     // Add frontend files and body classes
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_pagerenderer.php']['render-preProcess'][] = BackendStyles::class.'->addEnBaFrontendFiles';
-
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_pagerenderer.php']['render-preProcess'][] = BackendStyles::class . '->addEnBaFrontendFiles';
 })();
