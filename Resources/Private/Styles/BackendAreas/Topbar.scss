@@ -1,12 +1,12 @@
-@import "Mixins/TopbarEnhanceSearchWidget";
-@import "Mixins/TopbarEnhanceWidgetOrder";
+@import "Mixins/TopbarEnhancedSearchWidget";
+@import "Mixins/TopbarEnhancedWidgetOrder";
 
-.topbar {
-    &__enhanceSearchWidget {
-        @include topbar__enhanceSearchWidget;
+.enba-topbar {
+    &__enhancedSearchWidget {
+        @include topbar__enhancedSearchWidget;
     }
-    &__enhanceWidgetOrder {
-        @include topbar__enhanceWidgetOrder;
+    &__enhancedWidgetOrder {
+        @include topbar__enhancedWidgetOrder;
     }
 }
 

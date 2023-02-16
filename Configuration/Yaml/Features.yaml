@@ -2,13 +2,6 @@ groups:
   global:
     title: Global
     features:
-#      -
-#        id: darkmode
-#        title: Darkmode
-#        description: Darkmode
-#        type: check
-#        preset:
-#          - modern
       -
         id: enhancedIcons
         title: Optimierte Icons
@@ -23,6 +16,14 @@ groups:
         description: Verwende die optimierte Schriftart "Inter" für eine bessere Darstellung von Elementen und Texten.
         preset:
           - modern
+      -
+        id: enhancedScrollbars
+        title: Optimierte Scrollbalken
+        type: check
+        description: Verwende diese Option, um Scrollbalken dezenter zu gestalten und diese optisch in den Hintergrund zu rücken.
+        preset:
+          - vanilla
+          - modern
   topbar:
     title: Header-Bereich
     features:
@@ -33,6 +34,21 @@ groups:
         type: text
         preset:
           - vanilla
+          - modern
+      -
+        id: enhancedSearchWidget
+        title: Optimiertes Suchfeld
+        description: Das Suchfeld wird mehr in den Fokus gerückt und moderner gestaltet.
+        type: check
+        preset:
+          - vanilla
+          - modern
+      -
+        id: enhancedWidgetOrder
+        title: Icons rechts umsortieren
+        description: Der Nutzername wird in die rechte obere Ecke gerückt, so wie es Nutzer aus anderen Anwendungen gewohnt sind.
+        type: check
+        preset:
           - modern
   sidebar:
     title: Seitenleiste

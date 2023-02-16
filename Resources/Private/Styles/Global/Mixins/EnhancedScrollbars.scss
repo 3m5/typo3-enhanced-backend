@@ -1,4 +1,4 @@
-@mixin global__scrollbars {
+@mixin global__enhancedScrollbars {
     body::-webkit-scrollbar {
         width: 5px; /* width of the entire scrollbar */
     }

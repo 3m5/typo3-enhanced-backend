@@ -1,7 +1,7 @@
-@import "Mixins/Scrollbars";
+@import "Mixins/EnhancedScrollbars";
 
-.global {
-    &__scrollbars {
-       @include global__scrollbars;
+.enba-global {
+    &__enhancedScrollbars {
+       @include global__enhancedScrollbars;
     }
 }
