@@ -1,6 +1,10 @@
 @mixin sidebar__collapseButtonPosition {
     .scaffold-modulemenu {
         z-index: 100;
+
+        .modulemenu {
+            margin-bottom: 55px;
+        }
     }
 
     .topbar-header {
@@ -8,6 +12,8 @@
     }
 
     .topbar-button {
+        height: 55px;
+
         &.topbar-button-modulemenu {
             position: fixed;
             bottom: 0;
