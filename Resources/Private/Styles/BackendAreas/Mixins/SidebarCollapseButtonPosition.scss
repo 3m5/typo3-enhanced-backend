@@ -1,5 +1,8 @@
-@mixin sidebar__enhanceTogglePosition {
-    /** change toggle button position in sidebar **/
+@mixin sidebar__collapseButtonPosition {
+    .scaffold-modulemenu {
+        z-index: 100;
+    }
+
     .topbar-header {
         padding-left: 0;
     }
