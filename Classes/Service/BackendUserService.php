@@ -92,8 +92,8 @@ class BackendUserService implements SingletonInterface
         }
         if (!$this->isBackendUserAvailable()) {
             // TODO THIS IS AN WORKAROUND because the at some point the be user is not initialized
-            Bootstrap::initializeBackendUser();
-            if (!$this->isBackendUserAvailable()) {
+            \TYPO3\CMS\Core\Core\Bootstrap::initializeBackendUser();
+            if (!$GLOBALS['BE_USER']) {
                 return [];
             }
         }
