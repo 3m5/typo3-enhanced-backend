@@ -59,6 +59,12 @@ groups:
         type: check
         preset:
           - modern
+      - id: changeIconColors
+        title: Icons in einheitlicher Farbe anzeigen
+        description: Die Icons in der Seitenleiste werden entfärbt und lenken dadurch weniger vom Inhaltsbereich ab. Außerdem werden die einzelnen Bereiche optisch sauberer getrennt.
+        type: check
+        preset:
+          - modern
   pageTree:
     title: Seitenbaum
   contentNavigation:
