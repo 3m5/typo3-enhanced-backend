@@ -1,12 +1,12 @@
-@import "Mixins/ChangeTypography";
-@import "Mixins/EnhanceIcons";
+@import "Mixins/EnhancedFont";
+@import "Mixins/EnhancedIcons";
 
-.global {
-    &__changeTypography {
-        @include global__changeTypography;
+.enba-global {
+    &__enhancedFont {
+        @include global__enhancedFont;
     }
 
-    &__enhanceIcons {
+    &__enhancedIcons {
         @include global__enhanceIcons;
     }
 }

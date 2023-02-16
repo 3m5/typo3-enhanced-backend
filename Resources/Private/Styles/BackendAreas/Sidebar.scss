@@ -1,12 +1,12 @@
-@import "Mixins/SidebarChangeIconColors";
-@import "Mixins/SidebarEnhanceTogglePosition";
+@import "Mixins/Sidebar/ChangeIconColors";
+@import "Mixins/Sidebar/CollapseButtonPosition";
 
-.sidebar {
+.enba-sidebar {
     &__changeIconColors {
         @include sidebar__changeIconColors;
     }
 
-    &__rearrangeToggleButton {
-        @include sidebar__enhanceTogglePosition;
+    &__collapseButtonPosition {
+        @include sidebar__collapseButtonPosition;
     }
 }

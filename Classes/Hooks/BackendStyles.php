@@ -56,7 +56,7 @@ class BackendStyles
 
     private function getDefaultCssFile()
     {
-        return GeneralUtility::getFileAbsFileName('EXT:enhanced-backend/Resources/Public/Styles/Vanilla.css');
+        return GeneralUtility::getFileAbsFileName('EXT:enhanced-backend/Resources/Public/Styles/Features.css');
     }
 
     private function getDefaultJsFile()

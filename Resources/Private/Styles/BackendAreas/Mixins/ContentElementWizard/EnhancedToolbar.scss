@@ -1,0 +1,55 @@
+@mixin contentElementWizard__enhancedToolbar {
+    .t3-new-content-element-wizard-window {
+        .panel {
+            margin-bottom: 0;
+        }
+
+        .input-group {
+            margin: 16px 0;
+
+            &-addon {
+                background: transparent;
+                border: none;
+                padding-left: 5px;
+            }
+
+            .t3js-contentWizard-search {
+                border: none;
+                border-bottom: 1px solid #dedede;
+                box-shadow: none;
+                background-color: transparent;
+                max-width: 300px;
+            }
+        }
+
+        .t3js-tabs {
+            border-bottom-color: #dedede;
+            margin: .75rem .75rem 0; // equals original padding
+            padding: 0; // in this way, the border bottom gets some nice spacing
+            justify-content: space-evenly;
+        }
+
+        .t3js-icon.icon-default-not-found {
+            filter: saturate(0) brightness(2);
+        }
+
+        .t3js-tabmenu-item {
+            .nav-link {
+                border-bottom: 1px solid #dedede;
+                &.active {
+                    border: none;
+                    color: $typo3-color;
+                    border-bottom: 2px solid $typo3-color;
+                    background-color: transparent;
+                }
+
+                &:hover {
+                    background-color: transparent;
+                    border-color: transparent;
+                    border-bottom-color: $typo3-color;
+                    color: $typo3-color;
+                }
+            }
+        }
+    }
+}

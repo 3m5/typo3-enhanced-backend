@@ -1,0 +1,113 @@
+@mixin contentArea__enhancedOverviewUI {
+
+    .module-body {
+        .t3js-title-inlineedit {
+            margin-bottom: 0;
+        }
+
+        // change CE-Header color
+        .t3-page-ce .t3-page-ce-header {
+            background-color: transparent;
+        }
+
+        // set headline in top bar of content element
+        .t3-page-ce-body-inner .exampleContent {
+            img {
+                margin: 5px 5px 5px 0;
+            }
+
+            .icon-markup img {
+                margin: 0;
+            }
+        }
+
+        // change content element borders
+        .t3-page-ce {
+            * {
+                border: none;
+                border-spacing: 10px 0;
+            }
+
+            &-dragitem {
+                border: 1px dashed #777;
+
+                &:hover {
+                    border-left: 1px solid #777;
+                }
+            }
+
+            .t3-page-ce-body {
+                margin-bottom: 0;
+            }
+
+            &-header, &-body {
+                border: none;
+            }
+
+            &-footer {
+                color: #777;
+            }
+
+            &:hover {
+                .t3-page-ce-header, .t3-page-ce-body {
+                    box-shadow: none;
+                }
+            }
+        }
+
+        // change button appearance between content elements
+        .t3-page-ce-wrapper-new-ce {
+            margin-top: 10px;
+
+            .btn {
+                background: transparent;
+                border: 1px solid #ccc;
+                border-radius: 50%;
+                height: 35px;
+                width: 35px;
+                font-size: 0; // hides text "Content"
+
+                &:hover {
+                    background-color: $typo3-color;
+                    color: white;
+                    border-color: $typo3-color;
+                }
+            }
+        }
+
+        .callout {
+            margin-top: 0;
+        }
+
+        // style warnings
+        .alert, .callout {
+            background-color: white;
+            color: black;
+            border: 1px ridge;
+
+            .fa-circle {
+                opacity: 1 !important;
+            }
+        }
+
+        .alert {
+            border-color: var(--bs-alert-bg);
+
+            .fa-circle {
+                &::before {
+                    color: var(--bs-alert-bg);
+                }
+            }
+        }
+
+        .callout {
+            border-color: #6daae0;
+
+            .fa-circle {
+                &::before {
+                    color: #6daae0;
+                }
+            }
+        }
+    }
+}

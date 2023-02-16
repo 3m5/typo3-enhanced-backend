@@ -3,29 +3,30 @@ groups:
     title: Global
     features:
       -
-        id: darkmode
-        title: Darkmode
-        description: Darkmode
-        type: check
-        preset:
-          - modern
-      -
         id: enhancedIcons
         title: Optimierte Icons
         type: check
-        description: bla
+        description: Tausche die Standard-Icons von TYPO3 mit einem modernen und benutzerfreundlichen Iconset aus.
         preset:
+          - modern
+      -
+        id: enhancedFont
+        title: Optimierte Schriftart
+        type: check
+        description: Verwende die optimierte Schriftart "Inter" für eine bessere Darstellung von Elementen und Texten.
+        preset:
+          - modern
+      -
+        id: enhancedScrollbars
+        title: Optimierte Scrollbalken
+        type: check
+        description: Verwende diese Option, um Scrollbalken dezenter zu gestalten und diese optisch in den Hintergrund zu rücken.
+        preset:
+          - vanilla
           - modern
   topbar:
     title: Header-Bereich
     features:
-      -
-        id: sidebarToggle
-        title: Icon Sidebar verschieben
-        description: Icon am unteren Rand der Sidebar umpositionieren
-        type: check
-        preset:
-          - modern
       -
         id: customTitle
         title: Custom Site title
@@ -34,15 +35,86 @@ groups:
         preset:
           - vanilla
           - modern
+      -
+        id: enhancedSearchWidget
+        title: Optimiertes Suchfeld
+        description: Das Suchfeld wird mehr in den Fokus gerückt und moderner gestaltet.
+        type: check
+        preset:
+          - vanilla
+          - modern
+      -
+        id: enhancedWidgetOrder
+        title: Icons rechts umsortieren
+        description: Der Nutzername wird in die rechte obere Ecke gerückt, so wie es Nutzer aus anderen Anwendungen gewohnt sind.
+        type: check
+        preset:
+          - modern
   sidebar:
     title: Seitenleiste
+    features:
+      - id: collapseButtonPosition
+        title: Seitenlisten-Einklapp-Button an unteren Rand verschieben
+        description: Positioniert den Button zum Einklappen der Seitenleiste von der linken oberen Ecke an das Ende der Seitenleiste.
+        type: check
+        preset:
+          - modern
+      - id: changeIconColors
+        title: Icons in einheitlicher Farbe anzeigen
+        description: Die Icons in der Seitenleiste werden entfärbt und lenken dadurch weniger vom Inhaltsbereich ab. Außerdem werden die einzelnen Bereiche optisch sauberer getrennt.
+        type: check
+        preset:
+          - modern
   pageTree:
     title: Seitenbaum
+    features:
+      - id: enhancedToolbarUI
+        title: Toolbar über Seitenbaum optimieren
+        description: Buttons erhalten mehr Abstände, um besser klickbar zu sein. Das Suchfeld wird moderner angezeigt.
+        type: check
+        preset:
+          - vanilla
+          - modern
   contentNavigation:
     title: Inhaltsnavigation
   contentArea:
     title: Inhaltsbereich
+    features:
+      - id: enhancedOverviewUI
+        title: Inhaltsbereich optimieren
+        description: TODO
+        type: check
+        preset:
+          - vanilla
+          - modern
+      - id: enhancedContentElementPositioning
+        title: Komprimierte Ansicht von Inhaltselementen
+        description: Buttons und Titel werden repositioniert für einen besseren Überblick. Außerdem sind alle Flaggen ausgeblendet, um Redundanz zu verringern.
+        type: check
+        preset:
+          - modern
+      - id: enhancedToolbar
+        title: Optimierte Toolbar
+        description: Abstände sind im Einklang mit der Toolbar des Seitenbaums. Größere Klickflächen erleichtern die Arbeit.
+        type: check
+        preset:
+          - vanilla
+          - modern
   contentElementWizard:
     title: Inhaltselementwizard
+    features:
+      - id: enhancedToolbar
+        title: Optimierte Toolbar
+        description: Buttons und Titel werden repositioniert für einen besseren Überblick. Außerdem sind alle Flaggen ausgeblendet, um Redundanz zu verringern.
+        type: check
+        preset:
+          - vanilla
+          - modern
+      - id: enhancedUI
+        title: Kachelansicht
+        description: Beschreibungstexte sind als Tooltips verfügbar, Icons und Überschriften stehen im Fokus.
+        type: check
+        preset:
+          - modern
 
 

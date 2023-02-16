@@ -1,0 +1,38 @@
+@mixin contentElementWizard__enhancedUI {
+    .t3-new-content-element-wizard-window {
+        .model-content {
+            max-width: 750px;
+        }
+
+        .media-new-content-element-wizard {
+            width: 25% !important;
+            text-align: center;
+
+            .media {
+                display: block;
+                margin: 0 auto;
+                padding: 24px 16px !important;
+                width: 100%;
+                transition: all 0.3s;
+
+                &:hover {
+                    background-color: #dfdfdf;
+                    text-decoration: none;
+                }
+
+                &-left, &-body {
+                    text-align: center;
+                }
+
+                &-body {
+                    font-size: 0;
+                    margin-top: 12px;
+
+                    strong {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
