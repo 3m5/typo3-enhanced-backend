@@ -21,7 +21,8 @@ $typo3-color: #ff8700;
 @import "BackendAreas/Mixins/TopbarEnhanceWidgetOrder";
 @import "BackendAreas/Mixins/SidebarEnhanceTogglePosition";
 @import "UserSettings/UserSettings";
-@import "BackendAreas/Mixins/ContentTree";
+
+@import "BackendAreas/ContentTree";
 
 @font-face {
     font-family: 'Inter Regular';
