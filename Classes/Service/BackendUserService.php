@@ -85,9 +85,9 @@ class BackendUserService
     {
         if (!$this->isBackendUserLoggedIn()) {
             // TODO THIS IS AN WORKAROUND because the at some point the be user is not initialized
-            if (!$GLOBALS['BE_USER']) {
-                Bootstrap::initializeBackendUser();
-            }
+ //           if (!$GLOBALS['BE_USER']) {
+ //               Bootstrap::initializeBackendUser();
+ //           }
             if (!$GLOBALS['BE_USER']) {
                 return [];
             }

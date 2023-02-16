@@ -6,9 +6,9 @@ class IconService
 {
     public function __construct()
     {
-        if (!$GLOBALS['BE_USER']) {
-            \TYPO3\CMS\Core\Core\Bootstrap::initializeBackendUser();
-        }
+ //       if (!$GLOBALS['BE_USER']) {
+ //           \TYPO3\CMS\Core\Core\Bootstrap::initializeBackendUser();
+ //       }
     }
 
     public function setIcons(): array
