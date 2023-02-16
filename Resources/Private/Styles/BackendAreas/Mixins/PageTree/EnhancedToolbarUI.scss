@@ -1,7 +1,7 @@
 @mixin pagetree__enhancedToolbarUI {
     .svg-tree-loader {
         top: 83px;
-        height: calc(100% - 83px);
+        height: calc(100% - 81.5px);
     }
 
     .tree-toolbar {
@@ -20,7 +20,7 @@
                 display: flex; justify-content: space-between;
 
                 .svg-toolbar__menuitem {
-                    padding: 8px;
+                    padding: 6px;
                     transition: 0.4s all;
 
                     &:hover {
