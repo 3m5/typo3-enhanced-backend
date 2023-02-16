@@ -1,17 +1,10 @@
 @font-face {
-    font-family: 'Inter Regular';
-    src: url('../../Public/Static/Font/Inter-Regular.woff2?20230214') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Inter Bold';
-    src: url('../../Public/Static/Font/Inter-Bold.woff2?20230216') format('woff2');
+    font-family: 'Inter';
+    src: url('../../Public/Static/Font/Inter-VariableFont.woff2?20230216') format('woff2');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 $typo3-color: #ff8700;
+$nice-grey: #e1e1e1; // only notice for nicoles further work

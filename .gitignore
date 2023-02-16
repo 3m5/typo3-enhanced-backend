@@ -23,6 +23,3 @@
 /typo3temp/
 # Ignore IDE settings
 .idea
-Resources/Private/Styles/Vanilla.css.map
-Resources/Private/Styles/Dark.css.map
-Resources/Private/Styles/Enhanced.css.map

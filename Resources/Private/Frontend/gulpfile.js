@@ -11,10 +11,9 @@ const webpack = require("webpack-stream");
 const destCss = "../../Public/Styles";
 
 const sourceCss = [
-         '../Styles/Vanilla.scss',
          '../Styles/Dark.scss',
          '../Styles/Features.scss'
-    ]
+];
 
 // handle arguments
 const argv = require('yargs').option({
