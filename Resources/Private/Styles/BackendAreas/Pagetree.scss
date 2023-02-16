@@ -1,7 +1,7 @@
-@import "Mixins/PagetreeEnhanceToolbarUI";
+@import "Mixins/PagetreeEnhancedToolbarUI";
 
-.pagetree {
-    &__enhanceToolbarUI {
-        @include pagetree__enhanceToolbarUI;
+.enba-pageTree {
+    &__enhancedToolbarUI {
+        @include pagetree__enhancedToolbarUI;
     }
 }

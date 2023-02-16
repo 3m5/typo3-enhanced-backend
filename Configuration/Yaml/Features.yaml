@@ -67,6 +67,14 @@ groups:
           - modern
   pageTree:
     title: Seitenbaum
+    features:
+      - id: enhancedToolbarUI
+        title: Toolbar über Seitenbaum optimieren
+        description: Buttons erhalten mehr Abstände, um besser klickbar zu sein. Das Suchfeld wird moderner angezeigt.
+        type: check
+        preset:
+          - vanilla
+          - modern
   contentNavigation:
     title: Inhaltsnavigation
   contentArea:
