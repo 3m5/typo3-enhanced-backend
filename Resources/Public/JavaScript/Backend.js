@@ -7,7 +7,7 @@ function buildContentTree() {
     const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
     const $pageNavigation = document.querySelector('.t3js-scaffold-content-navigation');
 
-    if (iframeDoc.readyState == 'complete' && !!$pageNavigation) {
+    if (iframeDoc.readyState === 'complete' && !!$pageNavigation) {
       createContentTreeHTML();
     } else {
       window.setTimeout(buildContentTree, 1000);
@@ -15,24 +15,37 @@ function buildContentTree() {
   }
 }
 
-function createContentTreeHTML() {
-  const $pageNavigation = document.querySelector('.t3js-scaffold-content-navigation');
-  const contentTree = document.createElement("div");
-  contentTree.classList.add('content-tree');
-  contentTree.innerHTML = '<label class="content-tree__headline">Content Tree</label>';
-
+function createTreeList(elements, treeParent, iterateFurther) {
   // Create an empty string to store the HTML list
   const htmlList = document.createElement("ul");
 
-  const contentArea = document.getElementById("typo3-contentIframe").contentWindow.document;
-  const gridElements = contentArea.querySelectorAll(".t3-grid-cell");
-  for (let i = 0; i < gridElements.length; i++) {
+  for (let i = 0; i < elements.length; i++) {
     const listEntry = document.createElement("li");
-    listEntry.innerHTML = gridElements[i].querySelector('.t3-page-column-header').textContent;
+
+    if(iterateFurther) {
+      const subList = createTreeList(elements[i].querySelectorAll('.t3-page-ce'), listEntry, false);
+      //listEntry.innerHTML = elements[i].querySelector('.t3-page-column-header').textContent;
+      listEntry.appendChild(subList);
+    } else {
+      //listEntry.innerHTML = elements[i].querySelector('.t3-page-column-header').textContent;
+    }
+
     htmlList.append(listEntry);
   }
+  treeParent.append(htmlList);
 
-  contentTree.append(htmlList);
+  return treeParent;
+}
+
+function createContentTreeHTML() {
+  const $pageNavigation = document.querySelector('.t3js-scaffold-content-navigation');
+  let contentTree = document.createElement("div");
+  contentTree.classList.add('content-tree');
+  contentTree.innerHTML = '<label class="content-tree__headline">Content Tree</label>';
+
+  const contentArea = document.getElementById("typo3-contentIframe").contentWindow.document;
+  const gridElements = contentArea.querySelectorAll(".t3-grid-cell");
+  contentTree = createTreeList(gridElements, contentTree, true);
   $pageNavigation.append(contentTree);
 }
 
