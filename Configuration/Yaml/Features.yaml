@@ -100,6 +100,13 @@ groups:
         preset:
           - vanilla
           - modern
+      - id: enhancedEditingForm
+        title: Optimiertes Formular "Bearbeiten"
+        description: TBD
+        type: check
+        preset:
+          - vanilla
+          - modern
   contentElementWizard:
     title: Inhaltselementwizard
     features:

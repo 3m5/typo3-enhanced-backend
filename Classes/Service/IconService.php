@@ -107,12 +107,12 @@ class IconService
                 # create new page
                 'apps-pagetree-page-default' => [
                     'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/FilePlus.svg',
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/File.svg',
                 ],
                 # create new folder
                 'apps-pagetree-folder-default' => [
                     'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/FolderPlus.svg',
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Folder.svg',
                 ],
                 # add bin
                 'apps-pagetree-page-recycler' => [
@@ -241,7 +241,7 @@ class IconService
                     'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
                     'source' => 'EXT:enhanced-backend/Resources/Public/Icons/SortAscending.svg',
                 ],
-                ### User
+                ### USER
                 # User settings
                 'module-setup' => [
                     'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
@@ -251,6 +251,17 @@ class IconService
                 'actions-logout' => [
                     'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
                     'source' => 'EXT:enhanced-backend/Resources/Public/Icons/SignOut.svg',
+                ],
+                ### CONTENT AREA
+                # Tag
+                'ext-news-tag' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Tag.svg',
+                ],
+                # Plugin
+                'mimetypes-x-content-plugin' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/PuzzlePiece.svg',
                 ],
             ];
         }

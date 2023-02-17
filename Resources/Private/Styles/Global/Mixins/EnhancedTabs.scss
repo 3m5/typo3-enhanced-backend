@@ -1,0 +1,26 @@
+@mixin global__enhancedTabs {
+    .t3js-tabs {
+        border-bottom-color: #dedede;
+        padding: 0; // in this way, the border bottom gets some nice spacing
+        justify-content: space-evenly;
+    }
+
+    .t3js-tabmenu-item {
+        .nav-link {
+            border-bottom: 1px solid #dedede;
+            &.active {
+                border: none;
+                color: $typo3-color;
+                border-bottom: 2px solid $typo3-color;
+                background-color: transparent;
+            }
+
+            &:hover {
+                background-color: transparent;
+                border-color: transparent;
+                border-bottom-color: $typo3-color;
+                color: $typo3-color;
+            }
+        }
+    }
+}
