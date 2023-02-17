@@ -160,6 +160,42 @@ class IconService
                     'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
                     'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Eye.svg',
                 ],
+                ### CONTEXT MENU
+                # Info
+                'actions-document-info' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Info.svg',
+                ],
+                # Cut
+                'actions-edit-cut' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Scissors.svg',
+                ],
+                # Copy Page
+                'actions-edit-copy' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Copy.svg',
+                ],
+                # Show history
+                'actions-document-history-open' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/ClockCounterClockwise.svg',
+                ],
+                # New Subpage
+                'actions-page-new' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/FilePlus.svg',
+                ],
+                # Action paste into
+                'actions-document-paste-into' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Clipboard.svg',
+                ],
+                # Action paste after
+                'actions-document-paste-after' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/ListPlus.svg',
+                ],
 
             ];
         }
