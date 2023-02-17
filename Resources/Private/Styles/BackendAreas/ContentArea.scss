@@ -1,6 +1,7 @@
 @import "Mixins/ContentArea/EnhancedOverviewUI";
 @import "Mixins/ContentArea/EnhancedContentElementPositioning";
 @import "Mixins/ContentArea/EnhancedToolbar";
+@import "Mixins/ContentArea/EnhancedEditingForm";
 
 .enba-contentArea {
     &__enhancedOverviewUI {
@@ -13,5 +14,9 @@
 
     &__enhancedOverviewUI {
         @include contentArea__enhancedToolbar;
+    }
+
+    &__enhancedEditingForm {
+        @include contentArea__enhancedEditingForm;
     }
 }

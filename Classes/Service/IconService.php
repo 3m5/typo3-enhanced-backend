@@ -35,6 +35,11 @@ class IconService
                     'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
                     'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Bookmark-simple.svg',
                 ],
+                # bookmark page content
+                'module-page' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/FileText.svg',
+                ],
                 # cache
                 'apps-toolbar-menu-cache' => [
                     'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
@@ -89,16 +94,26 @@ class IconService
                     'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
                     'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Link.svg',
                 ],
+                # Help
+                'actions-system-help-open' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Question.svg',
+                ],
+                # Share
+                'actions-share-alt' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/ShareNetwork.svg',
+                ],
                 ### PAGE TREE
                 # create new page
                 'apps-pagetree-page-default' => [
                     'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/FilePlus.svg',
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/File.svg',
                 ],
                 # create new folder
                 'apps-pagetree-folder-default' => [
                     'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
-                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/FolderPlus.svg',
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Folder.svg',
                 ],
                 # add bin
                 'apps-pagetree-page-recycler' => [
@@ -140,6 +155,16 @@ class IconService
                     'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
                     'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Trash.svg',
                 ],
+                # collapse page tree
+                'apps-pagetree-category-collapse-all' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/ArrowsInLineVertical.svg',
+                ],
+                # reload
+                'actions-refresh' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/ArrowClockwise.svg',
+                ],
                 ### TOOL BAR
                 # edit save
                 'actions-document-save' => [
@@ -161,7 +186,84 @@ class IconService
                     'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
                     'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Eye.svg',
                 ],
-
+                ### CONTEXT MENU
+                # Info
+                'actions-document-info' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Info.svg',
+                ],
+                # Cut
+                'actions-edit-cut' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Scissors.svg',
+                ],
+                # Copy Page
+                'actions-edit-copy' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Copy.svg',
+                ],
+                # Show history
+                'actions-document-history-open' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/ClockCounterClockwise.svg',
+                ],
+                # New Subpage
+                'actions-page-new' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/FilePlus.svg',
+                ],
+                # Action paste into
+                'actions-document-paste-into' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Clipboard.svg',
+                ],
+                # Action paste after
+                'actions-document-paste-after' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/ListPlus.svg',
+                ],
+                # Export
+                'actions-document-export-t3d' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Export.svg',
+                ],
+                # Import
+                'actions-document-import-t3d' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/ArrowSquareIn.svg',
+                ],
+                # Create multiple pages
+                'apps-pagetree-drag-move-between' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Files.svg',
+                ],
+                # Sort subpages
+                'actions-page-move' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/SortAscending.svg',
+                ],
+                ### USER
+                # User settings
+                'module-setup' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Gear.svg',
+                ],
+                # Logout
+                'actions-logout' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/SignOut.svg',
+                ],
+                ### CONTENT AREA
+                # Tag
+                'ext-news-tag' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Tag.svg',
+                ],
+                # Plugin
+                'mimetypes-x-content-plugin' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/PuzzlePiece.svg',
+                ],
             ];
         }
         return [];

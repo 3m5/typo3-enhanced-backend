@@ -1,0 +1,48 @@
+@import "../../../Global/Mixins/EnhancedTabs";
+
+@mixin contentArea__enhancedEditingForm {
+    .module-body {
+        @include global__enhancedTabs;
+        .t3js-tabmenu-item {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-top: 8px;
+        }
+
+        .form-wizards-element {
+            .form-select {
+                width: 100%;
+            }
+
+            .input-group {
+                flex-wrap: nowrap;
+            }
+        }
+
+        .form-control {
+            border-radius: 0;
+
+            &:focus {
+                box-shadow: none;
+                outline: 1px solid $typo3-blue;
+            }
+        }
+
+        .form-section {
+            border: 1px dashed $grey--border;
+        }
+
+        .tab-pane {
+            .form-section:first-child {
+                border-top: none;
+            }
+        }
+
+        .form-control-wrap {
+            max-width: MAX(66%, 804px) !important; // 804px is the width, that is randomly set with js
+        }
+    }
+}

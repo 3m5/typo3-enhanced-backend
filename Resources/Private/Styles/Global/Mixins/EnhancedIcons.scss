@@ -69,4 +69,25 @@ $icon-size--phosphor: 20px;
             transform: scale(1.1);
         }
     }
+
+    // Colored Icons in Buttons or dropdowns
+    .dashboard-button {
+        .icon svg {
+            @include svg-color--white;
+        }
+    }
+
+    .dropdown-menu {
+        .icon {
+            margin-right: 4px;
+
+            svg, img, {
+                @include svg-color--white;
+            }
+        }
+
+        typo3-backend-icon {
+            @include svg-color--white;
+        }
+    }
 }

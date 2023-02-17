@@ -29,10 +29,10 @@
             }
 
             &-dragitem {
-                border: 1px dashed #777;
+                border: 1px dashed $grey--border;
 
                 &:hover {
-                    border-left: 1px solid #777;
+                    border-left: 1px solid $grey--border;
                 }
             }
 
@@ -45,7 +45,7 @@
             }
 
             &-footer {
-                color: #777;
+                color: $grey--border;
             }
 
             &:hover {
