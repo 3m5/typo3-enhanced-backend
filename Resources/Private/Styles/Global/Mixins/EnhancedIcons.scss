@@ -70,7 +70,7 @@ $icon-size--phosphor: 20px;
         }
     }
 
-    // Page Tree
+    // Colored Icons in Buttons or dropdowns
     .dashboard-button {
         .icon svg {
             @include svg-color--white;
@@ -79,9 +79,15 @@ $icon-size--phosphor: 20px;
 
     .dropdown-menu {
         .icon {
-            svg, img {
+            margin-right: 4px;
+
+            svg, img, {
                 @include svg-color--white;
             }
+        }
+
+        typo3-backend-icon {
+            @include svg-color--white;
         }
     }
 }
