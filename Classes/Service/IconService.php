@@ -88,6 +88,16 @@ class IconService
                     'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
                     'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Link.svg',
                 ],
+                # Help
+                'actions-system-help-open' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Question.svg',
+                ],
+                # Share
+                'actions-share-alt' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/ShareNetwork.svg',
+                ],
                 ### PAGE TREE
                 # create new page
                 'apps-pagetree-page-default' => [
@@ -196,7 +206,17 @@ class IconService
                     'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
                     'source' => 'EXT:enhanced-backend/Resources/Public/Icons/ListPlus.svg',
                 ],
-
+                ### User
+                # User settings
+                'module-setup' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/Gear.svg',
+                ],
+                # Logout
+                'actions-logout' => [
+                    'provider' => \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+                    'source' => 'EXT:enhanced-backend/Resources/Public/Icons/SignOut.svg',
+                ],
             ];
         }
         return [];

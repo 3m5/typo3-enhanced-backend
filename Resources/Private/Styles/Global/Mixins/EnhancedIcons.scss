@@ -69,4 +69,19 @@ $icon-size--phosphor: 20px;
             transform: scale(1.1);
         }
     }
+
+    // Page Tree
+    .dashboard-button {
+        .icon svg {
+            @include svg-color--white;
+        }
+    }
+
+    .dropdown-menu {
+        .icon {
+            svg, img {
+                @include svg-color--white;
+            }
+        }
+    }
 }

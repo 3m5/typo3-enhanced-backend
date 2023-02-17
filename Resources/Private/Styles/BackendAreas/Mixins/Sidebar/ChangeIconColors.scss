@@ -35,6 +35,7 @@
 
                     .modulemenu-icon {
                         svg {
+                            filter: saturate(1);
                             > path:first-child,
                             rect:first-of-type,
                             g,
@@ -78,6 +79,8 @@
 
     .modulemenu-icon, .card-icon {
         svg {
+            filter: saturate(0);
+
             > path:first-child,
             rect:first-of-type,
             g,
