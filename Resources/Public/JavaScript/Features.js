@@ -45,7 +45,6 @@ function createTreeList(elements, treeParent, iterateFurther) {
       }
     }
 
-    console.log(listEntry)
     htmlList.append(listEntry);
   }
   treeParent.append(htmlList);
@@ -75,7 +74,7 @@ function watchContentIframe() {
       // Code is executed in an iframe
     } else {
       // Code is only executed in main HTML
-      console.log('rebuild content tree');
+      document.querySelector('.content-tree').remove();
       buildContentTree();
     }
   });
