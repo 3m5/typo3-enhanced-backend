@@ -1,3 +1,9 @@
+function stringToHTML(htmlString) {
+  const dom = document.createElement('div');
+  dom.innerHTML = htmlString;
+  return dom;
+}
+
 function buildContentTree() {
   const iframe = document.querySelector('#typo3-contentIframe');
 
@@ -9,6 +15,7 @@ function buildContentTree() {
 
     if (iframeDoc.readyState === 'complete' && !!$pageNavigation) {
       createContentTreeHTML();
+      watchContentIframe();
     } else {
       window.setTimeout(buildContentTree, 1000);
     }
@@ -31,8 +38,11 @@ function createTreeList(elements, treeParent, iterateFurther) {
       //listEntry.appendChild(subList);
       //listEntry.appendChild(subList);
     } else {
-      //console.log(elements[i].querySelector('.t3-page-ce-dragitem .exampleContent strong').innerHTML);
-      listEntry.innerHTML = elements[i].querySelector('.t3-page-ce-dragitem .exampleContent strong') ? elements[i].querySelector('.t3-page-ce-dragitem .exampleContent strong').innerHTML : '';
+      let linkInIframe = elements[i].querySelector('.t3-page-ce-dragitem .exampleContent strong') ? stringToHTML(elements[i].querySelector('.t3-page-ce-dragitem .exampleContent strong').innerHTML) : '';
+      if(!!linkInIframe) {
+        linkInIframe.querySelector('a') ? linkInIframe.querySelector('a').setAttribute('target', 'list_frame') : linkInIframe;
+        listEntry.innerHTML = linkInIframe.innerHTML;
+      }
     }
 
     console.log(listEntry)
@@ -52,12 +62,23 @@ function createContentTreeHTML() {
   const contentArea = document.getElementById("typo3-contentIframe").contentWindow.document;
   const gridElements = contentArea.querySelectorAll(".t3-grid-cell");
   contentTree = createTreeList(gridElements, contentTree, true);
-  console.log('contenttree', contentTree);
   $pageNavigation.append(contentTree);
 }
 
 function reloadPage() {
   window.parent.location.reload();
+}
+
+function watchContentIframe() {
+  document.querySelector('#typo3-contentIframe').addEventListener('load', (event) => {
+    if (window.top !== window) {
+      // Code is executed in an iframe
+    } else {
+      // Code is only executed in main HTML
+      console.log('rebuild content tree');
+      buildContentTree();
+    }
+  });
 }
 
 window.addEventListener('load', (event) => {
@@ -74,6 +95,3 @@ window.addEventListener('load', (event) => {
     buildContentTree();
   }
 });
-
-
-
