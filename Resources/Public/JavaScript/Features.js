@@ -23,13 +23,19 @@ function createTreeList(elements, treeParent, iterateFurther) {
     const listEntry = document.createElement("li");
 
     if(iterateFurther) {
-      const subList = createTreeList(elements[i].querySelectorAll('.t3-page-ce'), listEntry, false);
-      //listEntry.innerHTML = elements[i].querySelector('.t3-page-column-header').textContent;
-      listEntry.appendChild(subList);
+      const subList = createTreeList(elements[i].querySelectorAll('.t3js-page-ce-sortable'), listEntry, false);
+      /*console.log('elements');
+      console.log(elements[i].querySelectorAll('.t3js-page-ce-sortable'));
+      console.log('sublist');
+      console.log(subList);*/
+      //listEntry.appendChild(subList);
+      //listEntry.appendChild(subList);
     } else {
-      //listEntry.innerHTML = elements[i].querySelector('.t3-page-column-header').textContent;
+      //console.log(elements[i].querySelector('.t3-page-ce-dragitem .exampleContent strong').innerHTML);
+      listEntry.innerHTML = elements[i].querySelector('.t3-page-ce-dragitem .exampleContent strong') ? elements[i].querySelector('.t3-page-ce-dragitem .exampleContent strong').innerHTML : '';
     }
 
+    console.log(listEntry)
     htmlList.append(listEntry);
   }
   treeParent.append(htmlList);
@@ -46,6 +52,7 @@ function createContentTreeHTML() {
   const contentArea = document.getElementById("typo3-contentIframe").contentWindow.document;
   const gridElements = contentArea.querySelectorAll(".t3-grid-cell");
   contentTree = createTreeList(gridElements, contentTree, true);
+  console.log('contenttree', contentTree);
   $pageNavigation.append(contentTree);
 }
 
