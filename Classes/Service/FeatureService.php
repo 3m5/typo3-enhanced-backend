@@ -6,6 +6,7 @@ namespace DMF\EnhancedBackend\Service;
 
 use DMF\EnhancedBackend\Factory\FeatureFactory;
 use DMF\EnhancedBackend\Model\Feature;
+use Psr\Log\LoggerInterface;
 use TYPO3\CMS\Core\SingletonInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -23,8 +24,9 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 /**
  * Managing features collected by configuration and user settings
  */
-class FeatureService implements SingletonInterface
-{
+class FeatureService implements SingletonInterface {
+    public const FIELD_NAME_PREFIX = 'enba';
+    public const YAML_CONFIG_FILE = 'EXT:enhanced-backend/Configuration/Yaml/Features.yaml';
 
     /**
      * @var FeatureFactory
@@ -32,44 +34,73 @@ class FeatureService implements SingletonInterface
     protected FeatureFactory $featureFactory;
 
     /**
-     * @var BackendUserService
+     * @var BackendUserService|null
      */
-    protected BackendUserService $backendUserService;
+    protected ?BackendUserService $backendUserService = null;
+
+    /**
+     * @var LoggerInterface
+     */
+    private LoggerInterface $logger;
 
     /**
      * @var Feature[]
      */
     protected array $features = [];
 
-    public function __construct()
+    /**
+     * @var bool
+     */
+    protected bool $activeByUserSettings = false;
+
+    /**
+     * @param LoggerInterface $logger
+     */
+    public function __construct(LoggerInterface $logger)
     {
-        $this->featureFactory = GeneralUtility::makeInstance(FeatureFactory::class);;
-        $this->backendUserService = GeneralUtility::makeInstance(BackendUserService::class);
+        $this->featureFactory = GeneralUtility::makeInstance(FeatureFactory::class);
+        $this->logger = $logger;
         $this->features = $this->featureFactory->create();
-        $this->setActiveStatesByBackendUser();
     }
 
-    private function setActiveStatesByBackendUser(): void
-    {
-        if (count($this->features) === 0) {
+    /**
+     * @return void
+     */
+    private function setActiveFeaturesByBackendUserSettings(): void {
+        if(count($this->features) === 0) {
+            $this->logger->debug('No Enba features available or not set');
             return;
         }
-        $userSettings = $this->backendUserService->getFeatureSettings();
-        if (count($userSettings) === 0) {
+
+        $backendUserService = $this->getBackendUserService();
+        $userSettings = $backendUserService->getBackendUserSettings();
+        if(count($userSettings) === 0) {
+            $this->logger->warning('Try to set active feature without backend user or user settings');
             return;
         }
         foreach ($userSettings as $userSettingId => $userSettingValue) {
-            $feature = $this->getFeatureById($userSettingId);
-            if (!$feature) {
+            if(!BackendUserService::isEnBaUserSettingById($userSettingId)) {
+                $this->logger->debug('UserSetting is not a enba-setting', [
+                    'userSettingId' => $userSettingId,
+                    'userSettingValue' => $userSettingValue,
+                ]);
                 continue;
             }
+            $feature = $this->getFeatureById($userSettingId);
+            if (!$feature) {
+                $this->logger->warning('Try to get an feature by userSettingsId that not exists', [
+                    'userSettingsId' => $userSettingId
+                ]);
+                continue;
+            }
+            // JSU I guess this can be shorter, better, more impressive ;)
             $feature->setActive(
                 $this->isActiveByType($feature, $userSettingValue)
             );
-            if ($feature->isActive()) {
-                $this->features[$feature->getId()] = $feature;
-            }
+            $this->features[$feature->getId()] = $feature;
         }
+        // At end, mark as set active features by user settings
+        $this->activeByUserSettings = true;
     }
 
     /**
@@ -116,6 +147,10 @@ class FeatureService implements SingletonInterface
      */
     public function getAllActiveFeatures(): array
     {
+        // Check if features set to active by user settings of backend user
+        if (!$this->activeByUserSettings) {
+            $this->setActiveFeaturesByBackendUserSettings();
+        }
         $activeFeatures = [];
         foreach ($this->features as $feature) {
             if ($feature->isActive()) {
@@ -149,4 +184,13 @@ class FeatureService implements SingletonInterface
         return $feature->isActive();
     }
 
+    /**
+     * @return BackendUserService
+     */
+    private function getBackendUserService():BackendUserService {
+        if(!$this->backendUserService) {
+            $this->backendUserService = GeneralUtility::makeInstance(BackendUserService::class);
+        }
+        return $this->backendUserService;
+    }
 }

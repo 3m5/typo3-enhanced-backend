@@ -5,12 +5,13 @@ declare(strict_types=1);
 namespace DMF\EnhancedBackend\Service;
 
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
-use TYPO3\CMS\Core\Core\Bootstrap;
 use TYPO3\CMS\Core\SingletonInterface;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use Psr\Log\LoggerInterface;
 
 /**
+ * Service for handling backend user settings
  *
  * This file is part of a 3m5. Extension for TYPO3 CMS.
  *
@@ -20,18 +21,26 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  *  (c) 2023 3m5. Media GmbH <jan.suchandt@3m5.de>
  *
  **/
-
-/**
- * Service for handling backend user settings
- */
 class BackendUserService implements SingletonInterface
 {
-    // TODO move to more central place
-    public const FIELD_NAME_PREFIX = 'enba';
-    public const FIELD_NAME_PRESET = self::FIELD_NAME_PREFIX . '_preset';
-    public const YAML_CONFIG_FILE = 'EXT:enhanced-backend/Configuration/Yaml/Features.yaml';
+    private LoggerInterface $logger;
 
     protected array $userSettings = [];
+
+    public function __construct(LoggerInterface $logger) {
+        $this->logger = $logger;
+    }
+
+    /**
+     * Checks if a user settings belongs to EnBa by convention
+     *
+     * @param string $userSettingsId
+     * @return bool
+     */
+    public static function isEnBaUserSettingById(string $userSettingsId): bool
+    {
+        return (preg_match('~' . FeatureService::FIELD_NAME_PREFIX . '-[A-Za-z_]+$~', $userSettingsId) === 1);
+    }
 
     /**
      * Add custom EnBa user settings
@@ -62,6 +71,7 @@ class BackendUserService implements SingletonInterface
      *
      * @return array
      */
+    /**
     public function getFeatureSettings(): array
     {
         $allBeUserSettings = $this->getBackendUserSettings();
@@ -78,27 +88,29 @@ class BackendUserService implements SingletonInterface
 
         return $featureSettings;
     }
+     */
 
     /**
      * Get all backend user settings
      *
      * @return array|null
      */
-    private function getBackendUserSettings(): ?array
+    public function getBackendUserSettings(): ?array
     {
-
         if(count($this->userSettings) > 0) {
             return $this->userSettings;
         }
+
         if (!$this->isBackendUserAvailable()) {
-            // TODO THIS IS AN WORKAROUND because the at some point the be user is not initialized
-            \TYPO3\CMS\Core\Core\Bootstrap::initializeBackendUser();
-            if (!$GLOBALS['BE_USER']) {
-                return [];
-            }
+            $this->logger->warning('Try to get user settings without existing backend user');
+            return [];
+        }
+        if(!$GLOBALS['BE_USER']->uc) {
+            $this->logger->warning('Try to get user settings without existing backend user');
+            return [];
         }
         $this->userSettings = $GLOBALS['BE_USER']->uc;
-        return $this->uc;
+        return $this->userSettings;
     }
 
     /**
@@ -109,15 +121,6 @@ class BackendUserService implements SingletonInterface
         return $GLOBALS['BE_USER'] instanceof BackendUserAuthentication;
     }
 
-    /**
-     * Checks if a user settings belongs to EnBa by convention
-     *
-     * @param string $userSettingsId
-     * @return bool
-     */
-    private function isEnBaUserSettingById(string $userSettingsId): bool
-    {
-        return (preg_match('~' . self::FIELD_NAME_PREFIX . '-[A-Za-z_]+$~', $userSettingsId) !== 1);
-    }
+
 
 }

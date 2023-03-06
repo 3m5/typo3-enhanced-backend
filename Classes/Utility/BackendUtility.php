@@ -4,10 +4,12 @@ declare(strict_types=1);
 
 namespace DMF\EnhancedBackend\Utility;
 
+use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Http\ApplicationType;
 use TYPO3\CMS\Core\Utility\VersionNumberUtility;
 
 /**
+ * Different utility functions for backend, like version comparison
  *
  * This file is part of a 3m5. Extension for TYPO3 CMS.
  *
@@ -17,10 +19,6 @@ use TYPO3\CMS\Core\Utility\VersionNumberUtility;
  *  (c) 2023 3m5. Media GmbH <jan.suchandt@3m5.de>
  *
  **/
-
-/**
- *
- */
 class BackendUtility
 {
     /**
@@ -37,6 +35,13 @@ class BackendUtility
             return ApplicationType::fromRequest($GLOBALS['TYPO3_REQUEST'])->isBackend();
         }
         return false;
+    }
+
+    /**
+     * @return bool
+     */
+    static function isCliRequest():bool {
+        return Environment::isCli();
     }
 
     static function getCurrentTypo3VersionNumberInt():int {
