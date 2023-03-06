@@ -29,7 +29,8 @@ class BackendUtility
      *
      * @return bool
      */
-    static function isBackendRequest():bool {
+    static function isBackendRequest(): bool
+    {
         $currentVersionNumber = self::getCurrentTypo3VersionNumberInt();
         if ($currentVersionNumber >= 11000000) {
             return ApplicationType::fromRequest($GLOBALS['TYPO3_REQUEST'])->isBackend();
@@ -40,11 +41,13 @@ class BackendUtility
     /**
      * @return bool
      */
-    static function isCliRequest():bool {
+    static function isCliRequest(): bool
+    {
         return Environment::isCli();
     }
 
-    static function getCurrentTypo3VersionNumberInt():int {
+    static function getCurrentTypo3VersionNumberInt(): int
+    {
         return VersionNumberUtility::convertVersionNumberToInteger(VersionNumberUtility::getCurrentTypo3Version());
     }
 }

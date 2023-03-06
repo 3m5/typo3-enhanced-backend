@@ -24,7 +24,8 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 /**
  * Managing features collected by configuration and user settings
  */
-class FeatureService implements SingletonInterface {
+class FeatureService implements SingletonInterface
+{
     public const FIELD_NAME_PREFIX = 'enba';
     public const YAML_CONFIG_FILE = 'EXT:enhanced-backend/Configuration/Yaml/Features.yaml';
 
@@ -66,20 +67,21 @@ class FeatureService implements SingletonInterface {
     /**
      * @return void
      */
-    private function setActiveFeaturesByBackendUserSettings(): void {
-        if(count($this->features) === 0) {
+    private function setActiveFeaturesByBackendUserSettings(): void
+    {
+        if (count($this->features) === 0) {
             $this->logger->debug('No Enba features available or not set');
             return;
         }
 
         $backendUserService = $this->getBackendUserService();
         $userSettings = $backendUserService->getBackendUserSettings();
-        if(count($userSettings) === 0) {
+        if (count($userSettings) === 0) {
             $this->logger->warning('Try to set active feature without backend user or user settings');
             return;
         }
         foreach ($userSettings as $userSettingId => $userSettingValue) {
-            if(!BackendUserService::isEnBaUserSettingById($userSettingId)) {
+            if (!BackendUserService::isEnBaUserSettingById($userSettingId)) {
                 $this->logger->debug('UserSetting is not a enba-setting', [
                     'userSettingId' => $userSettingId,
                     'userSettingValue' => $userSettingValue,
@@ -187,8 +189,9 @@ class FeatureService implements SingletonInterface {
     /**
      * @return BackendUserService
      */
-    private function getBackendUserService():BackendUserService {
-        if(!$this->backendUserService) {
+    private function getBackendUserService(): BackendUserService
+    {
+        if (!$this->backendUserService) {
             $this->backendUserService = GeneralUtility::makeInstance(BackendUserService::class);
         }
         return $this->backendUserService;

@@ -27,7 +27,8 @@ class BackendUserService implements SingletonInterface
 
     protected array $userSettings = [];
 
-    public function __construct(LoggerInterface $logger) {
+    public function __construct(LoggerInterface $logger)
+    {
         $this->logger = $logger;
     }
 
@@ -67,37 +68,13 @@ class BackendUserService implements SingletonInterface
     }
 
     /**
-     * Get all active features by user settings of backend user for EnBa
-     *
-     * @return array
-     */
-    /**
-    public function getFeatureSettings(): array
-    {
-        $allBeUserSettings = $this->getBackendUserSettings();
-        if (!$allBeUserSettings || count($allBeUserSettings) === 0) {
-            return [];
-        }
-
-        $featureSettings = [];
-        foreach ($allBeUserSettings as $userSettingIdentifier => $userSetting) {
-            if (!$this->isEnbaUserSettingById($userSettingIdentifier)) {
-                $featureSettings[$userSettingIdentifier] = $userSetting;
-            }
-        }
-
-        return $featureSettings;
-    }
-     */
-
-    /**
      * Get all backend user settings
      *
      * @return array|null
      */
     public function getBackendUserSettings(): ?array
     {
-        if(count($this->userSettings) > 0) {
+        if (count($this->userSettings) > 0) {
             return $this->userSettings;
         }
 
@@ -105,8 +82,8 @@ class BackendUserService implements SingletonInterface
             $this->logger->warning('Try to get user settings without existing backend user');
             return [];
         }
-        if(!$GLOBALS['BE_USER']->uc) {
-            $this->logger->warning('Try to get user settings without existing backend user');
+        if (!$GLOBALS['BE_USER']->uc) {
+            $this->logger->warning('Current backend user does not have any user settings in his UC');
             return [];
         }
         $this->userSettings = $GLOBALS['BE_USER']->uc;
@@ -120,7 +97,5 @@ class BackendUserService implements SingletonInterface
     {
         return $GLOBALS['BE_USER'] instanceof BackendUserAuthentication;
     }
-
-
 
 }
