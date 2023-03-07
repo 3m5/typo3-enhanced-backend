@@ -25,9 +25,10 @@ function createContentTreeHTML() {
   const contentTree = document.createElement("div");
   contentTree.classList.add('content-tree');
 
+  const contentTreeHeadline = contentArea.querySelector('.t3js-title-inlineedit') ? contentArea.querySelector('.t3js-title-inlineedit').textContent : 'Content Tree';
   const contentTreeHeader = document.createElement("div");
   contentTreeHeader.classList.add('content-tree__header');
-  contentTreeHeader.innerHTML = '<label class="content-tree__headline">' + contentArea.querySelector('.t3js-title-inlineedit').textContent + '</label><i class="fa fa-solid fa-angle-down content-tree__toggle"></i>';
+  contentTreeHeader.innerHTML = '<label class="content-tree__headline">' + contentTreeHeadline + '</label><i class="fa fa-solid fa-angle-down content-tree__toggle"></i>';
   contentTreeHeader.onclick = initContentTreeToggle;
 
   const contentTreeData = document.createElement("div");
@@ -106,7 +107,7 @@ function watchContentIframe() {
        */
       const contentArea = document.querySelector('#typo3-contentIframe').contentWindow.document;
       const editForm = contentArea.querySelector('#EditDocumentController');
-      if(!editForm) {
+      if(!editForm && !!document.querySelector('.content-tree')) {
         document.querySelector('.content-tree').remove();
         buildContentTree();
       }
