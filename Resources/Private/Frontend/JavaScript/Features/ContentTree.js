@@ -29,9 +29,10 @@ function createContentTreeHTML() {
   const rootElement = contentArea.querySelector('#PageLayoutController .t3js-sortable');
   const classList = ["t3js-page-ce-sortable"];
 
-  const nestedList = createNestedList(rootElement, classList);
-  document.querySelector(".content-tree__data").appendChild(nestedList);
-
+  if(!!rootElement) {
+    const nestedList = createNestedList(rootElement, classList);
+    document.querySelector(".content-tree__data").appendChild(nestedList);
+  }
 }
 
 function createNestedList(rootElement, classList) {
@@ -55,16 +56,16 @@ function createNestedList(rootElement, classList) {
     //listItem.textContent = element.textContent;
 
     let linkInIframe = elements[i].querySelector('.t3-page-ce-dragitem .exampleContent strong') ? stringToHTML(elements[i].querySelector('.t3-page-ce-dragitem .exampleContent strong').innerHTML) : '';
-    if(!!linkInIframe) {
+    if(!!linkInIframe && linkInIframe.querySelector('a')) {
       linkInIframe.querySelector('a') ? linkInIframe.querySelector('a').setAttribute('target', 'list_frame') : linkInIframe;
       listItem.innerHTML = linkInIframe.innerHTML;
+
+      // Füge die untergeordneten Elemente rekursiv hinzu
+      const sublist = createNestedList(element, classList);
+      if (sublist) listItem.appendChild(sublist);
+
+      list.appendChild(listItem);
     }
-
-    // Füge die untergeordneten Elemente rekursiv hinzu
-    const sublist = createNestedList(element, classList);
-    if (sublist) listItem.appendChild(sublist);
-
-    list.appendChild(listItem);
   }
 
   return list;
@@ -74,15 +75,30 @@ function watchContentIframe() {
   document.querySelector('#typo3-contentIframe').addEventListener('load', (event) => {
     if (window.top !== window) {
       // Code is executed in an iframe
-    } else {
+    }
+    else {
       // Code is only executed in main HTML
-      document.querySelector('.content-tree').remove();
-      buildContentTree();
+      /**
+       * if editForm is opened, we don't want to rebuild the content tree
+       * this way, we create a better user experience, because the user
+       * has the possibility to navigate between content elements on the same page
+       */
+      const contentArea = document.querySelector('#typo3-contentIframe').contentWindow.document;
+      const editForm = contentArea.querySelector('#EditDocumentController');
+      if(!editForm) {
+        document.querySelector('.content-tree').remove();
+        buildContentTree();
+      }
     }
   });
+}
+
+function initContentTreeToggle() {
+
 }
 
 
 export default function InitContentTree() {
   buildContentTree();
+  initContentTreeToggle();
 }

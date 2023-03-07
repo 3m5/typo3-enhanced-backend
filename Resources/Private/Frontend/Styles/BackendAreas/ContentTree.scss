@@ -6,12 +6,13 @@
     }
 
     .content-tree {
-        max-height: 50vh;
+        height: 50vh;
         position: absolute;
         top: 50vh;
         overflow: hidden;
         background-color: $typo3-grey--lighter;
         border-top: 1px solid $typo3-grey--border;
+        width:100%;
 
         &__data {
             overflow-y: auto;
