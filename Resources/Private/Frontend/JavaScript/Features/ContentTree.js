@@ -53,24 +53,24 @@ function createNestedList(rootElement, classList) {
       return classList.some(className => elementClasses.includes(className));
     });
 
-  // Wenn keine Elemente gefunden wurden, beende die Funktion
   if (elements.length === 0) return null;
 
-  // Erstelle eine neue ungeordnete Liste
   const list = document.createElement("ul");
 
-  // Iteriere über alle gefundenen Elemente und erstelle ein <li>-Element für jedes
+  // Iterate over all found elements and create a <li> element for each one
   for (let i = 0; i < elements.length; i++) {
     const element = elements[i];
     const listItem = document.createElement("li");
-    //listItem.textContent = element.textContent;
 
+    const elementIcon = elements[i].querySelector('.t3-page-ce-header .t3js-icon');
     let linkInIframe = elements[i].querySelector('.t3-page-ce-dragitem .exampleContent strong') ? stringToHTML(elements[i].querySelector('.t3-page-ce-dragitem .exampleContent strong').innerHTML) : '';
     if(!!linkInIframe && linkInIframe.querySelector('a')) {
-      linkInIframe.querySelector('a') ? linkInIframe.querySelector('a').setAttribute('target', 'list_frame') : linkInIframe;
+      linkInIframe.querySelector('a').setAttribute('target', 'list_frame');
+      // linkInIframe.querySelector('a').prepend
+      // TODO: add Icon to Listitem
       listItem.innerHTML = linkInIframe.innerHTML;
 
-      // Füge die untergeordneten Elemente rekursiv hinzu
+      // Add the child elements recursively
       const sublist = createNestedList(element, classList);
       if (sublist) listItem.appendChild(sublist);
 
