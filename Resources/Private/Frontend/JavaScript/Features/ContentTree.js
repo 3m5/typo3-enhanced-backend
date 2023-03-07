@@ -20,12 +20,14 @@ function buildContentTree() {
 
 function createContentTreeHTML() {
   const $pageNavigation = document.querySelector('.t3js-scaffold-content-navigation');
+  const contentArea = document.getElementById("typo3-contentIframe").contentWindow.document;
+
   const contentTree = document.createElement("div");
   contentTree.classList.add('content-tree');
 
   const contentTreeHeader = document.createElement("div");
   contentTreeHeader.classList.add('content-tree__header');
-  contentTreeHeader.innerHTML = '<label class="content-tree__headline">Content Tree</label><i class="fa fa-solid fa-angle-down content-tree__toggle"></i>';
+  contentTreeHeader.innerHTML = '<label class="content-tree__headline">' + contentArea.querySelector('.t3js-title-inlineedit').textContent + '</label><i class="fa fa-solid fa-angle-down content-tree__toggle"></i>';
   contentTreeHeader.onclick = initContentTreeToggle;
 
   const contentTreeData = document.createElement("div");
@@ -35,7 +37,6 @@ function createContentTreeHTML() {
   contentTree.appendChild(contentTreeData);
   $pageNavigation.append(contentTree);
 
-  const contentArea = document.getElementById("typo3-contentIframe").contentWindow.document;
   const rootElement = contentArea.querySelector('#PageLayoutController .t3js-sortable');
   const classList = ["t3js-page-ce-sortable"];
 
