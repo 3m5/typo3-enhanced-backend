@@ -20,6 +20,26 @@
 
             a {
                 display: block;
+                position: relative;
+                padding-right: 36px;
+
+                &::after {
+                    background-image: url("/typo3conf/ext/enhanced-backend/Resources/Public/Icons/Pencil.svg");
+                    position: absolute;
+                    right: 16px;
+                    top: 0;
+                    width: 16px;
+                    height: 16px;
+                    background-size: contain;
+                    content: ' ';
+                    opacity: 0;
+                }
+
+                &:hover {
+                    &::after {
+                        opacity: 1;
+                    }
+                }
             }
         }
 
