@@ -2,7 +2,10 @@ $content-tree-header-height: 43px;
 
 .scaffold-content-navigation {
     position: relative;
-    padding-bottom: $content-tree-header-height;
+
+    .navigation-tree-container {
+        padding-bottom: $content-tree-header-height;
+    }
 
     &:not(.content-tree--collapsed) {
         .scaffold-content-navigation-component {
