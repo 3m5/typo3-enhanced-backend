@@ -65,8 +65,19 @@ function createNestedList(rootElement, classList) {
     const elementIcon = elements[i].querySelector('.t3-page-ce-header .t3js-icon');
     let linkInIframe = elements[i].querySelector('.t3-page-ce-dragitem .exampleContent strong') ? stringToHTML(elements[i].querySelector('.t3-page-ce-dragitem .exampleContent strong').innerHTML) : '';
     if(!!linkInIframe && linkInIframe.querySelector('a')) {
+      // edit form should open in content area
       linkInIframe.querySelector('a').setAttribute('target', 'list_frame');
-      linkInIframe.querySelector('a').insertAdjacentElement("afterbegin", elementIcon);
+
+      // add ce icon to tree view
+      if(!!elementIcon) {
+        linkInIframe.querySelector('a').insertAdjacentElement("afterbegin", elementIcon.cloneNode(true));
+      }
+
+      // decrease opacity of disabled tree items
+      if(elements[i].classList.contains('t3-page-ce-hidden')) {
+        linkInIframe.querySelector('a').classList.add('t3-page-ce-hidden');
+      }
+
       listItem.innerHTML = linkInIframe.innerHTML;
 
       // Add the child elements recursively
