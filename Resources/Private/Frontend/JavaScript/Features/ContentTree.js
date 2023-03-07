@@ -104,7 +104,8 @@ function watchContentIframe() {
 }
 
 function initContentTreeToggle() {
-  console.log('toggle');
+  document.querySelector('.t3js-scaffold-content-navigation').classList.toggle('content-tree--collapsed');
+
 }
 
 

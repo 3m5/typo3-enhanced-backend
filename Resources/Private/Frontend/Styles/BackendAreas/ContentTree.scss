@@ -1,22 +1,39 @@
+$content-tree-header-height: 43px;
+
 .scaffold-content-navigation {
     position: relative;
+    padding-bottom: $content-tree-header-height;
 
-    &-component {
-        max-height: 50vh;
+    &:not(.content-tree--collapsed) {
+        .scaffold-content-navigation-component {
+            max-height: 50vh;
+        }
+    }
+
+    &.content-tree--collapsed {
+        .content-tree {
+            max-height: $content-tree-header-height;
+
+            &__toggle {
+                transform: rotate(180deg);
+            }
+        }
     }
 
     .content-tree {
         height: 50vh;
+        max-height: 50vh;
         position: absolute;
-        top: 50vh;
+        bottom: 0;
         overflow: hidden;
         background-color: $typo3-grey--lighter;
         border-top: 1px solid $typo3-grey--border;
         width:100%;
+        z-index: 10;
 
         &__data {
             overflow-y: auto;
-            max-height: calc(50vh - 56px);
+            max-height: calc(50vh - #{$content-tree-header-height});
             padding-top: 8px;
 
             a {
