@@ -20,9 +20,19 @@ function buildContentTree() {
 
 function createContentTreeHTML() {
   const $pageNavigation = document.querySelector('.t3js-scaffold-content-navigation');
-  let contentTree = document.createElement("div");
+  const contentTree = document.createElement("div");
   contentTree.classList.add('content-tree');
-  contentTree.innerHTML = '<div class="content-tree__header"><label class="content-tree__headline">Content Tree</label><i class="fa fa-solid fa-angle-down content-tree__toggle"></i></div><div class="content-tree__data"></div>';
+
+  const contentTreeHeader = document.createElement("div");
+  contentTreeHeader.classList.add('content-tree__header');
+  contentTreeHeader.innerHTML = '<label class="content-tree__headline">Content Tree</label><i class="fa fa-solid fa-angle-down content-tree__toggle"></i>';
+  contentTreeHeader.onclick = initContentTreeToggle;
+
+  const contentTreeData = document.createElement("div");
+  contentTreeData.classList.add('content-tree__data');
+
+  contentTree.appendChild(contentTreeHeader);
+  contentTree.appendChild(contentTreeData);
   $pageNavigation.append(contentTree);
 
   const contentArea = document.getElementById("typo3-contentIframe").contentWindow.document;
@@ -94,11 +104,10 @@ function watchContentIframe() {
 }
 
 function initContentTreeToggle() {
-
+  console.log('toggle');
 }
 
 
 export default function InitContentTree() {
   buildContentTree();
-  initContentTreeToggle();
 }
