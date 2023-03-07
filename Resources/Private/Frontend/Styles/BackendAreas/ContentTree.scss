@@ -9,12 +9,21 @@
         max-height: 50vh;
         position: absolute;
         top: 50vh;
-        overflow-y: auto;
+
+        &__data {
+            overflow-y: auto;
+            max-height: calc(50vh - 56px);
+        }
 
         &__headline {
             padding: 16px;
             font-weight: 700;
             font-size: 16px;
+            height: 56px;
+            width: 100%;
+            display: block;
+            background-color: white;
+            position: sticky;
         }
     }
 }

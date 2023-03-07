@@ -1,0 +1,88 @@
+import stringToHTML from "../Utils/stringToHTML";
+
+function buildContentTree() {
+  const iframe = document.querySelector('#typo3-contentIframe');
+
+  if (iframe == null) {
+    window.setTimeout(buildContentTree, 1000);
+  } else {
+    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+    const $pageNavigation = document.querySelector('.t3js-scaffold-content-navigation');
+
+    if (iframeDoc.readyState === 'complete' && !!$pageNavigation) {
+      createContentTreeHTML();
+      watchContentIframe();
+    } else {
+      window.setTimeout(buildContentTree, 1000);
+    }
+  }
+}
+
+function createContentTreeHTML() {
+  const $pageNavigation = document.querySelector('.t3js-scaffold-content-navigation');
+  let contentTree = document.createElement("div");
+  contentTree.classList.add('content-tree');
+  contentTree.innerHTML = '<label class="content-tree__headline">Content Tree</label><div class="content-tree__data"></div>';
+  $pageNavigation.append(contentTree);
+
+  const contentArea = document.getElementById("typo3-contentIframe").contentWindow.document;
+  const rootElement = contentArea.querySelector('#PageLayoutController .t3js-sortable');
+  const classList = ["t3js-page-ce-sortable"];
+
+  const nestedList = createNestedList(rootElement, classList);
+  document.querySelector(".content-tree__data").appendChild(nestedList);
+
+}
+
+function createNestedList(rootElement, classList) {
+  // Wähle alle Elemente aus, die mindestens eine der Klassen haben
+  const elements = Array.from(rootElement.querySelectorAll("*"))
+    .filter(element => {
+      const elementClasses = Array.from(element.classList);
+      return classList.some(className => elementClasses.includes(className));
+    });
+
+  // Wenn keine Elemente gefunden wurden, beende die Funktion
+  if (elements.length === 0) return null;
+
+  // Erstelle eine neue ungeordnete Liste
+  const list = document.createElement("ul");
+
+  // Iteriere über alle gefundenen Elemente und erstelle ein <li>-Element für jedes
+  for (let i = 0; i < elements.length; i++) {
+    const element = elements[i];
+    const listItem = document.createElement("li");
+    //listItem.textContent = element.textContent;
+
+    let linkInIframe = elements[i].querySelector('.t3-page-ce-dragitem .exampleContent strong') ? stringToHTML(elements[i].querySelector('.t3-page-ce-dragitem .exampleContent strong').innerHTML) : '';
+    if(!!linkInIframe) {
+      linkInIframe.querySelector('a') ? linkInIframe.querySelector('a').setAttribute('target', 'list_frame') : linkInIframe;
+      listItem.innerHTML = linkInIframe.innerHTML;
+    }
+
+    // Füge die untergeordneten Elemente rekursiv hinzu
+    const sublist = createNestedList(element, classList);
+    if (sublist) listItem.appendChild(sublist);
+
+    list.appendChild(listItem);
+  }
+
+  return list;
+}
+
+function watchContentIframe() {
+  document.querySelector('#typo3-contentIframe').addEventListener('load', (event) => {
+    if (window.top !== window) {
+      // Code is executed in an iframe
+    } else {
+      // Code is only executed in main HTML
+      document.querySelector('.content-tree').remove();
+      buildContentTree();
+    }
+  });
+}
+
+
+export default function InitContentTree() {
+  buildContentTree();
+}
