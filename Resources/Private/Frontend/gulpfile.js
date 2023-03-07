@@ -9,10 +9,11 @@ const webpack = require("webpack-stream");
 
 // paths
 const destCss = "../../Public/Styles";
+const destJavascript = "../../Public/JavaScript";
 
 const sourceCss = [
-         '../Styles/Dark.scss',
-         '../Styles/Features.scss'
+         './Styles/Dark.scss',
+         './Styles/Features.scss'
 ];
 
 // handle arguments
@@ -40,12 +41,42 @@ gulp.task("sass:compile", gulp.series(function (done) {
     done();
 }));
 
+gulp.task("js:compile", gulp.series(function (done) {
+  console.log('compile in ' + argv.m + ' mode!');
+  return gulp
+    .src("./JavaScript/Features.js")
+    .pipe(
+      webpack({
+        mode: argv.m,
+        module: {
+          rules: [
+            {
+              test: /\.js$/,
+              exclude: [/node_modules\/(?!(swiper|dom7)\/).*/],
+              use: {
+                loader: "babel-loader",
+                options: {
+                  presets: ["@babel/preset-env"]
+                }
+              }
+            }
+          ]
+        },
+        output: {
+          filename: "Features.js"
+        },
+        plugins: []
+      })
+    )
+    .pipe(gulp.dest(destJavascript));
+}));
 
 
 gulp.task("watch", function () {
-    gulp.watch(["../Styles/**/*.scss"], gulp.series("sass:compile"));
+    gulp.watch(["./Styles/**/*.scss"], gulp.series("sass:compile"));
+    gulp.watch(["./JavaScript/*.js"],  gulp.series("js:compile"));
 });
 
-gulp.task("build", gulp.series("sass:compile", function (done) {
+gulp.task("build", gulp.series("js:compile", "sass:compile", function (done) {
     done();
 }));
