@@ -1,0 +1,89 @@
+$content-tree-header-height: 43px;
+
+.scaffold-content-navigation {
+    position: relative;
+
+    .navigation-tree-container {
+        padding-bottom: $content-tree-header-height;
+    }
+
+    &:not(.content-tree--collapsed) {
+        .scaffold-content-navigation-component {
+            max-height: 50vh;
+        }
+    }
+
+    &.content-tree--collapsed {
+        .content-tree {
+            max-height: $content-tree-header-height;
+
+            &__toggle {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .content-tree {
+        height: 50vh;
+        max-height: 50vh;
+        position: absolute;
+        bottom: 0;
+        overflow: hidden;
+        background-color: $typo3-grey--lighter;
+        border-top: 1px solid $typo3-grey--border;
+        width:100%;
+        z-index: 10;
+
+        &__data {
+            overflow-y: auto;
+            max-height: calc(50vh - #{$content-tree-header-height});
+            padding-top: 8px;
+
+            a {
+                display: block;
+                position: relative;
+                padding-right: 36px;
+
+                &::after {
+                    background-image: url("/typo3conf/ext/enhanced-backend/Resources/Public/Icons/Pencil.svg");
+                    position: absolute;
+                    right: 16px;
+                    top: 0;
+                    width: 16px;
+                    height: 16px;
+                    background-size: contain;
+                    content: ' ';
+                    opacity: 0;
+                }
+
+                &:hover {
+                    &::after {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        &__header {
+            display: flex;
+            flex-wrap: nowrap;
+            width: 100%;
+            justify-content: space-between;
+            background-color: $typo3-grey;
+            padding: 8px 16px;
+            align-items: baseline;
+            cursor: pointer;
+        }
+
+        &__headline {
+            font-weight: 400;
+            font-size: 15px;
+            display: block;
+            margin-bottom: 0;
+        }
+
+        &__toggle {
+            font-size: 24px;
+        }
+    }
+}
