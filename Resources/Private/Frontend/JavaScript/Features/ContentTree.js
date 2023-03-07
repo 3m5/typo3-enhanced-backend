@@ -66,8 +66,7 @@ function createNestedList(rootElement, classList) {
     let linkInIframe = elements[i].querySelector('.t3-page-ce-dragitem .exampleContent strong') ? stringToHTML(elements[i].querySelector('.t3-page-ce-dragitem .exampleContent strong').innerHTML) : '';
     if(!!linkInIframe && linkInIframe.querySelector('a')) {
       linkInIframe.querySelector('a').setAttribute('target', 'list_frame');
-      // linkInIframe.querySelector('a').prepend
-      // TODO: add Icon to List item
+      linkInIframe.querySelector('a').insertAdjacentElement("afterbegin", elementIcon);
       listItem.innerHTML = linkInIframe.innerHTML;
 
       // Add the child elements recursively
