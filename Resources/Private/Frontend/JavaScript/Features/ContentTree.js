@@ -10,7 +10,12 @@ function buildContentTree() {
     const $pageNavigation = document.querySelector('.t3js-scaffold-content-navigation');
 
     if (iframeDoc.readyState === 'complete' && !!$pageNavigation) {
-      createContentTreeHTML();
+      if(isPageModuleActive()) {
+        createContentTreeHTML();
+        document.querySelector('.t3js-scaffold-content-navigation').classList.remove('content-tree--hidden');
+      } else {
+        hideContentTree();
+      }
       watchContentIframe();
     } else {
       window.setTimeout(buildContentTree, 1000);
@@ -91,6 +96,15 @@ function createNestedList(rootElement, classList) {
   return list;
 }
 
+function hideContentTree() {
+  const $contentTree = document.querySelector('.content-tree');
+  if(!!$contentTree) {
+    $contentTree.remove();
+  }
+
+  document.querySelector('.t3js-scaffold-content-navigation').classList.add('content-tree--hidden');
+}
+
 function watchContentIframe() {
   document.querySelector('#typo3-contentIframe').addEventListener('load', (event) => {
     if (window.top !== window) {
@@ -98,16 +112,19 @@ function watchContentIframe() {
     }
     else {
       // Code is only executed in main HTML
-      /**
-       * if editForm is opened, we don't want to rebuild the content tree
-       * this way, we create a better user experience, because the user
-       * has the possibility to navigate between content elements on the same page
-       */
-      const contentArea = document.querySelector('#typo3-contentIframe').contentWindow.document;
-      const editForm = contentArea.querySelector('#EditDocumentController');
-      if(!editForm) {
-        document.querySelector('.content-tree').remove();
-        buildContentTree();
+      if(isPageModuleActive()) {
+        /**
+         * if editForm is opened, we don't want to rebuild the content tree
+         * this way, we create a better user experience, because the user
+         * has the possibility to navigate between content elements on the same page
+         */
+        const contentArea = document.querySelector('#typo3-contentIframe').contentWindow.document;
+        const editForm = contentArea.querySelector('#EditDocumentController');
+        if(!editForm) {
+          buildContentTree();
+        }
+      } else {
+        hideContentTree();
       }
     }
   });
@@ -115,7 +132,10 @@ function watchContentIframe() {
 
 function initContentTreeToggle() {
   document.querySelector('.t3js-scaffold-content-navigation').classList.toggle('content-tree--collapsed');
+}
 
+function isPageModuleActive() {
+  return !!document.querySelector('#modulemenu .modulemenu-action-active') && document.querySelector('#modulemenu .modulemenu-action-active').dataset.modulename === 'web_layout';
 }
 
 

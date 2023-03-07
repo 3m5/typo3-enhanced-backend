@@ -7,7 +7,7 @@ $content-tree-header-height: 43px;
         padding-bottom: $content-tree-header-height;
     }
 
-    &:not(.content-tree--collapsed) {
+    &:not(.content-tree--collapsed):not(.content-tree--hidden) {
         .scaffold-content-navigation-component {
             max-height: 50vh;
         }
@@ -20,6 +20,19 @@ $content-tree-header-height: 43px;
             &__toggle {
                 transform: rotate(180deg);
             }
+        }
+    }
+
+    &.content-tree--hidden {
+        .content-tree {
+            max-height: 0;
+            opacity: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .navigation-tree-container {
+            padding-bottom: 0;
         }
     }
 
