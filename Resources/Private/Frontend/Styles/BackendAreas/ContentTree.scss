@@ -1,148 +1,154 @@
 $content-tree-header-height: 43px;
 
-.scaffold-content-navigation {
-    position: relative;
+.enba-contentNavigation {
+    &__enabledContentTree {
+        .scaffold-content-navigation {
+            position: relative;
 
-    .navigation-tree-container {
-        padding-bottom: $content-tree-header-height;
-    }
-
-    &:not(.content-tree--collapsed):not(.content-tree--hidden) {
-        .scaffold-content-navigation-component {
-            max-height: 50vh;
-        }
-    }
-
-    &.content-tree--collapsed {
-        .content-tree {
-            max-height: $content-tree-header-height;
-
-            &__toggle {
-                transform: rotate(180deg);
+            .navigation-tree-container {
+                padding-bottom: $content-tree-header-height;
             }
-        }
-    }
 
-    &.content-tree--hidden {
-        .content-tree {
-            max-height: 0;
-            opacity: 0;
-            pointer-events: none;
-            overflow: hidden;
-        }
+            &:not(.content-tree--collapsed):not(.content-tree--hidden) {
+                .scaffold-content-navigation-component {
+                    max-height: 50vh;
+                }
+            }
 
-        .navigation-tree-container {
-            padding-bottom: 0;
-        }
-    }
+            &.content-tree--collapsed {
+                .content-tree {
+                    max-height: $content-tree-header-height;
 
-    .content-tree {
-        height: 50vh;
-        max-height: 50vh;
-        position: absolute;
-        bottom: 0;
-        overflow: hidden;
-        background-color: $typo3-grey--lighter;
-        border-top: 1px solid $typo3-grey--border;
-        width:100%;
-        z-index: 10;
+                    &__toggle {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
 
-        &__data {
-            overflow-y: auto;
-            max-height: calc(50vh - #{$content-tree-header-height});
-            padding-top: 8px;
-
-            ul {
-                list-style-type: none;
-                padding-left: 24px;
-                margin-top: 4px;
-
-                &:first-child {
-                    padding-left: 16px;
-                    margin-left: 0;
+            &.content-tree--hidden {
+                .content-tree {
+                    max-height: 0;
+                    opacity: 0;
+                    pointer-events: none;
+                    overflow: hidden;
                 }
 
-                .t3js-icon {
-                    margin-right: 8px;
-                    flex-shrink: 0;
-                    position: relative;
-                    z-index: 10;
+                .navigation-tree-container {
+                    padding-bottom: 0;
                 }
+            }
 
-                ul {
-                    li {
+            .content-tree {
+                height: 50vh;
+                max-height: 50vh;
+                position: absolute;
+                bottom: 0;
+                overflow: hidden;
+                background-color: $typo3-grey--lighter;
+                border-top: 1px solid $typo3-grey--border;
+                width:100%;
+                z-index: 10;
+
+                &__data {
+                    overflow-y: auto;
+                    max-height: calc(50vh - #{$content-tree-header-height});
+                    padding-top: 8px;
+
+                    ul {
+                        list-style-type: none;
+                        padding-left: 24px;
+                        margin-top: 4px;
+
+                        &:first-child {
+                            padding-left: 16px;
+                            margin-left: 0;
+                        }
+
+                        .t3js-icon {
+                            margin-right: 8px;
+                            flex-shrink: 0;
+                            position: relative;
+                            z-index: 10;
+                        }
+
+                        ul {
+                            li {
+                                position: relative;
+
+                                &::after {
+                                    content: '';
+                                    position: absolute;
+                                    z-index: 5;
+                                    border-top: 1px solid #ccc;
+                                    top: 8px;
+                                    width: 24px;
+                                    left: -16px;
+                                }
+
+                                &::before {
+                                    content: '';
+                                    position: absolute;
+                                    z-index: 5;
+                                    left: -16px;
+                                    top: 0;
+                                    border-left: 1px solid #ccc;
+                                    height: 100%;
+                                }
+                            }
+                        }
+                    }
+
+                    a {
+                        display: flex;
                         position: relative;
+                        padding-right: 36px;
+                        padding-top: 2px;
+                        padding-bottom: 2px;
 
                         &::after {
-                            content: '';
+                            background-image: url("/typo3conf/ext/enhanced-backend/Resources/Public/Icons/Pencil.svg");
                             position: absolute;
-                            z-index: 5;
-                            border-top: 1px solid #ccc;
-                            top: 8px;
-                            width: 24px;
-                            left: -16px;
-                        }
-
-                        &::before {
-                            content: '';
-                            position: absolute;
-                            z-index: 5;
-                            left: -16px;
+                            right: 16px;
                             top: 0;
-                            border-left: 1px solid #ccc;
-                            height: 100%;
+                            width: 16px;
+                            height: 16px;
+                            background-size: contain;
+                            content: ' ';
+                            opacity: 0;
+                        }
+
+                        &:hover {
+                            &::after {
+                                opacity: 1;
+                            }
                         }
                     }
                 }
-            }
 
-            a {
-                display: flex;
-                position: relative;
-                padding-right: 36px;
-                padding-top: 2px;
-                padding-bottom: 2px;
-
-                &::after {
-                    background-image: url("/typo3conf/ext/enhanced-backend/Resources/Public/Icons/Pencil.svg");
-                    position: absolute;
-                    right: 16px;
-                    top: 0;
-                    width: 16px;
-                    height: 16px;
-                    background-size: contain;
-                    content: ' ';
-                    opacity: 0;
+                &__header {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    width: 100%;
+                    justify-content: space-between;
+                    background-color: $typo3-grey;
+                    padding: 8px 16px;
+                    align-items: baseline;
+                    cursor: pointer;
                 }
 
-                &:hover {
-                    &::after {
-                        opacity: 1;
-                    }
+                &__headline {
+                    font-weight: 400;
+                    font-size: 15px;
+                    display: block;
+                    margin-bottom: 0;
+                }
+
+                &__toggle {
+                    font-size: 24px;
                 }
             }
-        }
-
-        &__header {
-            display: flex;
-            flex-wrap: nowrap;
-            width: 100%;
-            justify-content: space-between;
-            background-color: $typo3-grey;
-            padding: 8px 16px;
-            align-items: baseline;
-            cursor: pointer;
-        }
-
-        &__headline {
-            font-weight: 400;
-            font-size: 15px;
-            display: block;
-            margin-bottom: 0;
-        }
-
-        &__toggle {
-            font-size: 24px;
         }
     }
 }
+
+
