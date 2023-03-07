@@ -8,3 +8,9 @@ services:
   DMF\EnhancedBackend\Service\BackendUserService:
     public: true
 
+  DMF\EnhancedBackend\Service\BackendStyles:
+    public: true
+
+  DMF\EnhancedBackend\Service\FeatureService:
+    public: true
+

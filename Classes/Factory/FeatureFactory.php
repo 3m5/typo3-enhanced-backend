@@ -6,13 +6,12 @@ namespace DMF\EnhancedBackend\Factory;
 
 use DMF\EnhancedBackend\Model\Feature;
 use DMF\EnhancedBackend\Model\Group;
-use DMF\EnhancedBackend\Service\BackendUserService;
+use DMF\EnhancedBackend\Service\FeatureService;
 use TYPO3\CMS\Core\Configuration\Loader\YamlFileLoader;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
+ * Generates Feature models based on user settings and configuration
  *
  * This file is part of a 3m5. Extension for TYPO3 CMS.
  *
@@ -22,18 +21,8 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
  *  (c) 2023 3m5. Media GmbH <jan.suchandt@3m5.de>
  *
  **/
-
-
-
-/**
- * Generates Feature models based on user settings and configuration
- */
 class FeatureFactory
 {
-    public function __construct() {
-
-    }
-
     /**
      * @return void
      */
@@ -55,7 +44,7 @@ class FeatureFactory
                     foreach ($featuresConfig as $featureConfig) {
                         // TODO add to construct
                         $feature = new Feature();
-                        $featureId = BackendUserService::FIELD_NAME_PREFIX . '-' . $groupId . '__' . $featureConfig['id'];
+                        $featureId = FeatureService::FIELD_NAME_PREFIX . '-' . $groupId . '__' . $featureConfig['id'];
                         $feature->setId($featureId);
                         $feature->setGroup($group);
                         $feature->setTitle($featureConfig['title']);
@@ -67,7 +56,6 @@ class FeatureFactory
                 }
             }
         }
-
         return $features;
     }
 
@@ -78,7 +66,7 @@ class FeatureFactory
      */
     private function getConfigByYaml():array {
         $yamlFileLoader = GeneralUtility::makeInstance(YamlFileLoader::class);
-        return $yamlFileLoader->load(BackendUserService::YAML_CONFIG_FILE);
+        return $yamlFileLoader->load(FeatureService::YAML_CONFIG_FILE);
     }
 
 }
