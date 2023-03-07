@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace DMF\EnhancedBackend\Service;
 
+use DMF\EnhancedBackend\Model\Feature;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\Core\Bootstrap;
 use TYPO3\CMS\Core\SingletonInterface;
@@ -52,6 +53,7 @@ class BackendUserService implements SingletonInterface
     public function addFieldsToUserSettings()
     {
         $featureService = GeneralUtility::makeInstance(FeatureService::class);
+
         $featureIds = [];
         foreach ($featureService->getAllFeatures() as $feature) {
             $GLOBALS['TYPO3_USER_SETTINGS']['columns'][$feature->getId()] = [
@@ -63,10 +65,53 @@ class BackendUserService implements SingletonInterface
             ];
             $featureIds[] = $feature->getId();
         }
-        ExtensionManagementUtility::addFieldsToUserSettings(
-            '--div--;LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.enba.tab_label,' . implode(',', $featureIds)
-        );
+
     }
+
+    public function renderUserConfig()
+    {
+        $featureService = GeneralUtility::makeInstance(FeatureService::class);
+        $html = ['<div>'];
+        $groupId = '';
+        $groupClose = '';
+        foreach ($featureService->getAllFeatures() as $feature) {
+            if($groupId != $feature->getGroup()->getId())
+            {
+                $html[] = $groupClose.'<div class="form-group t3js-formengine-field-item">';
+                $html[] = '<h3>'.$feature->getGroup()->getTitle().'</h3>';
+                if($description = $feature->getGroup()->getDescription())
+                {
+                    $html[] = '<p>'.$description.'</p>';
+                }
+                $groupClose = '</div>';
+                $groupId = $feature->getGroup()->getId();
+            }
+            $html [] = $this->renderFeature($feature);
+        }
+        $html[] = '</div>';
+
+        return implode('', $html);
+    }
+
+    private function renderFeature(Feature $feature)
+    {
+        $html = ['<label class="enba-uc__feature">'];
+        switch ($feature->getType())
+        {
+            case 'check':
+                $checked = $feature->isActive() ? 'checked="checked"': '';
+                // TODO:  $this->getLanguageService()->sL() nutzen
+                $html[] = '<span>'.$feature->getTitle().'</span>';
+                $fieldId = 'tx_enhancedbackend_uc_'.$feature->getId();
+                $html[] = '<div class="form-check form-switch"><input type="checkbox" id="field_'.$fieldId.'" class="form-check-input" name="data[\'tx_enhancedbackend_uc\'][\''.$feature->getId().'\']" '.$checked.'></div>';
+                break;
+            default:
+                $html[] = '<p>Der Typ wird noch nicht unterstützt</p>';
+
+        }
+        $html[] = '</label>';
+        return implode('', $html);
+   }
 
     /**
      * Get all backend user settings
