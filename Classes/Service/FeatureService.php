@@ -7,6 +7,7 @@ namespace DMF\EnhancedBackend\Service;
 use DMF\EnhancedBackend\Factory\FeatureFactory;
 use DMF\EnhancedBackend\Model\Feature;
 use Psr\Log\LoggerInterface;
+use TYPO3\CMS\Core\Configuration\Loader\YamlFileLoader;
 use TYPO3\CMS\Core\SingletonInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
@@ -29,6 +30,7 @@ class FeatureService implements SingletonInterface
     public const FIELD_NAME_PREFIX = 'enba';
     public const YAML_CONFIG_FILE = 'EXT:enhanced-backend/Configuration/Yaml/Features.yaml';
 
+    const YAML_ENHANCED_ICONS_FILE = 'EXT:enhanced-backend/Configuration/Yaml/Icons.yaml';
     /**
      * @var FeatureFactory
      */
@@ -49,6 +51,7 @@ class FeatureService implements SingletonInterface
      */
     protected array $features = [];
 
+    protected array $enhancedIcons = [];
     /**
      * @var bool
      */
@@ -179,6 +182,10 @@ class FeatureService implements SingletonInterface
      */
     public function isActiveFeatureById(string $id): bool
     {
+        // Check if features set to active by user settings of backend user
+        if (!$this->activeByUserSettings) {
+            $this->setActiveFeaturesByBackendUserSettings();
+        }
         $feature = $this->getFeatureById($id);
         if (!$feature) {
             return false;
@@ -196,4 +203,35 @@ class FeatureService implements SingletonInterface
         }
         return $this->backendUserService;
     }
+    public function isEnhancedIconAvalibleById(string $id)
+    {
+        $this->logger->debug('IconId: '.$id);
+        return array_key_exists($id,$this->getEnhancedIcons());
+    }
+
+    /**
+     * @return array
+     */
+    public function getEnhancedIcons(): array
+    {
+        if(!count($this->enhancedIcons))
+        {
+            $this->enhancedIcons = $this->getEnhancedIconsByYaml();
+        }
+
+        return $this->enhancedIcons;
+    }
+
+    public function getEnhancedIconById(string $id)
+    {
+        return $this->getEnhancedIcons()[$id];
+    }
+
+    private function getEnhancedIconsByYaml():array {
+        $yamlFileLoader = GeneralUtility::makeInstance(YamlFileLoader::class);
+        return $yamlFileLoader->load(self::YAML_ENHANCED_ICONS_FILE);
+    }
+
+
+
 }
