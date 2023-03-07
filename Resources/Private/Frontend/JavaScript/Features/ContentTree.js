@@ -22,7 +22,7 @@ function createContentTreeHTML() {
   const $pageNavigation = document.querySelector('.t3js-scaffold-content-navigation');
   let contentTree = document.createElement("div");
   contentTree.classList.add('content-tree');
-  contentTree.innerHTML = '<label class="content-tree__headline">Content Tree</label><div class="content-tree__data"></div>';
+  contentTree.innerHTML = '<div class="content-tree__header"><label class="content-tree__headline">Content Tree</label><i class="fa fa-solid fa-angle-down content-tree__toggle"></i></div><div class="content-tree__data"></div>';
   $pageNavigation.append(contentTree);
 
   const contentArea = document.getElementById("typo3-contentIframe").contentWindow.document;

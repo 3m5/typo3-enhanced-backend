@@ -1,14 +1,8 @@
 import InitContentTree from "./Features/ContentTree";
-
-function reloadPage() {
-  window.parent.location.reload();
-}
+import InitSaveSettingsListener from "./Features/SaveSettingsListener";
 
 window.addEventListener('load', (event) => {
-  /*const $saveButton = document.querySelector(".btn[name='data[save]']");
-  if(!!$saveButton) {
-    $saveButton.onclick = reloadPage;
-  }*/
+  InitSaveSettingsListener();
 
   if (window.top !== window) {
     // Code is executed in an iframe

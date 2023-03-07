@@ -9,21 +9,40 @@
         max-height: 50vh;
         position: absolute;
         top: 50vh;
+        overflow: hidden;
+        background-color: $typo3-grey--lighter;
+        border-top: 1px solid $typo3-grey--border;
 
         &__data {
             overflow-y: auto;
             max-height: calc(50vh - 56px);
+            padding-top: 8px;
+
+            a {
+                display: block;
+            }
+        }
+
+        &__header {
+            display: flex;
+            flex-wrap: nowrap;
+            width: 100%;
+            justify-content: space-between;
+            background-color: $typo3-grey;
+            padding: 8px 16px;
+            align-items: baseline;
+            cursor: pointer;
         }
 
         &__headline {
-            padding: 16px;
-            font-weight: 700;
-            font-size: 16px;
-            height: 56px;
-            width: 100%;
+            font-weight: 400;
+            font-size: 15px;
             display: block;
-            background-color: white;
-            position: sticky;
+            margin-bottom: 0;
+        }
+
+        &__toggle {
+            font-size: 24px;
         }
     }
 }
