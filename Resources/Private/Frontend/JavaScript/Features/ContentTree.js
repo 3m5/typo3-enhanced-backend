@@ -96,24 +96,40 @@ function createNestedList(rootElement, classList) {
   for (let i = 0; i < elements.length; i++) {
     const element = elements[i];
     const listItem = document.createElement("li");
+    const isGridContainer = !!element.querySelector('.exampleContent > .t3-grid-container');
 
-    const elementIcon = elements[i].querySelector('.t3-page-ce-header .t3js-icon');
-    let linkInIframe = elements[i].querySelector('.t3-page-ce-dragitem .exampleContent strong') ? stringToHTML(elements[i].querySelector('.t3-page-ce-dragitem .exampleContent strong').innerHTML) : '';
-    if(!!linkInIframe && linkInIframe.querySelector('a')) {
+    console.log(isGridContainer);
+
+    const elementIcon = element.querySelector('.t3-page-ce-header .t3js-icon');
+
+    let linkToContentElement = '';
+    if(isGridContainer) {
+      linkToContentElement = element.querySelector('.t3-page-ce-header a[title="Edit"]').cloneNode(true);
+      linkToContentElement.innerHTML = 'Container'
+      linkToContentElement.classList = '';
+    } else {
+      linkToContentElement = element.querySelector('.t3-page-ce-dragitem .exampleContent strong') ? stringToHTML(element.querySelector('.t3-page-ce-dragitem .exampleContent strong').innerHTML) : '';
+      if(!!linkToContentElement && linkToContentElement.querySelector('a')) {
+        linkToContentElement = linkToContentElement.querySelector('a').cloneNode(true);
+      }
+    }
+    if(!!linkToContentElement) {
       // edit form should open in content area
-      linkInIframe.querySelector('a').setAttribute('target', 'list_frame');
+      linkToContentElement.setAttribute('target', 'list_frame');
 
       // add ce icon to tree view
       if(!!elementIcon) {
-        linkInIframe.querySelector('a').insertAdjacentElement("afterbegin", elementIcon.cloneNode(true));
+        linkToContentElement.insertAdjacentElement("afterbegin", elementIcon.cloneNode(true));
       }
 
       // decrease opacity of disabled tree items
-      if(elements[i].classList.contains('t3-page-ce-hidden')) {
-        linkInIframe.querySelector('a').classList.add('t3-page-ce-hidden');
+      if(element.classList.contains('t3-page-ce-hidden')) {
+        linkToContentElement.classList.add('t3-page-ce-hidden');
       }
 
-      listItem.innerHTML = linkInIframe.innerHTML;
+      console.log(linkToContentElement);
+
+      listItem.appendChild(linkToContentElement); //TODO: linkTocontentElement.innerHTML notwendig. vorher muss ich einen Wrapper drum rum machen
 
       // Add the child elements recursively
       const sublist = createNestedList(element, classList);
