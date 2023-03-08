@@ -3,6 +3,20 @@ import stringToHTML from "../Utils/stringToHTML";
 function buildContentTree() {
   const iframe = document.querySelector('#typo3-contentIframe');
 
+  /**
+   * Content tree is only visible if page module is selected,
+   * otherwise there is no content in the content area that could be selected
+   */
+  if(isPageModuleActive()) {
+    document.querySelector('.t3js-scaffold-content-navigation').classList.remove('content-tree--hidden');
+  } else {
+    document.querySelector('.t3js-scaffold-content-navigation').classList.add('content-tree--hidden');
+  }
+
+  /**
+   * Content tree is build after the content area iframe is loaded and page tree is available
+   * the content tree is renderer below the page tree and shows the elements of the content area
+   */
   if (iframe == null) {
     window.setTimeout(buildContentTree, 1000);
   } else {
@@ -18,34 +32,57 @@ function buildContentTree() {
   }
 }
 
+/**
+ * creates the content tree header, that works as collapse toggle
+ * adds the current page title as content tree header
+ * adds the content tree data to the content tree body
+ */
 function createContentTreeHTML() {
   const $pageNavigation = document.querySelector('.t3js-scaffold-content-navigation');
+  const contentArea = document.getElementById("typo3-contentIframe").contentWindow.document;
+
   const contentTree = document.createElement("div");
   contentTree.classList.add('content-tree');
 
   const contentTreeHeader = document.createElement("div");
   contentTreeHeader.classList.add('content-tree__header');
-  contentTreeHeader.innerHTML = '<label class="content-tree__headline">Content Tree</label><i class="fa fa-solid fa-angle-down content-tree__toggle"></i>';
+  contentTreeHeader.innerHTML = '<label class="content-tree__headline">Content tree</label><i class="fa fa-solid fa-angle-down content-tree__toggle"></i>';
   contentTreeHeader.onclick = initContentTreeToggle;
 
+  const contentTreeHeadline = contentArea.querySelector('.t3js-title-inlineedit') ? contentArea.querySelector('.t3js-title-inlineedit').textContent : 'Content Tree';
   const contentTreeData = document.createElement("div");
   contentTreeData.classList.add('content-tree__data');
+  contentTreeData.innerHTML = '<ul><li><span class="content-tree__title"><span class="t3js-icon icon icon-size-small icon-state-default">' + document.querySelector('.icon-module-page').innerHTML + '</span>' + contentTreeHeadline + '</span></li></ul>'
 
   contentTree.appendChild(contentTreeHeader);
   contentTree.appendChild(contentTreeData);
   $pageNavigation.append(contentTree);
 
-  const contentArea = document.getElementById("typo3-contentIframe").contentWindow.document;
-  const rootElement = contentArea.querySelector('#PageLayoutController .t3js-sortable');
+  const rootElement = contentArea.querySelector('#PageLayoutController .t3-page-ce-wrapper');
   const classList = ["t3js-page-ce-sortable"];
 
+  const createdTreeLinks = [];
   if(!!rootElement) {
-    const nestedList = createNestedList(rootElement, classList);
-    document.querySelector(".content-tree__data").appendChild(nestedList);
+    const nestedList = createNestedList(rootElement, classList, createdTreeLinks);
+    if(!!nestedList) {
+      document.querySelector(".content-tree__data .content-tree__title").insertAdjacentElement("afterend", nestedList);
+    } else {
+      const list = document.createElement("ul");
+      const listItem = document.createElement("li");
+      listItem.innerHTML = 'No content on this page.';
+      list.appendChild(listItem);
+      document.querySelector(".content-tree__data").insertAdjacentElement("afterend", list);
+    }
   }
 }
 
-function createNestedList(rootElement, classList) {
+/**
+ *
+ * @param rootElement - the element from which the iteration should be started
+ * @param classList - all classnames, that match a content element in the content area
+ * @returns {HTMLUListElement|null}
+ */
+function createNestedList(rootElement, classList, createdTreeLinks) {
   // Wähle alle Elemente aus, die mindestens eine der Klassen haben
   const elements = Array.from(rootElement.querySelectorAll("*"))
     .filter(element => {
@@ -61,26 +98,59 @@ function createNestedList(rootElement, classList) {
   for (let i = 0; i < elements.length; i++) {
     const element = elements[i];
     const listItem = document.createElement("li");
+    const isGridContainer = !!element.querySelector('.exampleContent > .t3-grid-container');
 
-    const elementIcon = elements[i].querySelector('.t3-page-ce-header .t3js-icon');
-    let linkInIframe = elements[i].querySelector('.t3-page-ce-dragitem .exampleContent strong') ? stringToHTML(elements[i].querySelector('.t3-page-ce-dragitem .exampleContent strong').innerHTML) : '';
-    if(!!linkInIframe && linkInIframe.querySelector('a')) {
-      linkInIframe.querySelector('a').setAttribute('target', 'list_frame');
-      // linkInIframe.querySelector('a').prepend
-      // TODO: add Icon to List item
-      listItem.innerHTML = linkInIframe.innerHTML;
+    const elementIcon = element.querySelector('.t3-page-ce-header .t3js-icon');
 
-      // Add the child elements recursively
-      const sublist = createNestedList(element, classList);
-      if (sublist) listItem.appendChild(sublist);
+    let linkToContentElement = '';
+    if(isGridContainer) {
+      linkToContentElement = element.querySelector('.t3-page-ce-header a[title="Edit"]').cloneNode(true);
+      linkToContentElement.innerHTML = 'Container'
+      linkToContentElement.classList = '';
+    } else {
+      linkToContentElement = element.querySelector('.t3-page-ce-dragitem .exampleContent strong') ? stringToHTML(element.querySelector('.t3-page-ce-dragitem .exampleContent strong').innerHTML) : '';
+      if(!!linkToContentElement && linkToContentElement.querySelector('a')) {
+        linkToContentElement = linkToContentElement.querySelector('a').cloneNode(true);
+      }
+    }
 
-      list.appendChild(listItem);
+    if(!!linkToContentElement && linkToContentElement.tagName === 'A') {
+      // edit form should open in content area
+      linkToContentElement.setAttribute('target', 'list_frame');
+
+      // add ce icon to tree view
+      if(!!elementIcon) {
+        linkToContentElement.insertAdjacentElement("afterbegin", elementIcon.cloneNode(true));
+      }
+
+      // decrease opacity of disabled tree items
+      if(element.classList.contains('t3-page-ce-hidden')) {
+        linkToContentElement.classList.add('t3-page-ce-hidden');
+      }
+
+      // Check if element is already in content tree, if yes, don't use it as content root
+      const currentElementURL = linkToContentElement.getAttribute('href');
+      if(!createdTreeLinks.includes(currentElementURL)) {
+        createdTreeLinks.push(currentElementURL);
+
+        listItem.appendChild(linkToContentElement);
+
+        // Add the child elements recursively
+        const sublist = createNestedList(element, classList, createdTreeLinks);
+        if (sublist) listItem.appendChild(sublist);
+
+        list.appendChild(listItem);
+      }
     }
   }
 
   return list;
 }
 
+/**
+ * watch for changes in content area, because the content tree is only shown when page module is active
+ * furthermore, the content tree is rebuilt when the selected page changes
+ */
 function watchContentIframe() {
   document.querySelector('#typo3-contentIframe').addEventListener('load', (event) => {
     if (window.top !== window) {
@@ -95,7 +165,7 @@ function watchContentIframe() {
        */
       const contentArea = document.querySelector('#typo3-contentIframe').contentWindow.document;
       const editForm = contentArea.querySelector('#EditDocumentController');
-      if(!editForm) {
+      if(!editForm && !!document.querySelector('.content-tree')) {
         document.querySelector('.content-tree').remove();
         buildContentTree();
       }
@@ -103,12 +173,30 @@ function watchContentIframe() {
   });
 }
 
+/**
+ * makes the content tree collapsible / expandable
+ */
 function initContentTreeToggle() {
   document.querySelector('.t3js-scaffold-content-navigation').classList.toggle('content-tree--collapsed');
-
 }
 
+/**
+ * checks whether the page module in sidebar is selected
+ * @returns {boolean}
+ */
+function isPageModuleActive() {
+  return !!document.querySelector('#modulemenu .modulemenu-action-active') && document.querySelector('#modulemenu .modulemenu-action-active').dataset.modulename === 'web_layout';
+}
 
+/**
+ * builds a content tree that shows all available content elements on selected page
+ * content tree is located under the page tree and collapsible, so that the full page tree view is still available
+ * content tree is only visible in page module and when a content element is edited
+ * the content tree contains links for every content element, that allows to edit the content element in a fast way
+ * @constructor
+ */
 export default function InitContentTree() {
-  buildContentTree();
+  if(!!document.querySelector('.enba-contentNavigation__enabledContentTree')) {
+    buildContentTree();
+  }
 }
