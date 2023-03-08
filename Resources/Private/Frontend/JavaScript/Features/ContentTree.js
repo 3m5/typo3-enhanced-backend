@@ -44,14 +44,15 @@ function createContentTreeHTML() {
   const contentTree = document.createElement("div");
   contentTree.classList.add('content-tree');
 
-  const contentTreeHeadline = contentArea.querySelector('.t3js-title-inlineedit') ? contentArea.querySelector('.t3js-title-inlineedit').textContent : 'Content Tree';
   const contentTreeHeader = document.createElement("div");
   contentTreeHeader.classList.add('content-tree__header');
-  contentTreeHeader.innerHTML = '<label class="content-tree__headline">' + contentTreeHeadline + '</label><i class="fa fa-solid fa-angle-down content-tree__toggle"></i>';
+  contentTreeHeader.innerHTML = '<label class="content-tree__headline">Content tree</label><i class="fa fa-solid fa-angle-down content-tree__toggle"></i>';
   contentTreeHeader.onclick = initContentTreeToggle;
 
+  const contentTreeHeadline = contentArea.querySelector('.t3js-title-inlineedit') ? contentArea.querySelector('.t3js-title-inlineedit').textContent : 'Content Tree';
   const contentTreeData = document.createElement("div");
   contentTreeData.classList.add('content-tree__data');
+  contentTreeData.innerHTML = '<ul><li><span class="content-tree__title">' + contentTreeHeadline + '</span></li></ul>'
 
   contentTree.appendChild(contentTreeHeader);
   contentTree.appendChild(contentTreeData);
@@ -63,13 +64,13 @@ function createContentTreeHTML() {
   if(!!rootElement) {
     const nestedList = createNestedList(rootElement, classList);
     if(!!nestedList) {
-      document.querySelector(".content-tree__data").appendChild(nestedList);
+      document.querySelector(".content-tree__data .content-tree__title").insertAdjacentElement("afterend", nestedList);
     } else {
       const list = document.createElement("ul");
       const listItem = document.createElement("li");
       listItem.innerHTML = 'No content on this page.';
       list.appendChild(listItem);
-      document.querySelector(".content-tree__data").appendChild(list);
+      document.querySelector(".content-tree__data").insertAdjacentElement("afterend", list);
     }
   }
 }
