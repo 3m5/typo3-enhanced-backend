@@ -98,8 +98,6 @@ function createNestedList(rootElement, classList) {
     const listItem = document.createElement("li");
     const isGridContainer = !!element.querySelector('.exampleContent > .t3-grid-container');
 
-    console.log(isGridContainer);
-
     const elementIcon = element.querySelector('.t3-page-ce-header .t3js-icon');
 
     let linkToContentElement = '';
@@ -113,7 +111,8 @@ function createNestedList(rootElement, classList) {
         linkToContentElement = linkToContentElement.querySelector('a').cloneNode(true);
       }
     }
-    if(!!linkToContentElement) {
+
+    if(!!linkToContentElement && linkToContentElement.tagName === 'A') {
       // edit form should open in content area
       linkToContentElement.setAttribute('target', 'list_frame');
 
@@ -127,9 +126,7 @@ function createNestedList(rootElement, classList) {
         linkToContentElement.classList.add('t3-page-ce-hidden');
       }
 
-      console.log(linkToContentElement);
-
-      listItem.appendChild(linkToContentElement); //TODO: linkTocontentElement.innerHTML notwendig. vorher muss ich einen Wrapper drum rum machen
+      listItem.appendChild(linkToContentElement);
 
       // Add the child elements recursively
       const sublist = createNestedList(element, classList);
