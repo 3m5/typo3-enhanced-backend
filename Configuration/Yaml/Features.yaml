@@ -78,6 +78,13 @@ groups:
           - modern
   contentNavigation:
     title: Inhaltsnavigation
+    features:
+      - id: enabledContentTree
+        title: Inhaltsbaum aktivieren
+        description: Fügt unterhalb des Seitenbaums einen Baum ein, der die Contentelemente der aktuell ausgewählten Seite abbildet.
+        type: check
+        preset:
+          - modern
   contentArea:
     title: Inhaltsbereich
     features:

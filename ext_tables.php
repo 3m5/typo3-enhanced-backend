@@ -2,12 +2,13 @@
 
 use DMF\EnhancedBackend\Hooks\BackendStyles;
 use DMF\EnhancedBackend\Service\BackendUserService;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 defined('TYPO3') || die();
 
 (function () {
-    // Extend user settings
+
     GeneralUtility::makeInstance(BackendUserService::class)->addFieldsToUserSettings();
 
     // Add frontend files (javascript, stylesheet)

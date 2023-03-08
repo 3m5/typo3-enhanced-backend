@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace DMF\EnhancedBackend\Service;
 
+use DMF\EnhancedBackend\Model\Feature;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\Core\Bootstrap;
 use TYPO3\CMS\Core\SingletonInterface;
@@ -51,22 +52,73 @@ class BackendUserService implements SingletonInterface
      */
     public function addFieldsToUserSettings()
     {
+        $GLOBALS['TYPO3_USER_SETTINGS']['columns']['tx_enhancedbackend_uc'] = [
+            'label' => 'LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme',
+            'description' => 'LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.description',
+            'type' => 'user',
+            'userFunc' => BackendUserService::class.'->renderUserConfig'
+        ];
+        ExtensionManagementUtility::addFieldsToUserSettings(
+            '--div--;LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.enba.tab_label, tx_enhancedbackend_uc'
+        );
+
         $featureService = GeneralUtility::makeInstance(FeatureService::class);
-        $featureIds = [];
+
+        // we need this only to save the user setting
         foreach ($featureService->getAllFeatures() as $feature) {
             $GLOBALS['TYPO3_USER_SETTINGS']['columns'][$feature->getId()] = [
-                'label' => $feature->getTitle(),
-                // Not available at the moment in TCA user settings (Allowed values: button, check, password, select, text, user)
-                //  https://docs.typo3.org/m/typo3/reference-coreapi/main/en-us/Configuration/UserSettingsConfiguration/Columns.html
-                'description' => $feature->getDescription(),
+                'access' => 'none',
                 'type' => $feature->getType()
             ];
-            $featureIds[] = $feature->getId();
+            ExtensionManagementUtility::addFieldsToUserSettings($feature->getId());
         }
-        ExtensionManagementUtility::addFieldsToUserSettings(
-            '--div--;LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.enba.tab_label,' . implode(',', $featureIds)
-        );
+
     }
+
+    public function renderUserConfig()
+    {
+        $featureService = GeneralUtility::makeInstance(FeatureService::class);
+        $html = ['<div>'];
+        $groupId = '';
+        $groupClose = '';
+        foreach ($featureService->getAllFeatures() as $feature) {
+            if($groupId != $feature->getGroup()->getId())
+            {
+                $html[] = $groupClose.'<div class="form-group t3js-formengine-field-item">';
+                $html[] = '<h3>'.$feature->getGroup()->getTitle().'</h3>';
+                if($description = $feature->getGroup()->getDescription())
+                {
+                    $html[] = '<p>'.$description.'</p>';
+                }
+                $groupClose = '</div>';
+                $groupId = $feature->getGroup()->getId();
+            }
+            $html [] = $this->renderFeature($feature);
+        }
+        $html[] = '</div>';
+
+        return implode('', $html);
+    }
+
+    private function renderFeature(Feature $feature)
+    {
+        $html = ['<label class="enba-uc__feature">'];
+        // TODO: aktuell wird nur check unterstützt text kommt später
+        switch ($feature->getType())
+        {
+            case 'check':
+                $checked = $feature->isActive() ? 'checked="checked"': '';
+                // TODO:  $this->getLanguageService()->sL() nutzen
+                $html[] = '<span>'.$feature->getTitle().'</span>';
+                $fieldId = 'tx_enhancedbackend_uc_'.$feature->getId();
+                $html[] = '<div class="form-check form-switch"><input type="checkbox" id="field_'.$fieldId.'" class="form-check-input" name="data['.$feature->getId().']" '.$checked.'></div>';
+                break;
+            default:
+                $this->logger->warning('Try to render unsupported type for feature');
+        }
+        $html[] = '</label>';
+        return implode('', $html);
+   }
 
     /**
      * Get all backend user settings
