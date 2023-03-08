@@ -1,4 +1,4 @@
-@mixin sidebar__changeIconColors {
+@mixin sidebar__enhancedMenuUI {
     .scaffold-modulemenu {
 
         // change icon colors
@@ -91,6 +91,14 @@
                 &[fill='#fff'] > *, &[fill='#FFF'] > *, &[fill='#ffffff'] > *, &[fill='#FFFFFF'] > * {
                     fill: #fff !important;
                 }
+            }
+        }
+
+        svg[fill='#000000'] {
+            fill: #fff !important;
+
+            *[stroke='#000000'] {
+                stroke: #fff !important;
             }
         }
     }

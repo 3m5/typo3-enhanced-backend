@@ -59,11 +59,12 @@ groups:
         type: check
         preset:
           - modern
-      - id: changeIconColors
-        title: Icons in einheitlicher Farbe anzeigen
-        description: Die Icons in der Seitenleiste werden entfärbt und lenken dadurch weniger vom Inhaltsbereich ab. Außerdem werden die einzelnen Bereiche optisch sauberer getrennt.
+      - id: enhancedMenuUI # T3ENCBE-127
+        title: Menü UI
+        description: Verbessert die farbliche Gestaltung der Modul-Einträge, Abstände und visuelle Trennung von Gruppen.
         type: check
         preset:
+          - vanilla
           - modern
   pageTree:
     title: Seitenbaum
