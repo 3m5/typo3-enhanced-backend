@@ -84,7 +84,7 @@ $content-tree-header-height: 43px;
                                     position: absolute;
                                     z-index: 5;
                                     border-top: 1px solid #ccc;
-                                    top: 8px;
+                                    top: 10px;
                                     width: 24px;
                                     left: -16px;
                                 }
@@ -97,6 +97,12 @@ $content-tree-header-height: 43px;
                                     top: 0;
                                     border-left: 1px solid #ccc;
                                     height: 100%;
+                                }
+
+                                &:last-child {
+                                    &::before {
+                                        height: 12px;
+                                    }
                                 }
                             }
                         }
