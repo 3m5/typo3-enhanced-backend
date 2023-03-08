@@ -3,12 +3,20 @@ import stringToHTML from "../Utils/stringToHTML";
 function buildContentTree() {
   const iframe = document.querySelector('#typo3-contentIframe');
 
+  /**
+   * Content tree is only visible if page module is selected,
+   * otherwise there is no content in the content area that could be selected
+   */
   if(isPageModuleActive()) {
     document.querySelector('.t3js-scaffold-content-navigation').classList.remove('content-tree--hidden');
   } else {
     document.querySelector('.t3js-scaffold-content-navigation').classList.add('content-tree--hidden');
   }
 
+  /**
+   * Content tree is build after the content area iframe is loaded and page tree is available
+   * the content tree is renderer below the page tree and shows the elements of the content area
+   */
   if (iframe == null) {
     window.setTimeout(buildContentTree, 1000);
   } else {
@@ -24,6 +32,11 @@ function buildContentTree() {
   }
 }
 
+/**
+ * creates the content tree header, that works as collapse toggle
+ * adds the current page title as content tree header
+ * adds the content tree data to the content tree body
+ */
 function createContentTreeHTML() {
   const $pageNavigation = document.querySelector('.t3js-scaffold-content-navigation');
   const contentArea = document.getElementById("typo3-contentIframe").contentWindow.document;
@@ -53,6 +66,12 @@ function createContentTreeHTML() {
   }
 }
 
+/**
+ *
+ * @param rootElement - the element from which the iteration should be started
+ * @param classList - all classnames, that match a content element in the content area
+ * @returns {HTMLUListElement|null}
+ */
 function createNestedList(rootElement, classList) {
   // Wähle alle Elemente aus, die mindestens eine der Klassen haben
   const elements = Array.from(rootElement.querySelectorAll("*"))
@@ -99,6 +118,10 @@ function createNestedList(rootElement, classList) {
   return list;
 }
 
+/**
+ * watch for changes in content area, because the content tree is only shown when page module is active
+ * furthermore, the content tree is rebuilt when the selected page changes
+ */
 function watchContentIframe() {
   document.querySelector('#typo3-contentIframe').addEventListener('load', (event) => {
     if (window.top !== window) {
@@ -121,14 +144,28 @@ function watchContentIframe() {
   });
 }
 
+/**
+ * makes the content tree collapsible / expandable
+ */
 function initContentTreeToggle() {
   document.querySelector('.t3js-scaffold-content-navigation').classList.toggle('content-tree--collapsed');
 }
 
+/**
+ * checks whether the page module in sidebar is selected
+ * @returns {boolean}
+ */
 function isPageModuleActive() {
   return !!document.querySelector('#modulemenu .modulemenu-action-active') && document.querySelector('#modulemenu .modulemenu-action-active').dataset.modulename === 'web_layout';
 }
 
+/**
+ * builds a content tree that shows all available content elements on selected page
+ * content tree is located under the page tree and collapsible, so that the full page tree view is still available
+ * content tree is only visible in page module and when a content element is edited
+ * the content tree contains links for every content element, that allows to edit the content element in a fast way
+ * @constructor
+ */
 export default function InitContentTree() {
   if(!!document.querySelector('.enba-contentNavigation__enabledContentTree')) {
     buildContentTree();
