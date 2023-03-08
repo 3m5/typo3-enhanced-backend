@@ -61,8 +61,9 @@ function createContentTreeHTML() {
   const rootElement = contentArea.querySelector('#PageLayoutController .t3-page-ce-wrapper');
   const classList = ["t3js-page-ce-sortable"];
 
+  const createdTreeLinks = [];
   if(!!rootElement) {
-    const nestedList = createNestedList(rootElement, classList);
+    const nestedList = createNestedList(rootElement, classList, createdTreeLinks);
     if(!!nestedList) {
       document.querySelector(".content-tree__data .content-tree__title").insertAdjacentElement("afterend", nestedList);
     } else {
@@ -81,7 +82,7 @@ function createContentTreeHTML() {
  * @param classList - all classnames, that match a content element in the content area
  * @returns {HTMLUListElement|null}
  */
-function createNestedList(rootElement, classList) {
+function createNestedList(rootElement, classList, createdTreeLinks) {
   // Wähle alle Elemente aus, die mindestens eine der Klassen haben
   const elements = Array.from(rootElement.querySelectorAll("*"))
     .filter(element => {
@@ -127,13 +128,19 @@ function createNestedList(rootElement, classList) {
         linkToContentElement.classList.add('t3-page-ce-hidden');
       }
 
-      listItem.appendChild(linkToContentElement);
+      // Check if element is already in content tree, if yes, don't use it as content root
+      const currentElementURL = linkToContentElement.getAttribute('href');
+      if(!createdTreeLinks.includes(currentElementURL)) {
+        createdTreeLinks.push(currentElementURL);
 
-      // Add the child elements recursively
-      const sublist = createNestedList(element, classList);
-      if (sublist) listItem.appendChild(sublist);
+        listItem.appendChild(linkToContentElement);
 
-      list.appendChild(listItem);
+        // Add the child elements recursively
+        const sublist = createNestedList(element, classList, createdTreeLinks);
+        if (sublist) listItem.appendChild(sublist);
+
+        list.appendChild(listItem);
+      }
     }
   }
 
