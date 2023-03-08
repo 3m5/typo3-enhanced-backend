@@ -3,6 +3,12 @@ import stringToHTML from "../Utils/stringToHTML";
 function buildContentTree() {
   const iframe = document.querySelector('#typo3-contentIframe');
 
+  if(isPageModuleActive()) {
+    document.querySelector('.t3js-scaffold-content-navigation').classList.remove('content-tree--hidden');
+  } else {
+    document.querySelector('.t3js-scaffold-content-navigation').classList.add('content-tree--hidden');
+  }
+
   if (iframe == null) {
     window.setTimeout(buildContentTree, 1000);
   } else {
@@ -117,7 +123,10 @@ function watchContentIframe() {
 
 function initContentTreeToggle() {
   document.querySelector('.t3js-scaffold-content-navigation').classList.toggle('content-tree--collapsed');
+}
 
+function isPageModuleActive() {
+  return !!document.querySelector('#modulemenu .modulemenu-action-active') && document.querySelector('#modulemenu .modulemenu-action-active').dataset.modulename === 'web_layout';
 }
 
 export default function InitContentTree() {
