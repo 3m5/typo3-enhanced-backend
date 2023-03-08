@@ -58,7 +58,7 @@ function createContentTreeHTML() {
   contentTree.appendChild(contentTreeData);
   $pageNavigation.append(contentTree);
 
-  const rootElement = contentArea.querySelector('#PageLayoutController .t3-page-ce-wrapper');
+  const rootElement = contentArea.querySelector('#PageLayoutController');
   const classList = ["t3js-page-ce-sortable"];
 
   const createdTreeLinks = [];
@@ -68,6 +68,7 @@ function createContentTreeHTML() {
       document.querySelector(".content-tree__data .content-tree__title").insertAdjacentElement("afterend", nestedList);
     } else {
       const list = document.createElement("ul");
+      list.classList.add('list-style-type--none');
       const listItem = document.createElement("li");
       listItem.innerHTML = 'No content on this page.';
       list.appendChild(listItem);
@@ -105,7 +106,7 @@ function createNestedList(rootElement, classList, createdTreeLinks) {
     let linkToContentElement = '';
     if(isGridContainer) {
       linkToContentElement = element.querySelector('.t3-page-ce-header a[title="Edit"]').cloneNode(true);
-      linkToContentElement.innerHTML = 'Container'
+      linkToContentElement.innerHTML = element.querySelector('.t3-page-ce-body .exampleContent').firstElementChild.tagName === 'STRONG' ? element.querySelector('.t3-page-ce-body').querySelector('.exampleContent > strong').textContent : 'Container';
       linkToContentElement.classList = '';
     } else {
       linkToContentElement = element.querySelector('.t3-page-ce-dragitem .exampleContent strong') ? stringToHTML(element.querySelector('.t3-page-ce-dragitem .exampleContent strong').innerHTML) : '';
