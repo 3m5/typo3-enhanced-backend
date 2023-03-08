@@ -96,6 +96,7 @@ class BackendUserService implements SingletonInterface
     private function renderFeature(Feature $feature)
     {
         $html = ['<label class="enba-uc__feature">'];
+        // TODO: aktuell wird nur check unterstützt text kommt später
         switch ($feature->getType())
         {
             case 'check':
@@ -106,8 +107,7 @@ class BackendUserService implements SingletonInterface
                 $html[] = '<div class="form-check form-switch"><input type="checkbox" id="field_'.$fieldId.'" class="form-check-input" name="data[\'tx_enhancedbackend_uc\'][\''.$feature->getId().'\']" '.$checked.'></div>';
                 break;
             default:
-                $html[] = '<p>Der Typ wird noch nicht unterstützt</p>';
-
+                $this->logger->warning('Try to render unsupported type for feature');
         }
         $html[] = '</label>';
         return implode('', $html);
