@@ -109,6 +109,13 @@ $content-tree-header-height: 43px;
                         }
                     }
 
+                    .content-tree__title {
+                        display: flex;
+                        position: relative;
+                        padding-top: 2px;
+                        padding-bottom: 2px;
+                    }
+
                     a {
                         display: flex;
                         position: relative;
@@ -158,6 +165,11 @@ $content-tree-header-height: 43px;
                     font-size: 24px;
                 }
             }
+        }
+
+        .list-style-type--none {
+            list-style-type: none;
+            padding-left: 16px;
         }
     }
 }
