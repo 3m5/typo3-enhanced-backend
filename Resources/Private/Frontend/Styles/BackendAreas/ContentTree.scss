@@ -4,6 +4,8 @@ $content-tree-header-height: 43px;
     &__enabledContentTree {
         .scaffold-content-navigation {
             position: relative;
+            transition: all 0.5s;
+            background-color: $typo3-grey--lighter;
 
             .navigation-tree-container {
                 padding-bottom: $content-tree-header-height;
@@ -12,6 +14,7 @@ $content-tree-header-height: 43px;
             &:not(.content-tree--collapsed):not(.content-tree--hidden) {
                 .scaffold-content-navigation-component {
                     max-height: 50vh;
+                    transition: all 0.5s;
                 }
             }
 
@@ -48,6 +51,7 @@ $content-tree-header-height: 43px;
                 border-top: 1px solid $typo3-grey--border;
                 width:100%;
                 z-index: 10;
+                transition: all 0.5s;
 
                 &__data {
                     overflow-y: auto;

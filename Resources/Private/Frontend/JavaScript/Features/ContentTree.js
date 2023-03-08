@@ -57,12 +57,20 @@ function createContentTreeHTML() {
   contentTree.appendChild(contentTreeData);
   $pageNavigation.append(contentTree);
 
-  const rootElement = contentArea.querySelector('#PageLayoutController .t3js-sortable');
+  const rootElement = contentArea.querySelector('#PageLayoutController .t3-page-ce-wrapper');
   const classList = ["t3js-page-ce-sortable"];
 
   if(!!rootElement) {
     const nestedList = createNestedList(rootElement, classList);
-    document.querySelector(".content-tree__data").appendChild(nestedList);
+    if(!!nestedList) {
+      document.querySelector(".content-tree__data").appendChild(nestedList);
+    } else {
+      const list = document.createElement("ul");
+      const listItem = document.createElement("li");
+      listItem.innerHTML = 'No content on this page.';
+      list.appendChild(listItem);
+      document.querySelector(".content-tree__data").appendChild(list);
+    }
   }
 }
 
