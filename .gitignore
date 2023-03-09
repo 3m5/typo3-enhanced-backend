@@ -1,4 +1,4 @@
 /composer.lock
 .idea
-node_modules/*
 /Tests/Build/.phpunit.result.cache
+/Resources/Private/Frontend/node_modules/
