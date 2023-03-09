@@ -32,7 +32,7 @@ class BackendUtility
     static function isBackendRequest(): bool
     {
         $currentVersionNumber = self::getCurrentTypo3VersionNumberInt();
-        if ($currentVersionNumber >= 11000000) {
+        if ($currentVersionNumber >= 10000000) {
             return ApplicationType::fromRequest($GLOBALS['TYPO3_REQUEST'])->isBackend();
         }
         return false;
