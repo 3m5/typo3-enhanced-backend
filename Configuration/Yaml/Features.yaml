@@ -75,7 +75,7 @@ groups:
     features:
       - id: enhancedToolbarUI
         title: Toolbar über Seitenbaum optimieren
-        description: Buttons erhalten mehr Abstände, um besser klickbar zu sein. Das Suchfeld wird moderner angezeigt.
+        description: Buttons erhalten mehr Abstände, um besser klickbar zu sein. Das Suchfeld wird moderner dargestellt.
         type: check
         preset:
           - vanilla
