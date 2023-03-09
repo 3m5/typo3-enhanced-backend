@@ -33,7 +33,7 @@ class DefaultAvatarProvider extends \TYPO3\CMS\Backend\Backend\Avatar\DefaultAva
         // No image is set at this point, we add our custom avatar
         return GeneralUtility::makeInstance(
             Image::class,
-            PathUtility::getAbsoluteWebPath(GeneralUtility::getFileAbsFileName('EXT:enhanced-backend/Resources/Public/Icons/User.svg')),
+            GeneralUtility::getFileAbsFileName('EXT:enhanced-backend/Resources/Public/Icons/User.svg'),
             $size,
             $size
         );
