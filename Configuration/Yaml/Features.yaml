@@ -1,6 +1,7 @@
 groups:
   global:
     title: Global
+    description: Testbeschreibung
     features:
       -
         id: enhancedIcons

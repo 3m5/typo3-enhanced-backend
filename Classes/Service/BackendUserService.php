@@ -86,14 +86,17 @@ class BackendUserService implements SingletonInterface
             {
                 $html[] = $groupClose.'<div class="form-group t3js-formengine-field-item">';
                 $html[] = '<h3>'.$feature->getGroup()->getTitle().'</h3>';
+                $html[] = '<div class="enba-uc__group-content"><div class="enba-uc__group-description">';
                 if($description = $feature->getGroup()->getDescription())
                 {
                     $html[] = '<p>'.$description.'</p>';
                 }
-                $groupClose = '</div>';
+                $html[] = '<img src="Public/placeholder-user-settings.webp" /></div><div class="enba-uc__featurelist">';
+
+                $groupClose = '</div></div></div>';
                 $groupId = $feature->getGroup()->getId();
             }
-            $html [] = $this->renderFeature($feature);
+            $html[] = $this->renderFeature($feature);
         }
         $html[] = '</div>';
 

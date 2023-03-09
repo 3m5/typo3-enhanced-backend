@@ -5,5 +5,26 @@
         .feature__description {
             font-weight: normal;
         }
+
+        .feature__title {
+            font-weight: 600;
+        }
+    }
+
+    .enba-uc {
+        &__group-content {
+            display: flex;
+        }
+
+        &__group-description {
+            flex-basis: 25%;
+            max-width: 25%;
+            padding-right: 48px;
+        }
+
+        &__featurelist {
+            flex-basis: 75%;
+            max-width: 75%;
+        }
     }
 }
