@@ -52,7 +52,7 @@ function createContentTreeHTML() {
   const contentTreeHeadline = contentArea.querySelector('.t3js-title-inlineedit') ? contentArea.querySelector('.t3js-title-inlineedit').textContent : 'Content Tree';
   const contentTreeData = document.createElement("div");
   contentTreeData.classList.add('content-tree__data');
-  contentTreeData.innerHTML = '<ul><li><span class="content-tree__title"><span class="t3js-icon icon icon-size-small icon-state-default">' + document.querySelector('.icon-module-page').innerHTML + '</span>' + contentTreeHeadline + '</span></li></ul>'
+  contentTreeData.innerHTML = '<ul><li><span class="content-tree__title">' + contentArea.querySelector('.typo3-docheader-pagePath + strong').innerHTML + '</li></ul>'
 
   contentTree.appendChild(contentTreeHeader);
   contentTree.appendChild(contentTreeData);
