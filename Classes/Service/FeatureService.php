@@ -55,13 +55,9 @@ class FeatureService implements SingletonInterface , LoggerAwareInterface
      */
     protected bool $activeByUserSettings = false;
 
-    /**
-     * @param LoggerInterface $logger
-     */
-    public function __construct(LoggerInterface $logger)
+    public function __construct()
     {
         $this->featureFactory = GeneralUtility::makeInstance(FeatureFactory::class);
-        $this->logger = $logger;
         $this->features = $this->featureFactory->create();
     }
 

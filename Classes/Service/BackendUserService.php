@@ -30,11 +30,6 @@ class BackendUserService implements SingletonInterface, LoggerAwareInterface
 
     protected array $userSettings = [];
 
-    public function __construct(LoggerInterface $logger)
-    {
-        $this->logger = $logger;
-    }
-
     /**
      * Checks if a user settings belongs to EnBa by convention
      *
