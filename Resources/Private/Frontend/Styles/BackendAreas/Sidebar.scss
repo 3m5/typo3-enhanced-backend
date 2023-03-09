@@ -1,9 +1,9 @@
-@import "Mixins/Sidebar/ChangeIconColors";
+@import "Mixins/Sidebar/EnhancedMenuUI";
 @import "Mixins/Sidebar/CollapseButtonPosition";
 
 .enba-sidebar {
-    &__changeIconColors {
-        @include sidebar__changeIconColors;
+    &__enhancedMenuUI {
+        @include sidebar__enhancedMenuUI;
     }
 
     &__collapseButtonPosition {

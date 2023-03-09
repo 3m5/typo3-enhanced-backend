@@ -78,7 +78,7 @@ class BackendUserService implements SingletonInterface
     public function renderUserConfig()
     {
         $featureService = GeneralUtility::makeInstance(FeatureService::class);
-        $html = ['<div>'];
+        $html = ['<div class="enba-settings">'];
         $groupId = '';
         $groupClose = '';
         foreach ($featureService->getAllFeatures() as $feature) {
@@ -86,14 +86,17 @@ class BackendUserService implements SingletonInterface
             {
                 $html[] = $groupClose.'<div class="form-group t3js-formengine-field-item">';
                 $html[] = '<h3>'.$feature->getGroup()->getTitle().'</h3>';
+                $html[] = '<div class="enba-uc__group-content"><div class="enba-uc__group-description">';
                 if($description = $feature->getGroup()->getDescription())
                 {
                     $html[] = '<p>'.$description.'</p>';
                 }
-                $groupClose = '</div>';
+                $html[] = '<!--<img src="Public/placeholder-user-settings.webp" />--></div><div class="enba-uc__featurelist">';
+
+                $groupClose = '</div></div></div>';
                 $groupId = $feature->getGroup()->getId();
             }
-            $html [] = $this->renderFeature($feature);
+            $html[] = $this->renderFeature($feature);
         }
         $html[] = '</div>';
 
@@ -109,9 +112,10 @@ class BackendUserService implements SingletonInterface
             case 'check':
                 $checked = $feature->isActive() ? 'checked="checked"': '';
                 // TODO:  $this->getLanguageService()->sL() nutzen
-                $html[] = '<span>'.$feature->getTitle().'</span>';
                 $fieldId = 'tx_enhancedbackend_uc_'.$feature->getId();
                 $html[] = '<div class="form-check form-switch"><input type="checkbox" id="field_'.$fieldId.'" class="form-check-input" name="data['.$feature->getId().']" '.$checked.'></div>';
+                $html[] = '<div class="feature__text"><span class="feature__title">'.$feature->getTitle().'</span><br/>';
+                $html[] = '<span class="feature__description">'.$feature->getDescription().'</span></div>';
                 break;
             default:
                 $this->logger->warning('Try to render unsupported type for feature');
