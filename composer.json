@@ -1,7 +1,7 @@
 {
 	"name": "3m5/typo3-enhanced-backend",
 	"type": "typo3-cms-extension",
-	"description": "The Enhanced Backend Extension improves the user experience (UX) in the TYPO3 backend, provides customization options for editors and improves the look and feel of TYPO3 so that it represents a modern and intuitive eCMS.",
+	"description": "Improves the user experience (UI/UX), provides customization options for editors and enhances the look and feel of TYPO3 backend.",
 	"authors": [
 		{
 			"name": "Jan Suchandt",
@@ -20,24 +20,30 @@
 			"email": "nicole.schneider@3m5.de",
 			"homepage": "https://www.3m5.de",
 			"role": "Developer"
-		},
-		{
-			"name": "Felix Hellwig",
-			"email": "nicole.schneider@3m5.de",
-			"homepage": "https://www.3m5.de",
-			"role": "Developer"
 		}
 	],
-	"license": "GPL-3.0-or-later",
+	"homepage": "https://extensions.typo3.org/extension/enhanced_backend",
+	"keywords": [
+		"TYPO3",
+		"extension",
+		"enhanced",
+		"backend"
+	],
+	"license": [
+		"GPL-2.0-or-later"
+	],
 	"require": {
-		"typo3/cms-core": "^11.0",
-		"typo3/cms-setup": "^11.0",
-		"typo3/cms-backend": "^11.0",
-		"typo3/cms-sys-note": "^11.0"
+		"php": ">= 7.4 < 8.3",
+		"typo3/cms-core": "^11.5",
+		"typo3/cms-setup": "^11.5",
+		"typo3/cms-backend": "^11.5",
+		"typo3/cms-sys-note": "^11.5"
 	},
 	"require-dev": {
-		"typo3/testing-framework": "^6.8",
-		"typo3/cms-styleguide": "^11.0"
+		"typo3/testing-framework": "^6.8"
+	},
+	"suggest": {
+		"typo3/cms-styleguide": "^11.5"
 	},
 	"autoload": {
 		"psr-4": {
@@ -59,6 +65,14 @@
 	"scripts": {
 		"post-autoload-dump": [
 			"TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
+		],
+		"prepare-release": [
+			"@extension-create-libs",
+			"rm -rf .devbox",
+			"rm -rf Tests/",
+			"rm .gitignore",
+			"rm .scrutinizer.yml",
+			"rm disabled.travis.yml"
 		]
 	},
 	"extra": {

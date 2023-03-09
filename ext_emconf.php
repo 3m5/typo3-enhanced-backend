@@ -1,19 +1,28 @@
 <?php
-
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Enhanced backend',
-    'description' => 'The Enhanced Backend Extension improves the user experience (UX) in the TYPO3 backend, provides customization options for editors and improves the look\'n\'feel of TYPO3 so that it represents a modern and intuitive eCMS.',
+    'description' => 'Improves the user experience (UI/UX), provides customization options for editors and enhances the look and feel of TYPO3 backend.',
     'category' => 'be',
-    'author' => 'Jan Suchandt, Steffen Thiele, Nicole Schneider',
-    'author_email' => 'jan@suchandt.de, steffen.thiele@3m5.de, nicole.schneider@3m5.de',
+    'author' => 'Jan Suchandt',
+    'author_email' => 'jan.suchandt@3m5.de',
     'state' => 'alpha',
+    # Deprecated since version 12.1
     'clearCacheOnLoad' => 0,
-    'version' => '10.0.1',
+    'version' => '0.0.1',
     'constraints' => [
         'depends' => [
-            'typo3' => '10.0.0-10.99.99',
+            'php' => '7.4.0-8.2.99',
+            'typo3' => '11.5.0-11.99.99',
+            'sys_note' => '11.5.0-11.99.99'
         ],
         'conflicts' => [],
-        'suggests' => [],
+        'suggests' => [
+            'styleguide' => '11.5.0-11.99.99'
+        ],
+    ],
+    'autoload' => [
+        'psr-4' => [
+            'DMF\\EnhancedBackend\\' => 'Classes'
+        ]
     ],
 ];
