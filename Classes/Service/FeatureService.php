@@ -6,6 +6,8 @@ namespace DMF\EnhancedBackend\Service;
 
 use DMF\EnhancedBackend\Factory\FeatureFactory;
 use DMF\EnhancedBackend\Model\Feature;
+use Psr\Log\LoggerAwareInterface;
+use Psr\Log\LoggerAwareTrait;
 use Psr\Log\LoggerInterface;
 use TYPO3\CMS\Core\Configuration\Loader\YamlFileLoader;
 use TYPO3\CMS\Core\SingletonInterface;
@@ -25,8 +27,9 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 /**
  * Managing features collected by configuration and user settings
  */
-class FeatureService implements SingletonInterface
+class FeatureService implements SingletonInterface , LoggerAwareInterface
 {
+    use LoggerAwareTrait;
     public const FIELD_NAME_PREFIX = 'enba';
     public const YAML_CONFIG_FILE = 'EXT:enhanced-backend/Configuration/Yaml/Features.yaml';
 
@@ -40,11 +43,6 @@ class FeatureService implements SingletonInterface
      * @var BackendUserService|null
      */
     protected ?BackendUserService $backendUserService = null;
-
-    /**
-     * @var LoggerInterface
-     */
-    private LoggerInterface $logger;
 
     /**
      * @var Feature[]

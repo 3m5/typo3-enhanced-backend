@@ -30,14 +30,14 @@
 	],
 	"license": "GPL-3.0-or-later",
 	"require": {
-		"typo3/cms-core": "^10.4 | ^11.5",
-		"typo3/cms-setup": "^10.4 | ^11.5",
-		"typo3/cms-backend": "^10.4 | ^11.5",
-		"typo3/cms-sys-note": "^10.4 | ^11.5"
+		"typo3/cms-core": "^10.4",
+		"typo3/cms-setup": "^10.4",
+		"typo3/cms-backend": "^10.4",
+		"typo3/cms-sys-note": "^10.4"
 	},
 	"require-dev": {
 		"typo3/testing-framework": "^6.8",
-		"typo3/cms-styleguide": "^10.4 | ^11.5"
+		"typo3/cms-styleguide": "^10.4"
 	},
 	"autoload": {
 		"psr-4": {

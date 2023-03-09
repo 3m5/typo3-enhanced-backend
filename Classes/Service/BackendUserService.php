@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace DMF\EnhancedBackend\Service;
 
 use DMF\EnhancedBackend\Model\Feature;
+use Psr\Log\LoggerAwareInterface;
+use Psr\Log\LoggerAwareTrait;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
-use TYPO3\CMS\Core\Core\Bootstrap;
 use TYPO3\CMS\Core\SingletonInterface;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -23,9 +24,9 @@ use Psr\Log\LoggerInterface;
  *  (c) 2023 3m5. Media GmbH <jan.suchandt@3m5.de>
  *
  **/
-class BackendUserService implements SingletonInterface
+class BackendUserService implements SingletonInterface, LoggerAwareInterface
 {
-    private LoggerInterface $logger;
+   use LoggerAwareTrait;
 
     protected array $userSettings = [];
 
