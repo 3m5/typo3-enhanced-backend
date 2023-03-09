@@ -113,6 +113,15 @@
                     padding-top: 2px;
                     padding-bottom: 2px;
                     padding-right: 16px;
+                    align-items: center;
+
+                    a {
+                        padding-right: 0;
+
+                        &::after {
+                            display: none;
+                        }
+                    }
                 }
 
                 a {
