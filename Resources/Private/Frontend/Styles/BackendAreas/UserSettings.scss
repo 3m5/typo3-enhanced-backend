@@ -1,4 +1,18 @@
 .enba-settings {
+    .form-group {
+        margin-bottom: 8px;
+        padding-bottom: 32px;
+        border-bottom: 1px solid $typo3-grey--border;
+
+        h3 {
+            margin: 0;
+            padding: 16px 0;
+            display: block;
+            width: 100%;
+            cursor: pointer;
+        }
+    }
+
     .enba-uc__feature {
         display: flex;
 
@@ -14,6 +28,7 @@
     .enba-uc {
         &__group-content {
             display: flex;
+            padding-top: 8px;
         }
 
         &__group-description {

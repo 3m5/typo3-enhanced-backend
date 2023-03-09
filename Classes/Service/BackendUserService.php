@@ -91,7 +91,7 @@ class BackendUserService implements SingletonInterface
                 {
                     $html[] = '<p>'.$description.'</p>';
                 }
-                $html[] = '<img src="Public/placeholder-user-settings.webp" /></div><div class="enba-uc__featurelist">';
+                $html[] = '<!--<img src="Public/placeholder-user-settings.webp" />--></div><div class="enba-uc__featurelist">';
 
                 $groupClose = '</div></div></div>';
                 $groupId = $feature->getGroup()->getId();

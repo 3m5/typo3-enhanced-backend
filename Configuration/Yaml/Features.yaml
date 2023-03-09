@@ -1,7 +1,7 @@
 groups:
   global:
     title: Global
-    description: Testbeschreibung
+    description: Diese Einstellungen wirken sich auf alle Bereiche des TYPO3 - Backends aus.
     features:
       -
         id: enhancedIcons
@@ -27,6 +27,7 @@ groups:
           - modern
   topbar:
     title: Header-Bereich
+    description: Diese Einstellungen wirken sich auf die obere Leiste aus, in der sich beispielsweise dein Login befindet.
     features:
       -
         id: customTitle
@@ -53,6 +54,7 @@ groups:
           - modern
   sidebar:
     title: Seitenleiste
+    description: Diese Einstellungen wirken sich auf die Seitenleiste am linken Bildschirmrand aus, in der sich die verschiedenen Module befinden.
     features:
       - id: collapseButtonPosition
         title: Seitenlisten-Einklapp-Button an unteren Rand verschieben
