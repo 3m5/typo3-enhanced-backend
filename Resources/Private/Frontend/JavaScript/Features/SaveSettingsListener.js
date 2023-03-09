@@ -3,6 +3,13 @@ function reloadPage() {
   window.parent.location.reload();
 }
 
+function showPageReloadDialog() {
+  const dialog = confirm("For all changes to take effect, the page must be reloaded once. Should the page be reloaded now?");
+  if (dialog) {
+    reloadPage();
+  }
+}
+
 function initContentAreaListener() {
   const iframe = document.querySelector('#typo3-contentIframe');
 
@@ -18,7 +25,7 @@ function initContentAreaListener() {
 
       document.querySelector('#typo3-contentIframe').addEventListener('load', (event) => {
         if(!!sessionStorage.getItem('reloadPage')) {
-          window.setTimeout(reloadPage, 5000);
+          showPageReloadDialog();
         }
       });
     } else {
