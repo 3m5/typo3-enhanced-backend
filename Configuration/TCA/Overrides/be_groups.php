@@ -3,7 +3,7 @@ defined('TYPO3') || die();
 
 $tmpColumns = [
     'tx_enhancedbackend_themes' => [
-        'label' => 'LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:be_groups.tx_enhancedbackend_themes',
+        'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:be_groups.tx_enhancedbackend_themes',
         'config' => [
             'type' => 'select',
             'renderType' => 'selectCheckBox',

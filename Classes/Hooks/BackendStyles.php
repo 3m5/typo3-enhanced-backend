@@ -51,12 +51,12 @@ class BackendStyles
 
     private function getDefaultCssFile(): string
     {
-        return GeneralUtility::getFileAbsFileName('EXT:enhanced-backend/Resources/Public/Styles/Features.css');
+        return GeneralUtility::getFileAbsFileName('EXT:enhanced_backend/Resources/Public/Styles/Features.css');
     }
 
     private function getDefaultJsFile(): string
     {
-        return GeneralUtility::getFileAbsFileName('EXT:enhanced-backend/Resources/Public/JavaScript/Features.js');
+        return GeneralUtility::getFileAbsFileName('EXT:enhanced_backend/Resources/Public/JavaScript/Features.js');
     }
 
     /**

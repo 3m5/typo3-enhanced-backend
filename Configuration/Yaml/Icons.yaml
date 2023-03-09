@@ -1,102 +1,102 @@
 # SIDEBAR
 # Sidebar toggle
-actions-menu: 'EXT:enhanced-backend/Resources/Public/Icons/Caret-double-left.svg'
+actions-menu: 'EXT:enhanced_backend/Resources/Public/Icons/Caret-double-left.svg'
 # TOPBAR
 # bookmark
-apps-toolbar-menu-shortcut: 'EXT:enhanced-backend/Resources/Public/Icons/Bookmark-simple.svg'
+apps-toolbar-menu-shortcut: 'EXT:enhanced_backend/Resources/Public/Icons/Bookmark-simple.svg'
 # bookmark
-actions-system-shortcut-new: 'EXT:enhanced-backend/Resources/Public/Icons/Bookmark-simple.svg'
+actions-system-shortcut-new: 'EXT:enhanced_backend/Resources/Public/Icons/Bookmark-simple.svg'
 # bookmark page content
-module-page: 'EXT:enhanced-backend/Resources/Public/Icons/FileText.svg'
+module-page: 'EXT:enhanced_backend/Resources/Public/Icons/FileText.svg'
 # cache
-apps-toolbar-menu-cache: 'EXT:enhanced-backend/Resources/Public/Icons/Eraser.svg'
+apps-toolbar-menu-cache: 'EXT:enhanced_backend/Resources/Public/Icons/Eraser.svg'
 # cache frontend in toolbar
-actions-system-cache-clear-impact-low: 'EXT:enhanced-backend/Resources/Public/Icons/Eraser.svg'
+actions-system-cache-clear-impact-low: 'EXT:enhanced_backend/Resources/Public/Icons/Eraser.svg'
 # cache frontend in toolbar
-actions-system-cache-clear-impact-high: 'EXT:enhanced-backend/Resources/Public/Icons/Eraser.svg'
+actions-system-cache-clear-impact-high: 'EXT:enhanced_backend/Resources/Public/Icons/Eraser.svg'
 # help
-apps-toolbar-menu-help: 'EXT:enhanced-backend/Resources/Public/Icons/Question.svg'
+apps-toolbar-menu-help: 'EXT:enhanced_backend/Resources/Public/Icons/Question.svg'
 # system info default
-system-information-toolbar-item: 'EXT:enhanced-backend/Resources/Public/Icons/Info.svg'
+system-information-toolbar-item: 'EXT:enhanced_backend/Resources/Public/Icons/Info.svg'
 # system info open if any log is available
-actions-system-list-open: 'EXT:enhanced-backend/Resources/Public/Icons/Info.svg'
+actions-system-list-open: 'EXT:enhanced_backend/Resources/Public/Icons/Info.svg'
 ### TOOLBAR
   # cache on page module
-actions-system-cache-clear: 'EXT:enhanced-backend/Resources/Public/Icons/Eraser.svg'
+actions-system-cache-clear: 'EXT:enhanced_backend/Resources/Public/Icons/Eraser.svg'
 # view page in new tab
-actions-view-page: 'EXT:enhanced-backend/Resources/Public/Icons/ArrowSquareOut.svg'
+actions-view-page: 'EXT:enhanced_backend/Resources/Public/Icons/ArrowSquareOut.svg'
 # edit page properties
-actions-page-open: 'EXT:enhanced-backend/Resources/Public/Icons/NotePencil.svg'
+actions-page-open: 'EXT:enhanced_backend/Resources/Public/Icons/NotePencil.svg'
 # copy page url
-actions-link: 'EXT:enhanced-backend/Resources/Public/Icons/Link.svg'
+actions-link: 'EXT:enhanced_backend/Resources/Public/Icons/Link.svg'
 # Help
-actions-system-help-open: 'EXT:enhanced-backend/Resources/Public/Icons/Question.svg'
+actions-system-help-open: 'EXT:enhanced_backend/Resources/Public/Icons/Question.svg'
 # Share
-actions-share-alt: 'EXT:enhanced-backend/Resources/Public/Icons/ShareNetwork.svg'
+actions-share-alt: 'EXT:enhanced_backend/Resources/Public/Icons/ShareNetwork.svg'
 ### PAGE TREE
   # create new page
-apps-pagetree-page-default: 'EXT:enhanced-backend/Resources/Public/Icons/File.svg'
+apps-pagetree-page-default: 'EXT:enhanced_backend/Resources/Public/Icons/File.svg'
 # create new folder
-apps-pagetree-folder-default: 'EXT:enhanced-backend/Resources/Public/Icons/Folder.svg'
+apps-pagetree-folder-default: 'EXT:enhanced_backend/Resources/Public/Icons/Folder.svg'
 # add bin
-apps-pagetree-page-recycler: 'EXT:enhanced-backend/Resources/Public/Icons/Trash.svg'
+apps-pagetree-page-recycler: 'EXT:enhanced_backend/Resources/Public/Icons/Trash.svg'
 # add menu separator
-apps-pagetree-spacer: 'EXT:enhanced-backend/Resources/Public/Icons/Divide.svg'
+apps-pagetree-spacer: 'EXT:enhanced_backend/Resources/Public/Icons/Divide.svg'
 # add link to external url
-apps-pagetree-page-shortcut-external: 'EXT:enhanced-backend/Resources/Public/Icons/LinkSimple.svg'
+apps-pagetree-page-shortcut-external: 'EXT:enhanced_backend/Resources/Public/Icons/LinkSimple.svg'
 # add mount point
-apps-pagetree-page-mountpoint: 'EXT:enhanced-backend/Resources/Public/Icons/FlagBanner.svg'
+apps-pagetree-page-mountpoint: 'EXT:enhanced_backend/Resources/Public/Icons/FlagBanner.svg'
 # add shortcut
-apps-pagetree-page-shortcut: 'EXT:enhanced-backend/Resources/Public/Icons/ArrowBendUpRight.svg'
+apps-pagetree-page-shortcut: 'EXT:enhanced_backend/Resources/Public/Icons/ArrowBendUpRight.svg'
 # add backend user section
-apps-pagetree-page-backend-users: 'EXT:enhanced-backend/Resources/Public/Icons/LockKeyOpen.svg'
+apps-pagetree-page-backend-users: 'EXT:enhanced_backend/Resources/Public/Icons/LockKeyOpen.svg'
 # edit pencil
-actions-open: 'EXT:enhanced-backend/Resources/Public/Icons/Pencil.svg'
+actions-open: 'EXT:enhanced_backend/Resources/Public/Icons/Pencil.svg'
 # edit trash
-actions-edit-delete: 'EXT:enhanced-backend/Resources/Public/Icons/Trash.svg'
+actions-edit-delete: 'EXT:enhanced_backend/Resources/Public/Icons/Trash.svg'
 # collapse page tree
-apps-pagetree-category-collapse-all: 'EXT:enhanced-backend/Resources/Public/Icons/ArrowsInLineVertical.svg'
+apps-pagetree-category-collapse-all: 'EXT:enhanced_backend/Resources/Public/Icons/ArrowsInLineVertical.svg'
 # reload
-actions-refresh: 'EXT:enhanced-backend/Resources/Public/Icons/ArrowClockwise.svg'
+actions-refresh: 'EXT:enhanced_backend/Resources/Public/Icons/ArrowClockwise.svg'
 ### TOOL BAR
   # edit save
-actions-document-save: 'EXT:enhanced-backend/Resources/Public/Icons/FloppyDisk.svg'
+actions-document-save: 'EXT:enhanced_backend/Resources/Public/Icons/FloppyDisk.svg'
 # close
-actions-close: 'EXT:enhanced-backend/Resources/Public/Icons/X.svg'
+actions-close: 'EXT:enhanced_backend/Resources/Public/Icons/X.svg'
 # add
-actions-add: 'EXT:enhanced-backend/Resources/Public/Icons/Plus.svg'
+actions-add: 'EXT:enhanced_backend/Resources/Public/Icons/Plus.svg'
 # view
-actions-view: 'EXT:enhanced-backend/Resources/Public/Icons/Eye.svg'
+actions-view: 'EXT:enhanced_backend/Resources/Public/Icons/Eye.svg'
 ### CONTEXT MENU
   # Info
-actions-document-info: 'EXT:enhanced-backend/Resources/Public/Icons/Info.svg'
+actions-document-info: 'EXT:enhanced_backend/Resources/Public/Icons/Info.svg'
 # Cut
-actions-edit-cut: 'EXT:enhanced-backend/Resources/Public/Icons/Scissors.svg'
+actions-edit-cut: 'EXT:enhanced_backend/Resources/Public/Icons/Scissors.svg'
 # Copy Page
-actions-edit-copy: 'EXT:enhanced-backend/Resources/Public/Icons/Copy.svg'
+actions-edit-copy: 'EXT:enhanced_backend/Resources/Public/Icons/Copy.svg'
 # Show history
-actions-document-history-open: 'EXT:enhanced-backend/Resources/Public/Icons/ClockCounterClockwise.svg'
+actions-document-history-open: 'EXT:enhanced_backend/Resources/Public/Icons/ClockCounterClockwise.svg'
 # New Subpage
-actions-page-new: 'EXT:enhanced-backend/Resources/Public/Icons/FilePlus.svg'
+actions-page-new: 'EXT:enhanced_backend/Resources/Public/Icons/FilePlus.svg'
 # Action paste into
-actions-document-paste-into: 'EXT:enhanced-backend/Resources/Public/Icons/Clipboard.svg'
+actions-document-paste-into: 'EXT:enhanced_backend/Resources/Public/Icons/Clipboard.svg'
 # Action paste after
-actions-document-paste-after: 'EXT:enhanced-backend/Resources/Public/Icons/ListPlus.svg'
+actions-document-paste-after: 'EXT:enhanced_backend/Resources/Public/Icons/ListPlus.svg'
 # Export
-actions-document-export-t3d: 'EXT:enhanced-backend/Resources/Public/Icons/Export.svg'
+actions-document-export-t3d: 'EXT:enhanced_backend/Resources/Public/Icons/Export.svg'
 # Import
-actions-document-import-t3d: 'EXT:enhanced-backend/Resources/Public/Icons/ArrowSquareIn.svg'
+actions-document-import-t3d: 'EXT:enhanced_backend/Resources/Public/Icons/ArrowSquareIn.svg'
 # Create multiple pages
-apps-pagetree-drag-move-between: 'EXT:enhanced-backend/Resources/Public/Icons/Files.svg'
+apps-pagetree-drag-move-between: 'EXT:enhanced_backend/Resources/Public/Icons/Files.svg'
 # Sort subpages
-actions-page-move: 'EXT:enhanced-backend/Resources/Public/Icons/SortAscending.svg'
+actions-page-move: 'EXT:enhanced_backend/Resources/Public/Icons/SortAscending.svg'
 ### USER
   # User settings
-module-setup: 'EXT:enhanced-backend/Resources/Public/Icons/Gear.svg'
+module-setup: 'EXT:enhanced_backend/Resources/Public/Icons/Gear.svg'
 # Logout
-actions-logout: 'EXT:enhanced-backend/Resources/Public/Icons/SignOut.svg'
+actions-logout: 'EXT:enhanced_backend/Resources/Public/Icons/SignOut.svg'
 ### CONTENT AREA
   # Tag
-ext-news-tag: 'EXT:enhanced-backend/Resources/Public/Icons/Tag.svg'
+ext-news-tag: 'EXT:enhanced_backend/Resources/Public/Icons/Tag.svg'
 # Plugin
-mimetypes-x-content-plugin: 'EXT:enhanced-backend/Resources/Public/Icons/PuzzlePiece.svg'
+mimetypes-x-content-plugin: 'EXT:enhanced_backend/Resources/Public/Icons/PuzzlePiece.svg'

@@ -53,13 +53,13 @@ class BackendUserService implements SingletonInterface
     public function addFieldsToUserSettings()
     {
         $GLOBALS['TYPO3_USER_SETTINGS']['columns']['tx_enhancedbackend_uc'] = [
-            'label' => 'LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme',
-            'description' => 'LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.description',
+            'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme',
+            'description' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.description',
             'type' => 'user',
             'userFunc' => BackendUserService::class.'->renderUserConfig'
         ];
         ExtensionManagementUtility::addFieldsToUserSettings(
-            '--div--;LLL:EXT:enhanced-backend/Resources/Private/Language/locallang_be.xlf:user_settings.enba.tab_label, tx_enhancedbackend_uc'
+            '--div--;LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.enba.tab_label, tx_enhancedbackend_uc'
         );
 
         $featureService = GeneralUtility::makeInstance(FeatureService::class);
