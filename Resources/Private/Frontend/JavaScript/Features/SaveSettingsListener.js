@@ -10,35 +10,49 @@ function showPageReloadDialog() {
   }
 }
 
-function initContentAreaListener() {
+function initSaveSettings() {
   const iframe = document.querySelector('#typo3-contentIframe');
-
-  if (iframe == null) {
-    window.setTimeout(initContentAreaListener, 500);
-  } else {
-    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-    if (iframeDoc.readyState === 'complete') {
-      const $saveButton = iframe.contentWindow.document.querySelector(".btn[name='data[save]']");
-      if(!!$saveButton) {
-        $saveButton.onclick = setReloadTrigger();
-      }
-
-      document.querySelector('#typo3-contentIframe').addEventListener('load', (event) => {
-        if(!!sessionStorage.getItem('reloadPage')) {
-          showPageReloadDialog();
-        }
-      });
-    } else {
-      window.setTimeout(initContentAreaListener, 500);
-    }
+  const $saveButton = iframe.contentWindow.document.querySelector(".btn[name='data[save]']");
+  if(!!$saveButton) {
+    $saveButton.onclick = setReloadTrigger();
   }
+
+  document.querySelector('#typo3-contentIframe').addEventListener('load', (event) => {
+    if(!!sessionStorage.getItem('reloadPage')) {
+      showPageReloadDialog();
+    }
+  });
 }
 
 function setReloadTrigger() {
   sessionStorage.setItem('reloadPage', 'true');
 }
 
-// TODO: show a dialog for reloading the page to inform user what is going on
-export default function InitSaveSettingsListener() {
-  initContentAreaListener();
+function toggleGroup() {
+
+}
+
+function initSettingsGroupToggle() {
+  const contentArea = document.querySelector('#typo3-contentIframe');
+  contentArea.contentWindow.document.querySelectorAll('.enba-uc-group__header').forEach(groupHeader => {
+    console.log(groupHeader);
+    groupHeader.addEventListener('click', function() {
+      groupHeader.closest('.enba-uc-group').classList.toggle('enba-uc-group--collapsed');
+    });
+  });
+}
+
+export default function InitUserSettings() {
+  const iframe = document.querySelector('#typo3-contentIframe');
+  if (iframe == null) {
+    window.setTimeout(InitUserSettings, 500);
+  } else {
+    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+    if (iframeDoc.readyState === 'complete') {
+      initSaveSettings();
+      initSettingsGroupToggle();
+    } else {
+      window.setTimeout(InitUserSettings, 500);
+    }
+  }
 }

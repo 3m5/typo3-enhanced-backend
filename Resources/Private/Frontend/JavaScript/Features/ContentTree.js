@@ -197,7 +197,7 @@ function isPageModuleActive() {
  * @constructor
  */
 export default function InitContentTree() {
-  if(!!document.querySelector('.enba-contentNavigation__enabledContentTree')) {
+  if(!!document.querySelector('.enba-pageTree__enabledContentTree')) {
     buildContentTree();
   }
 }
