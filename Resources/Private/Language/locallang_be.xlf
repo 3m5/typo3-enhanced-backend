@@ -54,6 +54,33 @@
 			<trans-unit id="user_settings.theme.custom.description">
 				<source>Select your favorite features to customize the TYPO3 Backend for your needs.</source>
 			</trans-unit>
+			<trans-unit id="presets">
+				<source>Presets</source>
+			</trans-unit>
+			<trans-unit id="presets.none.label">
+				<source>no changes</source>
+			</trans-unit>
+			<trans-unit id="presets.none.description">
+				<source>orginal TYPO3 backend </source>
+			</trans-unit>
+			<trans-unit id="presets.vanilla.label">
+				<source>Vanilla+</source>
+			</trans-unit>
+			<trans-unit id="presets.vanilla.description">
+				<source>(fell free to add a descripition)</source>
+			</trans-unit>
+			<trans-unit id="presets.modern.label">
+				<source>Modern</source>
+			</trans-unit>
+			<trans-unit id="presets.modern.description">
+				<source>(fell free to add a descripition)</source>
+			</trans-unit>
+			<trans-unit id="presets.custom.label">
+				<source>Custom</source>
+			</trans-unit>
+			<trans-unit id="presets.custom.description">
+				<source>(fell free to add a descripition)</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
