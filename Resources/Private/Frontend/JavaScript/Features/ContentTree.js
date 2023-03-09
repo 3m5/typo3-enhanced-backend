@@ -101,7 +101,7 @@ function createNestedList(rootElement, classList, createdTreeLinks) {
     const listItem = document.createElement("li");
     const isGridContainer = !!element.querySelector('.exampleContent > .t3-grid-container');
 
-    const elementIcon = element.querySelector('.t3-page-ce-header .t3js-icon');
+    const elementIcon = element.querySelector('.t3-page-ce-header .t3js-contextmenutrigger');
 
     let linkToContentElement = '';
     if(isGridContainer) {
@@ -118,6 +118,7 @@ function createNestedList(rootElement, classList, createdTreeLinks) {
     if(!!linkToContentElement && linkToContentElement.tagName === 'A') {
       // edit form should open in content area
       linkToContentElement.setAttribute('target', 'list_frame');
+      linkToContentElement.classList.add('link-to-content-element');
 
       // add ce icon to tree view
       if(!!elementIcon) {
