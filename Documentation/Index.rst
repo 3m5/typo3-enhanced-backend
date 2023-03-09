@@ -3,7 +3,7 @@ Enhanced Backend
 ================
 
 :Extension key:
-   enhanced-backend
+   enhanced_backend
 
 :Package name:
    3m5/enhanced-backend

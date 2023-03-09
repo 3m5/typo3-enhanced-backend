@@ -28,9 +28,9 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 class FeatureService implements SingletonInterface
 {
     public const FIELD_NAME_PREFIX = 'enba';
-    public const YAML_CONFIG_FILE = 'EXT:enhanced-backend/Configuration/Yaml/Features.yaml';
+    public const YAML_CONFIG_FILE = 'EXT:enhanced_backend/Configuration/Yaml/Features.yaml';
 
-    const YAML_ENHANCED_ICONS_FILE = 'EXT:enhanced-backend/Configuration/Yaml/Icons.yaml';
+    const YAML_ENHANCED_ICONS_FILE = 'EXT:enhanced_backend/Configuration/Yaml/Icons.yaml';
     /**
      * @var FeatureFactory
      */
