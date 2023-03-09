@@ -2,3 +2,4 @@
 .idea
 /Tests/Build/.phpunit.result.cache
 /Resources/Private/Frontend/node_modules/
+/Resources/Private/Frontend/package-lock.json
