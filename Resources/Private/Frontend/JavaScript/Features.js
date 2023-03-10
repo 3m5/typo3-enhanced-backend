@@ -15,7 +15,10 @@ window.addEventListener('load', (event) => {
     // Code is executed in content area
     if(window.frameElement.id === 'typo3-contentIframe') {
       InitUserSettings();
-      InitContentElementWizard();
+
+      if(!!document.querySelector('.enba-contentElementWizard__enhancedUI')) {
+        InitContentElementWizard();
+      }
     }
   }
 });
