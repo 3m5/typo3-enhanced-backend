@@ -11,31 +11,18 @@ function showPageReloadDialog() {
 }
 
 function initSaveSettings() {
-  const iframe = document.querySelector('#typo3-contentIframe');
-  const $saveButton = iframe.contentWindow.document.querySelector(".btn[name='data[save]']");
+  const $saveButton = document.querySelector(".btn[name='data[save]']");
   if(!!$saveButton) {
-    $saveButton.onclick = setReloadTrigger();
+    $saveButton.onclick = setReloadTrigger;
   }
-
-  document.querySelector('#typo3-contentIframe').addEventListener('load', (event) => {
-    if(!!sessionStorage.getItem('reloadPage')) {
-      showPageReloadDialog();
-    }
-  });
 }
 
 function setReloadTrigger() {
   sessionStorage.setItem('reloadPage', 'true');
 }
 
-function toggleGroup() {
-
-}
-
 function initSettingsGroupToggle() {
-  const contentArea = document.querySelector('#typo3-contentIframe');
-  contentArea.contentWindow.document.querySelectorAll('.enba-uc-group__header').forEach(groupHeader => {
-    console.log(groupHeader);
+  document.querySelectorAll('.enba-uc-group__header').forEach(groupHeader => {
     groupHeader.addEventListener('click', function() {
       groupHeader.closest('.enba-uc-group').classList.toggle('enba-uc-group--collapsed');
     });
@@ -43,16 +30,10 @@ function initSettingsGroupToggle() {
 }
 
 export default function InitUserSettings() {
-  const iframe = document.querySelector('#typo3-contentIframe');
-  if (iframe == null) {
-    window.setTimeout(InitUserSettings, 500);
-  } else {
-    const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-    if (iframeDoc.readyState === 'complete') {
-      initSaveSettings();
-      initSettingsGroupToggle();
-    } else {
-      window.setTimeout(InitUserSettings, 500);
-    }
+  initSaveSettings();
+  initSettingsGroupToggle();
+
+  if(!!sessionStorage.getItem('reloadPage')) {
+    showPageReloadDialog();
   }
 }

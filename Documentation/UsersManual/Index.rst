@@ -1,4 +1,0 @@
-Editors manual
-==============
-
-coming soon...

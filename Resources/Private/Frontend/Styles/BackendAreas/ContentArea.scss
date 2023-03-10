@@ -6,13 +6,10 @@
 .enba-contentArea {
     &__enhancedOverviewUI {
         @include contentArea__enhancedOverviewUI;
-    }
-
-    &__enhancedContentElementPositioning {
         @include contentArea__enhancedContentElementPositioning;
     }
 
-    &__enhancedOverviewUI {
+    &__enhancedToolbar {
         @include contentArea__enhancedToolbar;
     }
 

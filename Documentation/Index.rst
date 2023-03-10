@@ -1,54 +1,22 @@
+.. include:: Includes.rst.txt
+
+.. _Start:
+
 ================
 Enhanced Backend
 ================
 
-:Extension key:
-   enhanced_backend
-
-:Package name:
-   3m5/enhanced-backend
-
-:Version:
-   |alpha|
-
-:Language:
-   en
-
-:Author:
-   Nicole Schneider, Steffen Thiele, Jan Suchandt & Contributors
-
-:License:
-   This document is published under the
-   `Open Publication License <https://www.opencontent.org/openpub/>`__.
-
-:Rendered:
-   |today|
-
-----
-
-The Enhanced Backend Extension improves the user experience (UX) in the TYPO3
-backend, provides customization options for editors and improves the look'n'feel
-of TYPO3 so that it represents a modern and intuitive eCMS.
-
-----
-
-.. Table of Contents
+:Author:    3m5. Media GmbH. <jan.suchandt@3m5.de>
+:License:   GPL 2.0
+:Rendered:  |today|
+:Description:
+   The Enhanced Backend Extension improves the user experience (UI/UX) in the TYPO3
+   backend, provides customization options for editors and enhances the look and
+   feel of TYPO3 so that it represents a modern and intuitive eCMS.
 
 .. toctree::
-   :maxdepth: 2
    :titlesonly:
-   :hidden:
+   :maxdepth: 2
+   :glob:
 
-   Introduction/Index
-   QuickStart/Index
-   UsersManual/Index
-   Administration/Index
-
-
-.. Meta Menu
-
-.. toctree::
-   :hidden:
-
-   Sitemap
-   genindex
+   Features/Index

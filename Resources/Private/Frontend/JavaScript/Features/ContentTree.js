@@ -49,10 +49,10 @@ function createContentTreeHTML() {
   contentTreeHeader.innerHTML = '<label class="content-tree__headline">Content tree</label><i class="fa fa-solid fa-angle-down content-tree__toggle"></i>';
   contentTreeHeader.onclick = initContentTreeToggle;
 
-  const contentTreeHeadline = contentArea.querySelector('.t3js-title-inlineedit') ? contentArea.querySelector('.t3js-title-inlineedit').textContent : 'Content Tree';
+  const contentTreeHeadline = contentArea.querySelector('.typo3-docheader-pagePath + strong') ? contentArea.querySelector('.typo3-docheader-pagePath + strong').innerHTML : (contentArea.querySelector('.t3js-title-inlineedit') ? contentArea.querySelector('.t3js-title-inlineedit').textContent : 'Content Tree');
   const contentTreeData = document.createElement("div");
   contentTreeData.classList.add('content-tree__data');
-  contentTreeData.innerHTML = '<ul><li><span class="content-tree__title">' + contentArea.querySelector('.typo3-docheader-pagePath + strong').innerHTML + '</li></ul>'
+  contentTreeData.innerHTML = '<ul><li><span class="content-tree__title">' + contentTreeHeadline + '</li></ul>';
 
   contentTree.appendChild(contentTreeHeader);
   contentTree.appendChild(contentTreeData);
@@ -101,7 +101,7 @@ function createNestedList(rootElement, classList, createdTreeLinks) {
     const listItem = document.createElement("li");
     const isGridContainer = !!element.querySelector('.exampleContent > .t3-grid-container');
 
-    const elementIcon = element.querySelector('.t3-page-ce-header .t3js-icon');
+    const elementIcon = element.querySelector('.t3-page-ce-header .t3js-contextmenutrigger');
 
     let linkToContentElement = '';
     if(isGridContainer) {
@@ -118,6 +118,7 @@ function createNestedList(rootElement, classList, createdTreeLinks) {
     if(!!linkToContentElement && linkToContentElement.tagName === 'A') {
       // edit form should open in content area
       linkToContentElement.setAttribute('target', 'list_frame');
+      linkToContentElement.classList.add('link-to-content-element');
 
       // add ce icon to tree view
       if(!!elementIcon) {
