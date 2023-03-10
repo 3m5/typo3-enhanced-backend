@@ -6,10 +6,14 @@ window.addEventListener('load', (event) => {
   if (window.top === window) {
     // Code is only executed in main HTML
     InitContentTree();
-    InitUserSettings();
 
   } else {
     // Code is executed in an iframe
     InitEnbaClassNames();
+
+    // Code is executed in content area
+    if(window.frameElement.id === 'typo3-contentIframe') {
+      InitUserSettings();
+    }
   }
 });
