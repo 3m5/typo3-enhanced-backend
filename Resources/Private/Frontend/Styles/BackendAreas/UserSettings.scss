@@ -126,4 +126,20 @@
             }
         }
     }
+
+    .enba-presets {
+        width: 100%;
+        height: 100%;
+        border: 2px solid $typo3-grey--border;
+        padding: 8px;
+        cursor: pointer;
+    }
+
+    input[name="data[enba-presets]"] {
+        display: none;
+
+        &:checked + .enba-presets {
+            border-color: $typo3-color;
+        }
+    }
 }

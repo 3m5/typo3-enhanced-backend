@@ -29,10 +29,14 @@ function initSettingsGroupToggle() {
   });
 }
 
+function initPresets() {
+  
+}
+
 export default function InitUserSettings() {
+  initPresets();
   initSaveSettings();
   initSettingsGroupToggle();
-
   if(!!sessionStorage.getItem('reloadPage')) {
     showPageReloadDialog();
   }
