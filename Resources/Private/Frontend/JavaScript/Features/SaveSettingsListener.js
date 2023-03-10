@@ -30,7 +30,11 @@ function initSettingsGroupToggle() {
 }
 
 function initPresets() {
-  
+  /*document.querySelectorAll('[name="data[enba-presets]"]').forEach(function(radioButton) {
+    radioButton.addEventListener('click', function() {
+      document.getElementById('price').innerHTML = $(this).val();
+    });
+  })*/
 }
 
 export default function InitUserSettings() {
