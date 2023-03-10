@@ -105,9 +105,11 @@ function createNestedList(rootElement, classList, createdTreeLinks) {
 
     let linkToContentElement = '';
     if(isGridContainer) {
-      linkToContentElement = element.querySelector('.t3-page-ce-header a[title="Edit"]').cloneNode(true);
-      linkToContentElement.innerHTML = element.querySelector('.t3-page-ce-body .exampleContent').firstElementChild.tagName === 'STRONG' ? element.querySelector('.t3-page-ce-body').querySelector('.exampleContent > strong').textContent : 'Container';
-      linkToContentElement.classList = '';
+      if(!!element.querySelector('.t3-page-ce-header a[title="Edit"]')) {
+        linkToContentElement = element.querySelector('.t3-page-ce-header a[title="Edit"]').cloneNode(true);
+        linkToContentElement.innerHTML = element.querySelector('.t3-page-ce-body .exampleContent').firstElementChild.tagName === 'STRONG' ? element.querySelector('.t3-page-ce-body').querySelector('.exampleContent > strong').textContent : 'Container';
+        linkToContentElement.classList = '';
+      }
     } else {
       linkToContentElement = element.querySelector('.t3-page-ce-dragitem .exampleContent strong') ? stringToHTML(element.querySelector('.t3-page-ce-dragitem .exampleContent strong').innerHTML) : '';
       if(!!linkToContentElement && linkToContentElement.querySelector('a')) {
