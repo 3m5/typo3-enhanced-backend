@@ -105,7 +105,7 @@ groups:
           - modern
       - id: enhancedEditingForm
         title: Optimiertes Formular "Bearbeiten"
-        description: TBD
+        description: Formularelemente werden anhand eines Rasters ausgerichtet. Rahmen werden optisch in den Hintergrund gestellt, damit Redakteure sich auf die Inhalte fokussieren können.
         type: check
         preset:
           - vanilla

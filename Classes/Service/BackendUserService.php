@@ -123,7 +123,7 @@ class BackendUserService implements SingletonInterface
             'custom'
         ];
 
-        $html = ['<div>'];
+        $html = ['<div class="enba-presets-container">'];
 
         $html[] = '<div class="row">';
 

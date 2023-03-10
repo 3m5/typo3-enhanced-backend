@@ -1,11 +1,7 @@
 .enba-settings {
     .form-group {
         margin-bottom: 8px;
-        border-bottom: 1px solid $typo3-grey--border;
-
-        &:last-child {
-            border-bottom: none;
-        }
+        border-top: 1px solid $typo3-grey--border;
     }
 
     .enba-uc__feature {
@@ -133,6 +129,10 @@
         border: 2px solid $typo3-grey--border;
         padding: 8px;
         cursor: pointer;
+
+        &-container {
+            margin-bottom: 32px;
+        }
     }
 
     input[name="data[enba-presets]"] {
