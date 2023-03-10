@@ -4,6 +4,7 @@ function reloadPage() {
 }
 
 function showPageReloadDialog() {
+  //const dialog = top.TYPO3.Modal.confirm("For all changes to take effect, the page must be reloaded once. Should the page be reloaded now?");
   const dialog = confirm("For all changes to take effect, the page must be reloaded once. Should the page be reloaded now?");
   if (dialog) {
     reloadPage();
