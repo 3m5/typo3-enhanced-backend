@@ -112,11 +112,11 @@ groups:
           - modern
   contentElementWizard:
     title: Inhaltselementwizard
-    description: Dieser Dialog wird sichtbar, wenn du ein neues Contentelement erstellst.
+    description: Dieser Dialog wird beim Erstellen eines neuen Contentelements sichtbar.
     features:
       - id: enhancedToolbar
         title: Optimierte Toolbar
-        description: Buttons und Titel werden repositioniert für einen besseren Überblick. Außerdem sind alle Flaggen ausgeblendet, um Redundanz zu verringern.
+        description: Das Suchfeld und die Tabs werden in einem moderneren Design bereitgestellt.
         type: check
         preset:
           - vanilla
