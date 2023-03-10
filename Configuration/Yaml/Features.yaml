@@ -91,15 +91,8 @@ groups:
     description: Der Inhaltsbereich ist der Bereich, in dem die Inhalte der jeweiligen Module gezeigt werden aus der Seitenleiste angezeigt werden.
     features:
       - id: enhancedOverviewUI
-        title: Inhaltsbereich optimieren
-        description: TODO
-        type: check
-        preset:
-          - vanilla
-          - modern
-      - id: enhancedContentElementPositioning
-        title: Komprimierte Ansicht von Inhaltselementen
-        description: Buttons und Titel werden repositioniert für einen besseren Überblick. Außerdem sind alle Flaggen ausgeblendet, um Redundanz zu verringern.
+        title: Optimierter Inhaltsbereich
+        description: Contentelement-Rahmen werden in den Hintergrund gerückt, um den Fokus auf die Inhalte zu setzen. Buttons und Titel werden repositioniert für einen besseren Überblick. Außerdem sind alle Flaggen ausgeblendet, um Redundanz zu verringern.
         type: check
         preset:
           - modern
