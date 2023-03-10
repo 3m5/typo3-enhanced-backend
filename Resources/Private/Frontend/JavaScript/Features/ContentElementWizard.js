@@ -1,3 +1,7 @@
+function toggleTooltip(tooltip) {
+  tooltip.classList.toggle('tooltip--active');
+}
+
 function addTooltip() {
   window.parent.document.querySelectorAll('.t3js-media-new-content-element-wizard').forEach(function(contentElementButton) {
     let tooltipContent = contentElementButton.querySelector('.media-body');
@@ -7,8 +11,12 @@ function addTooltip() {
       tooltipContent.classList.add('tooltip__content');
       const tooltip = document.createElement('div');
       tooltip.classList.add('enba-tooltip');
+      tooltip.insertAdjacentElement('afterbegin', tooltipContent);
       tooltip.insertAdjacentHTML("afterbegin",'<img class="tooltip__icon" src="/typo3conf/ext/enhanced_backend/Resources/Public/Icons/Info.svg" width="20" height="20" />');
-      tooltip.insertAdjacentElement('afterend', tooltipContent);
+
+      tooltip.querySelector('.tooltip__icon').addEventListener('click', function() {
+        toggleTooltip(tooltip);
+      });
       contentElementButton.insertAdjacentElement('afterbegin', tooltip);
     }
   });
