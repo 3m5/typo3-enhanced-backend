@@ -5,8 +5,11 @@
         }
 
         .media-new-content-element-wizard {
-            width: 25% !important;
+            width: calc(25% - 4px) !important;
+            margin: 2px;
             text-align: center;
+            position: relative;
+            background-color: $typo3-grey--lighter;
 
             .media {
                 display: block;
@@ -31,6 +34,18 @@
                     strong {
                         font-size: 12px;
                     }
+                }
+            }
+
+            /****** Custom Tooltip **************/
+            .enba-tooltip {
+                text-align: left;
+                position: absolute;
+                top: 8px;
+                right: 8px;
+
+                strong, br {
+                    display: none;
                 }
             }
         }
