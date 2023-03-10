@@ -176,7 +176,7 @@ class BackendUserService implements SingletonInterface
                 $checked = $feature->isActive() ? 'checked="checked"': '';
                 // TODO:  $this->getLanguageService()->sL() nutzen
                 $fieldId = 'tx_enhancedbackend_uc_'.$feature->getId();
-                $html[] = '<div class="form-check form-switch"><input type="checkbox" id="field_'.$fieldId.'" class="form-check-input" name="data['.$feature->getId().']" '.$checked.'></div>';
+                $html[] = '<div class="form-check form-switch" data-presets="'.implode(',',$feature->getPresets()).'"><input type="checkbox" id="field_'.$fieldId.'" class="form-check-input" name="data['.$feature->getId().']" '.$checked.'></div>';
                 $html[] = '<div class="feature__text"><span class="feature__title">'.$feature->getTitle().'</span><br/>';
                 $html[] = '<span class="feature__description">'.$feature->getDescription().'</span></div>';
                 break;
