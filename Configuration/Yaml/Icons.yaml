@@ -7,7 +7,7 @@ apps-toolbar-menu-shortcut: 'EXT:enhanced_backend/Resources/Public/Icons/Bookmar
 # bookmark
 actions-system-shortcut-new: 'EXT:enhanced_backend/Resources/Public/Icons/Bookmark-simple.svg'
 # bookmark page content
-module-page: 'EXT:enhanced_backend/Resources/Public/Icons/FileText.svg'
+#module-page: 'EXT:enhanced_backend/Resources/Public/Icons/FileText.svg'
 # cache
 apps-toolbar-menu-cache: 'EXT:enhanced_backend/Resources/Public/Icons/Eraser.svg'
 # cache frontend in toolbar
@@ -35,21 +35,22 @@ actions-system-help-open: 'EXT:enhanced_backend/Resources/Public/Icons/Question.
 actions-share-alt: 'EXT:enhanced_backend/Resources/Public/Icons/ShareNetwork.svg'
 ### PAGE TREE
   # create new page
-apps-pagetree-page-default: 'EXT:enhanced_backend/Resources/Public/Icons/File.svg'
+#apps-pagetree-page-default: 'EXT:enhanced_backend/Resources/Public/Icons/File.svg'
 # create new folder
-apps-pagetree-folder-default: 'EXT:enhanced_backend/Resources/Public/Icons/Folder.svg'
+#apps-pagetree-folder-default: 'EXT:enhanced_backend/Resources/Public/Icons/Folder.svg'
 # add bin
-apps-pagetree-page-recycler: 'EXT:enhanced_backend/Resources/Public/Icons/Trash.svg'
+#apps-pagetree-page-recycler: 'EXT:enhanced_backend/Resources/Public/Icons/Trash.svg'
 # add menu separator
-apps-pagetree-spacer: 'EXT:enhanced_backend/Resources/Public/Icons/Divide.svg'
+#apps-pagetree-spacer: 'EXT:enhanced_backend/Resources/Public/Icons/Divide.svg'
 # add link to external url
-apps-pagetree-page-shortcut-external: 'EXT:enhanced_backend/Resources/Public/Icons/LinkSimple.svg'
+#apps-pagetree-page-shortcut-external: 'EXT:enhanced_backend/Resources/Public/Icons/LinkSimple.svg'
 # add mount point
-apps-pagetree-page-mountpoint: 'EXT:enhanced_backend/Resources/Public/Icons/FlagBanner.svg'
+#apps-pagetree-page-mountpoint: 'EXT:enhanced_backend/Resources/Public/Icons/FlagBanner.svg'
 # add shortcut
-apps-pagetree-page-shortcut: 'EXT:enhanced_backend/Resources/Public/Icons/ArrowBendUpRight.svg'
+#apps-pagetree-page-shortcut: 'EXT:enhanced_backend/Resources/Public/Icons/ArrowBendUpRight.svg'
 # add backend user section
-apps-pagetree-page-backend-users: 'EXT:enhanced_backend/Resources/Public/Icons/LockKeyOpen.svg'
+#apps-pagetree-page-backend-users: 'EXT:enhanced_backend/Resources/Public/Icons/LockKeyOpen.svg'
+
 # edit pencil
 actions-open: 'EXT:enhanced_backend/Resources/Public/Icons/Pencil.svg'
 # edit trash
