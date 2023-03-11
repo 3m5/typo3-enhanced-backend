@@ -34,31 +34,39 @@
 				<target>Erlaubte Backend Themes</target>
 			</trans-unit>
 			<!-- Vanilla -->
-			<trans-unit id="user_settings.theme.vanilla">
-				<source>Vanilla+</source>
-				<target>Vanilla+</target>
+			<trans-unit id="presets">
+				<source>Presets</source>
 			</trans-unit>
-			<trans-unit id="user_settings.theme.vanilla.description">
-				<source>A TYPO3-a-like theme with UI/UX improvements.</source>
-				<target>Ein Theme das sich am TYPO3-Standard orientiert, aber UI/UX-Verbesserungen beinhaltet.</target>
+			<trans-unit id="presets.none.label">
+				<source>No changes</source>
+				<target>Keine Änderungen</target>
 			</trans-unit>
-			<!-- Modern -->
-			<trans-unit id="user_settings.theme.modern">
+			<trans-unit id="presets.none.description">
+				<source>Original TYPO3 backend</source>
+				<target>Originales TYPO3 Backend</target>
+			</trans-unit>
+			<trans-unit id="presets.vanilla.label">
+				<source>Vanilla⁺</source>
+				<target>Vanilla⁺</target>
+			</trans-unit>
+			<trans-unit id="presets.vanilla.description">
+				<source>The preset Vanilla⁺ is based on the corporate design of TYPO3. Functionalities are not changed or added. There are only minor UI optimizations.</source>
+				<target>Das Preset Vanilla⁺ basiert auf dem Corporate Design von TYPO3. Funktionalitäten werden nicht verändert oder hinzugefügt. Es gibt nur kleinere UI-Optimierungen.</target>
+			</trans-unit>
+			<trans-unit id="presets.modern.label">
 				<source>Modern</source>
-				<target>Modern</target>
 			</trans-unit>
-			<trans-unit id="user_settings.theme.modern.description">
-				<source>A modern makeover of the TYPO3 Backend with visuell improvements.</source>
-				<target>Eine moderne Überarbeitung des TYPO3 Backends mit visuellen Verbesserungen.</target>
+			<trans-unit id="presets.modern.description">
+				<source>The 'Modern' preset activates all available features and optimizations of the Enhanced Backend extension. The UI/UX is based on current developments and there is a content tree that allows quick navigation over all content on a page.</source>
+				<target>Die Voreinstellung "Modern" aktiviert alle verfügbaren Funktionen und Optimierungen der Erweiterung "Enhanced Backend". Die UI/UX basiert auf aktuellen Entwicklungen und es gibt einen Inhaltsbaum, der eine schnelle Navigation über alle Inhalte auf einer Seite ermöglicht.</target>
 			</trans-unit>
-			<!-- Custom -->
-			<trans-unit id="user_settings.theme.custom">
+			<trans-unit id="presets.custom.label">
 				<source>Custom</source>
-				<target>Custom</target>
+				<target>Benutzerdefiniert</target>
 			</trans-unit>
-			<trans-unit id="user_settings.theme.custom.description">
-				<source>Select your favorite features to customize the TYPO3 Backend for your needs.</source>
-				<target>Wählen Sie Ihre bevorzugten Funktionen, um das TYPO3 Backend an Ihre Bedürfnisse anzupassen.</target>
+			<trans-unit id="presets.custom.description">
+				<source>This preset takes over the last selected settings (from the other presets) and allows individual dis-/enabling of individual features and optimizations.</source>
+				<target>Dieses Preset übernimmt die zuletzt gewählten Einstellungen (aus den anderen Presets) und ermöglicht das individuelle De-/Aktivieren einzelner Funktionen und Optimierungen.</target>
 			</trans-unit>
 		</body>
 	</file>
