@@ -54,6 +54,33 @@
 			<trans-unit id="user_settings.theme.custom.description">
 				<source>Select your favorite features to customize the TYPO3 Backend for your needs.</source>
 			</trans-unit>
+			<trans-unit id="presets">
+				<source>Presets</source>
+			</trans-unit>
+			<trans-unit id="presets.none.label">
+				<source>No changes</source>
+			</trans-unit>
+			<trans-unit id="presets.none.description">
+				<source>Original TYPO3 backend </source>
+			</trans-unit>
+			<trans-unit id="presets.vanilla.label">
+				<source>Vanilla⁺</source>
+			</trans-unit>
+			<trans-unit id="presets.vanilla.description">
+				<source>The preset Vanilla⁺ is based on the corporate design of TYPO3. Functionalities are not changed or added. There are only minor UI optimizations.</source>
+			</trans-unit>
+			<trans-unit id="presets.modern.label">
+				<source>Modern</source>
+			</trans-unit>
+			<trans-unit id="presets.modern.description">
+				<source>The 'Modern' preset activates all available features and optimizations of the Enhanced Backend extension. The UI/UX is based on current developments and there is a content tree that allows quick navigation over all content on a page.</source>
+			</trans-unit>
+			<trans-unit id="presets.custom.label">
+				<source>Custom</source>
+			</trans-unit>
+			<trans-unit id="presets.custom.description">
+				<source>This preset takes over the last selected settings (from the other presets) and allows individual dis-/enabling of individual features and optimizations.</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

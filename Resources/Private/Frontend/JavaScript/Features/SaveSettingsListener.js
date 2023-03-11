@@ -30,10 +30,54 @@ function initSettingsGroupToggle() {
   });
 }
 
+function uncheckAllFeatures() {
+  document.querySelectorAll('.enba-uc__feature input[type="checkbox"]').forEach(function(featureCheckbox) {
+    featureCheckbox.checked = false
+  });
+}
+
+function updateFeatures(selectedPreset) {
+  switch(selectedPreset) {
+    case 'custom':
+      break;
+    case 'vanilla':
+      document.querySelectorAll('.enba-uc__feature input[type="checkbox"]').forEach(function(featureCheckbox) {
+        featureCheckbox.checked = featureCheckbox.dataset.presets.includes('vanilla');
+      });
+      break;
+    case 'modern':
+      document.querySelectorAll('.enba-uc__feature input[type="checkbox"]').forEach(function(featureCheckbox) {
+        featureCheckbox.checked = featureCheckbox.dataset.presets.includes('modern');
+      });
+      break;
+    case 'none':
+      uncheckAllFeatures();
+      break;
+  }
+}
+
+function setPreset(presetValue) {
+  document.querySelector('[name="data[enba-presets]"][value="' + presetValue + '"]').checked = true;
+}
+
+function initPresets() {
+  document.querySelectorAll('[name="data[enba-presets]"]').forEach(function(radioButton) {
+    radioButton.addEventListener('click', function() {
+      updateFeatures(this.getAttribute('value'));
+    });
+  });
+
+  document.querySelectorAll('.enba-uc__feature input[type="checkbox"]').forEach(function(featureCheckbox) {
+    featureCheckbox.addEventListener('change', function () {
+      setPreset('custom');
+    });
+  });
+}
+
 export default function InitUserSettings() {
+  initPresets();
   initSaveSettings();
   initSettingsGroupToggle();
-
   if(!!sessionStorage.getItem('reloadPage')) {
     showPageReloadDialog();
   }
