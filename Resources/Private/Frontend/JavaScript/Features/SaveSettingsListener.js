@@ -30,12 +30,38 @@ function initSettingsGroupToggle() {
   });
 }
 
+function uncheckAllFeatures() {
+  document.querySelectorAll('.enba-uc__feature input[type="checkbox"]').forEach(function(featureCheckbox) {
+    featureCheckbox.checked = false
+  });
+}
+
+function updateFeatures(selectedPreset) {
+  switch(selectedPreset) {
+    case 'custom':
+      break;
+    case 'vanilla':
+      document.querySelectorAll('.enba-uc__feature input[type="checkbox"]').forEach(function(featureCheckbox) {
+        featureCheckbox.checked = featureCheckbox.dataset.presets.includes('vanilla');
+      });
+      break;
+    case 'modern':
+      document.querySelectorAll('.enba-uc__feature input[type="checkbox"]').forEach(function(featureCheckbox) {
+        featureCheckbox.checked = featureCheckbox.dataset.presets.includes('modern');
+      });
+      break;
+    case 'none':
+      uncheckAllFeatures();
+      break;
+  }
+}
+
 function initPresets() {
-  /*document.querySelectorAll('[name="data[enba-presets]"]').forEach(function(radioButton) {
+  document.querySelectorAll('[name="data[enba-presets]"]').forEach(function(radioButton) {
     radioButton.addEventListener('click', function() {
-      document.getElementById('price').innerHTML = $(this).val();
+      updateFeatures(this.getAttribute('value'));
     });
-  })*/
+  });
 }
 
 export default function InitUserSettings() {
