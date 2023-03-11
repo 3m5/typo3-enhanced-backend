@@ -56,10 +56,20 @@ function updateFeatures(selectedPreset) {
   }
 }
 
+function setPreset(presetValue) {
+  document.querySelector('[name="data[enba-presets]"][value="' + presetValue + '"]').checked = true;
+}
+
 function initPresets() {
   document.querySelectorAll('[name="data[enba-presets]"]').forEach(function(radioButton) {
     radioButton.addEventListener('click', function() {
       updateFeatures(this.getAttribute('value'));
+    });
+  });
+
+  document.querySelectorAll('.enba-uc__feature input[type="checkbox"]').forEach(function(featureCheckbox) {
+    featureCheckbox.addEventListener('change', function () {
+      setPreset('custom');
     });
   });
 }
