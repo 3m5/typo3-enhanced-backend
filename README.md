@@ -13,7 +13,8 @@ feel of TYPO3 so that it represents a modern and intuitive eCMS.
 
 It includes these features:
 
-* ...coming soon
+* Content tree
+* UI / UX
 
 # Usages
 

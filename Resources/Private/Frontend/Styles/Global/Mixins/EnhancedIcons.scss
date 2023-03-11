@@ -8,6 +8,14 @@ $icon-size--phosphor: 20px;
     filter: brightness(0) saturate(100%) invert(100%);
 }
 
+@mixin svg-color--red {
+    filter: invert(41%) sepia(10%) saturate(3226%) hue-rotate(313deg) brightness(90%) contrast(118%);
+}
+
+@mixin svg-color--green {
+    filter: invert(57%) sepia(26%) saturate(783%) hue-rotate(46deg) brightness(98%) contrast(90%);
+}
+
 @mixin global__enhanceIcons {
     // Top bars
     .scaffold-header, .module-docheader-bar-buttons {
@@ -83,6 +91,14 @@ $icon-size--phosphor: 20px;
 
             svg, img, {
                 @include svg-color--white;
+            }
+
+            &.icon-actions-system-cache-clear-impact-high img {
+                @include svg-color--green;
+            }
+
+            &.icon-actions-system-cache-clear-impact-low img {
+                @include svg-color--red;
             }
         }
 
