@@ -13,7 +13,7 @@ apps-toolbar-menu-cache: 'EXT:enhanced_backend/Resources/Public/Icons/Lightning.
 # cache frontend in toolbar
 actions-system-cache-clear-impact-low: 'EXT:enhanced_backend/Resources/Public/Icons/Lightning.svg'
 # cache all in toolbar
-actions-system-cache-clear-impact-high: 'EXT:enhanced_backend/Resources/Public/Icons/Lightning.svg'
+actions-system-cache-clear-impact-high: 'EXT:enhanced_backend/Resources/Public/Icons/LightningA.svg'
 # help
 apps-toolbar-menu-help: 'EXT:enhanced_backend/Resources/Public/Icons/Question.svg'
 # system info default

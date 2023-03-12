@@ -5,7 +5,10 @@ function toggleTooltip(tooltip) {
 function addTooltip() {
   window.parent.document.querySelectorAll('.t3js-media-new-content-element-wizard').forEach(function(contentElementButton) {
     let tooltipContent = contentElementButton.querySelector('.media-body');
-    if(!!tooltipContent) {
+    tooltipContent.removeChild(tooltipContent.querySelector('br'));
+    tooltipContent.removeChild(tooltipContent.querySelector('strong'));
+
+    if(!!tooltipContent && !!tooltipContent.innerText.replace(/\n|\r|\W/g, "").length) {
       tooltipContent = tooltipContent.cloneNode(true);
       tooltipContent.classList.remove('media-body');
       tooltipContent.classList.add('tooltip__content');
