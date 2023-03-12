@@ -25,11 +25,18 @@ function addTooltip() {
   });
 }
 
+function contentWizardReadyListener() {
+  if(window.parent.document.querySelector('.t3-new-content-element-wizard-window')) {
+    addTooltip();
+  } else {
+    window.setTimeout(contentWizardReadyListener, 500);
+  }
+}
+
 export default function InitContentElementWizard() {
   document.querySelectorAll('typo3-backend-new-content-element-wizard-button').forEach(function(addContentElementButton) {
     addContentElementButton.addEventListener('click', function () {
-      // TODO: Timer is a workaround for aplpha, it would be better to listen if contentelement wizard is loaed instead
-      window.setTimeout(addTooltip, 1000);
+      contentWizardReadyListener();
     });
   });
 }
