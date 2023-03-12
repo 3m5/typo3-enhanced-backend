@@ -1,21 +1,4 @@
 $icon-size--phosphor: 20px;
-
-@mixin svg-color--black {
-    filter: brightness(0) saturate(100%);
-}
-
-@mixin svg-color--white {
-    filter: brightness(0) saturate(100%) invert(100%);
-}
-
-@mixin svg-color--red {
-    filter: invert(41%) sepia(10%) saturate(3226%) hue-rotate(313deg) brightness(90%) contrast(118%);
-}
-
-@mixin svg-color--green {
-    filter: invert(57%) sepia(26%) saturate(783%) hue-rotate(46deg) brightness(98%) contrast(90%);
-}
-
 @mixin global__enhanceIcons {
     // Top bars
     .scaffold-header, .module-docheader-bar-buttons {

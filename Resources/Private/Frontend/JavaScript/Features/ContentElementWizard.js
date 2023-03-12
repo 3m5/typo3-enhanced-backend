@@ -12,7 +12,7 @@ function addTooltip() {
       const tooltip = document.createElement('div');
       tooltip.classList.add('enba-tooltip');
       tooltip.insertAdjacentElement('afterbegin', tooltipContent);
-      tooltip.insertAdjacentHTML("afterbegin",'<img class="tooltip__icon" src="/typo3conf/ext/enhanced_backend/Resources/Public/Icons/Info.svg" width="20" height="20" />');
+      tooltip.insertAdjacentHTML("afterbegin",'<img class="tooltip__icon" src="/typo3conf/ext/enhanced_backend/Resources/Public/Icons/Info.svg" width="18" height="18" />');
 
       tooltip.querySelector('.tooltip__icon').addEventListener('click', function() {
         toggleTooltip(tooltip);
