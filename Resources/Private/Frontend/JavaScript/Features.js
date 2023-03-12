@@ -9,7 +9,7 @@ window.addEventListener('load', (event) => {
     InitContentTree();
 
   } else {
-    // Code is executed in an iframe 
+    // Code is executed in an iframe
     InitEnbaClassNames();
 
     // Code is executed in content area
