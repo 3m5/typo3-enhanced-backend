@@ -7,10 +7,12 @@ namespace DMF\EnhancedBackend\Service;
 use DMF\EnhancedBackend\Model\Feature;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\Core\Bootstrap;
+use TYPO3\CMS\Core\Localization\LanguageService;
 use TYPO3\CMS\Core\SingletonInterface;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use Psr\Log\LoggerInterface;
+use TYPO3\CMS\Extbase\Service\ImageService;
 
 /**
  * Service for handling backend user settings
@@ -25,6 +27,9 @@ use Psr\Log\LoggerInterface;
  **/
 class BackendUserService implements SingletonInterface
 {
+    const PRESET_KEY = 'enba-presets';
+    const LANG_FILE = 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf';
+
     private LoggerInterface $logger;
 
     protected array $userSettings = [];
@@ -53,8 +58,7 @@ class BackendUserService implements SingletonInterface
     public function addFieldsToUserSettings()
     {
         $GLOBALS['TYPO3_USER_SETTINGS']['columns']['tx_enhancedbackend_uc'] = [
-            'label' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme',
-            'description' => 'LLL:EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf:user_settings.theme.description',
+            'label' => self::LANG_FILE.':presets',
             'type' => 'user',
             'userFunc' => BackendUserService::class.'->renderUserConfig'
         ];
@@ -65,6 +69,12 @@ class BackendUserService implements SingletonInterface
         $featureService = GeneralUtility::makeInstance(FeatureService::class);
 
         // we need this only to save the user setting
+        $GLOBALS['TYPO3_USER_SETTINGS']['columns'][self::PRESET_KEY] = [
+            'access' => 'none',
+            'type' => 'radio'
+        ];
+        ExtensionManagementUtility::addFieldsToUserSettings(self::PRESET_KEY);
+
         foreach ($featureService->getAllFeatures() as $feature) {
             $GLOBALS['TYPO3_USER_SETTINGS']['columns'][$feature->getId()] = [
                 'access' => 'none',
@@ -79,6 +89,7 @@ class BackendUserService implements SingletonInterface
     {
         $featureService = GeneralUtility::makeInstance(FeatureService::class);
         $html = ['<div class="enba-settings">'];
+        $html[] = $this->renderPresetChoise();
         $groupId = '';
         $groupClose = '';
         foreach ($featureService->getAllFeatures() as $feature) {
@@ -103,6 +114,59 @@ class BackendUserService implements SingletonInterface
         return implode('', $html);
     }
 
+    public function renderPresetChoise()
+    {
+        $presets = [
+            'none',
+            'vanilla',
+            'modern',
+            'custom'
+        ];
+
+        $html = ['<div class="enba-presets-container">'];
+
+        $html[] = '<div class="row">';
+
+        foreach ($presets as $key) {
+                $html[] = '<div class="col-xs-12 col-md-3">';
+                $html[] = $this->renderPreset($key);
+                $html[] = '</div>';
+        }
+        $html[] = '</div>';
+        $html[] = '</div>';
+
+        return implode('', $html);
+
+    }
+
+    protected function renderPreset(string $key): string
+    {
+        $content = '<input type="radio" id="field_tx_enhancedbackend_uc_' .self::PRESET_KEY.
+            '_' . $key . '" name="data['.self::PRESET_KEY.']" value="' . $key . '"' .
+            ($this->getPresetFromUser() === $key ? ' checked="checked"' : '') . '/>';
+
+        $content .= '<label class="enba-presets" for="field_tx_enhancedbackend_uc_' .self::PRESET_KEY.
+            '_' . $key . '"><b>' . $this->getLanguageService()->sL(self::LANG_FILE.':presets.'.$key.'.label') . '</b>';
+        $content .= '<br>' . $this->getLanguageService()->sL(self::LANG_FILE.':presets.'.$key.'.description');
+
+        $content .= '</label>';
+
+        return $content;
+    }
+
+    protected function getPresetFromUser(): string
+    {
+        if($this->isBackendUserAvailable())
+        {
+            $value = $GLOBALS['BE_USER']->uc[self::PRESET_KEY] ?? false;
+        }
+        if (!$value) {
+            $value = 'none';
+        }
+        return $value;
+    }
+
+
     private function renderFeature(Feature $feature)
     {
         $html = ['<label class="enba-uc__feature">'];
@@ -113,7 +177,7 @@ class BackendUserService implements SingletonInterface
                 $checked = $feature->isActive() ? 'checked="checked"': '';
                 // TODO:  $this->getLanguageService()->sL() nutzen
                 $fieldId = 'tx_enhancedbackend_uc_'.$feature->getId();
-                $html[] = '<div class="form-check form-switch"><input type="checkbox" id="field_'.$fieldId.'" class="form-check-input" name="data['.$feature->getId().']" '.$checked.'></div>';
+                $html[] = '<div class="form-check form-switch"><input type="checkbox" id="field_'.$fieldId.'" class="form-check-input" name="data['.$feature->getId().']" '.$checked.' data-presets="'.implode(',',$feature->getPresets()).'" /></div>';
                 $html[] = '<div class="feature__text"><span class="feature__title">'.$feature->getTitle().'</span><br/>';
                 $html[] = '<span class="feature__description">'.$feature->getDescription().'</span></div>';
                 break;
@@ -153,6 +217,11 @@ class BackendUserService implements SingletonInterface
     private function isBackendUserAvailable(): bool
     {
         return $GLOBALS['BE_USER'] instanceof BackendUserAuthentication;
+    }
+
+    protected function getLanguageService(): LanguageService
+    {
+        return $GLOBALS['LANG'];
     }
 
 }

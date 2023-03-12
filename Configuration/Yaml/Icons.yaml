@@ -9,11 +9,11 @@ actions-system-shortcut-new: 'EXT:enhanced_backend/Resources/Public/Icons/Bookma
 # bookmark page content
 #module-page: 'EXT:enhanced_backend/Resources/Public/Icons/FileText.svg'
 # cache
-apps-toolbar-menu-cache: 'EXT:enhanced_backend/Resources/Public/Icons/Eraser.svg'
+apps-toolbar-menu-cache: 'EXT:enhanced_backend/Resources/Public/Icons/Lightning.svg'
 # cache frontend in toolbar
-actions-system-cache-clear-impact-low: 'EXT:enhanced_backend/Resources/Public/Icons/Eraser.svg'
-# cache frontend in toolbar
-actions-system-cache-clear-impact-high: 'EXT:enhanced_backend/Resources/Public/Icons/Eraser.svg'
+actions-system-cache-clear-impact-low: 'EXT:enhanced_backend/Resources/Public/Icons/Lightning.svg'
+# cache all in toolbar
+actions-system-cache-clear-impact-high: 'EXT:enhanced_backend/Resources/Public/Icons/LightningA.svg'
 # help
 apps-toolbar-menu-help: 'EXT:enhanced_backend/Resources/Public/Icons/Question.svg'
 # system info default
@@ -22,7 +22,7 @@ system-information-toolbar-item: 'EXT:enhanced_backend/Resources/Public/Icons/In
 actions-system-list-open: 'EXT:enhanced_backend/Resources/Public/Icons/Info.svg'
 ### TOOLBAR
   # cache on page module
-actions-system-cache-clear: 'EXT:enhanced_backend/Resources/Public/Icons/Eraser.svg'
+actions-system-cache-clear: 'EXT:enhanced_backend/Resources/Public/Icons/Lightning.svg'
 # view page in new tab
 actions-view-page: 'EXT:enhanced_backend/Resources/Public/Icons/ArrowSquareOut.svg'
 # edit page properties

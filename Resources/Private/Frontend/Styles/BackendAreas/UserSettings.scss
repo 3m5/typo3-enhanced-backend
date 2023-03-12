@@ -1,11 +1,7 @@
 .enba-settings {
     .form-group {
         margin-bottom: 8px;
-        border-bottom: 1px solid $typo3-grey--border;
-
-        &:last-child {
-            border-bottom: none;
-        }
+        border-top: 1px solid $typo3-grey--border;
     }
 
     .enba-uc__feature {
@@ -124,6 +120,26 @@
                     overflow: hidden;
                 }
             }
+        }
+    }
+
+    .enba-presets {
+        width: 100%;
+        height: 100%;
+        border: 2px solid $typo3-grey--border;
+        padding: 8px;
+        cursor: pointer;
+
+        &-container {
+            margin-bottom: 32px;
+        }
+    }
+
+    input[name="data[enba-presets]"] {
+        display: none;
+
+        &:checked + .enba-presets {
+            border-color: $typo3-color;
         }
     }
 }

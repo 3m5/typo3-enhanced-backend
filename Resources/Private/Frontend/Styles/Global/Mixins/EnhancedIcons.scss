@@ -1,13 +1,4 @@
 $icon-size--phosphor: 20px;
-
-@mixin svg-color--black {
-    filter: brightness(0) saturate(100%);
-}
-
-@mixin svg-color--white {
-    filter: brightness(0) saturate(100%) invert(100%);
-}
-
 @mixin global__enhanceIcons {
     // Top bars
     .scaffold-header, .module-docheader-bar-buttons {
@@ -83,6 +74,14 @@ $icon-size--phosphor: 20px;
 
             svg, img, {
                 @include svg-color--white;
+            }
+
+            &.icon-actions-system-cache-clear-impact-high img {
+                @include svg-color--green;
+            }
+
+            &.icon-actions-system-cache-clear-impact-low img {
+                @include svg-color--red;
             }
         }
 

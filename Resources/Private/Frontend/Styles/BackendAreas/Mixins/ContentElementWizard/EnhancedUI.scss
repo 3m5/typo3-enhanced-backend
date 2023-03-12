@@ -54,9 +54,10 @@
                     &__icon {
                         pointer-events: auto;
                         cursor: pointer;
+                        @include svg-color--grey;
 
                         &:hover, &:focus, &:active {
-                            filter: invert(51%) sepia(97%) saturate(1621%) hue-rotate(360deg) brightness(102%) contrast(108%);
+                            @include svg-color--orange;
                         }
                     }
 
@@ -66,8 +67,8 @@
                         right: 0;
                         top: 24px;
                         padding: 4px 8px;
-                        background-color: #dfdfdf;
-                        border: 1px solid $typo3-grey--border;
+                        background-color: $typo3-grey--lighter;
+                        box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px;
                     }
                 }
 
@@ -79,7 +80,7 @@
 
                 &.tooltip--active {
                     .tooltip__icon {
-                        filter: invert(51%) sepia(97%) saturate(1621%) hue-rotate(360deg) brightness(102%) contrast(108%);
+                        @include svg-color--orange;
                     }
                 }
             }
