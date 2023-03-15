@@ -8,10 +8,12 @@ use DMF\EnhancedBackend\Model\Feature;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\Core\Bootstrap;
 use TYPO3\CMS\Core\Localization\LanguageService;
+use TYPO3\CMS\Core\Resource\Exception\InvalidFileException;
 use TYPO3\CMS\Core\SingletonInterface;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use Psr\Log\LoggerInterface;
+use TYPO3\CMS\Core\Utility\PathUtility;
 use TYPO3\CMS\Extbase\Service\ImageService;
 
 /**
@@ -85,6 +87,9 @@ class BackendUserService implements SingletonInterface
 
     }
 
+    /**
+     * @throws InvalidFileException
+     */
     public function renderUserConfig()
     {
         $featureService = GeneralUtility::makeInstance(FeatureService::class);
@@ -96,13 +101,13 @@ class BackendUserService implements SingletonInterface
             if($groupId != $feature->getGroup()->getId())
             {
                 $html[] = $groupClose.'<div class="form-group t3js-formengine-field-item enba-uc-group">';
-                $html[] = '<div class="enba-uc-group__header"><h3><span class="enba-uc-group__header-icon" data-group-icon="'. $feature->getGroup()->getId() .'"></span>'.$feature->getGroup()->getTitle().'</h3><img src="/typo3conf/ext/enhanced_backend/Resources/Public/Icons/Caret-left.svg" width="24" class="enba-uc-group__header-toggle" /></div>';
+                $html[] = '<div class="enba-uc-group__header"><h3><span class="enba-uc-group__header-icon" data-group-icon="'. $feature->getGroup()->getId() .'"></span>'.$feature->getGroup()->getTitle().'</h3><img src="'.PathUtility::getPublicResourceWebPath('EXT:enhanced_backend/Resources/Public/Icons/Caret-left.svg" width="24" class="enba-uc-group__header-toggle').'" /></div>';
                 $html[] = '<div class="enba-uc-group__content"><div class="enba-uc-group__description">';
                 if($description = $feature->getGroup()->getDescription())
                 {
                     $html[] = '<p>'.$description.'</p>';
                 }
-                $html[] = '<img src="/typo3conf/ext/enhanced_backend/Resources/Public/Images/placeholder-user-settings.webp" width="300" /></div><div class="enba-uc-group__featurelist">';
+                $html[] = '<img src="'.PathUtility::getPublicResourceWebPath('EXT:enhanced_backend/Resources/Public/Images/placeholder-user-settings.webp').'" width="300" /></div><div class="enba-uc-group__featurelist">';
 
                 $groupClose = '</div></div></div>';
                 $groupId = $feature->getGroup()->getId();
