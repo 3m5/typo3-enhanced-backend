@@ -37,6 +37,11 @@ class Group
     protected string $description = '';
 
     /**
+     * @var string
+     */
+    protected string $image = '';
+
+    /**
      * @return string
      */
     public function getId(): string
@@ -82,6 +87,22 @@ class Group
     public function setDescription(string $description = ''): void
     {
         $this->description = $description;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImage(): string
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param string $image
+     */
+    public function setImage(string $image): void
+    {
+        $this->image = $image;
     }
 
 }
