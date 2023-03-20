@@ -8,7 +8,7 @@ $EM_CONF[$_EXTKEY] = [
     'state' => 'alpha',
     # Deprecated since version 12.1
     'clearCacheOnLoad' => 0,
-    'version' => '0.0.3',
+    'version' => '0.0.4',
     'constraints' => [
         'depends' => [
             'php' => '7.4.0-8.2.99',
