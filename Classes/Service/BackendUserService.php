@@ -88,13 +88,15 @@ class BackendUserService implements SingletonInterface
     }
 
     /**
+     * Renders custom user settings for enhanced backend
+     *
      * @throws InvalidFileException
      */
-    public function renderUserConfig()
+    public function renderUserConfig(): string
     {
         $featureService = GeneralUtility::makeInstance(FeatureService::class);
         $html = ['<div class="enba-settings">'];
-        $html[] = $this->renderPresetChoise();
+        $html[] = $this->renderPresetChoice();
         $groupId = '';
         $groupClose = '';
         foreach ($featureService->getAllFeatures() as $feature) {
@@ -107,7 +109,13 @@ class BackendUserService implements SingletonInterface
                 {
                     $html[] = '<p>'.$description.'</p>';
                 }
-                $html[] = '<img src="'.PathUtility::getPublicResourceWebPath('EXT:enhanced_backend/Resources/Public/Images/placeholder-user-settings.webp').'" width="300" /></div><div class="enba-uc-group__featurelist">';
+                if($image = $feature->getGroup()->getImage())
+                {
+                    $html[] = '<img src="'
+                        . PathUtility::getPublicResourceWebPath('EXT:enhanced_backend/Resources/Public/Images/' . $image)
+                        . '" width="300" /></div><div class="enba-uc-group__featurelist">';
+                }
+
 
                 $groupClose = '</div></div></div>';
                 $groupId = $feature->getGroup()->getId();
@@ -119,7 +127,12 @@ class BackendUserService implements SingletonInterface
         return implode('', $html);
     }
 
-    public function renderPresetChoise()
+    /**
+     * Renders preset selection in user settings
+     *
+     * @return string
+     */
+    public function renderPresetChoice(): string
     {
         $presets = [
             'none',
