@@ -60,7 +60,7 @@ be installed using the extension manager.
 
 # Tagging and releasing
 
-[packagist.org](https://packagist.org/packages/typo3/cms-styleguide) is enabled via the casual GitHub hook.
+[packagist.org](https://packagist.org/packages/3m5/typo3-enhanced-backend) is enabled via the casual GitHub hook.
 TER releases are created by the "publish.yml" GitHub workflow when tagging versions
 using [tailor](https://github.com/TYPO3/tailor). The commit message of the commit a tag points to is
 used as TER upload comment.
