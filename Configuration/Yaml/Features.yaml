@@ -26,6 +26,13 @@ groups:
         preset:
           - vanilla
           - modern
+      -
+        id: darkMode
+        title: Darkmode
+        type: check
+        description: Aktiviert den Darkmode. (Demo only)
+        preset:
+          - modern
   topbar:
     title: Header-Bereich
     description: Diese Einstellungen wirken sich auf die obere Leiste aus, in der sich beispielsweise dein Login befindet.
@@ -133,5 +140,3 @@ groups:
         type: check
         preset:
           - modern
-
-

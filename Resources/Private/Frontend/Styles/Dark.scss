@@ -220,14 +220,16 @@ $white-replacement: #151515;
 }
 
 // Dark Theme
-.enbe {
-    &.color-mode--system {
+.enba-global {
+    /*&__darkMode {
         @media (prefers-color-scheme: dark) {
             @include dark-theme;
         }
-    }
+    }*/
 
-    &.color-mode--dark {
+    &__darkMode {
         @include dark-theme;
     }
 }
+
+@include dark-theme;
