@@ -4,9 +4,36 @@ $grey-replacement: #343434;
 $white-replacement: #151515;
 
 @mixin dark-theme {
+    .enba-settings .enba-uc__feature {
+        &:hover {
+            background-color: $grey-replacement;
+        }
+    }
+
     .scaffold-content, .module {
         background-color: $grey-replacement; // show dark background while loading everything
     }
+
+    .module-body, .module-docheader {
+        .icon-markup, .enba-uc-group__header-toggle, .enba-uc-group__header-icon {
+            filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(74deg) brightness(104%) contrast(102%);
+        }
+    }
+
+    /** Content tree **/
+    .content-tree, .content-tree__data ul .t3js-icon {
+        background-color: $white-replacement !important;
+    }
+
+    .link-to-content-element {
+        color: white;
+    }
+
+    .content-tree__header {
+        background-color: $grey-replacement !important;
+    }
+
+    /*******************************************************/
 
     .module-body {
         background-color: $white-replacement;
@@ -231,5 +258,3 @@ $white-replacement: #151515;
         @include dark-theme;
     }
 }
-
-@include dark-theme;
