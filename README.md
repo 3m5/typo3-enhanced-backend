@@ -58,6 +58,13 @@ not in our focus. So please be patient._
 For non-composer projects, the extension is available in TER as extension key `enhanced_backend` and can
 be installed using the extension manager.
 
+# Roadmap
+
+**Before stable release 1.0**
+- Add planned and stabilize features for TYPO3 v11
+- Prepeare for TYPO3 v12
+- Improve documentation
+
 # Tagging and releasing
 
 [packagist.org](https://packagist.org/packages/3m5/typo3-enhanced-backend) is enabled via the casual GitHub hook.
