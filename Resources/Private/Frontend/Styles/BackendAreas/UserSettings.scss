@@ -52,33 +52,6 @@
                 height: 20px;
                 background-size: contain;
                 margin-right: 8px;
-
-                // TODO: add group icons to settings.yaml
-
-                &[data-group-icon="global"] {
-                    background-image: url("/typo3conf/ext/enhanced_backend/Resources/Public/Icons/GlobeHemisphereWest.svg");
-                }
-
-                &[data-group-icon="topbar"] {
-                    background-image: url("/typo3conf/ext/enhanced_backend/Resources/Public/Icons/Sidebar.svg");
-                    transform: rotate(90deg);
-                }
-
-                &[data-group-icon="sidebar"] {
-                    background-image: url("/typo3conf/ext/enhanced_backend/Resources/Public/Icons/Sidebar.svg");
-                }
-
-                &[data-group-icon="pageTree"] {
-                    background-image: url("/typo3conf/ext/enhanced_backend/Resources/Public/Icons/TreeStructure.svg");
-                }
-
-                &[data-group-icon="contentArea"] {
-                    background-image: url("/typo3conf/ext/enhanced_backend/Resources/Public/Icons/Layout.svg");
-                }
-
-                &[data-group-icon="contentElementWizard"] {
-                    background-image: url("/typo3conf/ext/enhanced_backend/Resources/Public/Icons/MagicWand.svg");
-                }
             }
         }
 

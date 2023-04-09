@@ -3,6 +3,7 @@ groups:
     title: Global
     description: Diese Einstellungen wirken sich auf alle Bereiche des TYPO3 - Backends aus.
     image: layoutarea_global.webp
+    icon: GlobeHemisphereWest.svg
     features:
       -
         id: enhancedIcons
@@ -30,6 +31,7 @@ groups:
     title: Header-Bereich
     description: Diese Einstellungen wirken sich auf die obere Leiste aus, in der sich beispielsweise dein Login befindet.
     image: layoutarea_header.webp
+    icon: Headerbar.svg
     features:
       -
         id: customTitle
@@ -58,6 +60,7 @@ groups:
     title: Seitenleiste
     description: Diese Einstellungen wirken sich auf die Seitenleiste am linken Bildschirmrand aus, in der sich die verschiedenen Module befinden.
     image: layoutarea_sidebar.webp
+    icon: Sidebar.svg
     features:
       - id: collapseButtonPosition
         title: Seitenlisten-Einklapp-Button an unteren Rand verschieben
@@ -76,6 +79,7 @@ groups:
     title: Seitenbaum
     description: Diese Einstellungen wirken sich auf den Seitenbaum der sich rechts neben der Seitenleiste befindet, aus.
     image: layoutarea_pagetree.webp
+    icon: TreeStructure.svg
     features:
       - id: enhancedToolbarUI
         title: Toolbar über Seitenbaum optimieren
@@ -94,6 +98,7 @@ groups:
     title: Inhaltsbereich
     description: Der Inhaltsbereich ist der Bereich, in dem die Inhalte der jeweiligen Module gezeigt werden aus der Seitenleiste angezeigt werden.
     image: layoutarea_content.webp
+    icon: Layout.svg
     features:
       - id: enhancedOverviewUI
         title: Optimierter Inhaltsbereich
@@ -119,6 +124,7 @@ groups:
     title: Inhaltselementwizard
     description: Dieser Dialog wird beim Erstellen eines neuen Contentelements sichtbar.
     image: layoutarea_contentwizard.webp
+    icon: MagicWand.svg
     features:
       - id: enhancedToolbar
         title: Optimierte Toolbar
