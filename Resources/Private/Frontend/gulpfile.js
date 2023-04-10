@@ -21,7 +21,7 @@ const argv = require('yargs').option({
     'mode': {
         alias: 'm',
         demandOption: false,
-        default: 'development',
+        default: 'production', // use mode 'development' for debugging, make sure to push only in mode 'production'
         describe: 'Choose a build mode..',
         type: 'string'
     }
