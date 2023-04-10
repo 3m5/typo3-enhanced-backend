@@ -91,6 +91,91 @@
 			<trans-unit id="groups.contentElementWizard.description">
 				<source>This dialog becomes visible when creating a new content element.</source>
 			</trans-unit>
+
+			<trans-unit id="global.enhancedIcons.title">
+				<source>Enhanced Icons</source>
+			</trans-unit>
+			<trans-unit id="global.enhancedIcons.description">
+				<source>Replace the default TYPO3 icons with a modern and user-friendly icon set.</source>
+			</trans-unit>
+			<trans-unit id="global.enhancedFont.title">
+				<source>Enhanced Font</source>
+			</trans-unit>
+			<trans-unit id="global.enhancedFont.description">
+				<source>Use the optimized "Inter" font for better display of elements and texts.</source>
+			</trans-unit>
+			<trans-unit id="global.enhancedScrollbars.title">
+				<source>Enhanced Scrollbars</source>
+			</trans-unit>
+			<trans-unit id="global.enhancedScrollbars.description">
+				<source>Use this option to make scrollbars more discreet and move them visually into the background.</source>
+			</trans-unit>
+			<trans-unit id="topbar.enhancedSearchWidget.title">
+				<source>Enhanced Search Field</source>
+			</trans-unit>
+			<trans-unit id="topbar.enhancedSearchWidget.description">
+				<source>The search field is brought more into focus and given a more modern design.</source>
+			</trans-unit>
+			<trans-unit id="topbar.enhancedWidgetOrder.title">
+				<source>Reorder icons on the right</source>
+			</trans-unit>
+			<trans-unit id="topbar.enhancedWidgetOrder.description">
+				<source>The username is moved to the upper right corner, as users are used to from other applications.</source>
+			</trans-unit>
+			<trans-unit id="sidebar.collapseButtonPosition.title">
+				<source>Move sidebar collapse toggle to bottom edge</source>
+			</trans-unit>
+			<trans-unit id="sidebar.collapseButtonPosition.description">
+				<source>Positions the sidebar collapse toggle from the upper left corner to the end of the sidebar.</source>
+			</trans-unit>
+			<trans-unit id="sidebar.enhancedMenuUI.title">
+				<source>Enhanced Menu UI</source>
+			</trans-unit>
+			<trans-unit id="sidebar.enhancedMenuUI.description">
+				<source>Improves the color design of module entries, spacing and visual separation of groups.</source>
+			</trans-unit>
+			<trans-unit id="pageTree.enhancedToolbarUI.title">
+				<source>Enhance toolbar over page tree</source>
+			</trans-unit>
+			<trans-unit id="pageTree.enhancedToolbarUI.description">
+				<source>Buttons get more spacing to be more clickable. The search field is displayed in a more modern way.</source>
+			</trans-unit>
+			<trans-unit id="pageTree.enabledContentTree.title">
+				<source>Enable content tree</source>
+			</trans-unit>
+			<trans-unit id="pageTree.enabledContentTree.description">
+				<source>Inserts a tree below the page tree that maps the content elements of the currently selected page.</source>
+			</trans-unit>
+			<trans-unit id="contentArea.enhancedOverviewUI.title">
+				<source>Enhanced content area</source>
+			</trans-unit>
+			<trans-unit id="contentArea.enhancedOverviewUI.description">
+				<source>Content element frames are moved to the background to focus on the content. Buttons and titles are repositioned for a better overview. Also, all flags are hidden to reduce redundancy.</source>
+			</trans-unit>
+			<trans-unit id="contentArea.enhancedToolbar.title">
+				<source>Enhanced Toolbar</source>
+			</trans-unit>
+			<trans-unit id="contentArea.enhancedToolbar.description">
+				<source>Spacing is consistent with the page tree toolbar. Larger click areas make the work easier.</source>
+			</trans-unit>
+			<trans-unit id="contentArea.enhancedEditingForm.title">
+				<source>Enhanced "Edit" Form</source>
+			</trans-unit>
+			<trans-unit id="contentArea.enhancedEditingForm.description">
+				<source>Form elements are aligned using a grid. Frames are visually placed in the background so editors can focus on content.</source>
+			</trans-unit>
+			<trans-unit id="contentElementWizard.enhancedToolbar.title">
+				<source>Enhanced Toolbar</source>
+			</trans-unit>
+			<trans-unit id="contentElementWizard.enhancedToolbar.description">
+				<source>The search box and tabs are provided in a more modern design.</source>
+			</trans-unit>
+			<trans-unit id="contentElementWizard.enhancedUI.title">
+				<source>Tile view</source>
+			</trans-unit>
+			<trans-unit id="contentElementWizard.enhancedUI.description">
+				<source>Description texts are available as tooltips, icons and headlines are in focus.</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

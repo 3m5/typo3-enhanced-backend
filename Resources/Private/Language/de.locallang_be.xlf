@@ -137,43 +137,43 @@
 				<target>Der Nutzername wird in die rechte obere Ecke gerückt, so wie es Nutzer aus anderen Anwendungen gewohnt sind.</target>
 			</trans-unit>
 			<trans-unit id="sidebar.collapseButtonPosition.title">
-				<source></source>
+				<source>Move sidebar collapse toggle to bottom edge</source>
 				<target>Seitenlisten-Einklapp-Button an unteren Rand verschieben</target>
 			</trans-unit>
 			<trans-unit id="sidebar.collapseButtonPosition.description">
-				<source>Move sidebar collapse button to bottom edge.</source>
+				<source>Positions the sidebar collapse toggle from the upper left corner to the end of the sidebar.</source>
 				<target>Positioniert den Button zum Einklappen der Seitenleiste von der linken oberen Ecke an das Ende der Seitenleiste.</target>
 			</trans-unit>
 			<trans-unit id="sidebar.enhancedMenuUI.title">
-				<source></source>
-				<target>Menü UI</target>
+				<source>Enhanced Menu UI</source>
+				<target>Optimiertes Menü UI</target>
 			</trans-unit>
 			<trans-unit id="sidebar.enhancedMenuUI.description">
-				<source></source>
+				<source>Improves the color design of module entries, spacing and visual separation of groups.</source>
 				<target>Verbessert die farbliche Gestaltung der Modul-Einträge, Abstände und visuelle Trennung von Gruppen.</target>
 			</trans-unit>
 			<trans-unit id="pageTree.enhancedToolbarUI.title">
-				<source></source>
+				<source>Enhance toolbar over page tree</source>
 				<target>Toolbar über Seitenbaum optimieren</target>
 			</trans-unit>
 			<trans-unit id="pageTree.enhancedToolbarUI.description">
-				<source></source>
+				<source>Buttons get more spacing to be more clickable. The search field is displayed in a more modern way.</source>
 				<target>Buttons erhalten mehr Abstände, um besser klickbar zu sein. Das Suchfeld wird moderner dargestellt.</target>
 			</trans-unit>
 			<trans-unit id="pageTree.enabledContentTree.title">
-				<source></source>
+				<source>Enable content tree</source>
 				<target>Inhaltsbaum aktivieren</target>
 			</trans-unit>
 			<trans-unit id="pageTree.enabledContentTree.description">
-				<source></source>
+				<source>Inserts a tree below the page tree that maps the content elements of the currently selected page.</source>
 				<target>Fügt unterhalb des Seitenbaums einen Baum ein, der die Inhaltselemente der aktuell ausgewählten Seite abbildet.</target>
 			</trans-unit>
 			<trans-unit id="contentArea.enhancedOverviewUI.title">
-				<source></source>
+				<source>Enhanced content area</source>
 				<target>Optimierter Inhaltsbereich</target>
 			</trans-unit>
 			<trans-unit id="contentArea.enhancedOverviewUI.description">
-				<source></source>
+				<source>Content element frames are moved to the background to focus on the content. Buttons and titles are repositioned for a better overview. Also, all flags are hidden to reduce redundancy.</source>
 				<target>Inhaltselement-Rahmen werden in den Hintergrund gerückt, um den Fokus auf die Inhalte zu setzen. Buttons und Titel werden repositioniert für einen besseren Überblick. Außerdem sind alle Flaggen ausgeblendet, um Redundanz zu verringern.</target>
 			</trans-unit>
 			<trans-unit id="contentArea.enhancedToolbar.title">
@@ -181,15 +181,15 @@
 				<target>Optimierte Toolbar</target>
 			</trans-unit>
 			<trans-unit id="contentArea.enhancedToolbar.description">
-				<source></source>
+				<source>Spacing is consistent with the page tree toolbar. Larger click areas make the work easier.</source>
 				<target>Abstände sind im Einklang mit der Toolbar des Seitenbaums. Größere Klickflächen erleichtern die Arbeit.</target>
 			</trans-unit>
 			<trans-unit id="contentArea.enhancedEditingForm.title">
-				<source></source>
+				<source>Enhanced "Edit" Form</source>
 				<target>Optimiertes Formular "Bearbeiten"</target>
 			</trans-unit>
 			<trans-unit id="contentArea.enhancedEditingForm.description">
-				<source></source>
+				<source>Form elements are aligned using a grid. Frames are visually placed in the background so editors can focus on content.</source>
 				<target>Formularelemente werden anhand eines Rasters ausgerichtet. Rahmen werden optisch in den Hintergrund gestellt, damit Redakteure sich auf die Inhalte fokussieren können.</target>
 			</trans-unit>
 			<trans-unit id="contentElementWizard.enhancedToolbar.title">
@@ -197,18 +197,17 @@
 				<target>Optimierte Toolbar</target>
 			</trans-unit>
 			<trans-unit id="contentElementWizard.enhancedToolbar.description">
-				<source></source>
+				<source>The search box and tabs are provided in a more modern design.</source>
 				<target>Das Suchfeld und die Tabs werden in einem moderneren Design bereitgestellt.</target>
 			</trans-unit>
 			<trans-unit id="contentElementWizard.enhancedUI.title">
 				<source></source>
-				<target>Kachelansicht</target>
+				<target>Tile view</target>
 			</trans-unit>
 			<trans-unit id="contentElementWizard.enhancedUI.description">
-				<source></source>
+				<source>Description texts are available as tooltips, icons and headlines are in focus.</source>
 				<target>Beschreibungstexte sind als Tooltips verfügbar, Icons und Überschriften stehen im Fokus.</target>
 			</trans-unit>
-
 		</body>
 	</file>
 </xliff>
