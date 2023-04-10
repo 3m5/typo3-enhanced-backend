@@ -7,23 +7,23 @@ groups:
     features:
       -
         id: enhancedIcons
-        title: Optimierte Icons
+        title: global.enhancedIcons.title
         type: check
-        description: Tausche die Standard-Icons von TYPO3 mit einem modernen und benutzerfreundlichen Iconset aus.
+        description: global.enhancedIcons.description
         preset:
           - modern
       -
         id: enhancedFont
-        title: Optimierte Schriftart
+        title: global.enhancedFont.title
         type: check
-        description: Verwende die optimierte Schriftart "Inter" für eine bessere Darstellung von Elementen und Texten.
+        description: global.enhancedFont.description
         preset:
           - modern
       -
         id: enhancedScrollbars
-        title: Optimierte Scrollbalken
+        title: global.enhancedScrollbars.title
         type: check
-        description: Verwende diese Option, um Scrollbalken dezenter zu gestalten und diese optisch in den Hintergrund zu rücken.
+        description: global.enhancedScrollbars.description
         preset:
           - vanilla
           - modern
@@ -43,16 +43,16 @@ groups:
           - modern
       -
         id: enhancedSearchWidget
-        title: Optimiertes Suchfeld
-        description: Das Suchfeld wird mehr in den Fokus gerückt und moderner gestaltet.
+        title: topbar.enhancedSearchWidget.title
+        description: topbar.enhancedSearchWidget.description
         type: check
         preset:
           - vanilla
           - modern
       -
         id: enhancedWidgetOrder
-        title: Icons rechts umsortieren
-        description: Der Nutzername wird in die rechte obere Ecke gerückt, so wie es Nutzer aus anderen Anwendungen gewohnt sind.
+        title: topbar.enhancedWidgetOrder.title
+        description: topbar.enhancedWidgetOrder.description
         type: check
         preset:
           - modern
@@ -63,14 +63,14 @@ groups:
     icon: Sidebar.svg
     features:
       - id: collapseButtonPosition
-        title: Seitenlisten-Einklapp-Button an unteren Rand verschieben
-        description: Positioniert den Button zum Einklappen der Seitenleiste von der linken oberen Ecke an das Ende der Seitenleiste.
+        title: sidebar.collapseButtonPosition.title
+        description: sidebar.collapseButtonPosition.description
         type: check
         preset:
           - modern
-      - id: enhancedMenuUI # T3ENCBE-127
-        title: Menü UI
-        description: Verbessert die farbliche Gestaltung der Modul-Einträge, Abstände und visuelle Trennung von Gruppen.
+      - id: enhancedMenuUI
+        title: sidebar.enhancedMenuUI.title
+        description: sidebar.enhancedMenuUI.description
         type: check
         preset:
           - vanilla
@@ -82,15 +82,15 @@ groups:
     icon: TreeStructure.svg
     features:
       - id: enhancedToolbarUI
-        title: Toolbar über Seitenbaum optimieren
-        description: Buttons erhalten mehr Abstände, um besser klickbar zu sein. Das Suchfeld wird moderner dargestellt.
+        title: pageTree.enhancedToolbarUI.title
+        description: pageTree.enhancedToolbarUI.description
         type: check
         preset:
           - vanilla
           - modern
       - id: enabledContentTree
-        title: Inhaltsbaum aktivieren
-        description: Fügt unterhalb des Seitenbaums einen Baum ein, der die Contentelemente der aktuell ausgewählten Seite abbildet.
+        title: pageTree.enabledContentTree.title
+        description: pageTree.enabledContentTree.description
         type: check
         preset:
           - modern
@@ -101,21 +101,21 @@ groups:
     icon: Layout.svg
     features:
       - id: enhancedOverviewUI
-        title: Optimierter Inhaltsbereich
-        description: Contentelement-Rahmen werden in den Hintergrund gerückt, um den Fokus auf die Inhalte zu setzen. Buttons und Titel werden repositioniert für einen besseren Überblick. Außerdem sind alle Flaggen ausgeblendet, um Redundanz zu verringern.
+        title: contentArea.enhancedOverviewUI.title
+        description: contentArea.enhancedOverviewUI.description
         type: check
         preset:
           - modern
       - id: enhancedToolbar
-        title: Optimierte Toolbar
-        description: Abstände sind im Einklang mit der Toolbar des Seitenbaums. Größere Klickflächen erleichtern die Arbeit.
+        title: contentArea.enhancedToolbar.title
+        description: contentArea.enhancedToolbar.description
         type: check
         preset:
           - vanilla
           - modern
       - id: enhancedEditingForm
-        title: Optimiertes Formular "Bearbeiten"
-        description: Formularelemente werden anhand eines Rasters ausgerichtet. Rahmen werden optisch in den Hintergrund gestellt, damit Redakteure sich auf die Inhalte fokussieren können.
+        title: contentArea.enhancedEditingForm.title
+        description: contentArea.enhancedEditingForm.description
         type: check
         preset:
           - vanilla
@@ -127,15 +127,15 @@ groups:
     icon: MagicWand.svg
     features:
       - id: enhancedToolbar
-        title: Optimierte Toolbar
-        description: Das Suchfeld und die Tabs werden in einem moderneren Design bereitgestellt.
+        title: contentElementWizard.enhancedToolbar.title
+        description: contentElementWizard.enhancedToolbar.description
         type: check
         preset:
           - vanilla
           - modern
       - id: enhancedUI
-        title: Kachelansicht
-        description: Beschreibungstexte sind als Tooltips verfügbar, Icons und Überschriften stehen im Fokus.
+        title: contentElementWizard.enhancedUI.title
+        description: contentElementWizard.enhancedUI.description
         type: check
         preset:
           - modern

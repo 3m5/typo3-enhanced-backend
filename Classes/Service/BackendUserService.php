@@ -197,11 +197,10 @@ class BackendUserService implements SingletonInterface
         {
             case 'check':
                 $checked = $feature->isActive() ? 'checked="checked"': '';
-                // TODO:  $this->getLanguageService()->sL() nutzen
                 $fieldId = 'tx_enhancedbackend_uc_'.$feature->getId();
                 $html[] = '<div class="form-check form-switch"><input type="checkbox" id="field_'.$fieldId.'" class="form-check-input" name="data['.$feature->getId().']" '.$checked.' data-presets="'.implode(',',$feature->getPresets()).'" /></div>';
-                $html[] = '<div class="feature__text"><span class="feature__title">'.$feature->getTitle().'</span><br/>';
-                $html[] = '<span class="feature__description">'.$feature->getDescription().'</span></div>';
+                $html[] = '<div class="feature__text"><span class="feature__title">'.$this->getLanguageService()->sL(self::LANG_FILE.':'.$feature->getTitle()).'</span><br/>';
+                $html[] = '<span class="feature__description">'.$this->getLanguageService()->sL(self::LANG_FILE.':'.$feature->getDescription()).'</span></div>';
                 break;
             default:
                 $this->logger->warning('Try to render unsupported type for feature');
