@@ -1,7 +1,7 @@
 groups:
   global:
-    title: Global
-    description: Diese Einstellungen wirken sich auf alle Bereiche des TYPO3 - Backends aus.
+    title: groups.global.title
+    description: groups.global.description
     image: layoutarea_global.webp
     icon: GlobeHemisphereWest.svg
     features:
@@ -28,8 +28,8 @@ groups:
           - vanilla
           - modern
   topbar:
-    title: Header-Bereich
-    description: Diese Einstellungen wirken sich auf die obere Leiste aus, in der sich beispielsweise dein Login befindet.
+    title: groups.topbar.title
+    description: groups.topbar.description
     image: layoutarea_header.webp
     icon: Headerbar.svg
     features:
@@ -57,8 +57,8 @@ groups:
         preset:
           - modern
   sidebar:
-    title: Seitenleiste
-    description: Diese Einstellungen wirken sich auf die Seitenleiste am linken Bildschirmrand aus, in der sich die verschiedenen Module befinden.
+    title: groups.sidebar.title
+    description: groups.sidebar.description
     image: layoutarea_sidebar.webp
     icon: Sidebar.svg
     features:
@@ -76,8 +76,8 @@ groups:
           - vanilla
           - modern
   pageTree:
-    title: Seitenbaum
-    description: Diese Einstellungen wirken sich auf den Seitenbaum der sich rechts neben der Seitenleiste befindet, aus.
+    title: groups.pageTree.title
+    description: groups.pageTree.description
     image: layoutarea_pagetree.webp
     icon: TreeStructure.svg
     features:
@@ -95,8 +95,8 @@ groups:
         preset:
           - modern
   contentArea:
-    title: Inhaltsbereich
-    description: Der Inhaltsbereich ist der Bereich, in dem die Inhalte der jeweiligen Module gezeigt werden aus der Seitenleiste angezeigt werden.
+    title: groups.contentArea.title
+    description: groups.contentArea.description
     image: layoutarea_content.webp
     icon: Layout.svg
     features:
@@ -121,8 +121,8 @@ groups:
           - vanilla
           - modern
   contentElementWizard:
-    title: Inhaltselementwizard
-    description: Dieser Dialog wird beim Erstellen eines neuen Contentelements sichtbar.
+    title: groups.contentElementWizard.title
+    description: groups.contentElementWizard.description
     image: layoutarea_contentwizard.webp
     icon: MagicWand.svg
     features:

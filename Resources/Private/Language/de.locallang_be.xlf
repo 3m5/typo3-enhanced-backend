@@ -12,27 +12,6 @@
 				<source>Enable dark mode</source>
 				<target>Aktiviere dark mode</target>
 			</trans-unit>
-			<!-- Theme -->
-			<trans-unit id="user_settings.theme">
-				<source>Theme</source>
-				<target>Theme</target>
-			</trans-unit>
-			<trans-unit id="user_settings.theme.description">
-				<source><![CDATA[Choose a theme to customize the backend visually and functionally according to your needs. Use the <i>Vanilla+</i> for UI/UX improvements, the <i>Modern</i> for a modern look and feel or the <i>Custom</i> option to customize the backend according to your individual needs.]]></source>
-				<target><![CDATA[Wähle das Theme, um das Backend visuell und funktionell nach Deinen Wünschen anzupassen. Verwende <i>Vanilla+</i> für UI/UX Verbesserungen, <i>Modern</i> für einen modernen Look und <i>Angepasst</i>, um das Backend Deinen Bedürfnissen entsprechend anzupassen.]]></target>
-			</trans-unit>
-			<trans-unit id="user_settings.theme.default">
-				<source>Default</source>
-				<target>Standard</target>
-			</trans-unit>
-			<trans-unit id="user_settings.theme.default.description">
-				<source>Use the default TYPO3 backend styles and functions.</source>
-				<target>Verwenden Sie die Standard-Stil und -Funktionen des TYPO3-Backends.</target>
-			</trans-unit>
-			<trans-unit id="be_groups.tx_enhancedbackend_themes">
-				<source>Allowed Backend Themes</source>
-				<target>Erlaubte Backend Themes</target>
-			</trans-unit>
 			<!-- Vanilla -->
 			<trans-unit id="presets">
 				<source>Presets</source>
@@ -67,6 +46,54 @@
 			<trans-unit id="presets.custom.description">
 				<source>This preset takes over the last selected settings (from the other presets) and allows individual dis-/enabling of individual features and optimizations.</source>
 				<target>Dieses Preset übernimmt die zuletzt gewählten Einstellungen (aus den anderen Presets) und ermöglicht das individuelle De-/Aktivieren einzelner Funktionen und Optimierungen.</target>
+			</trans-unit>
+			<trans-unit id="groups.global.title">
+				<source>Global</source>
+				<target>Global</target>
+			</trans-unit>
+			<trans-unit id="groups.global.description">
+				<source>These settings affect all areas of the TYPO3 backend.</source>
+				<target>Diese Einstellungen wirken sich auf alle Bereiche des TYPO3 - Backends aus.</target>
+			</trans-unit>
+			<trans-unit id="groups.topbar.title">
+				<source>Header area</source>
+				<target>Header-Bereich</target>
+			</trans-unit>
+			<trans-unit id="groups.topbar.description">
+				<source>These settings affect the top bar, where your login is located, for example.</source>
+				<target>Diese Einstellungen wirken sich auf die obere Leiste aus, in der sich beispielsweise dein Login befindet.</target>
+			</trans-unit>
+			<trans-unit id="groups.sidebar.title">
+				<source>Sidebar</source>
+				<target>Seitenleiste</target>
+			</trans-unit>
+			<trans-unit id="groups.sidebar.description">
+				<source>These settings affect the sidebar on the left side of the screen where the different modules are located.</source>
+				<target>Diese Einstellungen wirken sich auf die Seitenleiste am linken Bildschirmrand aus, in der sich die verschiedenen Module befinden.</target>
+			</trans-unit>
+			<trans-unit id="groups.pageTree.title">
+				<source>Page tree</source>
+				<target>Seitenbaum</target>
+			</trans-unit>
+			<trans-unit id="groups.pageTree.description">
+				<source>These settings affect the page tree, located to the right of the sidebar.</source>
+				<target>Diese Einstellungen wirken sich auf den Seitenbaum, der sich rechts neben der Seitenleiste befindet, aus.</target>
+			</trans-unit>
+			<trans-unit id="groups.contentArea.title">
+				<source>Content area</source>
+				<target>Inhaltsbereich</target>
+			</trans-unit>
+			<trans-unit id="groups.contentArea.description">
+				<source>The content area is the area where the contents of the respective modules are shown from the sidebar.</source>
+				<target>Der Inhaltsbereich ist der Bereich, in dem die Inhalte der jeweiligen Module gezeigt werden aus der Seitenleiste angezeigt werden.</target>
+			</trans-unit>
+			<trans-unit id="groups.contentElementWizard.title">
+				<source>Content element wizard</source>
+				<target>Inhaltselementwizard</target>
+			</trans-unit>
+			<trans-unit id="groups.contentElementWizard.description">
+				<source>This dialog becomes visible when creating a new content element.</source>
+				<target>Dieser Dialog wird beim Erstellen eines neuen Inhaltselements sichtbar.</target>
 			</trans-unit>
 		</body>
 	</file>

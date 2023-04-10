@@ -1,37 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2">
-	<file source-language="en" datatype="plaintext" original="EXT:enhanced_backend/Resources/Private/Language/locallang_be.xlf" date="2022-04-23T21:39:37Z" product-name="enhanced_backend">
+	<file source-language="en" datatype="plaintext" date="2022-04-23T21:39:37Z" product-name="enhanced_backend">
 		<header/>
 		<body>
 			<!-- General -->
 			<trans-unit id="user_settings.enba.tab_label">
 				<source>Enhanced Backend</source>
-			</trans-unit>
-			<trans-unit id="user_settings.active">
-				<source>Enable enhanced backend visuals</source>
-			</trans-unit>
-			<trans-unit id="user_settings.darkmode">
-				<source>Enable dark mode</source>
-			</trans-unit>
-			<trans-unit id="be_groups.tx_enhancedbackend_themes">
-				<source>Allowed Backend Themes</source>
-			</trans-unit>
-			<!-- Theme -->
-			<trans-unit id="user_settings.theme">
-				<source>Theme</source>
-			</trans-unit>
-			<trans-unit id="user_settings.theme.description">
-				<source><![CDATA[Choose a theme to customize the backend visually and functionally according to your needs. Use the <i>Vanilla+</i> for UI/UX improvements, the <i>Modern</i> for a modern look and feel or the <i>Custom</i> option to customize the backend according to your individual needs.]]></source>
-			</trans-unit>
-			<trans-unit id="user_settings.theme.default">
-				<source>Default</source>
-			</trans-unit>
-			<trans-unit id="user_settings.theme.default.description">
-				<source>Use the default TYPO3 backend styles and functions.</source>
-			</trans-unit>
-			<trans-unit id="be_groups.tx_enhancedbackend_themes">
-				<source>Allowed Backend Themes</source>
-				<target>Erlaubte Backend Themes</target>
 			</trans-unit>
 			<!-- Vanilla -->
 			<trans-unit id="user_settings.theme.vanilla">
@@ -80,6 +54,42 @@
 			</trans-unit>
 			<trans-unit id="presets.custom.description">
 				<source>This preset takes over the last selected settings (from the other presets) and allows individual dis-/enabling of individual features and optimizations.</source>
+			</trans-unit>
+			<trans-unit id="groups.global.title">
+				<source>Global</source>
+			</trans-unit>
+			<trans-unit id="groups.global.description">
+				<source>These settings affect all areas of the TYPO3 backend.</source>
+			</trans-unit>
+			<trans-unit id="groups.topbar.title">
+				<source>Header area</source>
+			</trans-unit>
+			<trans-unit id="groups.topbar.description">
+				<source>These settings affect the top bar, where your login is located, for example.</source>
+			</trans-unit>
+			<trans-unit id="groups.sidebar.title">
+				<source>Sidebar</source>
+			</trans-unit>
+			<trans-unit id="groups.sidebar.description">
+				<source>These settings affect the sidebar on the left side of the screen where the different modules are located.</source>
+			</trans-unit>
+			<trans-unit id="groups.pageTree.title">
+				<source>Page tree</source>
+			</trans-unit>
+			<trans-unit id="groups.pageTree.description">
+				<source>These settings affect the page tree, located to the right of the sidebar.</source>
+			</trans-unit>
+			<trans-unit id="groups.contentArea.title">
+				<source>Content area</source>
+			</trans-unit>
+			<trans-unit id="groups.contentArea.description">
+				<source>The content area is the area where the contents of the respective modules are shown from the sidebar.</source>
+			</trans-unit>
+			<trans-unit id="groups.contentElementWizard.title">
+				<source>Content element wizard</source>
+			</trans-unit>
+			<trans-unit id="groups.contentElementWizard.description">
+				<source>This dialog becomes visible when creating a new content element.</source>
 			</trans-unit>
 		</body>
 	</file>
