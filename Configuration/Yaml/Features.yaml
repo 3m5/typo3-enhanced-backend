@@ -1,3 +1,11 @@
+# this file configures all user settings, that can be found in the tab 'Enhanced Backend'
+# if a feature is enabled in the user settings, a css class is automatically added to the backend html
+# the css class is generated in the following structure: .groupKey__featureId
+# this yaml-file is transformed in BackendUserService.php
+# title and description are always the translation keys, that are used in locallang_be.xlf
+# image is located in EXT:enhanced_backend/Resources/Public/Images/
+# icon is located in EXT:enhanced_backend/Resources/Public/Icons/
+
 groups:
   global:
     title: groups.global.title
