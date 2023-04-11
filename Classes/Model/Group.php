@@ -42,6 +42,11 @@ class Group
     protected string $image = '';
 
     /**
+     * @var string
+     */
+    protected string $icon = '';
+
+    /**
      * @return string
      */
     public function getId(): string
@@ -103,6 +108,22 @@ class Group
     public function setImage(string $image): void
     {
         $this->image = $image;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIcon(): string
+    {
+        return $this->icon;
+    }
+
+    /**
+     * @param string $icon
+     */
+    public function setIcon(string $icon): void
+    {
+        $this->icon = $icon;
     }
 
 }

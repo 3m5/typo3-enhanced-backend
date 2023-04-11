@@ -102,10 +102,14 @@ class BackendUserService implements SingletonInterface
         foreach ($featureService->getAllFeatures() as $feature) {
             if($groupId != $feature->getGroup()->getId())
             {
+                $groupTitle =  $this->getLanguageService()->sL(self::LANG_FILE.':'.$feature->getGroup()->getTitle());
+                $groupIcon = '<span class="enba-uc-group__header-icon"><img src="'.PathUtility::getPublicResourceWebPath('EXT:enhanced_backend/Resources/Public/Icons/' . $feature->getGroup()->getIcon()).'" width="20" height="20" /></span>';
+                $groupToggleIcon = '<img src="'.PathUtility::getPublicResourceWebPath('EXT:enhanced_backend/Resources/Public/Icons/Caret-left.svg" width="24" class="enba-uc-group__header-toggle').'" />';
+
                 $html[] = $groupClose.'<div class="form-group t3js-formengine-field-item enba-uc-group">';
-                $html[] = '<div class="enba-uc-group__header"><h3><span class="enba-uc-group__header-icon" data-group-icon="'. $feature->getGroup()->getId() .'"></span>'.$feature->getGroup()->getTitle().'</h3><img src="'.PathUtility::getPublicResourceWebPath('EXT:enhanced_backend/Resources/Public/Icons/Caret-left.svg" width="24" class="enba-uc-group__header-toggle').'" /></div>';
+                $html[] = '<div class="enba-uc-group__header"><h3>'.$groupIcon.$groupTitle.'</h3>'.$groupToggleIcon.'</div>';
                 $html[] = '<div class="enba-uc-group__content"><div class="enba-uc-group__description">';
-                if($description = $feature->getGroup()->getDescription())
+                if($description =  $this->getLanguageService()->sL(self::LANG_FILE.':'.$feature->getGroup()->getDescription()))
                 {
                     $html[] = '<p>'.$description.'</p>';
                 }
@@ -193,11 +197,10 @@ class BackendUserService implements SingletonInterface
         {
             case 'check':
                 $checked = $feature->isActive() ? 'checked="checked"': '';
-                // TODO:  $this->getLanguageService()->sL() nutzen
                 $fieldId = 'tx_enhancedbackend_uc_'.$feature->getId();
                 $html[] = '<div class="form-check form-switch"><input type="checkbox" id="field_'.$fieldId.'" class="form-check-input" name="data['.$feature->getId().']" '.$checked.' data-presets="'.implode(',',$feature->getPresets()).'" /></div>';
-                $html[] = '<div class="feature__text"><span class="feature__title">'.$feature->getTitle().'</span><br/>';
-                $html[] = '<span class="feature__description">'.$feature->getDescription().'</span></div>';
+                $html[] = '<div class="feature__text"><span class="feature__title">'.$this->getLanguageService()->sL(self::LANG_FILE.':'.$feature->getTitle()).'</span><br/>';
+                $html[] = '<span class="feature__description">'.$this->getLanguageService()->sL(self::LANG_FILE.':'.$feature->getDescription()).'</span></div>';
                 break;
             default:
                 $this->logger->warning('Try to render unsupported type for feature');

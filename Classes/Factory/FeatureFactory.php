@@ -39,8 +39,11 @@ class FeatureFactory
                 if($groupDescription = $groupConfig['description']) {
                     $group->setDescription($groupDescription);
                 }
-                if($groupDescription = $groupConfig['image']) {
-                    $group->setImage($groupDescription);
+                if($groupImage = $groupConfig['image']) {
+                    $group->setImage($groupImage);
+                }
+                if($groupIcon = $groupConfig['icon']) {
+                    $group->setIcon($groupIcon);
                 }
 
                 if ($featuresConfig = $groupConfig['features']) {
