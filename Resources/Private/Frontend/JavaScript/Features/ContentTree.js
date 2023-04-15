@@ -108,7 +108,7 @@ function createNestedList(rootElement, classList, createdTreeLinks) {
 
 
     if(!!linkToContentElement && linkToContentElement.tagName === 'A') {
-      linkToContentElement.innerHTML = element.querySelector('.t3-page-ce-body .exampleContent')?.firstElementChild?.tagName === 'STRONG' ? element.querySelector('.t3-page-ce-body').querySelector('.exampleContent > strong').textContent : elementFallbackName;
+      linkToContentElement.innerHTML = element.querySelector('.t3-page-ce-body .exampleContent')?.firstElementChild?.tagName === 'STRONG' ? element.querySelector('.t3-page-ce-body').querySelector('.exampleContent > strong').textContent : (element.querySelector('.t3-page-ce-body .exampleContent th')?.firstElementChild?.tagName === 'STRONG' ? element.querySelector('.t3-page-ce-body .exampleContent th > strong').textContent : elementFallbackName);
       linkToContentElement.classList = '';
       // edit form should open in content area
       linkToContentElement.setAttribute('target', 'list_frame');

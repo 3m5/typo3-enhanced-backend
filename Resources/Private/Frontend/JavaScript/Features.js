@@ -17,7 +17,7 @@ window.addEventListener('load', (event) => {
       InitUserSettings();
 
       if(!!document.querySelector('.enba-contentElementWizard__enhancedUI')) {
-        InitContentElementWizard();
+        InitContentElementWizard(); 
       }
     }
   }
