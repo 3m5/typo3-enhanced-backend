@@ -14,7 +14,7 @@ if (typeof window !== "undefined") {
       InitEnbaClassNames();
 
       // Code is executed in content area
-      if (window.frameElement.id === 'typo3-contentIframe') {
+      if (window.frameElement?.id === 'typo3-contentIframe') {
         InitUserSettings();
 
         if (!!document.querySelector('.enba-contentElementWizard__enhancedUI')) {

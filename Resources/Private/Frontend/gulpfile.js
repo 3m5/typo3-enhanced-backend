@@ -6,6 +6,9 @@ const autoprefixer = require("autoprefixer");
 const webpackCore = require("webpack");
 const webpack = require("webpack-stream");
 
+const ts = require('gulp-typescript');
+const tsProject = ts.createProject('tsconfig.json');
+
 
 // paths
 const destCss = "../../Public/Styles";
@@ -41,6 +44,13 @@ gulp.task("sass:compile", gulp.series(function (done) {
     done();
 }));
 
+gulp.task('ts:compile', function() {
+  return gulp
+    .src('./JavaScript/Features.ts')
+    .pipe(tsProject())
+    .js.pipe(gulp.dest(destJavascript));
+});
+
 gulp.task("js:compile", gulp.series(function (done) {
   console.log('compile in ' + argv.m + ' mode!');
   return gulp
@@ -71,10 +81,9 @@ gulp.task("js:compile", gulp.series(function (done) {
     .pipe(gulp.dest(destJavascript));
 }));
 
-
 gulp.task("watch", function () {
     gulp.watch(["./Styles/**/*.scss"], gulp.series("sass:compile"));
-    //gulp.watch(["./JavaScript/*.js"],  gulp.series("js:compile"));
+    gulp.watch(["./JavaScript/**/*.ts"],  gulp.series("ts:compile"));
 });
 
 gulp.task("build", gulp.series("sass:compile", function (done) {

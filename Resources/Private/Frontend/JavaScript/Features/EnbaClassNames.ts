@@ -4,9 +4,10 @@
  */
 export default function InitEnbaClassNames() {
   if (typeof window !== "undefined") {
-    const enbaClassNames = Array.from(window.parent.document.querySelector('html').classList);
+    const classList = window.parent?.document?.querySelector('html')?.classList;
+    const enbaClassNames = classList ? Array.from(classList) : [];
     enbaClassNames.filter(className => !className.startsWith('enba'));
-    document.querySelector('html').classList.add(...enbaClassNames);
+    document.querySelector('html')?.classList.add(...enbaClassNames);
   }
 }
 
