@@ -74,9 +74,9 @@ gulp.task("js:compile", gulp.series(function (done) {
 
 gulp.task("watch", function () {
     gulp.watch(["./Styles/**/*.scss"], gulp.series("sass:compile"));
-    gulp.watch(["./JavaScript/*.js"],  gulp.series("js:compile"));
+    //gulp.watch(["./JavaScript/*.js"],  gulp.series("js:compile"));
 });
 
-gulp.task("build", gulp.series("js:compile", "sass:compile", function (done) {
+gulp.task("build", gulp.series("sass:compile", function (done) {
     done();
 }));

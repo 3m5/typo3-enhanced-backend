@@ -12,7 +12,7 @@ function showPageReloadDialog() {
 }
 
 function initSaveSettings() {
-  const $saveButton = document.querySelector(".btn[name='data[save]']");
+  const $saveButton = document.querySelector(".btn[name='data[save]']") as HTMLElement;
   if(!!$saveButton) {
     $saveButton.onclick = setReloadTrigger;
   }
@@ -31,7 +31,7 @@ function initSettingsGroupToggle() {
 }
 
 function uncheckAllFeatures() {
-  document.querySelectorAll('.enba-uc__feature input[type="checkbox"]').forEach(function(featureCheckbox) {
+  document.querySelectorAll('.enba-uc__feature input[type="checkbox"]').forEach(function(featureCheckbox : HTMLInputElement) {
     featureCheckbox.checked = false
   });
 }
@@ -41,12 +41,12 @@ function updateFeatures(selectedPreset) {
     case 'custom':
       break;
     case 'vanilla':
-      document.querySelectorAll('.enba-uc__feature input[type="checkbox"]').forEach(function(featureCheckbox) {
+      document.querySelectorAll('.enba-uc__feature input[type="checkbox"]').forEach(function(featureCheckbox : HTMLInputElement) {
         featureCheckbox.checked = featureCheckbox.dataset.presets.includes('vanilla');
       });
       break;
     case 'modern':
-      document.querySelectorAll('.enba-uc__feature input[type="checkbox"]').forEach(function(featureCheckbox) {
+      document.querySelectorAll('.enba-uc__feature input[type="checkbox"]').forEach(function(featureCheckbox : HTMLInputElement) {
         featureCheckbox.checked = featureCheckbox.dataset.presets.includes('modern');
       });
       break;
@@ -57,7 +57,10 @@ function updateFeatures(selectedPreset) {
 }
 
 function setPreset(presetValue) {
-  document.querySelector('[name="data[enba-presets]"][value="' + presetValue + '"]').checked = true;
+  const checkbox = document.querySelector<HTMLInputElement>('[name="data[enba-presets]"][value="' + presetValue + '"]');
+  if (checkbox) {
+    checkbox.checked = true;
+  }
 }
 
 function initPresets() {

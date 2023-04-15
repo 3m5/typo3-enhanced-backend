@@ -1,7 +1,7 @@
 import stringToHTML from "../Utils/stringToHTML";
 
 function buildContentTree() {
-  const iframe = document.querySelector('#typo3-contentIframe');
+  const iframe = document.querySelector('#typo3-contentIframe') as HTMLIFrameElement;
 
   /**
    * Content tree is only visible if page module is selected,
@@ -39,7 +39,8 @@ function buildContentTree() {
  */
 function createContentTreeHTML() {
   const $pageNavigation = document.querySelector('.t3js-scaffold-content-navigation');
-  const contentArea = document.getElementById("typo3-contentIframe").contentWindow.document;
+  const iframe = document.getElementById("typo3-contentIframe") as HTMLIFrameElement;
+  const contentArea = iframe.contentWindow?.document;
 
   const contentTree = document.createElement("div");
   contentTree.classList.add('content-tree');
@@ -58,7 +59,7 @@ function createContentTreeHTML() {
   contentTree.appendChild(contentTreeData);
   $pageNavigation.append(contentTree);
 
-  const rootElement = contentArea.querySelector('#PageLayoutController');
+  const rootElement = contentArea.querySelector('#PageLayoutController') as HTMLElement;
   const classList = ["t3js-page-ce-sortable"];
 
   const createdTreeLinks = [];
@@ -83,13 +84,14 @@ function createContentTreeHTML() {
  * @param classList - all classnames, that match a content element in the content area
  * @returns {HTMLUListElement|null}
  */
-function createNestedList(rootElement, classList, createdTreeLinks) {
+function createNestedList(rootElement : HTMLElement, classList : Array<string>, createdTreeLinks) {
   // Wähle alle Elemente aus, die mindestens eine der Klassen haben
-  const elements = Array.from(rootElement.querySelectorAll("*"))
-    .filter(element => {
-      const elementClasses = Array.from(element.classList);
-      return classList.some(className => elementClasses.includes(className));
+  const elements: Array<HTMLElement> = Array.from<HTMLElement>(rootElement.querySelectorAll("*"))
+    .filter((element: HTMLElement) => {
+      const elementClasses = Array.from<string>(element.classList);
+      return classList.some((className: string) => elementClasses.includes(className));
     });
+
 
   if (elements.length === 0) return null;
 
@@ -97,26 +99,28 @@ function createNestedList(rootElement, classList, createdTreeLinks) {
 
   // Iterate over all found elements and create a <li> element for each one
   for (let i = 0; i < elements.length; i++) {
-    const element = elements[i];
+    const element : HTMLElement = elements[i];
     const listItem = document.createElement("li");
     const isGridContainer = !!element.querySelector('.exampleContent > .t3-grid-container');
 
-    const elementIcon = element.querySelector('.t3-page-ce-header .t3js-contextmenutrigger');
+    const elementIcon: HTMLElement | null = element.querySelector('.t3-page-ce-header .t3js-contextmenutrigger');
 
     const elementFallbackName = isGridContainer ? 'Container' : 'Content element';
-    const linkToContentElement =  element.querySelector('.t3-page-ce-header [data-identifier="actions-open"]').closest('a') ? element.querySelector('.t3-page-ce-header [data-identifier="actions-open"]').closest('a').cloneNode(true) : '<div></div>';
+    const linkToContentElement : HTMLElement =  element.querySelector('.t3-page-ce-header [data-identifier="actions-open"]').closest('a') ? element.querySelector('.t3-page-ce-header [data-identifier="actions-open"]').closest('a').cloneNode(true) as HTMLElement : document.createElement('div');
 
 
     if(!!linkToContentElement && linkToContentElement.tagName === 'A') {
       linkToContentElement.innerHTML = element.querySelector('.t3-page-ce-body .exampleContent')?.firstElementChild?.tagName === 'STRONG' ? element.querySelector('.t3-page-ce-body').querySelector('.exampleContent > strong').textContent : (element.querySelector('.t3-page-ce-body .exampleContent th')?.firstElementChild?.tagName === 'STRONG' ? element.querySelector('.t3-page-ce-body .exampleContent th > strong').textContent : elementFallbackName);
-      linkToContentElement.classList = '';
+      while (linkToContentElement.classList.length > 0) {
+        linkToContentElement.classList.remove(linkToContentElement.classList.item(0));
+      }
       // edit form should open in content area
       linkToContentElement.setAttribute('target', 'list_frame');
       linkToContentElement.classList.add('link-to-content-element');
 
       // add ce icon to tree view
       if(!!elementIcon) {
-        linkToContentElement.insertAdjacentElement("afterbegin", elementIcon.cloneNode(true));
+        linkToContentElement.insertAdjacentElement("afterbegin", elementIcon.cloneNode(true) as HTMLElement);
       }
 
       // decrease opacity of disabled tree items
@@ -159,7 +163,7 @@ function watchContentIframe() {
        * this way, we create a better user experience, because the user
        * has the possibility to navigate between content elements on the same page
        */
-      const contentArea = document.querySelector('#typo3-contentIframe').contentWindow.document;
+      const contentArea = document.querySelector<HTMLIFrameElement>('#typo3-contentIframe').contentWindow?.document;
       const editForm = contentArea.querySelector('#EditDocumentController');
       if(!editForm && !!document.querySelector('.content-tree')) {
         document.querySelector('.content-tree').remove();
@@ -181,7 +185,7 @@ function initContentTreeToggle() {
  * @returns {boolean}
  */
 function isPageModuleActive() {
-  return !!document.querySelector('#modulemenu .modulemenu-action-active') && document.querySelector('#modulemenu .modulemenu-action-active').dataset.modulename === 'web_layout';
+  return document.querySelector<HTMLElement>('#modulemenu .modulemenu-action-active')?.dataset.modulename === 'web_layout';
 }
 
 /**
