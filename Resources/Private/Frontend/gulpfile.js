@@ -3,20 +3,15 @@ const sass = require("gulp-sass")(require('sass'));
 const postcss = require("gulp-postcss");
 const cssnano = require("cssnano");
 const autoprefixer = require("autoprefixer");
-const webpackCore = require("webpack");
 const webpack = require("webpack-stream");
-
-const ts = require('gulp-typescript');
-const tsProject = ts.createProject('tsconfig.json');
-
 
 // paths
 const destCss = "../../Public/Styles";
 const destJavascript = "../../Public/JavaScript";
 
 const sourceCss = [
-         './Styles/Dark.scss',
-         './Styles/Features.scss'
+   './Styles/Dark.scss',
+   './Styles/Features.scss'
 ];
 
 // handle arguments
@@ -55,7 +50,6 @@ gulp.task('ts:compile', function() {
           exclude: [/node_modules\/(?!(swiper|dom7)\/).*/],
           use: {
             loader: "ts-loader",
-            //exclude: /node_modules/,
           }
         }]
       },
@@ -71,36 +65,6 @@ gulp.task('ts:compile', function() {
     }))
     .pipe(gulp.dest(destJavascript));
 });
-
-gulp.task("js:compile", gulp.series(function (done) {
-  console.log('compile in ' + argv.m + ' mode!');
-  return gulp
-    .src("./JavaScript/Features.js")
-    .pipe(
-      webpack({
-        mode: argv.m,
-        module: {
-          rules: [
-            {
-              test: /\.js$/,
-              exclude: [/node_modules\/(?!(swiper|dom7)\/).*/],
-              use: {
-                loader: "babel-loader",
-                options: {
-                  presets: ["@babel/preset-env"]
-                }
-              }
-            }
-          ]
-        },
-        output: {
-          filename: "Features.js"
-        },
-        plugins: []
-      })
-    )
-    .pipe(gulp.dest(destJavascript));
-}));
 
 gulp.task("watch", function () {
     gulp.watch(["./Styles/**/*.scss"], gulp.series("sass:compile"));
