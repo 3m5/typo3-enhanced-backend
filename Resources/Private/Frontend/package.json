@@ -6,7 +6,8 @@
         "watch": "gulp watch",
         "watch-prod": "gulp watch --mode=production",
         "build": "gulp build",
-        "build-prod": "gulp build --mode=production"
+        "build-prod": "gulp build --mode=production",
+				"build-ts": "gulp ts:compile"
     },
     "author": "",
     "license": "ISC",
@@ -42,6 +43,7 @@
         "moment": "^2.29.3",
         "pikaday": "^1.8.2",
         "postcss": "^8.4.21",
+        "ts-loader": "^9.4.2",
         "yargs": "^17.5.1"
     },
     "resolutions": {

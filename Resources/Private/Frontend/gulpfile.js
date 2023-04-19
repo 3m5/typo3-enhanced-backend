@@ -47,8 +47,29 @@ gulp.task("sass:compile", gulp.series(function (done) {
 gulp.task('ts:compile', function() {
   return gulp
     .src('./JavaScript/Features.ts')
-    .pipe(tsProject())
-    .js.pipe(gulp.dest(destJavascript));
+    .pipe(webpack({
+      mode: argv.m,
+      module: {
+        rules: [{
+          test: /\.ts$/,
+          exclude: [/node_modules\/(?!(swiper|dom7)\/).*/],
+          use: {
+            loader: "ts-loader",
+            //exclude: /node_modules/,
+          }
+        }]
+      },
+      output: {
+        filename: 'Features.js',
+      },
+      resolve: {
+        extensions: ['.ts']
+      },
+    }).on('error', function(error) {
+      console.log(error);
+      this.emit('end'); // Don't stop the rest of the task
+    }))
+    .pipe(gulp.dest(destJavascript));
 });
 
 gulp.task("js:compile", gulp.series(function (done) {
