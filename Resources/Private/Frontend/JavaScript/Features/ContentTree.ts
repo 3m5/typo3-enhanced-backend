@@ -135,7 +135,7 @@ function createNestedList(rootElement : HTMLElement, classList : Array<string>, 
             : elementFallbackName);
 
       while (linkToContentElement.classList.length > 0) {
-        linkToContentElement.classList.remove(linkToContentElement.classList.item(0) ?? '');
+        linkToContentElement.classList.remove(linkToContentElement.classList.item(0) || '');
       }
       // edit form should open in content area
       linkToContentElement.setAttribute('target', 'list_frame');
@@ -152,7 +152,7 @@ function createNestedList(rootElement : HTMLElement, classList : Array<string>, 
       }
 
       // Check if element is already in content tree, if yes, don't use it as content root
-      const currentElementURL = linkToContentElement.getAttribute('href') || '';
+      const currentElementURL = linkToContentElement.getAttribute('href') ?? '';
       if(!createdTreeLinks.includes(currentElementURL)) {
         createdTreeLinks.push(currentElementURL);
 
