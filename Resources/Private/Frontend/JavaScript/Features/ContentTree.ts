@@ -17,7 +17,7 @@ function buildContentTree() {
    * Content tree is build after the content area iframe is loaded and page tree is available
    * the content tree is renderer below the page tree and shows the elements of the content area
    */
-  if (iframe == null) {
+  if (iframe === null) {
     window.setTimeout(buildContentTree, 1000);
   } else {
     const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
@@ -188,7 +188,7 @@ function watchContentIframe() {
       if(!editForm && !!document.querySelector('.content-tree')) {
         document.querySelector<HTMLElement>('.content-tree')?.remove();
         buildContentTree();
-      } 
+      }
     }
   });
 }
