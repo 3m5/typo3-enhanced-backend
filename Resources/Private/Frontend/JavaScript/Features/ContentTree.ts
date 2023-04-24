@@ -32,6 +32,23 @@ function buildContentTree() {
   }
 }
 
+function getContentTreeHeadline(contentArea: Document): string {
+  // Check page name including page icon in the top right corner of content area in page path
+  const pagePathHeader = contentArea.querySelector<HTMLElement>('.typo3-docheader-pagePath + strong');
+  if (pagePathHeader?.innerHTML) {
+    return pagePathHeader.innerHTML;
+  }
+
+  // If path is not available check for page name in editable headline in content area
+  const editableHeader = contentArea.querySelector<HTMLElement>('.t3js-title-inlineedit');
+  if (editableHeader?.textContent) {
+    return editableHeader.textContent;
+  }
+
+  // If page name is not available, show 'Content Tree' label as fallback
+  return 'Content Tree';
+}
+
 /**
  * creates the content tree header, that works as collapse toggle
  * adds the current page title as content tree header
@@ -40,7 +57,7 @@ function buildContentTree() {
 function createContentTreeHTML() {
   const $pageNavigation = document.querySelector('.t3js-scaffold-content-navigation');
   const iframe = document.getElementById("typo3-contentIframe") as HTMLIFrameElement;
-  const contentArea = iframe.contentWindow?.document;
+  const contentArea = iframe.contentWindow?.document as Document;
 
   const contentTree = document.createElement("div");
   contentTree.classList.add('content-tree');
@@ -50,7 +67,7 @@ function createContentTreeHTML() {
   contentTreeHeader.innerHTML = '<label class="content-tree__headline">Content tree</label><i class="fa fa-solid fa-angle-down content-tree__toggle"></i>';
   contentTreeHeader.onclick = initContentTreeToggle;
 
-  const contentTreeHeadline = contentArea?.querySelector<HTMLElement>('.typo3-docheader-pagePath + strong') ? contentArea?.querySelector<HTMLElement>('.typo3-docheader-pagePath + strong')?.innerHTML : (contentArea?.querySelector<HTMLElement>('.t3js-title-inlineedit') ? contentArea?.querySelector<HTMLElement>('.t3js-title-inlineedit')?.textContent : 'Content Tree');
+  const contentTreeHeadline = getContentTreeHeadline(contentArea);
   const contentTreeData = document.createElement("div");
   contentTreeData.classList.add('content-tree__data');
   contentTreeData.innerHTML = '<ul><li><span class="content-tree__title">' + contentTreeHeadline + '</li></ul>';
@@ -118,7 +135,7 @@ function createNestedList(rootElement : HTMLElement, classList : Array<string>, 
             : elementFallbackName);
 
       while (linkToContentElement.classList.length > 0) {
-        linkToContentElement.classList.remove(linkToContentElement.classList.item(0) || '');
+        linkToContentElement.classList.remove(linkToContentElement.classList.item(0) ?? '');
       }
       // edit form should open in content area
       linkToContentElement.setAttribute('target', 'list_frame');
@@ -159,10 +176,7 @@ function createNestedList(rootElement : HTMLElement, classList : Array<string>, 
  */
 function watchContentIframe() {
   document.querySelector<HTMLIFrameElement>('#typo3-contentIframe')?.addEventListener('load', (event) => {
-    if (window.top !== window) {
-      // Code is executed in an iframe
-    }
-    else {
+    if (window.top === window) {
       // Code is only executed in main HTML
       /**
        * if editForm is opened, we don't want to rebuild the content tree
@@ -174,7 +188,7 @@ function watchContentIframe() {
       if(!editForm && !!document.querySelector('.content-tree')) {
         document.querySelector<HTMLElement>('.content-tree')?.remove();
         buildContentTree();
-      }
+      } 
     }
   });
 }
