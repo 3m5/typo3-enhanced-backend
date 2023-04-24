@@ -55,6 +55,7 @@
                 overflow-y: auto;
                 max-height: calc(50vh - #{$content-tree-header-height});
                 padding-top: 8px;
+                padding-bottom: 8px;
 
                 ul {
                     list-style-type: none;

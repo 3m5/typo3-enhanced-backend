@@ -1,15 +1,16 @@
-function toggleTooltip(tooltip) {
+function toggleTooltip(tooltip : HTMLElement) {
   tooltip.classList.toggle('tooltip--active');
 }
 
 function addTooltip() {
   window.parent.document.querySelectorAll('.t3js-media-new-content-element-wizard').forEach(function(contentElementButton) {
-    let tooltipContent = contentElementButton.querySelector('.media-body').cloneNode(true);
-    tooltipContent.removeChild(tooltipContent.querySelector('br'));
-    tooltipContent.removeChild(tooltipContent.querySelector('strong'));
+    let tooltipContent = contentElementButton?.querySelector('.media-body')?.cloneNode(true) as HTMLElement;
+    if(!!tooltipContent) {
+      tooltipContent.removeChild(tooltipContent.querySelector('br') as ChildNode);
+      tooltipContent.removeChild(tooltipContent.querySelector('strong') as ChildNode);
+    }
 
     if(!!tooltipContent && !!tooltipContent.innerText.replace(/\n|\r|\W/g, "").length) {
-      tooltipContent = tooltipContent.cloneNode(true);
       tooltipContent.classList.remove('media-body');
       tooltipContent.classList.add('tooltip__content');
       const tooltip = document.createElement('div');
@@ -17,7 +18,7 @@ function addTooltip() {
       tooltip.insertAdjacentElement('afterbegin', tooltipContent);
       tooltip.insertAdjacentHTML("afterbegin",'<img class="tooltip__icon" src="/typo3conf/ext/enhanced_backend/Resources/Public/Icons/Info.svg" width="18" height="18" />');
 
-      tooltip.querySelector('.tooltip__icon').addEventListener('click', function() {
+      tooltip?.querySelector('.tooltip__icon')?.addEventListener('click', function() {
         toggleTooltip(tooltip);
       });
       contentElementButton.insertAdjacentElement('afterbegin', tooltip);
