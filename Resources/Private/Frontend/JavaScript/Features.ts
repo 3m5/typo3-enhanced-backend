@@ -4,15 +4,21 @@ import InitEnbaClassNames from "./Features/EnbaClassNames";
 import InitContentElementWizard from "./Features/ContentElementWizard";
 
 if (typeof window !== "undefined") {
-  window.addEventListener('load', (event) => {
-    if (window.top === window) {
-      // Code is only executed in main HTML
-      InitContentTree();
-
-    } else {
-      // Code is executed in an iframe
+  window.addEventListener('DOMContentLoaded', function() {
+    // Code is executed in an iFrame
+    if (window.parent !== window) {
       InitEnbaClassNames();
+    }
+  });
 
+
+  window.addEventListener('load', (event) => {
+    // Code is only executed in main HTML
+    if (window.top === window) {
+      InitContentTree();
+    }
+    // Code is executed in an iframe
+    else {
       // Code is executed in content area
       if (window.frameElement?.id === 'typo3-contentIframe') {
         InitUserSettings();
