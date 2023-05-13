@@ -77,10 +77,32 @@ function initPresets() {
   });
 }
 
+/**
+ * Classnames are set on every iframe immediately when a feature checkbox is toggled.
+ * This way, the user gets faster feedback on what has changed.
+ */
+function initFeatureListener() {
+  document.querySelectorAll<HTMLInputElement>('.enba-uc__feature input[type="checkbox"]').forEach(function(featureCheckbox) {
+    featureCheckbox.addEventListener('change', function () {
+      const featureClassName = featureCheckbox.getAttribute('name')?.replace(/^data\[|\]$/g, '');
+      if(!!featureClassName) {
+        if(featureCheckbox.checked) {
+          document.querySelector('html')?.classList.add(featureClassName);
+          window?.parent?.document?.querySelector('html')?.classList.add(featureClassName);
+        } else {
+          document.querySelector('html')?.classList.remove(featureClassName);
+          window?.parent?.document?.querySelector('html')?.classList.remove(featureClassName);
+        }
+      }
+    });
+  });
+}
+
 export default function InitUserSettings() {
   initPresets();
   initSaveSettings();
   initSettingsGroupToggle();
+  initFeatureListener();
   if(!!sessionStorage.getItem('reloadPage')) {
     showPageReloadDialog();
   }
