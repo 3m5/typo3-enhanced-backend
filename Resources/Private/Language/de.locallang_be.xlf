@@ -101,8 +101,8 @@
 				<target>Optimierte Icons</target>
 			</trans-unit>
 			<trans-unit id="global.enhancedIcons.description">
-				<source>Replace the default TYPO3 icons with a modern and user-friendly icon set.</source>
-				<target>Tausche die Standard-Icons von TYPO3 mit einem modernen und benutzerfreundlichen Iconset aus.</target>
+				<source><![CDATA[Replace the default TYPO3 icons with a modern and user-friendly icon set. <em>⇾ Requires a page reload to make the change visible.</em>]]></source>
+				<target><![CDATA[Tausche die Standard-Icons von TYPO3 mit einem modernen und benutzerfreundlichen Iconset aus. <em>⇾ Erfordert einen Page Reload, damit die Änderung sichtbar wird.</em>]]></target>
 			</trans-unit>
 			<trans-unit id="global.enhancedFont.title">
 				<source>Enhanced Font</source>
