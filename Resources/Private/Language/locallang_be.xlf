@@ -96,7 +96,7 @@
 				<source>Enhanced Icons</source>
 			</trans-unit>
 			<trans-unit id="global.enhancedIcons.description">
-				<source>Replace the default TYPO3 icons with a modern and user-friendly icon set.</source>
+				<source><![CDATA[Replace the default TYPO3 icons with a modern and user-friendly icon set. <em>⇾ Requires a page reload to make the change visible.</em>]]></source>
 			</trans-unit>
 			<trans-unit id="global.enhancedFont.title">
 				<source>Enhanced Font</source>

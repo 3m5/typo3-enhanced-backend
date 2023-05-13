@@ -1,3 +1,5 @@
+import {featuresThatRequirePageReload} from "../Constants";
+
 function reloadPage() {
   sessionStorage.removeItem('reloadPage');
   window.parent.location.reload();
@@ -8,13 +10,6 @@ function showPageReloadDialog() {
   const dialog = confirm("For all changes to take effect, the page must be reloaded once. Should the page be reloaded now?");
   if (dialog) {
     reloadPage();
-  }
-}
-
-function initSaveSettings() {
-  const $saveButton = document.querySelector(".btn[name='data[save]']") as HTMLElement;
-  if(!!$saveButton) {
-    $saveButton.onclick = setReloadTrigger;
   }
 }
 
@@ -85,7 +80,7 @@ function initFeatureListener() {
   document.querySelectorAll<HTMLInputElement>('.enba-uc__feature input[type="checkbox"]').forEach(function(featureCheckbox) {
     featureCheckbox.addEventListener('change', function () {
       const featureClassName = featureCheckbox.getAttribute('name')?.replace(/^data\[|\]$/g, '');
-      if(!!featureClassName) {
+      if(!!featureClassName && !featuresThatRequirePageReload.includes(featureClassName)) {
         if(featureCheckbox.checked) {
           document.querySelector('html')?.classList.add(featureClassName);
           window?.parent?.document?.querySelector('html')?.classList.add(featureClassName);
@@ -93,6 +88,8 @@ function initFeatureListener() {
           document.querySelector('html')?.classList.remove(featureClassName);
           window?.parent?.document?.querySelector('html')?.classList.remove(featureClassName);
         }
+      } else if(!!featureClassName && featuresThatRequirePageReload.includes(featureClassName)) {
+        setReloadTrigger();
       }
     });
   });
@@ -100,7 +97,6 @@ function initFeatureListener() {
 
 export default function InitUserSettings() {
   initPresets();
-  initSaveSettings();
   initSettingsGroupToggle();
   initFeatureListener();
   if(!!sessionStorage.getItem('reloadPage')) {
