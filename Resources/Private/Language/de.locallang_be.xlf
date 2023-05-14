@@ -173,8 +173,8 @@
 				<target>Optimierter Inhaltsbereich</target>
 			</trans-unit>
 			<trans-unit id="contentArea.enhancedOverviewUI.description">
-				<source>Content element frames are moved to the background to focus on the content. Buttons and titles are repositioned for a better overview. Also, all flags are hidden to reduce redundancy.</source>
-				<target>Inhaltselement-Rahmen werden in den Hintergrund gerückt, um den Fokus auf die Inhalte zu setzen. Buttons und Titel werden repositioniert für einen besseren Überblick. Außerdem sind alle Flaggen ausgeblendet, um Redundanz zu verringern.</target>
+				<source>Content element frames are moved to the background to focus on the content. Buttons and titles are repositioned for a better overview.</source>
+				<target>Inhaltselement-Rahmen werden in den Hintergrund gerückt, um den Fokus auf die Inhalte zu setzen. Buttons und Titel werden repositioniert für einen besseren Überblick.</target>
 			</trans-unit>
 			<trans-unit id="contentArea.enhancedToolbar.title">
 				<source>Enhanced Toolbar</source>

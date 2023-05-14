@@ -2,6 +2,7 @@ import InitContentTree from "./Features/ContentTree";
 import InitUserSettings from "./Features/UserSettings";
 import InitEnbaClassNames from "./Features/EnbaClassNames";
 import InitContentElementWizard from "./Features/ContentElementWizard";
+import InitEnhancedLanguageVisualization from "./Features/EnhancedLanguageVisualization";
 
 if (typeof window !== "undefined") {
   window.addEventListener('DOMContentLoaded', function() {
@@ -25,6 +26,10 @@ if (typeof window !== "undefined") {
 
         if (!!document.querySelector('.enba-contentElementWizard__enhancedUI')) {
           InitContentElementWizard();
+        }
+
+        if(!!document.querySelector('.enba-contentArea__enhancedLanguageVisualization')) {
+          InitEnhancedLanguageVisualization();
         }
       }
     }
