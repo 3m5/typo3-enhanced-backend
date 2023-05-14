@@ -1,5 +1,5 @@
 import InitContentTree from "./Features/ContentTree";
-import InitUserSettings from "./Features/SaveSettingsListener";
+import InitUserSettings from "./Features/UserSettings";
 import InitEnbaClassNames from "./Features/EnbaClassNames";
 import InitContentElementWizard from "./Features/ContentElementWizard";
 
