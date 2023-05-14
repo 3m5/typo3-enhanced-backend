@@ -164,6 +164,12 @@
 			<trans-unit id="contentArea.enhancedEditingForm.description">
 				<source>Form elements are aligned using a grid. Frames are visually placed in the background so editors can focus on content.</source>
 			</trans-unit>
+			<trans-unit id="contentArea.hideQuickPageTitleEdit.title">
+				<source>Hide quick page title editing</source>
+			</trans-unit>
+			<trans-unit id="contentArea.hideQuickPageTitleEdit.description">
+				<source>Displays the icon for quick editing of the page title only when the mouse is hovered over it.</source>
+			</trans-unit>
 			<trans-unit id="contentElementWizard.enhancedToolbar.title">
 				<source>Enhanced Toolbar</source>
 			</trans-unit>

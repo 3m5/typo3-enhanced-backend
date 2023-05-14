@@ -2,6 +2,7 @@
 @import "Mixins/ContentArea/EnhancedContentElementPositioning";
 @import "Mixins/ContentArea/EnhancedToolbar";
 @import "Mixins/ContentArea/EnhancedEditingForm";
+@import "Mixins/ContentArea/HideQuickPageTitleEdit";
 
 .enba-contentArea {
     &__enhancedOverviewUI {
@@ -15,5 +16,9 @@
 
     &__enhancedEditingForm {
         @include contentArea__enhancedEditingForm;
+    }
+
+    &__hideQuickPageTitleEdit {
+        @include contentArea__hideQuickPageTitleEdit;
     }
 }

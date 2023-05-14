@@ -192,6 +192,14 @@
 				<source>Form elements are aligned using a grid. Frames are visually placed in the background so editors can focus on content.</source>
 				<target>Formularelemente werden anhand eines Rasters ausgerichtet. Rahmen werden optisch in den Hintergrund gestellt, damit Redakteure sich auf die Inhalte fokussieren können.</target>
 			</trans-unit>
+			<trans-unit id="contentArea.hideQuickPageTitleEdit.title">
+				<source>Hide quick page title editing</source>
+				<target>Verstecke schnelle Seitentitel-Bearbeitung</target>
+			</trans-unit>
+			<trans-unit id="contentArea.hideQuickPageTitleEdit.description">
+				<source>Displays the icon for quick editing of the page title only when the mouse is hovered over it.</source>
+				<target>Blendet das Icon für die schnelle Bearbeitung des Seitentitels erst ein, wenn mit der Maus darüber gefahren wird.</target>
+			</trans-unit>
 			<trans-unit id="contentElementWizard.enhancedToolbar.title">
 				<source>Enhanced Toolbar</source>
 				<target>Optimierte Toolbar</target>
