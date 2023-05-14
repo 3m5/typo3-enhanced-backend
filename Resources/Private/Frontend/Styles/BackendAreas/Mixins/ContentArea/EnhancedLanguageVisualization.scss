@@ -1,0 +1,18 @@
+@mixin contentArea__enhancedLanguageVisualization {
+    .module-body {
+        .t3-page-column-lang-name {
+            position: sticky;
+            background-color: white;
+            top: 84px;
+            z-index: 500;
+            padding-top: 16px;
+            transition: transform .3s ease-in-out;
+        }
+    }
+
+    .module-docheader-folded + .module-body {
+        .t3-page-column-lang-name {
+            transform: translateY(-30px);
+        }
+    }
+}
