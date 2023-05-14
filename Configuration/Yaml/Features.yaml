@@ -128,6 +128,12 @@ groups:
         preset:
           - vanilla
           - modern
+      - id: enhancedLanguageVisualization
+        title: contentArea.enhancedLanguageVisualization.title
+        description: contentArea.enhancedLanguageVisualization.description
+        type: check
+        preset:
+          - modern
       - id: hideQuickPageTitleEdit
         title: contentArea.hideQuickPageTitleEdit.title
         description: contentArea.hideQuickPageTitleEdit.description
