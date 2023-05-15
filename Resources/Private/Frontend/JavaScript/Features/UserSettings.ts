@@ -93,22 +93,31 @@ function uncheckAllFeatures() {
  * @param selectedPreset
  */
 function updateFeatures(selectedPreset : string | null) {
+  let changeEvent = new Event('change', { bubbles: true });
   switch(selectedPreset) {
     case 'custom':
       break;
     case 'vanilla':
       document.querySelectorAll<HTMLInputElement>('.enba-uc__feature input[type="checkbox"]').forEach(function(featureCheckbox) {
         featureCheckbox.checked = !!featureCheckbox.dataset?.presets?.includes('vanilla');
+        featureCheckbox.dispatchEvent(changeEvent);
       });
       break;
     case 'modern':
       document.querySelectorAll<HTMLInputElement>('.enba-uc__feature input[type="checkbox"]').forEach(function(featureCheckbox) {
         featureCheckbox.checked = !!featureCheckbox.dataset?.presets?.includes('modern');
+        featureCheckbox.dispatchEvent(changeEvent);
       });
       break;
     case 'none':
       uncheckAllFeatures();
+      document.querySelectorAll<HTMLInputElement>('.enba-uc__feature input[type="checkbox"]').forEach(function(featureCheckbox) {
+        featureCheckbox.dispatchEvent(changeEvent);
+      });
       break;
+  }
+  if(!!selectedPreset) {
+    setPreset(selectedPreset);
   }
 }
 
