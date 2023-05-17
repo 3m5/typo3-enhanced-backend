@@ -20,6 +20,7 @@ apps-toolbar-menu-help: 'EXT:enhanced_backend/Resources/Public/Icons/Question.sv
 system-information-toolbar-item: 'EXT:enhanced_backend/Resources/Public/Icons/Info.svg'
 # system info open if any log is available
 actions-system-list-open: 'EXT:enhanced_backend/Resources/Public/Icons/Info.svg'
+
 ### TOOLBAR
   # cache on page module
 actions-system-cache-clear: 'EXT:enhanced_backend/Resources/Public/Icons/Lightning.svg'
@@ -33,6 +34,19 @@ actions-link: 'EXT:enhanced_backend/Resources/Public/Icons/Link.svg'
 actions-system-help-open: 'EXT:enhanced_backend/Resources/Public/Icons/Question.svg'
 # Share
 actions-share-alt: 'EXT:enhanced_backend/Resources/Public/Icons/ShareNetwork.svg'
+
+## Search Dropdown
+status-user-group-backend: 'EXT:enhanced_backend/Resources/Public/Icons/Users.svg'
+status-user-backend: 'EXT:enhanced_backend/Resources/Public/Icons/User.svg'
+status-user-admin: 'EXT:enhanced_backend/Resources/Public/Icons/CrownSimple.svg'
+#apps-pagetree-page-default: 'EXT:enhanced_backend/Resources/Public/Icons/File.svg'
+#apps-pagetree-page-shortcut: 'EXT:enhanced_backend/Resources/Public/Icons/ArrowBendUpRight.svg'
+#apps-pagetree-page-domain: 'EXT:enhanced_backend/Resources/Public/Icons/GlobeHemisphereWest.svg'
+module-page: 'EXT:enhanced_backend/Resources/Public/Icons/File.svg'
+module-cshmanual: 'EXT:enhanced_backend/Resources/Public/Icons/BookOpenText.svg'
+information-os-linux: 'EXT:enhanced_backend/Resources/Public/Icons/LinuxLogo.svg'
+information-debugger: 'EXT:enhanced_backend/Resources/Public/Icons/Bug.svg'
+
 ### PAGE TREE
   # create new page
 #apps-pagetree-page-default: 'EXT:enhanced_backend/Resources/Public/Icons/File.svg'
@@ -59,7 +73,8 @@ actions-edit-delete: 'EXT:enhanced_backend/Resources/Public/Icons/Trash.svg'
 apps-pagetree-category-collapse-all: 'EXT:enhanced_backend/Resources/Public/Icons/ArrowsInLineVertical.svg'
 # reload
 actions-refresh: 'EXT:enhanced_backend/Resources/Public/Icons/ArrowClockwise.svg'
-### TOOL BAR
+
+### TOOLBAR
   # edit save
 actions-document-save: 'EXT:enhanced_backend/Resources/Public/Icons/FloppyDisk.svg'
 # close
@@ -68,6 +83,7 @@ actions-close: 'EXT:enhanced_backend/Resources/Public/Icons/X.svg'
 actions-add: 'EXT:enhanced_backend/Resources/Public/Icons/Plus.svg'
 # view
 actions-view: 'EXT:enhanced_backend/Resources/Public/Icons/Eye.svg'
+
 ### CONTEXT MENU
   # Info
 actions-document-info: 'EXT:enhanced_backend/Resources/Public/Icons/Info.svg'
@@ -91,11 +107,13 @@ actions-document-import-t3d: 'EXT:enhanced_backend/Resources/Public/Icons/ArrowS
 apps-pagetree-drag-move-between: 'EXT:enhanced_backend/Resources/Public/Icons/Files.svg'
 # Sort subpages
 actions-page-move: 'EXT:enhanced_backend/Resources/Public/Icons/SortAscending.svg'
+
 ### USER
   # User settings
 module-setup: 'EXT:enhanced_backend/Resources/Public/Icons/Gear.svg'
 # Logout
 actions-logout: 'EXT:enhanced_backend/Resources/Public/Icons/SignOut.svg'
+
 ### CONTENT AREA
   # Tag
 ext-news-tag: 'EXT:enhanced_backend/Resources/Public/Icons/Tag.svg'

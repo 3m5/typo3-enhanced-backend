@@ -1,17 +1,12 @@
 @mixin contentArea__enhancedContentElementPositioning {
     .module-body {
 
-        // hide flags
-        .t3js-flag {
-            display: none;
-        }
-
         // set headline in top bar of content element
         .t3-page-ce-body-inner .exampleContent {
             > strong:first-child {
                 position: absolute;
                 top: 8px;
-                left: 40px;
+                left: 60px;
                 font-size: 14px;
                 /** hide too long text in headline */
                 height: 25px;

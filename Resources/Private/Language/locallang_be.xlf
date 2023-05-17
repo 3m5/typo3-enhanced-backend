@@ -96,7 +96,7 @@
 				<source>Enhanced Icons</source>
 			</trans-unit>
 			<trans-unit id="global.enhancedIcons.description">
-				<source>Replace the default TYPO3 icons with a modern and user-friendly icon set.</source>
+				<source><![CDATA[Replace the default TYPO3 icons with a modern and user-friendly icon set. <em>⇾ Requires a page reload to make the change visible.</em>]]></source>
 			</trans-unit>
 			<trans-unit id="global.enhancedFont.title">
 				<source>Enhanced Font</source>
@@ -150,7 +150,7 @@
 				<source>Enhanced content area</source>
 			</trans-unit>
 			<trans-unit id="contentArea.enhancedOverviewUI.description">
-				<source>Content element frames are moved to the background to focus on the content. Buttons and titles are repositioned for a better overview. Also, all flags are hidden to reduce redundancy.</source>
+				<source>Content element frames are moved to the background to focus on the content. Buttons and titles are repositioned for a better overview.</source>
 			</trans-unit>
 			<trans-unit id="contentArea.enhancedToolbar.title">
 				<source>Enhanced Toolbar</source>
@@ -163,6 +163,18 @@
 			</trans-unit>
 			<trans-unit id="contentArea.enhancedEditingForm.description">
 				<source>Form elements are aligned using a grid. Frames are visually placed in the background so editors can focus on content.</source>
+			</trans-unit>
+			<trans-unit id="contentArea.enhancedLanguageVisualization.title">
+				<source>Enhanced language visualization</source>
+			</trans-unit>
+			<trans-unit id="contentArea.enhancedLanguageVisualization.description">
+				<source>Displays the respective language flag only once per column and makes the language sticky at the top, so that it is also recognizable when elements are edited further down.</source>
+			</trans-unit>
+			<trans-unit id="contentArea.hideQuickPageTitleEdit.title">
+				<source>Hide quick page title editing</source>
+			</trans-unit>
+			<trans-unit id="contentArea.hideQuickPageTitleEdit.description">
+				<source>Displays the icon for quick editing of the page title only when the mouse is hovered over it.</source>
 			</trans-unit>
 			<trans-unit id="contentElementWizard.enhancedToolbar.title">
 				<source>Enhanced Toolbar</source>

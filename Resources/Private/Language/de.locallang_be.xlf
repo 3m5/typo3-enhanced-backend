@@ -101,8 +101,8 @@
 				<target>Optimierte Icons</target>
 			</trans-unit>
 			<trans-unit id="global.enhancedIcons.description">
-				<source>Replace the default TYPO3 icons with a modern and user-friendly icon set.</source>
-				<target>Tausche die Standard-Icons von TYPO3 mit einem modernen und benutzerfreundlichen Iconset aus.</target>
+				<source><![CDATA[Replace the default TYPO3 icons with a modern and user-friendly icon set. <em>⇾ Requires a page reload to make the change visible.</em>]]></source>
+				<target><![CDATA[Tausche die Standard-Icons von TYPO3 mit einem modernen und benutzerfreundlichen Iconset aus. <em>⇾ Erfordert einen Page Reload, damit die Änderung sichtbar wird.</em>]]></target>
 			</trans-unit>
 			<trans-unit id="global.enhancedFont.title">
 				<source>Enhanced Font</source>
@@ -173,8 +173,8 @@
 				<target>Optimierter Inhaltsbereich</target>
 			</trans-unit>
 			<trans-unit id="contentArea.enhancedOverviewUI.description">
-				<source>Content element frames are moved to the background to focus on the content. Buttons and titles are repositioned for a better overview. Also, all flags are hidden to reduce redundancy.</source>
-				<target>Inhaltselement-Rahmen werden in den Hintergrund gerückt, um den Fokus auf die Inhalte zu setzen. Buttons und Titel werden repositioniert für einen besseren Überblick. Außerdem sind alle Flaggen ausgeblendet, um Redundanz zu verringern.</target>
+				<source>Content element frames are moved to the background to focus on the content. Buttons and titles are repositioned for a better overview.</source>
+				<target>Inhaltselement-Rahmen werden in den Hintergrund gerückt, um den Fokus auf die Inhalte zu setzen. Buttons und Titel werden repositioniert für einen besseren Überblick.</target>
 			</trans-unit>
 			<trans-unit id="contentArea.enhancedToolbar.title">
 				<source>Enhanced Toolbar</source>
@@ -191,6 +191,22 @@
 			<trans-unit id="contentArea.enhancedEditingForm.description">
 				<source>Form elements are aligned using a grid. Frames are visually placed in the background so editors can focus on content.</source>
 				<target>Formularelemente werden anhand eines Rasters ausgerichtet. Rahmen werden optisch in den Hintergrund gestellt, damit Redakteure sich auf die Inhalte fokussieren können.</target>
+			</trans-unit>
+			<trans-unit id="contentArea.enhancedLanguageVisualization.title">
+				<source>Enhanced language visualization</source>
+				<target>Optimierte Darstellung der Sprachen</target>
+			</trans-unit>
+			<trans-unit id="contentArea.enhancedLanguageVisualization.description">
+				<source>Displays the respective language flag only once per column and makes the language sticky at the top, so that it is also recognizable when elements are edited further down.</source>
+				<target>Zeigt die jeweilige Sprachflagge nur einmal je Spalte an und macht die Sprache sticky am oberen Rand, sodass sie auch erkennbar ist, wenn Elemente weiter unten bearbeitet werden.</target>
+			</trans-unit>
+			<trans-unit id="contentArea.hideQuickPageTitleEdit.title">
+				<source>Hide quick page title editing</source>
+				<target>Verstecke schnelle Seitentitel-Bearbeitung</target>
+			</trans-unit>
+			<trans-unit id="contentArea.hideQuickPageTitleEdit.description">
+				<source>Displays the icon for quick editing of the page title only when the mouse is hovered over it.</source>
+				<target>Blendet das Icon für die schnelle Bearbeitung des Seitentitels erst ein, wenn mit der Maus darüber gefahren wird.</target>
 			</trans-unit>
 			<trans-unit id="contentElementWizard.enhancedToolbar.title">
 				<source>Enhanced Toolbar</source>

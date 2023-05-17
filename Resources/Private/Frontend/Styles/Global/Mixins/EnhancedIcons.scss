@@ -12,6 +12,10 @@ $icon-size--phosphor: 20px;
         svg {
             @include svg-color--white;
         }
+
+        .t3js-toolbar-item-search svg {
+            filter: none !important;
+        }
     }
 
     .module-docheader-bar-buttons {

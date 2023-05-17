@@ -2,24 +2,15 @@
     .module-docheader {
         min-height: 81.5px;
 
+        &.module-docheader-folded {
+            transform: translateY(-44px);
+        }
+
         .form-select {
             min-width: 150px;
             cursor: pointer;
         }
 
-        &-bar {
-            &:first-child {
-                margin-top: 7px;
-            }
-
-            .btn {
-                padding: 4px 8px;
-                height: 30px;
-            }
-        }
-    }
-
-    .module-docheader {
         .form-select, .form-control {
             border: 1px solid #ddd;
             font-size: 13px;
@@ -37,6 +28,16 @@
             border-right-color: transparent;
             background-color: transparent;
         }
-    }
 
+        &-bar {
+            &:first-child {
+                margin-top: 7px;
+            }
+
+            .btn {
+                padding: 4px 8px;
+                height: 30px;
+            }
+        }
+    }
 }

@@ -49,6 +49,32 @@ function getContentTreeHeadline(contentArea: Document): string {
   return 'Content Tree';
 }
 
+function getElementHeadline(element:HTMLElement): string {
+  const isGridContainer = !!element.querySelector('.exampleContent > .t3-grid-container');
+  const elementFallbackName = isGridContainer ? 'Container' : 'Content element';
+
+  const elementBody = element?.querySelectorAll<HTMLElement>('.t3-page-ce-body')[0];
+  const elementContent = elementBody?.querySelectorAll<HTMLElement>('.exampleContent')[0]
+
+  // if element has a strong title, show this in content tree
+  if (elementContent?.firstElementChild?.tagName === 'STRONG') {
+    return elementContent?.firstElementChild?.textContent ?? '';
+  }
+
+  // if no strong title is found and element is grid container, show fallback name
+  if(isGridContainer) {
+    return elementFallbackName;
+  }
+
+  // if element is no grid container and has no title, show table head as headline
+  if(elementContent?.querySelector<HTMLElement>('th:first-of-type')?.firstElementChild?.tagName === 'STRONG') {
+    return elementContent?.querySelector<HTMLElement>('th:first-of-type > strong')?.textContent ?? '';
+  }
+
+  // if no title is available show fallback name
+  return elementFallbackName;
+}
+
 /**
  * creates the content tree header, that works as collapse toggle
  * adds the current page title as content tree header
@@ -118,21 +144,11 @@ function createNestedList(rootElement : HTMLElement, classList : Array<string>, 
   for (let i = 0; i < elements.length; i++) {
     const element : HTMLElement = elements[i];
     const listItem = document.createElement("li");
-    const isGridContainer = !!element.querySelector('.exampleContent > .t3-grid-container');
-
     const elementIcon: HTMLElement | null = element.querySelector('.t3-page-ce-header .t3js-contextmenutrigger');
-
-    const elementFallbackName = isGridContainer ? 'Container' : 'Content element';
     const linkToContentElement : HTMLElement =  element?.querySelector<HTMLElement>('.t3-page-ce-header [data-identifier="actions-open"]')?.closest('a') ? element?.querySelector<HTMLElement>('.t3-page-ce-header [data-identifier="actions-open"]')?.closest('a')?.cloneNode(true) as HTMLElement : document.createElement('div');
 
-
     if(!!linkToContentElement && linkToContentElement.tagName === 'A') {
-      linkToContentElement.innerHTML =
-        element?.querySelector<HTMLElement>('.t3-page-ce-body .exampleContent')?.firstElementChild?.tagName === 'STRONG'
-          ? (element?.querySelector<HTMLElement>('.t3-page-ce-body')?.querySelector<HTMLElement>('.exampleContent > strong')?.textContent ?? '')
-          : (element?.querySelector<HTMLElement>('.t3-page-ce-body .exampleContent th')?.firstElementChild?.tagName === 'STRONG'
-            ? (element?.querySelector<HTMLElement>('.t3-page-ce-body .exampleContent th > strong')?.textContent ?? '')
-            : elementFallbackName);
+      linkToContentElement.innerHTML = getElementHeadline(element);
 
       while (linkToContentElement.classList.length > 0) {
         linkToContentElement.classList.remove(linkToContentElement.classList.item(0) || '');
