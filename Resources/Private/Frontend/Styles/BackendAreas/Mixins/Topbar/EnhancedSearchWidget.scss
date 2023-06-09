@@ -11,4 +11,16 @@
             border-bottom-color: white;
         }
     }
+
+    .dropdown-menu {
+        .btn-primary {
+            width: 100%;
+            background-color: transparent;
+            border: 1px solid white;
+
+            &:hover {
+                background-color: var(--bs-btn-bg);
+            }
+        }
+    }
 }

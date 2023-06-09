@@ -44,5 +44,9 @@
         .form-control-wrap {
             max-width: MAX(66%, 804px) !important; // 804px is the width, that is randomly set with js
         }
+
+        typo3-formengine-element-category .form-control-wrap {
+            max-width: 100% !important; //category select is the only element that should have width of 100%
+        }
     }
 }
