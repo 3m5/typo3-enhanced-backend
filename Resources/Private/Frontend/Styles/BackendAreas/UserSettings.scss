@@ -1,4 +1,6 @@
 .enba-settings {
+    width: 200%; // TYPO3 12 settings are limited to 50% width, so we need to override this
+
     .form-group {
         margin-bottom: 8px;
         border-top: 1px solid $typo3-grey--border;
