@@ -2,7 +2,6 @@
 @import "Mixins/ContentArea/EnhancedContentElementPositioning";
 @import "Mixins/ContentArea/EnhancedToolbar";
 @import "Mixins/ContentArea/EnhancedEditingForm";
-@import "Mixins/ContentArea/HideQuickPageTitleEdit";
 @import "Mixins/ContentArea/EnhancedLanguageVisualization";
 
 .enba-contentArea {
@@ -27,10 +26,6 @@
 
     &__enhancedEditingForm {
         @include contentArea__enhancedEditingForm;
-    }
-
-    &__hideQuickPageTitleEdit {
-        @include contentArea__hideQuickPageTitleEdit;
     }
 
     &__enhancedLanguageVisualization {

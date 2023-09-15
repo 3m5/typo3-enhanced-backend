@@ -164,12 +164,6 @@
 			<trans-unit id="contentArea.enhancedLanguageVisualization.description">
 				<source>Displays the respective language flag only once per column and makes the language sticky at the top, so that it is also recognizable when elements are edited further down.</source>
 			</trans-unit>
-			<trans-unit id="contentArea.hideQuickPageTitleEdit.title">
-				<source>Hide quick page title editing</source>
-			</trans-unit>
-			<trans-unit id="contentArea.hideQuickPageTitleEdit.description">
-				<source>Displays the icon for quick editing of the page title only when the mouse is hovered over it.</source>
-			</trans-unit>
 			<trans-unit id="contentElementWizard.enhancedToolbar.title">
 				<source>Enhanced Toolbar</source>
 			</trans-unit>
