@@ -7,12 +7,11 @@ function buildContentTree() {
    * Content tree is only visible if page module is selected,
    * otherwise there is no content in the content area that could be selected
    */
-   //TODO: check why this is not working anymore
-  /*if(isPageModuleActive()) {
+  if(isPageModuleActive()) {
     document.querySelector<HTMLElement>('.t3js-scaffold-content-navigation')?.classList?.remove('content-tree--hidden');
   } else {
     document.querySelector<HTMLElement>('.t3js-scaffold-content-navigation')?.classList?.add('content-tree--hidden');
-  }*/
+  }
 
   /**
    * Content tree is build after the content area iframe is loaded and page tree is available
@@ -222,7 +221,7 @@ function initContentTreeToggle() {
  * @returns {boolean}
  */
 function isPageModuleActive() {
-  return document.querySelector<HTMLElement>('#modulemenu .modulemenu-action-active')?.dataset.modulename === 'web_layout';
+  return document.querySelector<HTMLElement>('#modulemenu a.modulemenu-action-active')?.dataset.modulemenuIdentifier === 'web_layout';
 }
 
 /**
