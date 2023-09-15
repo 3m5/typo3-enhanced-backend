@@ -110,12 +110,6 @@
 			<trans-unit id="global.enhancedScrollbars.description">
 				<source>Use this option to make scrollbars more discreet and move them visually into the background.</source>
 			</trans-unit>
-			<trans-unit id="topbar.enhancedSearchWidget.title">
-				<source>Enhanced Search Field</source>
-			</trans-unit>
-			<trans-unit id="topbar.enhancedSearchWidget.description">
-				<source>The search field is brought more into focus and given a more modern design.</source>
-			</trans-unit>
 			<trans-unit id="topbar.enhancedWidgetOrder.title">
 				<source>Reorder icons on the right</source>
 			</trans-unit>

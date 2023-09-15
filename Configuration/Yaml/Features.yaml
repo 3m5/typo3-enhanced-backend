@@ -50,14 +50,6 @@ groups:
           - vanilla
           - modern
       -
-        id: enhancedSearchWidget
-        title: topbar.enhancedSearchWidget.title
-        description: topbar.enhancedSearchWidget.description
-        type: check
-        preset:
-          - vanilla
-          - modern
-      -
         id: enhancedWidgetOrder
         title: topbar.enhancedWidgetOrder.title
         description: topbar.enhancedWidgetOrder.description

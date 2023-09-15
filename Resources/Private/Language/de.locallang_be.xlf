@@ -120,14 +120,6 @@
 				<source>Use this option to make scrollbars more discreet and move them visually into the background.</source>
 				<target>Verwende diese Option, um Scrollbalken dezenter zu gestalten und diese optisch in den Hintergrund zu rücken.</target>
 			</trans-unit>
-			<trans-unit id="topbar.enhancedSearchWidget.title">
-				<source>Enhanced Search Field</source>
-				<target>Optimiertes Suchfeld</target>
-			</trans-unit>
-			<trans-unit id="topbar.enhancedSearchWidget.description">
-				<source>The search field is brought more into focus and given a more modern design.</source>
-				<target>Das Suchfeld wird mehr in den Fokus gerückt und moderner gestaltet.</target>
-			</trans-unit>
 			<trans-unit id="topbar.enhancedWidgetOrder.title">
 				<source>Reorder icons on the right</source>
 				<target>Icons rechts umsortieren</target>
