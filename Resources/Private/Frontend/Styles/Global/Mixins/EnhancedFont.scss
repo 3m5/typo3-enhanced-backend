@@ -1,10 +1,10 @@
 @mixin global__enhancedFont {
     *:not(.fa), .t3-page-ce-body {
         --bs-body-font-size: 13px;
-        font-family: 'Inter';
+        font-family: 'Inter v11', 'Inter v12';
     }
 
     option {
-        font-family: 'Inter', Sans-Serif;
+        font-family: 'Inter v11', 'Inter v12', Sans-Serif;
     }
 }

@@ -48,10 +48,9 @@ TYPO3 installations, enhanced backend is easily added to the project.
 composer require 3m5/typo3-enhanced-backend
 ```
 
-**TYPO3 10**
+**TYPO3 12**
 
-_At the moment we are try to backport our extensions to TYPO3 10.  But this is
-not in our focus. So please be patient._
+_At the moment we are try to upgrade our extension to TYPO3 12. So please be patient._
 
 
 ## TYPO3 Extension Repository

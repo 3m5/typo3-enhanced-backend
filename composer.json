@@ -34,10 +34,10 @@
 	],
 	"require": {
 		"php": ">= 7.4 < 8.3",
-		"typo3/cms-core": "^11.5",
-		"typo3/cms-setup": "^11.5",
-		"typo3/cms-backend": "^11.5",
-		"typo3/cms-sys-note": "^11.5"
+		"typo3/cms-core": "^11.5 || ^12.4",
+		"typo3/cms-setup": "^11.5 || ^12.4",
+		"typo3/cms-backend": "^11.5 || ^12.4",
+		"typo3/cms-sys-note": "^11.5 || ^12.4"
 	},
 	"require-dev": {
 		"typo3/testing-framework": "^6.8"
