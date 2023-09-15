@@ -52,14 +52,14 @@ function getContentTreeHeadline(contentArea: Document): string {
 
 function getElementHeadline(element:HTMLElement): string {
   const isGridContainer = !!element.querySelector('.exampleContent > .t3-grid-container');
-  const elementFallbackName = isGridContainer ? 'Container' : 'Content element';
+  const elementFallbackName = isGridContainer ? 'Container' : (element.querySelector('.t3-page-ce-header-title')?.textContent ?? 'Content element');
 
   const elementBody = element?.querySelectorAll<HTMLElement>('.t3-page-ce-body')[0];
-  const elementContent = elementBody?.querySelectorAll<HTMLElement>('.exampleContent')[0]
+  const elementContent = elementBody?.querySelectorAll<HTMLElement>('.exampleContent')[0];
 
   // if element has a strong title, show this in content tree
-  if (element.querySelector('.t3-page-ce-header-title')) {
-    return element.querySelector('.t3-page-ce-header-title')?.textContent ?? '';
+  if (element.querySelector('.element-preview-header-header')) {
+    return element.querySelector('.element-preview-header-header')?.textContent ?? '';
   }
 
   // if no strong title is found and element is grid container, show fallback name
@@ -91,7 +91,7 @@ function createContentTreeHTML() {
 
   const contentTreeHeader = document.createElement("div");
   contentTreeHeader.classList.add('content-tree__header');
-  contentTreeHeader.innerHTML = '<label class="content-tree__headline">Content tree</label><i class="fa fa-solid fa-angle-down content-tree__toggle"></i>';
+  contentTreeHeader.innerHTML = '<label class="content-tree__headline">Content tree</label><i class="content-tree__toggle" aria-label="Toggle content tree"></i>';
   contentTreeHeader.onclick = initContentTreeToggle;
 
   const contentTreeHeadline = getContentTreeHeadline(contentArea);

@@ -21,7 +21,7 @@
                 max-height: $content-tree-header-height;
 
                 &__toggle {
-                    transform: rotate(180deg);
+                    transform: rotate(90deg);
                 }
             }
         }
@@ -133,7 +133,7 @@
                     padding-bottom: 2px;
 
                     &::after {
-                        background-image: url("/typo3conf/ext/enhanced_backend/Resources/Public/Icons/Pencil.svg");
+                        background-image: url("../Icons/Pencil.svg");
                         position: absolute;
                         right: 16px;
                         top: 0;
@@ -159,7 +159,7 @@
                 justify-content: space-between;
                 background-color: $typo3-grey;
                 padding: 8px 16px;
-                align-items: baseline;
+                align-items: center;
                 cursor: pointer;
             }
 
@@ -171,7 +171,14 @@
             }
 
             &__toggle {
-                font-size: 24px;
+                background-image: url("../Icons/Caret-left.svg");
+                width: 24px;
+                height: 24px;
+                background-size: contain;
+                transform: rotate(-90deg);
+                background-position: center;
+                background-repeat: no-repeat;
+
             }
         }
     }
