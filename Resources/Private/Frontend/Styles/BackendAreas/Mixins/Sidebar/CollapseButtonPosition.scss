@@ -19,7 +19,9 @@
             z-index: 100000;
             width: 66px;
             padding-right: 0;
-            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
 
             .icon {
                 transform: rotate(180deg);
@@ -31,7 +33,7 @@
         .topbar-button {
             &.topbar-button-modulemenu {
                 width: 240px;
-                text-align: right;
+                justify-content: flex-end;
                 padding-right: 16px;
 
                 .icon {
