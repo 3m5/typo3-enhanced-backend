@@ -7,11 +7,12 @@ function buildContentTree() {
    * Content tree is only visible if page module is selected,
    * otherwise there is no content in the content area that could be selected
    */
-  if(isPageModuleActive()) {
+   //TODO: check why this is not working anymore
+  /*if(isPageModuleActive()) {
     document.querySelector<HTMLElement>('.t3js-scaffold-content-navigation')?.classList?.remove('content-tree--hidden');
   } else {
     document.querySelector<HTMLElement>('.t3js-scaffold-content-navigation')?.classList?.add('content-tree--hidden');
-  }
+  }*/
 
   /**
    * Content tree is build after the content area iframe is loaded and page tree is available
@@ -57,8 +58,8 @@ function getElementHeadline(element:HTMLElement): string {
   const elementContent = elementBody?.querySelectorAll<HTMLElement>('.exampleContent')[0]
 
   // if element has a strong title, show this in content tree
-  if (elementContent?.firstElementChild?.tagName === 'STRONG') {
-    return elementContent?.firstElementChild?.textContent ?? '';
+  if (element.querySelector('.t3-page-ce-header-title')) {
+    return element.querySelector('.t3-page-ce-header-title')?.textContent ?? '';
   }
 
   // if no strong title is found and element is grid container, show fallback name
@@ -144,7 +145,7 @@ function createNestedList(rootElement : HTMLElement, classList : Array<string>, 
   for (let i = 0; i < elements.length; i++) {
     const element : HTMLElement = elements[i];
     const listItem = document.createElement("li");
-    const elementIcon: HTMLElement | null = element.querySelector('.t3-page-ce-header .t3js-contextmenutrigger');
+    const elementIcon: HTMLElement | null = element.querySelector('.t3-page-ce-header-left [data-contextmenu-table="tt_content"]');
     const linkToContentElement : HTMLElement =  element?.querySelector<HTMLElement>('.t3-page-ce-header [data-identifier="actions-open"]')?.closest('a') ? element?.querySelector<HTMLElement>('.t3-page-ce-header [data-identifier="actions-open"]')?.closest('a')?.cloneNode(true) as HTMLElement : document.createElement('div');
 
     if(!!linkToContentElement && linkToContentElement.tagName === 'A') {
