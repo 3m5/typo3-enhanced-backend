@@ -58,29 +58,4 @@ class BackendStyles
     {
         return GeneralUtility::getFileAbsFileName('EXT:enhanced_backend/Resources/Public/JavaScript/Features.js');
     }
-
-    /**
-     * Add enhanced backend css classes to root html document
-     *
-     * @param array $params
-     * @param Typo3BackendController $backendController
-     * @return void
-     */
-    public function addEnBaCssClasses(array &$params, Typo3BackendController &$backendController)
-    {
-        $featureService = GeneralUtility::makeInstance(FeatureService::class);
-        $features = $featureService->getAllActiveFeatures();
-        $bodyClasses = implode(' ', array_keys($features));
-        $params['content'] = $this->addClassesToHtml($params['content'], $bodyClasses);
-    }
-
-    /**
-     * @param $htmlTag
-     * @param $bodyCssClasses
-     * @return array|string|string[]
-     */
-    private function addClassesToHtml($htmlTag, $bodyCssClasses)
-    {
-        return str_replace('<html ', '<html class="' . $bodyCssClasses . '" ', $htmlTag);
-    }
 }
