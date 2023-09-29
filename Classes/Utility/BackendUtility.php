@@ -21,6 +21,8 @@ use TYPO3\CMS\Core\Utility\VersionNumberUtility;
  **/
 class BackendUtility
 {
+    private const EXTENSION_KEY = 'enhanced_backend';
+
     /**
      * Determine, depending on TYPO3 version, if this request is a backend request
      *
@@ -49,5 +51,14 @@ class BackendUtility
     static function getCurrentTypo3VersionNumberInt(): int
     {
         return VersionNumberUtility::convertVersionNumberToInteger(VersionNumberUtility::getCurrentTypo3Version());
+    }
+
+    /**
+     * Get the extension key for enhanced backend
+     *
+     * @return string
+     */
+    static function getExtensionKey():string {
+        return self::EXTENSION_KEY;
     }
 }
