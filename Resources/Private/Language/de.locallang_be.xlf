@@ -176,30 +176,6 @@
 				<source>Form elements are aligned using a grid. Frames are visually placed in the background so editors can focus on content.</source>
 				<target>Formularelemente werden anhand eines Rasters ausgerichtet. Rahmen werden optisch in den Hintergrund gestellt, damit Redakteure sich auf die Inhalte fokussieren können.</target>
 			</trans-unit>
-			<trans-unit id="contentArea.enhancedLanguageVisualization.title">
-				<source>Enhanced language visualization</source>
-				<target>Optimierte Darstellung der Sprachen</target>
-			</trans-unit>
-			<trans-unit id="contentArea.enhancedLanguageVisualization.description">
-				<source>Displays the respective language flag only once per column and makes the language sticky at the top, so that it is also recognizable when elements are edited further down.</source>
-				<target>Zeigt die jeweilige Sprachflagge nur einmal je Spalte an und macht die Sprache sticky am oberen Rand, sodass sie auch erkennbar ist, wenn Elemente weiter unten bearbeitet werden.</target>
-			</trans-unit>
-			<trans-unit id="contentElementWizard.enhancedToolbar.title">
-				<source>Enhanced Toolbar</source>
-				<target>Optimierte Toolbar</target>
-			</trans-unit>
-			<trans-unit id="contentElementWizard.enhancedToolbar.description">
-				<source>The search box and tabs are provided in a more modern design.</source>
-				<target>Das Suchfeld und die Tabs werden in einem moderneren Design bereitgestellt.</target>
-			</trans-unit>
-			<trans-unit id="contentElementWizard.enhancedUI.title">
-				<source></source>
-				<target>Tile view</target>
-			</trans-unit>
-			<trans-unit id="contentElementWizard.enhancedUI.description">
-				<source>Description texts are available as tooltips, icons and headlines are in focus.</source>
-				<target>Beschreibungstexte sind als Tooltips verfügbar, Icons und Überschriften stehen im Fokus.</target>
-			</trans-unit>
 		</body>
 	</file>
 </xliff>

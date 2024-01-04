@@ -112,12 +112,6 @@ groups:
         preset:
           - vanilla
           - modern
-      - id: enhancedLanguageVisualization
-        title: contentArea.enhancedLanguageVisualization.title
-        description: contentArea.enhancedLanguageVisualization.description
-        type: check
-        preset:
-          - modern
 # there is no need for contentElementWizard in v12 until now, but maybe we re-enable it later
 #  contentElementWizard:
 #    title: groups.contentElementWizard.title

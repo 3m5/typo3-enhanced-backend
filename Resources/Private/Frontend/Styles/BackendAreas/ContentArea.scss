@@ -2,22 +2,11 @@
 @import "Mixins/ContentArea/EnhancedContentElementPositioning";
 @import "Mixins/ContentArea/EnhancedToolbar";
 @import "Mixins/ContentArea/EnhancedEditingForm";
-@import "Mixins/ContentArea/EnhancedLanguageVisualization";
 
 .enba-contentArea {
     &__enhancedOverviewUI {
         @include contentArea__enhancedOverviewUI;
         @include contentArea__enhancedContentElementPositioning;
-
-        &.enba-contentArea__enhancedLanguageVisualization {
-            .module-body {
-                .t3-page-ce-body-inner .exampleContent {
-                    > strong:first-child {
-                        left: 40px;
-                    }
-                }
-            }
-        }
     }
 
     &__enhancedToolbar {
@@ -26,22 +15,5 @@
 
     &__enhancedEditingForm {
         @include contentArea__enhancedEditingForm;
-    }
-
-    &__enhancedLanguageVisualization {
-        @include contentArea__enhancedLanguageVisualization;
-
-        &.enba-contentArea__enhancedToolbar {
-            .module-docheader-folded + .module-body {
-                .t3-page-column-lang-name {
-                    transform: translateY(-44px);
-                }
-            }
-
-            .module-body .t3-page-column-lang-name {
-                top: 84px;
-            }
-        }
-
     }
 }
