@@ -112,14 +112,6 @@
 				<source>Use the optimized "Inter" font for better display of elements and texts.</source>
 				<target>Verwende die optimierte Schriftart "Inter" für eine bessere Darstellung von Elementen und Texten.</target>
 			</trans-unit>
-			<trans-unit id="global.enhancedScrollbars.title">
-				<source>Enhanced Scrollbars</source>
-				<target>Optimierte Scrollbalken</target>
-			</trans-unit>
-			<trans-unit id="global.enhancedScrollbars.description">
-				<source>Use this option to make scrollbars more discreet and move them visually into the background.</source>
-				<target>Verwende diese Option, um Scrollbalken dezenter zu gestalten und diese optisch in den Hintergrund zu rücken.</target>
-			</trans-unit>
 			<trans-unit id="topbar.enhancedWidgetOrder.title">
 				<source>Reorder icons on the right</source>
 				<target>Icons rechts umsortieren</target>

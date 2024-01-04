@@ -6,12 +6,6 @@ import InitEnhancedLanguageVisualization from "./Features/EnhancedLanguageVisual
 
 if (typeof window !== "undefined") {
   window.addEventListener('DOMContentLoaded', function() {
-    // TODO: this if is for testing purpose only and should be removed!
-    if(window.top === window) {
-      //document.querySelector('html')?.classList.add('enba-global__enhancedFont', 'enba-global__enhancedScrollbars', 'enba-topbar__enhancedSearchWidget', 'enba-topbar__enhancedWidgetOrder', 'enba-sidebar__collapseButtonPosition', 'enba-sidebar__enhancedMenuUI', 'enba-pageTree__enhancedToolbarUI', 'enba-pageTree__enabledContentTree', 'enba-contentArea__enhancedOverviewUI', 'enba-contentArea__enhancedToolbar', 'enba-contentArea__enhancedEditingForm', 'enba-contentArea__enhancedLanguageVisualization', 'enba-contentArea__hideQuickPageTitleEdit', 'enba-contentElementWizard__enhancedToolbar', 'enba-contentElementWizard__enhancedUI');
-      document.querySelector('html')?.classList.add('enba-sidebar__enhancedMenuUI', 'enba-pageTree__enhancedToolbarUI', 'enba-contentArea__enhancedOverviewUI', 'enba-contentArea__enhancedToolbar', 'enba-contentArea__enhancedEditingForm', 'enba-contentArea__enhancedLanguageVisualization', 'enba-contentElementWizard__enhancedToolbar', 'enba-contentElementWizard__enhancedUI');
-    }
-
     // Code is executed in an iFrame
     if (window.parent !== window) {
       InitEnbaClassNames();

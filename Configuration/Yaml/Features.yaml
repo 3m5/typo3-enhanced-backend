@@ -27,14 +27,6 @@ groups:
         description: global.enhancedFont.description
         preset:
           - modern
-      -
-        id: enhancedScrollbars
-        title: global.enhancedScrollbars.title
-        type: check
-        description: global.enhancedScrollbars.description
-        preset:
-          - vanilla
-          - modern
   topbar:
     title: groups.topbar.title
     description: groups.topbar.description
@@ -126,24 +118,10 @@ groups:
         type: check
         preset:
           - modern
-  contentElementWizard:
-    title: groups.contentElementWizard.title
-    description: groups.contentElementWizard.description
-    image: layoutarea_contentwizard.webp
-    icon: MagicWand.svg
-    features:
-      - id: enhancedToolbar
-        title: contentElementWizard.enhancedToolbar.title
-        description: contentElementWizard.enhancedToolbar.description
-        type: check
-        preset:
-          - vanilla
-          - modern
-      - id: enhancedUI
-        title: contentElementWizard.enhancedUI.title
-        description: contentElementWizard.enhancedUI.description
-        type: check
-        preset:
-          - modern
-
-
+# there is no need for contentElementWizard in v12 until now, but maybe we re-enable it later
+#  contentElementWizard:
+#    title: groups.contentElementWizard.title
+#    description: groups.contentElementWizard.description
+#    image: layoutarea_contentwizard.webp
+#    icon: MagicWand.svg
+#    features:

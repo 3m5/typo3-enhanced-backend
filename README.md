@@ -42,7 +42,7 @@ as new tab "enhanced backend" in user settings. All settings are user specific.
 With [composer based](https://docs.typo3.org/m/typo3/tutorial-getting-started/main/en-us/Installation/Install.html)
 TYPO3 installations, enhanced backend is easily added to the project.
 
-**TYPO3 11**
+**TYPO3 12**
 
 ```
 composer require 3m5/typo3-enhanced-backend
@@ -61,7 +61,7 @@ be installed using the extension manager.
 
 **Before stable release 1.0**
 - Add planned and stabilize features for TYPO3 v11
-- Prepeare for TYPO3 v12
+- Prepare for TYPO3 v12
 - Improve documentation
 
 # Tagging and releasing

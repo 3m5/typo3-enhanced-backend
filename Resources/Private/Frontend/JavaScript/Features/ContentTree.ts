@@ -22,7 +22,7 @@ function buildContentTree() {
   } else {
     const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
     const $pageNavigation = document.querySelector('.t3js-scaffold-content-navigation');
-
+    
     if (iframeDoc?.readyState === 'complete' && !!$pageNavigation) {
       createContentTreeHTML();
       watchContentIframe();
@@ -100,6 +100,8 @@ function createContentTreeHTML() {
 
   contentTree.appendChild(contentTreeHeader);
   contentTree.appendChild(contentTreeData);
+  console.log('content tree', contentTree);
+  console.log('page navigation', $pageNavigation);
   $pageNavigation?.append(contentTree);
 
   const rootElement = contentArea?.querySelector<HTMLElement>('#PageLayoutController');
