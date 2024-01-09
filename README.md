@@ -42,13 +42,9 @@ as new tab "enhanced backend" in user settings. All settings are user specific.
 With [composer based](https://docs.typo3.org/m/typo3/tutorial-getting-started/main/en-us/Installation/Install.html)
 TYPO3 installations, enhanced backend is easily added to the project.
 
-**TYPO3 12**
-
 ```
 composer require 3m5/typo3-enhanced-backend
 ```
-
-**TYPO3 12**
 
 _At the moment we are try to upgrade our extension to TYPO3 12. So please be patient._
 
@@ -59,10 +55,8 @@ be installed using the extension manager.
 
 # Roadmap
 
-**Before stable release 1.0**
-- Add planned and stabilize features for TYPO3 v11
-- Prepare for TYPO3 v12
 - Improve documentation
+- Add more features
 
 # Tagging and releasing
 
@@ -79,7 +73,8 @@ used as TER upload comment.
 
 | EnBa | TYPO3 | PHP       | Support / Development |
 |------|-------|-----------|-----------------------|
-| main | 11    | 7.4 - 8.2 | most recent branch    |
+| main | 12    | 7.4 - 8.2 | most recent branch    |
+| v11   | 11    | 7.4 - 8.2 | branch for TYPO3 v11  |
 
 # Legal
 This project is released under GPLv2 license. See LICENSE.txt for details.

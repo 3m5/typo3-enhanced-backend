@@ -9,16 +9,16 @@ $EM_CONF[$_EXTKEY] = [
     'state' => 'beta',
     # Deprecated since version 12.1
     'clearCacheOnLoad' => 0,
-    'version' => '0.1.5',
+    'version' => '1.0.0',
     'constraints' => [
         'depends' => [
             'php' => '7.4.0-8.2.99',
-            'typo3' => '11.5.0-11.99.99',
-            'sys_note' => '11.5.0-11.99.99'
+            'typo3' => '12.0.0-12.99.99',
+            'sys_note' => '12.0.0-12.99.99'
         ],
         'conflicts' => [],
         'suggests' => [
-            'styleguide' => '11.5.0-11.99.99'
+            'styleguide' => '12.0.0-12.99.99'
         ],
     ],
     'autoload' => [
