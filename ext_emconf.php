@@ -6,7 +6,7 @@ $EM_CONF[$_EXTKEY] = [
     'author' => 'Jan Suchandt',
     'author_email' => 'jan.suchandt@3m5.de',
     'author_company' => '3m5. Media GmbH',
-    'state' => 'beta',
+    'state' => 'stable',
     # Deprecated since version 12.1
     'clearCacheOnLoad' => 0,
     'version' => '1.0.0',
