@@ -3,7 +3,7 @@
 TYPO3 Extension ENHANCED BACKEND
 ================================
 
-![enhanced_backend_logo](/Resources/Public/Icons/Extension.png){height=250px}
+![enhanced_backend_logo](/Resources/Public/Icons/Extension.png)
 
 # What is it?
 
