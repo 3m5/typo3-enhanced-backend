@@ -14,5 +14,11 @@ services:
   DMF\EnhancedBackend\Service\FeatureService:
     public: true
 
+  DMF\EnhancedBackend\Backend\EventListener\AfterBackendPageRenderEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'enhanced_backend/backend/after-backend-page-render'
+
+
   TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider: '@DMF\EnhancedBackend\Hooks\EnhancedSvgIconProvider'
   TYPO3\CMS\Core\Imaging\IconProvider\SvgSpriteIconProvider: '@DMF\EnhancedBackend\Hooks\EnhancedSvgSpriteIconProvider'

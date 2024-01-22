@@ -104,18 +104,6 @@
 			<trans-unit id="global.enhancedFont.description">
 				<source>Use the optimized "Inter" font for better display of elements and texts.</source>
 			</trans-unit>
-			<trans-unit id="global.enhancedScrollbars.title">
-				<source>Enhanced Scrollbars</source>
-			</trans-unit>
-			<trans-unit id="global.enhancedScrollbars.description">
-				<source>Use this option to make scrollbars more discreet and move them visually into the background.</source>
-			</trans-unit>
-			<trans-unit id="topbar.enhancedSearchWidget.title">
-				<source>Enhanced Search Field</source>
-			</trans-unit>
-			<trans-unit id="topbar.enhancedSearchWidget.description">
-				<source>The search field is brought more into focus and given a more modern design.</source>
-			</trans-unit>
 			<trans-unit id="topbar.enhancedWidgetOrder.title">
 				<source>Reorder icons on the right</source>
 			</trans-unit>
@@ -163,30 +151,6 @@
 			</trans-unit>
 			<trans-unit id="contentArea.enhancedEditingForm.description">
 				<source>Form elements are aligned using a grid. Frames are visually placed in the background so editors can focus on content.</source>
-			</trans-unit>
-			<trans-unit id="contentArea.enhancedLanguageVisualization.title">
-				<source>Enhanced language visualization</source>
-			</trans-unit>
-			<trans-unit id="contentArea.enhancedLanguageVisualization.description">
-				<source>Displays the respective language flag only once per column and makes the language sticky at the top, so that it is also recognizable when elements are edited further down.</source>
-			</trans-unit>
-			<trans-unit id="contentArea.hideQuickPageTitleEdit.title">
-				<source>Hide quick page title editing</source>
-			</trans-unit>
-			<trans-unit id="contentArea.hideQuickPageTitleEdit.description">
-				<source>Displays the icon for quick editing of the page title only when the mouse is hovered over it.</source>
-			</trans-unit>
-			<trans-unit id="contentElementWizard.enhancedToolbar.title">
-				<source>Enhanced Toolbar</source>
-			</trans-unit>
-			<trans-unit id="contentElementWizard.enhancedToolbar.description">
-				<source>The search box and tabs are provided in a more modern design.</source>
-			</trans-unit>
-			<trans-unit id="contentElementWizard.enhancedUI.title">
-				<source>Tile view</source>
-			</trans-unit>
-			<trans-unit id="contentElementWizard.enhancedUI.description">
-				<source>Description texts are available as tooltips, icons and headlines are in focus.</source>
 			</trans-unit>
 		</body>
 	</file>

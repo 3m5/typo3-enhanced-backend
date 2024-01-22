@@ -22,7 +22,7 @@ function buildContentTree() {
   } else {
     const iframeDoc = iframe.contentDocument || iframe.contentWindow?.document;
     const $pageNavigation = document.querySelector('.t3js-scaffold-content-navigation');
-
+    
     if (iframeDoc?.readyState === 'complete' && !!$pageNavigation) {
       createContentTreeHTML();
       watchContentIframe();
@@ -51,14 +51,14 @@ function getContentTreeHeadline(contentArea: Document): string {
 
 function getElementHeadline(element:HTMLElement): string {
   const isGridContainer = !!element.querySelector('.exampleContent > .t3-grid-container');
-  const elementFallbackName = isGridContainer ? 'Container' : 'Content element';
+  const elementFallbackName = isGridContainer ? 'Container' : (element.querySelector('.t3-page-ce-header-title')?.textContent ?? 'Content element');
 
   const elementBody = element?.querySelectorAll<HTMLElement>('.t3-page-ce-body')[0];
-  const elementContent = elementBody?.querySelectorAll<HTMLElement>('.exampleContent')[0]
+  const elementContent = elementBody?.querySelectorAll<HTMLElement>('.exampleContent')[0];
 
   // if element has a strong title, show this in content tree
-  if (elementContent?.firstElementChild?.tagName === 'STRONG') {
-    return elementContent?.firstElementChild?.textContent ?? '';
+  if (element.querySelector('.element-preview-header-header')) {
+    return element.querySelector('.element-preview-header-header')?.textContent ?? '';
   }
 
   // if no strong title is found and element is grid container, show fallback name
@@ -90,7 +90,7 @@ function createContentTreeHTML() {
 
   const contentTreeHeader = document.createElement("div");
   contentTreeHeader.classList.add('content-tree__header');
-  contentTreeHeader.innerHTML = '<label class="content-tree__headline">Content tree</label><i class="fa fa-solid fa-angle-down content-tree__toggle"></i>';
+  contentTreeHeader.innerHTML = '<label class="content-tree__headline">Content tree</label><i class="content-tree__toggle" aria-label="Toggle content tree"></i>';
   contentTreeHeader.onclick = initContentTreeToggle;
 
   const contentTreeHeadline = getContentTreeHeadline(contentArea);
@@ -100,6 +100,8 @@ function createContentTreeHTML() {
 
   contentTree.appendChild(contentTreeHeader);
   contentTree.appendChild(contentTreeData);
+  console.log('content tree', contentTree);
+  console.log('page navigation', $pageNavigation);
   $pageNavigation?.append(contentTree);
 
   const rootElement = contentArea?.querySelector<HTMLElement>('#PageLayoutController');
@@ -144,7 +146,7 @@ function createNestedList(rootElement : HTMLElement, classList : Array<string>, 
   for (let i = 0; i < elements.length; i++) {
     const element : HTMLElement = elements[i];
     const listItem = document.createElement("li");
-    const elementIcon: HTMLElement | null = element.querySelector('.t3-page-ce-header .t3js-contextmenutrigger');
+    const elementIcon: HTMLElement | null = element.querySelector('.t3-page-ce-header-left [data-contextmenu-table="tt_content"]');
     const linkToContentElement : HTMLElement =  element?.querySelector<HTMLElement>('.t3-page-ce-header [data-identifier="actions-open"]')?.closest('a') ? element?.querySelector<HTMLElement>('.t3-page-ce-header [data-identifier="actions-open"]')?.closest('a')?.cloneNode(true) as HTMLElement : document.createElement('div');
 
     if(!!linkToContentElement && linkToContentElement.tagName === 'A') {
@@ -221,7 +223,7 @@ function initContentTreeToggle() {
  * @returns {boolean}
  */
 function isPageModuleActive() {
-  return document.querySelector<HTMLElement>('#modulemenu .modulemenu-action-active')?.dataset.modulename === 'web_layout';
+  return document.querySelector<HTMLElement>('#modulemenu a.modulemenu-action-active')?.dataset.modulemenuIdentifier === 'web_layout';
 }
 
 /**

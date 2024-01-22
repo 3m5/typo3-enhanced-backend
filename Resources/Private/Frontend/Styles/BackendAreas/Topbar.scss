@@ -1,10 +1,6 @@
-@import "Mixins/Topbar/EnhancedSearchWidget";
 @import "Mixins/Topbar/EnhancedWidgetOrder";
 
 .enba-topbar {
-    &__enhancedSearchWidget {
-        @include topbar__enhancedSearchWidget;
-    }
     &__enhancedWidgetOrder {
         @include topbar__enhancedWidgetOrder;
     }

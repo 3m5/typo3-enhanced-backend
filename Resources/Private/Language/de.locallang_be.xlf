@@ -112,22 +112,6 @@
 				<source>Use the optimized "Inter" font for better display of elements and texts.</source>
 				<target>Verwende die optimierte Schriftart "Inter" für eine bessere Darstellung von Elementen und Texten.</target>
 			</trans-unit>
-			<trans-unit id="global.enhancedScrollbars.title">
-				<source>Enhanced Scrollbars</source>
-				<target>Optimierte Scrollbalken</target>
-			</trans-unit>
-			<trans-unit id="global.enhancedScrollbars.description">
-				<source>Use this option to make scrollbars more discreet and move them visually into the background.</source>
-				<target>Verwende diese Option, um Scrollbalken dezenter zu gestalten und diese optisch in den Hintergrund zu rücken.</target>
-			</trans-unit>
-			<trans-unit id="topbar.enhancedSearchWidget.title">
-				<source>Enhanced Search Field</source>
-				<target>Optimiertes Suchfeld</target>
-			</trans-unit>
-			<trans-unit id="topbar.enhancedSearchWidget.description">
-				<source>The search field is brought more into focus and given a more modern design.</source>
-				<target>Das Suchfeld wird mehr in den Fokus gerückt und moderner gestaltet.</target>
-			</trans-unit>
 			<trans-unit id="topbar.enhancedWidgetOrder.title">
 				<source>Reorder icons on the right</source>
 				<target>Icons rechts umsortieren</target>
@@ -191,38 +175,6 @@
 			<trans-unit id="contentArea.enhancedEditingForm.description">
 				<source>Form elements are aligned using a grid. Frames are visually placed in the background so editors can focus on content.</source>
 				<target>Formularelemente werden anhand eines Rasters ausgerichtet. Rahmen werden optisch in den Hintergrund gestellt, damit Redakteure sich auf die Inhalte fokussieren können.</target>
-			</trans-unit>
-			<trans-unit id="contentArea.enhancedLanguageVisualization.title">
-				<source>Enhanced language visualization</source>
-				<target>Optimierte Darstellung der Sprachen</target>
-			</trans-unit>
-			<trans-unit id="contentArea.enhancedLanguageVisualization.description">
-				<source>Displays the respective language flag only once per column and makes the language sticky at the top, so that it is also recognizable when elements are edited further down.</source>
-				<target>Zeigt die jeweilige Sprachflagge nur einmal je Spalte an und macht die Sprache sticky am oberen Rand, sodass sie auch erkennbar ist, wenn Elemente weiter unten bearbeitet werden.</target>
-			</trans-unit>
-			<trans-unit id="contentArea.hideQuickPageTitleEdit.title">
-				<source>Hide quick page title editing</source>
-				<target>Verstecke schnelle Seitentitel-Bearbeitung</target>
-			</trans-unit>
-			<trans-unit id="contentArea.hideQuickPageTitleEdit.description">
-				<source>Displays the icon for quick editing of the page title only when the mouse is hovered over it.</source>
-				<target>Blendet das Icon für die schnelle Bearbeitung des Seitentitels erst ein, wenn mit der Maus darüber gefahren wird.</target>
-			</trans-unit>
-			<trans-unit id="contentElementWizard.enhancedToolbar.title">
-				<source>Enhanced Toolbar</source>
-				<target>Optimierte Toolbar</target>
-			</trans-unit>
-			<trans-unit id="contentElementWizard.enhancedToolbar.description">
-				<source>The search box and tabs are provided in a more modern design.</source>
-				<target>Das Suchfeld und die Tabs werden in einem moderneren Design bereitgestellt.</target>
-			</trans-unit>
-			<trans-unit id="contentElementWizard.enhancedUI.title">
-				<source></source>
-				<target>Tile view</target>
-			</trans-unit>
-			<trans-unit id="contentElementWizard.enhancedUI.description">
-				<source>Description texts are available as tooltips, icons and headlines are in focus.</source>
-				<target>Beschreibungstexte sind als Tooltips verfügbar, Icons und Überschriften stehen im Fokus.</target>
 			</trans-unit>
 		</body>
 	</file>
