@@ -10,6 +10,8 @@ TYPO3 Extension ENHANCED BACKEND
 Enhanced Backend is an extension developed by 3m5. to make the work of editors in the TYPO3 backend more pleasant.
 There are features that visually change the backend and also functionalities that are added to the backend.
 
+Created by:[3m5.de - Die TYPO3 Agentur](https://www.3m5.de/digitalagentur/typo3-agentur)
+
 ## Presets
 
 The primary goal of the extension is individuality, which is why each feature can be enabled or disabled individually.
